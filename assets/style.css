@@ -416,12 +416,16 @@ a.vcard:hover { border-color: var(--subj); }
 
 /* Watch page */
 /* lesson page: video column (default 42%, learners drag the bar to resize), bar, text column */
-.watch { display: grid; grid-template-columns: minmax(0, var(--vcol, 42%)) 14px minmax(0, 1fr); gap: 4px; align-items: start; }
+.watch { display: grid; grid-template-columns: minmax(0, var(--vcol, 42%)) 18px minmax(0, 1fr); gap: 4px; align-items: start; }
 .wsplit {
-  align-self: stretch; display: flex; justify-content: center; cursor: col-resize; touch-action: none;
-  border-radius: 6px; color: var(--muted); user-select: none;
+  align-self: stretch; display: flex; justify-content: center; cursor: col-resize; touch-action: none; user-select: none;
+  /* a thin divider line down the middle */
+  background: linear-gradient(var(--line-strong), var(--line-strong)) center / 2px 100% no-repeat;
 }
-.wsplit span { position: sticky; top: 45vh; height: 48px; width: 8px; display: grid; place-items: center; border-radius: 4px; background: var(--line); font-weight: 700; line-height: 1; }
+.wsplit span {
+  position: sticky; top: 40vh; height: 76px; width: 14px; display: grid; place-items: center; border-radius: 7px;
+  background: var(--graphite); color: var(--on-graphite); font-size: 1.125rem; font-weight: 700; line-height: 1;
+}
 .wsplit:hover span, .wsplit:focus-visible span, body.is-resizing .wsplit span { background: var(--accent); color: var(--on-graphite); }
 body.is-resizing { cursor: col-resize; user-select: none; }
 body.is-resizing iframe { pointer-events: none; }
