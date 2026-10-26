@@ -1070,12 +1070,14 @@
   }
   var ready = false, authKnown = false;
   var GATE_VIEWS = { welcome: 1, login: 1, register: 1, reset: 1 };
+  var afterLogin = null;
   function route() {
     if (!authKnown) return;
     var h = (location.hash || "").slice(1);
-    if (!user) { renderGate(h); return; }
+    /* a shared link (e.g. #v-k1-01) opened while signed out: remember it and go there after signing in */
+    if (!user) { if (h && !GATE_VIEWS[h] && h !== "terms") afterLogin = h; renderGate(h); return; }
     closeMenu();
-    if (GATE_VIEWS[h]) { history.replaceState(null, "", "#home"); h = "home"; }
+    if (GATE_VIEWS[h]) { h = afterLogin || "home"; afterLogin = null; history.replaceState(null, "", "#" + h); }
     if (h === "terms") { renderTermsPage(); markNav(""); window.scrollTo(0, 0); return; }
     if (!ready) return;
     if (searchBox.value && h) searchBox.value = "";
