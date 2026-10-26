@@ -58,6 +58,8 @@
 
 ## 5. Quy trình thêm bài (đã thống nhất)
 
+**Đọc `QUY-TRINH-THEM-BAI.md` trước khi làm bài mới**: các bước, tin nhắn mẫu, giao diện đã chốt, prompt soạn bài, danh sách tự kiểm tra. Mục tiêu: mỗi bài chỉ 2 lượt trao đổi (bạn gửi bài → Claude Code làm xong, mời xem trên máy → bạn duyệt → đưa lên web). Thiếu thông tin nào ở tin nhắn mẫu (chủ đề › mục, mục lục video, link video) thì hỏi **một lần, gộp tất cả câu hỏi**, rồi mới làm.
+
 - Chủ dự án soạn bài trên Claude chat (claude.ai), rồi copy dán vào đây kèm khóa học, chương và tên file mong muốn.
 - Việc của Claude ở đây:
   1. Lưu thành `content/lessons/<mã-bài>.md`. Mã bài chỉ gồm chữ không dấu, số, `-`, `_`; nếu chủ dự án không đặt tên thì tự đặt theo kiểu các bài có sẵn (vd `m3a`) và báo lại.
