@@ -3,7 +3,7 @@
     {
       "no": 1, "tag": "数学Ⅰ", "ja": "数と式", "vi": "Số và biểu thức", "en": "Numbers and expressions",
       "sections": [
-        {"ja":"式の計算","vi":"Tính toán biểu thức","en":"Calculating expressions","lessons":["k1-01","m1a","m1b"]},
+        {"ja":"式の計算","vi":"Tính toán biểu thức","en":"Calculating expressions","lessons":["k1-01"]},
         {"ja":"実数","vi":"Số thực","en":"Real numbers","planned":[
           {"ja":"実数","vi":"Số thực","en":"Real numbers"},
           {"ja":"根号を含む式の計算","vi":"Tính toán biểu thức chứa căn","en":"Expressions with square roots"}]},
