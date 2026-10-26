@@ -11,7 +11,12 @@
   - Tên website: **Newmichi EJU With haiyen.1995** (thẻ `<title>`; chữ cạnh logo: "Newmichi EJU" / "With haiyen.1995").
   - Logo ba ô: **E nền xanh** `#1F66C9`, **J nền cam** `#C2571A`, **U nền trắng** chữ đậm. Giữ nguyên ở cả chế độ tối.
   - Thứ tự nút ngôn ngữ: **VI · JP+VI · JP · EN**.
-  - Font chữ kiểu **Times**: Times New Roman (dự phòng Tinos) cho chữ Việt/Latin, Mincho (BIZ UDPMincho, Yu Mincho) cho chữ Nhật.
+  - Font chữ kiểu **Times**: Times New Roman (dự phòng Tinos) cho chữ Việt/Latin, **Shippori Mincho** cho chữ Nhật.
+  - Khung bài giảng (`.pbody`) **nền xanh nhạt** `--lesson-bg #EAF4FD` (tối `#142233`). Chữ tab/chip trang bài **in đậm, màu đậm**.
+  - Chỗ quan trọng tô **đỏ đậm** (`!!…!!`, class `hl`, `--hl #C62828`). **Khung ghi nhớ** (`! …`, class `memo`): nền trắng nổi, viền trái cam, nhãn 重要 · Quan trọng; không dùng nền đỏ.
+  - Bài có thể có **tiêu đề nhỏ** (`### …`) và **hình minh họa** (`![chú thích](file)` trong `content/images/`). Sơ đồ Toán Claude tự vẽ bằng SVG (nền trắng, chữ Times/Shippori).
+  - Mục まとめ phải đầy đủ: công thức và ví dụ cho từng ý, không chỉ vài câu chung chung.
+  - `[hidden]` luôn ẩn (`display:none !important`): lời giải 解説 chỉ hiện sau khi bấm Chấm điểm.
   - Môn Toán theo **20 chủ đề đề cương EJU** (`content/math-topics.json`). Menu Toán: 数学Ⅰ → 数学A → 数学Ⅱ → 数学B → 数学Ⅲ → 数学C (通常学習編), rồi コース1 (chủ đề 1–7) và コース2 (chủ đề 1–20). Chủ đề 13 thuộc 数学B; 19 và 20 thuộc cả 数学Ⅱ và 数学Ⅲ.
   - Trong chương Toán có **dòng tiêu đề mục lớn** (1), (2)… (class `tsec-t`).
   - Trang bài có tối đa 3 video: video chính (bài giảng) ở khung trên, dưới khung là nút **授業 · 解説 · 単語** (`video`, `video_kaisetsu`, `video_tango`).

@@ -36,7 +36,8 @@
   };
 
   /* **term** → <b class="term">term</b> */
-  function inline(s) { return s.replace(/\*\*(.+?)\*\*/g, '<b class="term">$1</b>'); }
+  /* !!important!! → red bold */
+  function inline(s) { return s.replace(/!!(.+?)!!/g, '<b class="hl">$1</b>').replace(/\*\*(.+?)\*\*/g, '<b class="term">$1</b>'); }
   function stripJa(s) { var m = s.match(RE.ja); return m ? m[1] : s; }
   /* a translation line: { key: "vi" | "en", text } or null */
   function trLine(t) {
@@ -115,7 +116,8 @@
     L.point = body.point ? parseBlocks(body.point) : [];
     if (body.rei) L.rei = parseRei(body.rei);
     L.pr = body.pr ? parsePractice(body.pr) : [];
-    L.sum = body.sum ? parseItems(body.sum) : [];
+    /* まとめ takes the same blocks as Point (lists, formulas, key-point boxes, sub-headings, figures) */
+    L.sum = body.sum ? parseBlocks(body.sum) : [];
     L.terms = body.terms ? parseWords(body.terms) : [];
     if (body.words) L.words = parseWords(body.words);
     if (L.kind === "vocab" && !(L.words && L.words.length)) fail("Bài từ vựng (kind: vocab) cần có mục ## 単語 với ít nhất một từ.", lines.length);
@@ -142,6 +144,24 @@
         continue;
       }
       if ((m = t.match(/^>>\s?(.*)$/))) { push({ type: "line", text: inline(m[1]) }); continue; }
+      if ((m = t.match(/^!\[(.*)\]\(\s*([^\s)]+)\s*\)$/))) {
+        var src = m[2];
+        if (!/^(https?:\/\/|content\/)/.test(src)) {
+          if (!/^[A-Za-z0-9_.\/-]+$/.test(src)) fail("Tên file hình chỉ dùng chữ không dấu, số, - _ . (ví dụ k1-01-1.svg).", r.n);
+          src = "content/images/" + src;
+        }
+        var cap = m[1].split(/\s+\|\s+/);
+        push({ type: "img", src: src, ja: inline(cap[0] || ""), vi: cap[1] ? inline(cap[1]) : null, en: cap[2] ? inline(cap[2]) : null });
+        continue;
+      }
+      if ((m = t.match(/^###\s+(.+)$/))) { var hd = push({ type: "h", ja: inline(m[1]) }); hd.target = hd; continue; }
+      if ((m = t.match(/^[!！]\s+(.+)$/))) {
+        var memo = last && last.type === "memo" ? last : push({ type: "memo", items: [] });
+        var mi = { ja: inline(m[1]) };
+        memo.items.push(mi);
+        memo.target = mi;
+        continue;
+      }
       if ((m = t.match(RE.item))) {
         var ul = last && last.type === "ul" ? last : push({ type: "ul", items: [] });
         var it = { ja: inline(m[1]) };
@@ -185,6 +205,9 @@
       if (b.type === "line") return ["line", b.text];
       if (b.type === "ul") return ["ul", b.items.map(function (x) { return pair(x.ja, x.vi, x.en); })];
       if (b.type === "cmp") return ["cmp", b.cols];
+      if (b.type === "memo") return ["memo", b.items.map(function (x) { return pair(x.ja, x.vi, x.en); })];
+      if (b.type === "h") return ["h", b.ja, b.vi == null ? null : b.vi, b.en == null ? null : b.en];
+      if (b.type === "img") return ["img", b.src, b.ja, b.vi, b.en];
       return ["html", tableHTML(b)];
     });
   }

@@ -19,6 +19,7 @@ content/
   courses.json          môn → khóa học → chương → danh sách bài
   math-topics.json      20 chủ đề Toán EJU: mục lớn, bài, bài "Sắp có" (xem mục 6b)
   lessons/              mỗi bài một file .md
+  images/               hình minh họa trong bài
   terms.md              điều khoản sử dụng và chính sách riêng tư (BẢN MẪU, cần sửa)
 firebase-config.js      mã cấu hình Firebase cho đăng nhập (xem mục 11)
 firestore.rules         quy tắc bảo mật dán vào Firebase (xem mục 11)
@@ -110,6 +111,7 @@ VI: Lấy một nửa hệ số, bình phương rồi trừ đi.
   Ở chế độ **EN**: câu có `EN:` hiện tiếng Anh, câu chưa có `EN:` hiện tiếng Nhật. Các chế độ khác không hiện dòng `EN:`.
   `EN:` dùng được ở mọi chỗ dùng được `VI:`, trừ ô trong bảng.
 - **`**chữ**`** làm nổi bật thuật ngữ (in đậm, font tiếng Nhật).
+- **`!!chữ!!`** tô **đỏ, in đậm** chỗ quan trọng nhất (dùng ít thôi để còn nổi bật).
 - **Công thức toán**: trong câu viết `\( ... \)`; công thức riêng một dòng viết `\[ ... \]` hoặc `$$ ... $$`.
   Dấu nhỏ hơn / lớn hơn trong công thức nên viết `\lt` và `\gt`. Công thức hóa học viết `\(\ce{H2O}\)`.
 - Dòng trống ngăn cách các đoạn.
@@ -151,7 +153,29 @@ Mỗi câu cần có dòng `解説:` (lời giải), có thể kèm `VI:` ngay d
 
 Học viên trả lời **đúng hết** các câu thì bài được tính là **hoàn thành**. Bài không có bài tập được tính hoàn thành khi học viên bấm xem video.
 
-### Thành phần đặc biệt trong `## Point`
+### Thành phần đặc biệt trong `## Point` và `## まとめ`
+
+Mục まとめ viết được mọi thứ giống `## Point` (đoạn văn, công thức, danh sách, khung ghi nhớ, tiêu đề nhỏ, hình).
+
+**Tiêu đề nhỏ** (chia bài giảng thành từng phần):
+```
+### 因数分解
+VI: Phân tích nhân tử
+EN: Factorization
+```
+
+**Khung ghi nhớ** (khung trắng nổi bật, nhãn "重要 · Quan trọng"): mỗi dòng bắt đầu bằng `! ` (dấu chấm than rồi dấu cách).
+Nhiều dòng `! ` liền nhau gộp vào một khung.
+```
+! 因数分解は「共通因数 → 乗法公式 → たすき掛け」の順に考える。
+VI: Phân tích nhân tử theo thứ tự: nhân tử chung → hằng đẳng thức → nhân chéo.
+```
+
+**Hình minh họa:** để file hình (`.svg`, `.png`, `.jpg`) trong `content/images/`, rồi viết một dòng:
+```
+![図1 たすき掛け | Hình 1: Nhân chéo | Figure 1: Cross method](k1-01-tasuki.svg)
+```
+Phần trong `[ ]` là chú thích dưới hình (Nhật | Việt | Anh). Tên file hình nên bắt đầu bằng mã bài (ví dụ `k1-01-...`).
 
 **Danh sách:**
 ```

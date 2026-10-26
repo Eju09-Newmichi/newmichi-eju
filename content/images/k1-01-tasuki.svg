@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="230" viewBox="0 0 420 230" role="img" aria-labelledby="t d">
+  <title id="t">たすき掛け 6x²−5xy−4y²</title>
+  <desc id="d">Sơ đồ nhân chéo: 2 và 3 nhân chéo với y và −4y; 3·y = 3y, 2·(−4y) = −8y, cộng lại được −5y; vậy 6x²−5xy−4y² = (2x+y)(3x−4y).</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; }
+    .n { font-size: 26px; }
+    .s { font-size: 15px; fill: #5A6072; }
+    .r { fill: #C62828; font-weight: 700; }
+    .ln { stroke: #2D4A9A; stroke-width: 2; }
+    .ar { stroke: #9AA1B2; stroke-width: 1.5; }
+    .sum { stroke: #1B1F2A; stroke-width: 1.5; }
+  </style>
+  <text class="s" x="70" y="24" text-anchor="middle">x² の係数</text>
+  <text class="s" x="200" y="24" text-anchor="middle">y² の係数</text>
+  <text class="s" x="340" y="24" text-anchor="middle">xy の係数</text>
+
+  <text class="n" x="70" y="72" text-anchor="middle">2</text>
+  <text class="n" x="70" y="132" text-anchor="middle">3</text>
+  <text class="n" x="200" y="72" text-anchor="middle">y</text>
+  <text class="n" x="200" y="132" text-anchor="middle">−4y</text>
+  <line class="ln" x1="88" y1="64" x2="170" y2="122"/>
+  <line class="ln" x1="88" y1="122" x2="178" y2="64"/>
+
+  <line class="ar" x1="232" y1="64" x2="290" y2="64"/>
+  <path class="ar" d="M284 59 L292 64 L284 69" fill="none"/>
+  <line class="ar" x1="240" y1="124" x2="290" y2="124"/>
+  <path class="ar" d="M284 119 L292 124 L284 129" fill="none"/>
+  <text class="n" x="340" y="72" text-anchor="middle">3y</text>
+  <text class="n" x="340" y="132" text-anchor="middle">−8y</text>
+
+  <line class="sum" x1="30" y1="150" x2="400" y2="150"/>
+  <text class="n" x="70" y="186" text-anchor="middle">6</text>
+  <text class="n" x="200" y="186" text-anchor="middle">−4y²</text>
+  <text class="n r" x="340" y="186" text-anchor="middle">−5y</text>
+  <text class="s" x="210" y="220" text-anchor="middle">6x² − 5xy − 4y² = (2x + y)(3x − 4y)</text>
+</svg>

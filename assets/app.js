@@ -86,6 +86,10 @@
       if (b[0] === "line") return '<p class="formula-line">' + b[1] + "</p>";
       if (b[0] === "ul") return "<ul>" + b[1].map(li).join("") + "</ul>";
       if (b[0] === "html") return b[1];
+      if (b[0] === "memo") return '<div class="memo"><p class="memo-l">' + bi("重要", "Quan trọng", "Key point") + "</p>" + b[1].map(para).join("") + "</div>";
+      if (b[0] === "h") return '<h3 class="sub-t">' + stack(b[1], b[2], b[3]) + "</h3>";
+      if (b[0] === "img") return '<figure class="fig"><img src="' + esc(b[1]) + '" alt="' + esc(String(b[2]).replace(/<[^>]*>/g, "")) + '">' +
+        (b[2] ? "<figcaption>" + (b[3] != null || b[4] != null ? bi(b[2], b[3], b[4]) : b[2]) + "</figcaption>" : "") + "</figure>";
       if (b[0] === "cmp") return '<div class="compare">' + b[1].map(function (c) {
         return "<div><h4>" + c.hj + subs("", "span", c.hv, c.he) + "</h4>" + para(c.vi || c.en ? [c.ja, c.vi || null, c.en || null] : c.ja) + "</div>";
       }).join("") + "</div>";
@@ -333,6 +337,13 @@
   function typeset(el) { if (mjReady && el) { window.MathJax.typesetPromise([el]).then(function () { fitMath(el); }).catch(function () {}); } }
   /* in-line formulas cannot wrap; mark the ones wider than their line so CSS lets them scroll */
   function fitMath(root) {
+    root.querySelectorAll('mjx-container.mj-wide').forEach(function (c) { c.classList.remove("mj-wide"); });
+    /* answer choices too wide for the two-column grid go one per line */
+    root.querySelectorAll(".opts").forEach(function (o) {
+      o.classList.remove("opts-1col");
+      var wide = Array.prototype.some.call(o.querySelectorAll(".opt-text"), function (t) { return t.scrollWidth > t.clientWidth + 1; });
+      if (wide) o.classList.add("opts-1col");
+    });
     root.querySelectorAll('mjx-container:not([display="true"])').forEach(function (c) {
       c.classList.remove("mj-wide");
       var host = c.parentElement && c.parentElement.closest("p, li, td, div, h1, h2, h3, h4");
@@ -695,7 +706,7 @@
         }).join("") + "</section>" : "");
       if (!html) html = emptyPanel(["この授業には問題がありません。", "Bài này không có bài tập."]);
     } else if (tab === "sum") {
-      html = (v.sum.length ? '<section class="psec">' + ptitle("要点まとめ", "Tóm tắt") + "<ul>" + v.sum.map(li).join("") + "</ul></section>" : "") +
+      html = (v.sum.length ? '<section class="psec">' + ptitle("要点まとめ", "Tóm tắt") + blocks(v.sum) + "</section>" : "") +
         (v.terms.length ? '<section class="psec">' + ptitle("用語", "Thuật ngữ") + vocabTable(v.terms) + "</section>" : "");
       if (!html) html = emptyPanel(["まとめは準備中です。", "Phần tóm tắt đang được soạn."]);
     } else if (tab === "list") {
