@@ -13,7 +13,8 @@
   - Thứ tự nút ngôn ngữ: **VI · JP+VI · JP · EN**.
   - Font chữ kiểu **Times**: Times New Roman (dự phòng Tinos) cho chữ Việt/Latin, **Shippori Mincho** cho chữ Nhật.
   - Khung bài giảng (`.pbody`) **nền xanh nhạt** `--lesson-bg #EAF4FD` (tối `#142233`). Chữ tab/chip trang bài **in đậm, màu đậm**.
-  - Chỗ quan trọng tô **đỏ đậm** (`!!…!!`, class `hl`, `--hl #C62828`). **Khung ghi nhớ** (`! …`, class `memo`): nền trắng nổi, viền trái cam, nhãn 重要 · Quan trọng; không dùng nền đỏ.
+  - Chỗ quan trọng tô **đỏ đậm** (`!!…!!`, class `hl`, `--hl #C62828`); **thuật ngữ `**…**` trong bài cũng hiện đỏ đậm**. **Khung ghi nhớ** (`! …`, class `memo`): nền trắng nổi, viền trái và nhãn **đỏ**, nhãn 重要 · Quan trọng; không dùng nền đỏ. **Khung lưu ý** (`? …`, class `note`): nền xanh đậm hơn nền trang, viền trái xanh, nhãn 注意 · Lưu ý, cho trường hợp đặc biệt.
+  - **Hàng nút dưới video** (mục `## 動画` trong file bài): mỗi nút tua video bài giảng tới mốc thời gian (không tải lại khung, dùng YouTube `enablejsapi` + `postMessage`) hoặc chuyển sang video 解説/単語, và đưa chữ bên phải tới đúng mục. Bài 1 dùng 6 nút: Mở đầu · Phần 1 · Phần 2 · Luyện tập (video chữa bài) · Tóm tắt · Từ vựng (video từ vựng); không có nút Ví dụ. Bài có mục này thì không hiện hàng 3 nút 授業·解説·単語. Trên máy tính (>900px) video + hàng nút **ghim** bên trái (`.wstick`).
   - Bài có thể có **tiêu đề nhỏ** (`### …`) và **hình minh họa** (`![chú thích](file)` trong `content/images/`). Sơ đồ Toán Claude tự vẽ bằng SVG (nền trắng, chữ Times/Shippori).
   - Mục まとめ phải đầy đủ: công thức và ví dụ cho từng ý, không chỉ vài câu chung chung.
   - `[hidden]` luôn ẩn (`display:none !important`): lời giải 解説 chỉ hiện sau khi bấm Chấm điểm.

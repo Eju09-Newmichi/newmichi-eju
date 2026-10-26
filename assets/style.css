@@ -52,15 +52,19 @@
   --font-display: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
   /* lesson panel: pale blue page, white "key point" boxes, red for important words */
   --lesson-bg: #EAF4FD;
-  --memo-line: #E3C9A8;
+  --memo-line: #F0B4B4;
   --hl: #C62828;
+  --note-bg: #CFE5FA;
+  --note-line: #8DBBE8;
   --radius: 8px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --paper: #111318;
     --lesson-bg: #142233;
-    --memo-line: #5A3D24;
+    --memo-line: #6B2A2A;
+    --note-bg: #1B3350;
+    --note-line: #2F5C8E;
     --hl: #FF8A80;
     --surface: #191C23;
     --hover: #222631;
@@ -94,7 +98,9 @@
 :root[data-theme="dark"] {
   --paper: #111318;
   --lesson-bg: #142233;
-  --memo-line: #5A3D24;
+  --memo-line: #6B2A2A;
+    --note-bg: #1B3350;
+    --note-line: #2F5C8E;
   --hl: #FF8A80;
   --surface: #191C23;
   --hover: #222631;
@@ -410,7 +416,22 @@ a.vcard:hover { border-color: var(--subj); }
 
 /* Watch page */
 .watch { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 20px; align-items: start; }
-.wleft { display: grid; gap: 14px; min-width: 0; }
+.wleft { display: grid; gap: 14px; min-width: 0; align-self: stretch; align-content: start; }
+/* the video and its buttons; on wide screens they stay in view while the text on the right scrolls */
+.wstick { display: grid; gap: 10px; min-width: 0; }
+@media (min-width: 901px) {
+  .wstick { position: sticky; top: 8px; z-index: 6; background: var(--paper); padding-bottom: 6px; }
+}
+.wstick > .chips { margin-top: 0; border-top: 0; padding-top: 0; }
+.chips.is-vchap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.chips.is-vchap button {
+  display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface);
+  padding: 7px 10px; min-width: 0;
+}
+.chips.is-vchap button:hover { border-color: var(--accent); }
+.chips.is-vchap button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.chip-t { flex: none; font-size: 0.75rem; font-weight: 700; color: var(--muted); font-family: var(--font-body); font-variant-numeric: tabular-nums; }
+@media (max-width: 480px) { .chips.is-vchap { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .player { position: relative; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; container-type: inline-size; background: var(--board); }
 .player .b-tag { font-size: 2.6cqw; }
 .player .b-line { font-size: 5.6cqw; }
@@ -551,12 +572,16 @@ button.menu-item { width: 100%; border: 0; background: none; font: inherit; text
 
 /* Lesson text: important words (!!…!!), key-point box (! …), sub-headings (### …), figures (![…](…)) */
 .hl { color: var(--hl); font-weight: 700; }
+.pbody b.term { color: var(--hl); }
 .memo {
-  background: var(--surface); border: 1px solid var(--memo-line); border-left: 5px solid var(--accent);
+  background: var(--surface); border: 1px solid var(--memo-line); border-left: 5px solid var(--hl);
   border-radius: 6px; padding: 10px 14px; display: grid; gap: 6px; box-shadow: 0 2px 8px var(--shadow);
 }
-.memo-l { margin: 0; font-size: 0.8125rem; font-weight: 700; color: var(--accent); letter-spacing: 0.04em; }
-.memo-l .lv, .memo-l .le { color: inherit; }
+.memo-l { margin: 0; font-size: 0.8125rem; font-weight: 700; color: var(--hl); letter-spacing: 0.04em; }
+.memo-l .lv, .memo-l .le, .note-l .lv, .note-l .le { color: inherit; }
+/* "special case" note (? …): a deeper blue layer on the pale blue page */
+.note { background: var(--note-bg); border: 1px solid var(--note-line); border-left: 5px solid var(--c-sugaku); border-radius: 6px; padding: 10px 14px; display: grid; gap: 6px; }
+.note-l { margin: 0; font-size: 0.8125rem; font-weight: 700; color: var(--c-sugaku); letter-spacing: 0.04em; }
 .sub-t { margin: 6px 0 0; font-family: var(--font-jp); font-size: 1.125rem; font-weight: 700; color: var(--subj); line-height: 1.4; }
 .sub-t > .lj, .sub-t > .lv, .sub-t > .le { display: block; }
 .sub-t > .lv, .sub-t > .le { font-family: var(--font-body); font-size: 0.9375rem; font-weight: 700; color: var(--ink); }

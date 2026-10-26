@@ -171,6 +171,14 @@ Nhiều dòng `! ` liền nhau gộp vào một khung.
 VI: Phân tích nhân tử theo thứ tự: nhân tử chung → hằng đẳng thức → nhân chéo.
 ```
 
+**Khung lưu ý xanh "注意 · Lưu ý"** (cho trường hợp đặc biệt): mỗi dòng bắt đầu bằng `? ` (dấu hỏi rồi dấu cách).
+```
+? \(x^2\) の係数が 1 でないときは、たすき掛けを使う。
+VI: Khi hệ số của \(x^2\) khác 1, dùng phương pháp nhân chéo.
+```
+Khung `! ` (重要 · Quan trọng) có viền đỏ, dùng cho ý chính; khung `? ` màu xanh, dùng cho lưu ý, trường hợp đặc biệt.
+Thuật ngữ viết `**…**` hiện **chữ đỏ đậm**.
+
 **Hình minh họa:** để file hình (`.svg`, `.png`, `.jpg`) trong `content/images/`, rồi viết một dòng:
 ```
 ![図1 たすき掛け | Hình 1: Nhân chéo | Figure 1: Cross method](k1-01-tasuki.svg)
@@ -249,6 +257,31 @@ Trang bài học vẫn hiện ảnh bìa như cũ; học viên bấm nút ▶ th
 Bài chưa có link thì bấm ▶ sẽ hiện "Video đang được chuẩn bị".
 
 Video phải để chế độ **Công khai** hoặc **Không công khai (Unlisted)** và cho phép nhúng. Video **Riêng tư** sẽ không phát được.
+
+### Hàng nút dưới video: mục lục video (`## 動画`, không bắt buộc)
+
+Thêm mục `## 動画` vào file bài để có hàng nút ngay dưới video. Bấm nút nào thì video tua tới đoạn đó
+(hoặc chuyển sang video chữa bài / từ vựng), đồng thời phần chữ bên phải nhảy tới đúng mục:
+
+```
+## 動画
+
+- 0:00 | はじめに | Mở đầu | Introduction | point
+- 0:25 | 第1部 展開 | Phần 1: Khai triển | Part 1: Expansion | 展開
+- 4:56 | 第2部 因数分解 | Phần 2: Phân tích nhân tử | Part 2: Factorization | 因数分解
+- 解説 | 練習 | Luyện tập | Practice | pr
+- 9:37 | まとめ | Tóm tắt | Summary | sum
+- 単語 | 単語 | Từ vựng | Vocabulary | terms
+```
+
+- **Cột 1:** thời điểm trong video bài giảng (lấy từ mục lục YouTube); hoặc `解説` (phát video chữa bài),
+  `単語` (phát video từ vựng), `-` (không đổi video).
+- **Cột 2–4:** tên nút tiếng Nhật | Việt | Anh.
+- **Cột 5:** chỗ chữ bên phải nhảy tới: `point` (đầu bài giảng), `rei` (ví dụ), `pr` (luyện tập), `sum` (tóm tắt),
+  `terms` (bảng 用語), hoặc đúng chữ của một tiêu đề nhỏ `### …` (ví dụ `展開`).
+
+Không có mục `## 動画` thì hàng nút là ポイント · 例題 · 練習 · まとめ như cũ.
+Trên máy tính, video và hàng nút ghim bên trái khi kéo đọc phần chữ bên phải.
 
 ### Video chữa bài tập và video từ vựng (không bắt buộc)
 

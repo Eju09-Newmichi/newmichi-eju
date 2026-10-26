@@ -19,7 +19,8 @@
     ["pr", ["練習", "luyện tập", "practice"]],
     ["sum", ["まとめ", "tóm tắt", "summary"]],
     ["terms", ["用語", "thuật ngữ", "terms"]],
-    ["words", ["単語", "từ vựng", "words"]]
+    ["words", ["単語", "từ vựng", "words"]],
+    ["chapters", ["動画", "mục lục video", "video"]]
   ];
   var META_KEYS = { title: "t", vi: "vi", en: "en", video: "video", video_kaisetsu: "videoKaisetsu", video_tango: "videoTango", duration: "dur", board: "board", kind: "kind" };
   var RE = {
@@ -120,6 +121,7 @@
     L.sum = body.sum ? parseBlocks(body.sum) : [];
     L.terms = body.terms ? parseWords(body.terms) : [];
     if (body.words) L.words = parseWords(body.words);
+    if (body.chapters) L.chapters = parseChapters(body.chapters);
     if (L.kind === "vocab" && !(L.words && L.words.length)) fail("Bài từ vựng (kind: vocab) cần có mục ## 単語 với ít nhất một từ.", lines.length);
     return L;
   }
@@ -155,8 +157,11 @@
         continue;
       }
       if ((m = t.match(/^###\s+(.+)$/))) { var hd = push({ type: "h", ja: inline(m[1]) }); hd.target = hd; continue; }
-      if ((m = t.match(/^[!！]\s+(.+)$/))) {
-        var memo = last && last.type === "memo" ? last : push({ type: "memo", items: [] });
+      if ((m = t.match(/^([!！?？])\s+(.+)$/))) {
+        /* "! …" key point (red), "? …" special-case note (blue); consecutive lines share one box */
+        var kind = /[!！]/.test(m[1]) ? "memo" : "note";
+        m = [m[0], m[2]];
+        var memo = last && last.type === kind ? last : push({ type: kind, items: [] });
         var mi = { ja: inline(m[1]) };
         memo.items.push(mi);
         memo.target = mi;
@@ -205,7 +210,7 @@
       if (b.type === "line") return ["line", b.text];
       if (b.type === "ul") return ["ul", b.items.map(function (x) { return pair(x.ja, x.vi, x.en); })];
       if (b.type === "cmp") return ["cmp", b.cols];
-      if (b.type === "memo") return ["memo", b.items.map(function (x) { return pair(x.ja, x.vi, x.en); })];
+      if (b.type === "memo" || b.type === "note") return [b.type, b.items.map(function (x) { return pair(x.ja, x.vi, x.en); })];
       if (b.type === "h") return ["h", b.ja, b.vi == null ? null : b.vi, b.en == null ? null : b.en];
       if (b.type === "img") return ["img", b.src, b.ja, b.vi, b.en];
       return ["html", tableHTML(b)];
@@ -346,6 +351,30 @@
       items.push(last);
     });
     return items.map(function (x) { return pair(x.ja, x.vi, x.en); });
+  }
+
+  /* ---- ## 動画: buttons under the video  "- 0:25 | 展開 | Phần 1: Khai triển | Part 1: Expansion | 展開" ----
+     first column: a time in the lecture video, 解説 / 単語 (play that video), or - (no video change);
+     then JP | VI | EN | where the text goes: point, rei, pr, sum, terms, or the words of a ### heading */
+  var CHAPTER_VIDEO = { "解説": "videoKaisetsu", "kaisetsu": "videoKaisetsu", "単語": "videoTango", "tango": "videoTango" };
+  function parseChapters(rows) {
+    var out = [];
+    rows.forEach(function (r) {
+      var t = r.t, m;
+      if (!t) return;
+      m = t.match(RE.item);
+      var p = (m ? m[1] : t).split("|").map(function (s) { return s.trim(); });
+      if (p.length < 3 || !p[1]) fail("Mỗi dòng mục lục video viết dạng  - 0:25 | 展開 | Phần 1: Khai triển | Part 1: Expansion | 展開", r.n);
+      var sec = null, video = null;
+      if (CHAPTER_VIDEO[p[0].toLowerCase()]) video = CHAPTER_VIDEO[p[0].toLowerCase()];
+      else if (p[0] !== "-") {
+        var tm = p[0].match(/^(?:(\d+):)?(\d{1,2}):(\d{2})$/);
+        if (!tm) fail("Cột đầu phải là thời điểm phút:giây (ví dụ 4:56), hoặc 解説 / 単語 (phát video đó), hoặc - (không đổi video).", r.n);
+        sec = (tm[1] ? +tm[1] * 3600 : 0) + (+tm[2]) * 60 + (+tm[3]);
+      }
+      out.push({ time: sec == null ? null : p[0], sec: sec, video: video, ja: inline(p[1]), vi: p[2] ? inline(p[2]) : null, en: p[3] ? inline(p[3]) : null, to: p[4] || "" });
+    });
+    return out;
   }
 
   /* ---- ## 用語 / ## 単語: 漢字 | reading | Vietnamese [| English] ---- */

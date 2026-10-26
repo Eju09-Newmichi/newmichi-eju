@@ -87,6 +87,7 @@
       if (b[0] === "ul") return "<ul>" + b[1].map(li).join("") + "</ul>";
       if (b[0] === "html") return b[1];
       if (b[0] === "memo") return '<div class="memo"><p class="memo-l">' + bi("重要", "Quan trọng", "Key point") + "</p>" + b[1].map(para).join("") + "</div>";
+      if (b[0] === "note") return '<div class="note"><p class="note-l">' + bi("注意", "Lưu ý", "Note") + "</p>" + b[1].map(para).join("") + "</div>";
       if (b[0] === "h") return '<h3 class="sub-t">' + stack(b[1], b[2], b[3]) + "</h3>";
       if (b[0] === "img") return '<figure class="fig"><img src="' + esc(b[1]) + '" alt="' + esc(String(b[2]).replace(/<[^>]*>/g, "")) + '">' +
         (b[2] ? "<figcaption>" + (b[3] != null || b[4] != null ? bi(b[2], b[3], b[4]) : b[2]) + "</figcaption>" : "") + "</figure>";
@@ -556,13 +557,22 @@
     }
     vState.c = c.id;
     var idx = c.vids.indexOf(id), prev = c.vids[idx - 1], next = c.vids[idx + 1];
-    var chips = isVocab ? [["単語", "Từ vựng", "list", null], ["テスト", "Kiểm tra", "test", null]]
-      : [["ポイント", "Điểm chính", "text", "p-point", v.point.length], ["例題", "Ví dụ", "text", "p-rei", v.rei], ["練習", "Luyện tập", "text", "p-prac", v.pr.length], ["まとめ", "Tóm tắt", "sum", null, v.sum.length || v.terms.length]]
-        .filter(function (x) { return x[4]; });
+    /* buttons under the video: the lesson's own list (## 動画) when it has one, else the four sections.
+       Each is { ja, vi, en, tab, target (element id), head (### heading words), sec (lecture time), video (other video) } */
+    var SECTION_OF = { point: ["text", "p-point"], rei: ["text", "p-rei"], pr: ["text", "p-prac"], sum: ["sum", null], terms: ["sum", "p-terms"] };
+    var chips = isVocab ? [{ ja: "単語", vi: "Từ vựng", tab: "list" }, { ja: "テスト", vi: "Kiểm tra", tab: "test" }]
+      : v.chapters ? v.chapters.map(function (ch) {
+          var s = SECTION_OF[ch.to];
+          return { ja: ch.ja, vi: ch.vi, en: ch.en, tab: s ? s[0] : "text", target: s ? s[1] : (ch.to ? null : "p-point"), head: s || !ch.to ? null : ch.to,
+            sec: ch.sec, time: ch.time, video: ch.video && v[ch.video] ? ch.video : null };
+        })
+      : [{ ja: "ポイント", vi: "Điểm chính", tab: "text", target: "p-point", has: v.point.length }, { ja: "例題", vi: "Ví dụ", tab: "text", target: "p-rei", has: v.rei },
+          { ja: "練習", vi: "Luyện tập", tab: "text", target: "p-prac", has: v.pr.length }, { ja: "まとめ", vi: "Tóm tắt", tab: "sum", has: v.sum.length || v.terms.length }]
+          .filter(function (x) { return x.has; });
     var yt = v.video ? ytEmbed(v.video) : null;
     /* lecture / worked solutions / vocabulary videos: the buttons show only when there is more than the lecture */
     var kinds = VIDEO_KINDS.filter(function (k) { return v[k[0]]; });
-    var vsw = kinds.length && !(kinds.length === 1 && kinds[0][0] === "video")
+    var vsw = !v.chapters && kinds.length && !(kinds.length === 1 && kinds[0][0] === "video")
       ? '<div class="vsw" role="group" aria-label="動画 · Video">' + kinds.map(function (k, i) {
           return '<button type="button" data-v="' + k[0] + '" aria-pressed="' + (i === 0) + '">' + ICON.playSm + bs(k[1], k[2], k[3]) + "</button>";
         }).join("") + "</div>" : "";
@@ -573,15 +583,17 @@
 
     var html = '<div class="in page" data-subj="' + c.s + '">' +
       '<p class="crumb"><a href="#home">' + jv("学習状況", "Học tập") + '</a> › <a href="#c-' + c.id + '">' + jv(c.label, c.labelVi, c.labelEn) + "</a> › " + jv(c.ch[chi].t[0], c.ch[chi].t[1], c.ch[chi].t[2]) + "</p>" +
-      '<div class="watch"><div class="wleft">' +
+      '<div class="watch"><div class="wleft"><div class="wstick">' +
         '<div class="player" id="player"><div class="board"><span class="b-tag">' + (isVocab ? "単語" : "要点") + " | " + v.t + '</span><div class="b-lines">' +
           v.board.map(function (l) { return '<span class="b-line">' + l + "</span>"; }).join("") + '</div><span class="b-mark">' + SUBJ[c.s].ja + "</span></div>" +
           '<button type="button" class="play-btn" id="playBtn" aria-label="再生 · Phát video">' + ICON.play + "</button>" +
           '<div class="pnote" id="pnote" hidden>' + para(["この授業の動画は準備中です。", "Video của bài này đang được chuẩn bị."]) + "</div>" +
           '<div class="pbar" aria-hidden="true">' + ICON.playSm + ICON.vol + "<span>0:00 / " + (v.dur || "--:--") + '</span><span class="ptrack"></span><span>1x</span>' + ICON.full + "</div>" +
         "</div>" + vsw +
+        '<div class="chips' + (v.chapters ? " is-vchap" : "") + '">' + chips.map(function (x, i) {
+          return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + (x.time ? '<span class="chip-t">' + x.time + "</span>" : "") + bs(x.ja, x.vi, x.en) + "</button>";
+        }).join("") + "</div></div>" +
         '<div class="winfo">' + clabel(c) + '<h1 class="wtitle">' + v.t + "</h1>" + subs("vvi", "p", v.vi, v.en) +
-          '<div class="chips">' + chips.map(function (x, i) { return '<button type="button" data-tab="' + x[2] + '"' + (x[3] ? ' data-target="' + x[3] + '"' : "") + ' aria-pressed="' + (i === 0) + '">' + bs(x[0], x[1]) + "</button>"; }).join("") + "</div>" +
           '<div class="wmeta"><button type="button" class="bm" id="bmBtn" aria-pressed="' + marked + '">' + ICON.star + bi("ブックマーク", "Lưu bài", "Save") + "</button>" +
             '<span class="wstatus" id="wstatus"></span><span class="wcount">' + bi("視聴 " + n + " 回", "Đã xem " + n + " lần", "Viewed " + n + (n === 1 ? " time" : " times")) + "</span></div>" +
           '<div class="prevnext">' + (prev ? '<a href="#v-' + prev + '">← ' + bi("前の授業", "Bài trước") + "</a>" : "<span></span>") + (next ? '<a href="#v-' + next + '">' + bi("次の授業", "Bài sau") + " →</a>" : "") + "</div>" +
@@ -594,24 +606,33 @@
     setHTML(app, html);
     updateStatus();
 
-    function playIn(url) {
+    /* the player: which video is loaded, and since when (YouTube needs a moment before it takes commands) */
+    var current = kinds.length ? kinds[0][0] : null, loaded = null, loadedAt = 0;
+    function playIn(kind, start) {
+      var url = ytEmbed(v[kind]) + "&enablejsapi=1&origin=" + encodeURIComponent(location.origin);
+      if (start != null) url = url.replace(/&start=\d+/, "") + "&start=" + start;
       document.getElementById("player").innerHTML = '<iframe src="' + esc(url) + '" title="' + esc(v.t.replace(/<[^>]*>/g, "")) + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+      loaded = current = kind; loadedAt = Date.now();
+      if (kind === "video") markLectureDone();
+      app.querySelectorAll(".vsw button").forEach(function (x) { x.setAttribute("aria-pressed", x.dataset.v === kind ? "true" : "false"); });
     }
+    /* jump the lecture to a time; when the lecture is already playing, only the time changes (no reload) */
+    function seekLecture(sec) {
+      var frame = document.querySelector("#player iframe");
+      if (loaded === "video" && frame && Date.now() - loadedAt > 2000) {
+        frame.contentWindow.postMessage(JSON.stringify({ event: "command", func: "seekTo", args: [sec, true] }), "*");
+        frame.contentWindow.postMessage(JSON.stringify({ event: "command", func: "playVideo", args: [] }), "*");
+      } else playIn("video", sec);
+    }
+    /* a lesson with no exercises counts as done once its lecture is played */
+    function markLectureDone() { if (yt && !isVocab && !v.pr.length && !st.done[id]) { st.done[id] = true; save(); updateStatus(); } }
     /* the big play button starts the selected video (the lecture unless another button was chosen) */
-    var current = kinds.length ? kinds[0][0] : null;
     document.getElementById("playBtn").addEventListener("click", function () {
-      /* a lesson with no exercises counts as done once its video is played */
-      if (yt && !isVocab && !v.pr.length && !st.done[id]) { st.done[id] = true; save(); updateStatus(); }
       if (!current) { var note = document.getElementById("pnote"); note.hidden = !note.hidden; return; }
-      playIn(ytEmbed(v[current]));
+      playIn(current);
     });
     app.querySelectorAll(".vsw button").forEach(function (b) {
-      b.addEventListener("click", function () {
-        current = b.dataset.v;
-        app.querySelectorAll(".vsw button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-        if (current === "video" && yt && !isVocab && !v.pr.length && !st.done[id]) { st.done[id] = true; save(); updateStatus(); }
-        playIn(ytEmbed(v[current]));
-      });
+      b.addEventListener("click", function () { playIn(b.dataset.v); });
     });
     document.getElementById("bmBtn").addEventListener("click", function (e) {
       st.marks[id] = !st.marks[id]; save();
@@ -622,10 +643,21 @@
     });
     app.querySelectorAll(".chips button").forEach(function (b) {
       b.addEventListener("click", function () {
-        app.querySelectorAll(".chips button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-        if (vState.tab !== b.dataset.tab) setTab(b.dataset.tab);
-        var target = (b.dataset.target && document.getElementById(b.dataset.target)) || document.querySelector(".panel");
-        if (target) target.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+        var x = chips[+b.dataset.i];
+        app.querySelectorAll(".chips button").forEach(function (y) { y.setAttribute("aria-pressed", y === b ? "true" : "false"); });
+        /* the video: switch to another video, or move the lecture to this part */
+        if (x.video) playIn(x.video);
+        else if (x.sec != null && v.video) seekLecture(x.sec);
+        /* the text on the right: open the tab, then go to the section or ### heading */
+        if (vState.tab !== x.tab) setTab(x.tab);
+        var target = x.target && document.getElementById(x.target);
+        if (x.head) target = Array.prototype.filter.call(document.querySelectorAll("#pbody .sub-t"), function (h) {
+          var lj = h.querySelector(".lj"); return lj && lj.textContent.trim().indexOf(x.head) > -1;
+        })[0];
+        target = target || document.querySelector(".panel");
+        target.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+        /* formulas finish drawing after the jump and push the text down; land on the section again if it moved */
+        setTimeout(function () { if (document.body.contains(target) && Math.abs(target.getBoundingClientRect().top) > 40) target.scrollIntoView({ block: "start" }); }, 800);
       });
     });
     renderPanel();
@@ -707,7 +739,7 @@
       if (!html) html = emptyPanel(["この授業には問題がありません。", "Bài này không có bài tập."]);
     } else if (tab === "sum") {
       html = (v.sum.length ? '<section class="psec">' + ptitle("要点まとめ", "Tóm tắt") + blocks(v.sum) + "</section>" : "") +
-        (v.terms.length ? '<section class="psec">' + ptitle("用語", "Thuật ngữ") + vocabTable(v.terms) + "</section>" : "");
+        (v.terms.length ? '<section class="psec" id="p-terms">' + ptitle("用語", "Thuật ngữ") + vocabTable(v.terms) + "</section>" : "");
       if (!html) html = emptyPanel(["まとめは準備中です。", "Phần tóm tắt đang được soạn."]);
     } else if (tab === "list") {
       html = '<section class="psec">' + ptitle("単語リスト", "Danh sách từ") + '<div class="vocab-bar">' + para(["「意味をかくす」で自分をテスト。灰色の部分をタップすると表示されます。", "Bấm Ẩn nghĩa để tự kiểm tra, chạm vào ô xám để xem lại."]) +
