@@ -308,10 +308,17 @@ Bài bị lỗi tạm thời bị ẩn, các bài khác vẫn chạy bình thư�
 
 ## 9. Đưa website lên mạng (miễn phí)
 
-**Netlify Drop**: vào https://app.netlify.com/drop, kéo cả thư mục `EJU WEB` vào trang. Có ngay một địa chỉ web.
-Muốn cập nhật bài, kéo thả lại thư mục (cần tạo tài khoản Netlify để giữ cùng một địa chỉ).
+Website đang chạy trên **GitHub Pages**:
 
-**GitHub Pages**: tạo repository trên GitHub, tải toàn bộ thư mục lên, vào *Settings → Pages* chọn nhánh `main`.
+- Trang web: https://eju09-newmichi.github.io/newmichi-eju/
+- Mã nguồn (kho GitHub): https://github.com/Eju09-Newmichi/newmichi-eju
+
+Mỗi lần có bài mới, Claude Code kiểm tra trên máy rồi commit và `git push`; khoảng 1 phút sau web tự cập nhật.
+Link trực tiếp tới một bài có dạng `https://eju09-newmichi.github.io/newmichi-eju/#v-<mã-bài>`; người chưa đăng nhập
+sẽ được đưa vào đúng bài đó ngay sau khi đăng nhập.
+
+Không xóa file `.nojekyll` ở thư mục gốc (thiếu nó GitHub không phục vụ các file `.md` của bài học).
+Khi kết nối Firebase, nhớ thêm `eju09-newmichi.github.io` vào **Authorized domains** (mục 11).
 
 Trên mạng thì không cần `xem-thu.bat`.
 
