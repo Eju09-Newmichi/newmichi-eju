@@ -1,0 +1,200 @@
+{
+  "subjects": [
+    {"id":"nihongo","ja":"日本語","vi":"Tiếng Nhật","en":"Japanese"},
+    {"id":"sugaku","ja":"数学","vi":"Toán","en":"Mathematics"},
+    {"id":"rika","ja":"理科","vi":"Hóa học · Sinh học","en":"Chemistry · Biology"},
+    {"id":"shakai","ja":"社会","vi":"Xã hội (総合科目)","en":"Japan and the World"},
+    {"id":"tango","ja":"単語","vi":"Từ mới","en":"Vocabulary"}
+  ],
+  "series_vi": {
+    "日本語 EJU対策編": "Luyện thi EJU",
+    "数学 通常学習編": "Học theo chương trình",
+    "数学 EJU対策編": "Luyện thi EJU",
+    "化学 通常学習編": "Học theo chương trình",
+    "生物 通常学習編": "Học theo chương trình",
+    "化学 EJU対策編": "Luyện thi EJU",
+    "生物 EJU対策編": "Luyện thi EJU",
+    "総合科目 通常学習編": "Học theo chương trình",
+    "単語": "Từ mới"
+  },
+  "series_en": {
+    "日本語 EJU対策編": "EJU prep",
+    "数学 通常学習編": "Core course",
+    "数学 EJU対策編": "EJU prep",
+    "化学 通常学習編": "Core course",
+    "生物 通常学習編": "Core course",
+    "化学 EJU対策編": "EJU prep",
+    "生物 EJU対策編": "EJU prep",
+    "総合科目 通常学習編": "Core course",
+    "単語": "Vocabulary"
+  },
+  "courses": [
+    {
+      "id": "n-dokkai", "subject": "nihongo", "series": "日本語 EJU対策編", "name": "読解", "vi": "Đọc hiểu", "en": "Reading",
+      "chapters": [
+        {"ja":"第1章 指示語と接続語","vi":"Chương 1: Từ chỉ thị và từ nối","en":"Chapter 1: Demonstratives and conjunctions"},
+        {"ja":"第2章 筆者の主張をつかむ","vi":"Chương 2: Nắm ý kiến của tác giả","en":"Chapter 2: Finding the author's argument"},
+        {"ja":"第3章 図表・資料の読み取り","vi":"Chương 3: Đọc biểu đồ và tài liệu","en":"Chapter 3: Reading charts and documents"}
+      ]
+    },
+    {
+      "id": "n-choudokkai", "subject": "nihongo", "series": "日本語 EJU対策編", "name": "聴読解", "vi": "Nghe – đọc hiểu", "en": "Listening-reading",
+      "chapters": [
+        {"ja":"第1章 図表を見ながら聞く","vi":"Chương 1: Vừa xem biểu đồ vừa nghe","en":"Chapter 1: Listening while reading charts"},
+        {"ja":"第2章 説明の要点をつかむ","vi":"Chương 2: Nắm ý chính của phần giải thích","en":"Chapter 2: Catching the main points"}
+      ]
+    },
+    {
+      "id": "n-choukai", "subject": "nihongo", "series": "日本語 EJU対策編", "name": "聴解", "vi": "Nghe hiểu", "en": "Listening",
+      "chapters": [
+        {"ja":"第1章 講義を聞く","vi":"Chương 1: Nghe bài giảng","en":"Chapter 1: Listening to lectures"},
+        {"ja":"第2章 会話を聞く","vi":"Chương 2: Nghe hội thoại","en":"Chapter 2: Listening to conversations"}
+      ]
+    },
+    {
+      "id": "n-kijutsu", "subject": "nihongo", "series": "日本語 EJU対策編", "name": "記述", "vi": "Viết luận", "en": "Writing",
+      "chapters": [
+        {"ja":"第1章 記述問題の形式","vi":"Chương 1: Dạng đề viết luận","en":"Chapter 1: The writing task format"},
+        {"ja":"第2章 意見文の組み立て方","vi":"Chương 2: Cách dựng bài nêu ý kiến","en":"Chapter 2: Structuring an opinion essay"},
+        {"ja":"第3章 よく使う表現","vi":"Chương 3: Mẫu câu hay dùng","en":"Chapter 3: Useful expressions"}
+      ]
+    },
+    {
+      "id": "m-1", "subject": "sugaku", "series": "数学 通常学習編", "name": "数学Ⅰ", "vi": "Toán I", "en": "Math I",
+      "topics": [1, 2, 3, 4]
+    },
+    {
+      "id": "m-a", "subject": "sugaku", "series": "数学 通常学習編", "name": "数学A", "vi": "Toán A", "en": "Math A",
+      "topics": [5, 6, 7]
+    },
+    {
+      "id": "m-2", "subject": "sugaku", "series": "数学 通常学習編", "name": "数学Ⅱ", "vi": "Toán II", "en": "Math II",
+      "topics": [8, 9, 10, 11, 19, 20]
+    },
+    {
+      "id": "m-b", "subject": "sugaku", "series": "数学 通常学習編", "name": "数学B", "vi": "Toán B", "en": "Math B",
+      "topics": [12, 13]
+    },
+    {
+      "id": "m-3", "subject": "sugaku", "series": "数学 通常学習編", "name": "数学Ⅲ", "vi": "Toán III", "en": "Math III",
+      "topics": [17, 18, 19, 20]
+    },
+    {
+      "id": "m-c", "subject": "sugaku", "series": "数学 通常学習編", "name": "数学C", "vi": "Toán C", "en": "Math C",
+      "topics": [14, 15, 16]
+    },
+    {
+      "id": "m-k1", "subject": "sugaku", "series": "数学 EJU対策編", "name": "コース1", "vi": "Course 1", "en": "Course 1",
+      "topics": [1, 2, 3, 4, 5, 6, 7], "showTag": true
+    },
+    {
+      "id": "m-k2", "subject": "sugaku", "series": "数学 EJU対策編", "name": "コース2", "vi": "Course 2", "en": "Course 2",
+      "topics": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], "showTag": true
+    },
+    {
+      "id": "r-c1", "subject": "rika", "series": "化学 通常学習編", "name": "理論化学", "vi": "Hóa học đại cương", "en": "Theoretical chemistry",
+      "chapters": [
+        {"ja":"第1章 物質の構成","vi":"Chương 1: Cấu tạo chất","en":"Chapter 1: Structure of matter","lessons":["c1a","c1b"]},
+        {"ja":"第2章 物質量","vi":"Chương 2: Lượng chất (mol)","en":"Chapter 2: Amount of substance (mol)","lessons":["c2a","c2b","c2c","c2d"]},
+        {"ja":"第3章 化学反応式","vi":"Chương 3: Phương trình hóa học","en":"Chapter 3: Chemical equations","planned":[{"ja":"「化学反応式」の係数のつけ方","vi":"Cách cân bằng phương trình","en":"Balancing equations"},{"ja":"反応式と量的関係","vi":"Tính toán theo phương trình","en":"Calculations from equations"}]},
+        {"ja":"第4章 酸と塩基","vi":"Chương 4: Axit và bazơ","en":"Chapter 4: Acids and bases","planned":[{"ja":"酸・塩基の定義","vi":"Định nghĩa axit, bazơ","en":"Definitions of acids and bases"},{"ja":"「中和反応」とは？","vi":"Phản ứng trung hòa là gì?","en":"What is neutralization?"},{"ja":"「pH」とは？","vi":"pH là gì?","en":"What is pH?"}]}
+      ]
+    },
+    {
+      "id": "r-c2", "subject": "rika", "series": "化学 通常学習編", "name": "無機化学", "vi": "Hóa vô cơ", "en": "Inorganic chemistry",
+      "chapters": [
+        {"ja":"第1章 非金属元素","vi":"Chương 1: Nguyên tố phi kim","en":"Chapter 1: Non-metal elements"},
+        {"ja":"第2章 金属元素","vi":"Chương 2: Nguyên tố kim loại","en":"Chapter 2: Metal elements"}
+      ]
+    },
+    {
+      "id": "r-c3", "subject": "rika", "series": "化学 通常学習編", "name": "有機化学", "vi": "Hóa hữu cơ", "en": "Organic chemistry",
+      "chapters": [
+        {"ja":"第1章 有機化合物の特徴","vi":"Chương 1: Đặc điểm hợp chất hữu cơ","en":"Chapter 1: Features of organic compounds"},
+        {"ja":"第2章 脂肪族化合物","vi":"Chương 2: Hợp chất mạch hở","en":"Chapter 2: Aliphatic compounds"},
+        {"ja":"第3章 芳香族化合物","vi":"Chương 3: Hợp chất thơm","en":"Chapter 3: Aromatic compounds"}
+      ]
+    },
+    {
+      "id": "r-b1", "subject": "rika", "series": "生物 通常学習編", "name": "生物基礎", "vi": "Sinh học cơ bản", "en": "Basic biology",
+      "chapters": [
+        {"ja":"第1章 細胞","vi":"Chương 1: Tế bào","en":"Chapter 1: Cells","lessons":["b1a","b1b","b1c"]},
+        {"ja":"第2章 代謝","vi":"Chương 2: Trao đổi chất","en":"Chapter 2: Metabolism","lessons":["b2a","b2b"]},
+        {"ja":"第3章 遺伝子とそのはたらき","vi":"Chương 3: Gen và chức năng của gen","en":"Chapter 3: Genes and their functions","planned":[{"ja":"「DNA」の構造","vi":"Cấu trúc DNA","en":"The structure of DNA"},{"ja":"転写と翻訳","vi":"Phiên mã và dịch mã","en":"Transcription and translation"}]},
+        {"ja":"第4章 体内環境","vi":"Chương 4: Môi trường trong cơ thể","en":"Chapter 4: The internal environment","planned":[{"ja":"血液のはたらき","vi":"Chức năng của máu","en":"Functions of blood"},{"ja":"「ホルモン」とは？","vi":"Hormone là gì?","en":"What are hormones?"}]}
+      ]
+    },
+    {
+      "id": "r-b2", "subject": "rika", "series": "生物 通常学習編", "name": "生物", "vi": "Sinh học", "en": "Biology",
+      "chapters": [
+        {"ja":"第1章 生命現象と物質","vi":"Chương 1: Hiện tượng sống và vật chất","en":"Chapter 1: Life processes and molecules"},
+        {"ja":"第2章 生殖と発生","vi":"Chương 2: Sinh sản và phát triển","en":"Chapter 2: Reproduction and development"},
+        {"ja":"第3章 生物の進化と系統","vi":"Chương 3: Tiến hóa và phân loại","en":"Chapter 3: Evolution and classification"}
+      ]
+    },
+    {
+      "id": "r-kc", "subject": "rika", "series": "化学 EJU対策編", "name": "化学", "vi": "Hóa học", "en": "Chemistry",
+      "chapters": [
+        {"ja":"第1章 出題傾向と時間配分","vi":"Chương 1: Xu hướng đề và phân bổ thời gian","en":"Chapter 1: Question trends and timing"},
+        {"ja":"第2章 模擬試験と解説","vi":"Chương 2: Đề thi thử và lời giải","en":"Chapter 2: Mock exams with solutions"}
+      ]
+    },
+    {
+      "id": "r-kb", "subject": "rika", "series": "生物 EJU対策編", "name": "生物", "vi": "Sinh học", "en": "Biology",
+      "chapters": [
+        {"ja":"第1章 出題傾向と時間配分","vi":"Chương 1: Xu hướng đề và phân bổ thời gian","en":"Chapter 1: Question trends and timing"},
+        {"ja":"第2章 模擬試験と解説","vi":"Chương 2: Đề thi thử và lời giải","en":"Chapter 2: Mock exams with solutions"}
+      ]
+    },
+    {
+      "id": "s-pol", "subject": "shakai", "series": "総合科目 通常学習編", "name": "政治・経済・社会", "vi": "Chính trị · Kinh tế · Xã hội", "en": "Politics · Economy · Society",
+      "chapters": [
+        {"ja":"第1章 日本国憲法と政治のしくみ","vi":"Chương 1: Hiến pháp Nhật Bản và bộ máy chính trị","en":"Chapter 1: The Japanese Constitution and political system"},
+        {"ja":"第2章 市場経済のしくみ","vi":"Chương 2: Cơ chế kinh tế thị trường","en":"Chapter 2: How market economies work"},
+        {"ja":"第3章 国際経済と国際社会","vi":"Chương 3: Kinh tế và xã hội quốc tế","en":"Chapter 3: The international economy and society"}
+      ]
+    },
+    {
+      "id": "s-geo", "subject": "shakai", "series": "総合科目 通常学習編", "name": "地理", "vi": "Địa lý", "en": "Geography",
+      "chapters": [
+        {"ja":"第1章 地図と時差","vi":"Chương 1: Bản đồ và múi giờ","en":"Chapter 1: Maps and time zones"},
+        {"ja":"第2章 世界の気候と産業","vi":"Chương 2: Khí hậu và sản xuất trên thế giới","en":"Chapter 2: World climates and industries"}
+      ]
+    },
+    {
+      "id": "s-his", "subject": "shakai", "series": "総合科目 通常学習編", "name": "歴史", "vi": "Lịch sử", "en": "History",
+      "chapters": [
+        {"ja":"第1章 近代の世界","vi":"Chương 1: Thế giới cận đại","en":"Chapter 1: The modern world"},
+        {"ja":"第2章 第二次世界大戦後の世界","vi":"Chương 2: Thế giới sau Thế chiến II","en":"Chapter 2: The world after World War II"}
+      ]
+    },
+    {
+      "id": "t-m", "subject": "tango", "series": "単語", "name": "数学の用語", "vi": "Thuật ngữ Toán", "en": "Math terms",
+      "chapters": [
+        {"ja":"第1章 数と式・二次関数","vi":"Chương 1: Số, biểu thức và hàm bậc hai","en":"Chapter 1: Expressions and quadratic functions","lessons":["tm1","tm2"]},
+        {"ja":"第2章 図形と計量","vi":"Chương 2: Hình học và lượng giác","en":"Chapter 2: Trigonometry and measurement","planned":[{"ja":"「三角比」の用語","vi":"Từ vựng: lượng giác","en":"Terms: trigonometric ratios"}]}
+      ]
+    },
+    {
+      "id": "t-c", "subject": "tango", "series": "単語", "name": "化学の用語", "vi": "Thuật ngữ Hóa", "en": "Chemistry terms",
+      "chapters": [
+        {"ja":"第1章 物質の構成と物質量","vi":"Chương 1: Cấu tạo chất và mol","en":"Chapter 1: Structure of matter and the mole","lessons":["tc1","tc2"]},
+        {"ja":"第2章 酸と塩基","vi":"Chương 2: Axit và bazơ","en":"Chapter 2: Acids and bases","planned":[{"ja":"「酸・塩基」の用語","vi":"Từ vựng: axit, bazơ","en":"Terms: acids and bases"}]}
+      ]
+    },
+    {
+      "id": "t-b", "subject": "tango", "series": "単語", "name": "生物の用語", "vi": "Thuật ngữ Sinh", "en": "Biology terms",
+      "chapters": [
+        {"ja":"第1章 細胞と代謝","vi":"Chương 1: Tế bào và trao đổi chất","en":"Chapter 1: Cells and metabolism","lessons":["tb1","tb2"]},
+        {"ja":"第2章 遺伝子","vi":"Chương 2: Gen","en":"Chapter 2: Genes","planned":[{"ja":"「遺伝子」の用語","vi":"Từ vựng: gen","en":"Terms: genes"}]}
+      ]
+    },
+    {
+      "id": "t-n", "subject": "tango", "series": "単語", "name": "日本語 頻出語", "vi": "Từ tiếng Nhật hay gặp", "en": "Common Japanese words",
+      "chapters": [
+        {"ja":"第1章 読解でよく出る言葉","vi":"Chương 1: Từ hay gặp trong đọc hiểu","en":"Chapter 1: Words common in reading"},
+        {"ja":"第2章 記述で使える言葉","vi":"Chương 2: Từ dùng khi viết luận","en":"Chapter 2: Words for essay writing"}
+      ]
+    }
+  ]
+}

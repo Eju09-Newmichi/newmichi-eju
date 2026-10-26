@@ -1,0 +1,8 @@
+{
+  "member": { "ja": "Newmichi EJU 会員", "vi": "Học viên Newmichi EJU", "en": "Newmichi EJU member" },
+  "recommended": ["m2a", "c2a", "b1a", "tm2"],
+  "footer": [
+    { "ja": "見本ページです。授業内容・動画はすべて例です。", "vi": "Bản mẫu để xem cách trình bày. Nội dung và video ở đây là ví dụ.", "en": "This is a sample page. Lessons and videos are examples." },
+    { "ja": "学習の進み具合・視聴履歴・ブックマークは、あなたのアカウントに保存されます。", "vi": "Tiến độ học, lịch sử xem và bài đã lưu được lưu theo tài khoản của bạn.", "en": "Progress, watch history and saved lessons are stored with your account." }
+  ]
+}

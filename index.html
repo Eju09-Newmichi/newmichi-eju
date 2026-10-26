@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Newmichi EJU With haiyen.1995</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho:wght@400;700&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="auth-wait">
+
+<!-- sign-in screens (drawn by assets/app.js while nobody is signed in) -->
+<div id="gate" class="gate"></div>
+
+<header class="site-head">
+  <div class="in head-row">
+    <a class="logo" href="#home" aria-label="Trang đầu">
+      <span class="cells" aria-hidden="true"><b>E</b><b>J</b><b>U</b></span>
+      <span class="logo-text"><b>Newmichi EJU</b><small>With haiyen.1995</small></span>
+    </a>
+    <label class="search">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" autocomplete="off" placeholder="キーワード / Từ khóa（例：平方完成、物質量、tế bào）" data-ja="キーワード（例：平方完成、物質量、細胞）" data-vi="Từ khóa (ví dụ: tế bào, mol, 平方完成)" data-en="Keyword (e.g. cell, mol, 平方完成)" aria-label="Tìm bài học · Search lessons">
+    </label>
+    <div class="langsw" role="group" aria-label="Ngôn ngữ · 言語">
+      <button type="button" data-lang="vi" aria-pressed="false" title="Chỉ tiếng Việt">VI</button>
+      <button type="button" data-lang="both" aria-pressed="true" title="日本語とベトナム語 · Song ngữ">JP+VI</button>
+      <button type="button" data-lang="ja" aria-pressed="false" title="日本語だけ表示">JP</button>
+      <button type="button" data-lang="en" aria-pressed="false" title="English">EN</button>
+    </div>
+    <button class="avatar" id="avatar" type="button" aria-label="Tài khoản · アカウント · Account" aria-haspopup="true" aria-expanded="false"></button>
+  </div>
+  <nav class="in gnav" id="gnav" aria-label="Menu chính">
+    <a href="#home" data-nav="home"><span class="bs"><span class="lj xe">学習状況</span><span class="lv">Học tập</span><span class="le">My study</span></span></a>
+    <button type="button" data-subj="nihongo" data-nav="nihongo" aria-haspopup="true" aria-expanded="false"><span class="bs"><span class="lj xe">日本語</span><span class="lv">Tiếng Nhật</span><span class="le">Japanese</span></span></button>
+    <button type="button" data-subj="sugaku" data-nav="sugaku" aria-haspopup="true" aria-expanded="false"><span class="bs"><span class="lj xe">数学</span><span class="lv">Toán</span><span class="le">Math</span></span></button>
+    <button type="button" data-subj="rika" data-nav="rika" aria-haspopup="true" aria-expanded="false"><span class="bs"><span class="lj xe">理科</span><span class="lv">Hóa · Sinh</span><span class="le">Science</span></span></button>
+    <button type="button" data-subj="shakai" data-nav="shakai" aria-haspopup="true" aria-expanded="false"><span class="bs"><span class="lj xe">社会</span><span class="lv">Xã hội</span><span class="le">Social studies</span></span></button>
+    <button type="button" data-subj="tango" data-nav="tango" aria-haspopup="true" aria-expanded="false"><span class="bs"><span class="lj xe">単語</span><span class="lv">Từ mới</span><span class="le">Vocabulary</span></span></button>
+    <a href="#bookmark" data-nav="bookmark"><span class="bs"><span class="lj xe">ブックマーク</span><span class="lv">Bài đã lưu</span><span class="le">Saved</span></span></a>
+    <a href="#ranking" data-nav="ranking"><span class="bs"><span class="lj xe">ランキング</span><span class="lv">Xếp hạng</span><span class="le">Ranking</span></span></a>
+  </nav>
+  <div class="menu" id="menu" hidden></div>
+  <div class="menu acct" id="acctMenu" hidden></div>
+</header>
+
+<div class="in" id="contentErr" hidden></div>
+
+<main id="app"></main>
+
+<footer class="in site-foot" id="siteFoot"></footer>
+
+<script src="firebase-config.js"></script>
+<script src="assets/auth.js"></script>
+<script src="assets/lesson-parser.js"></script>
+<script src="assets/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js" defer></script>
+</body>
+</html>

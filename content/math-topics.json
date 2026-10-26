@@ -1,0 +1,231 @@
+{
+  "topics": [
+    {
+      "no": 1, "tag": "数学Ⅰ", "ja": "数と式", "vi": "Số và biểu thức", "en": "Numbers and expressions",
+      "sections": [
+        {"ja":"式の計算","vi":"Tính toán biểu thức","en":"Calculating expressions","lessons":["k1-01","m1a","m1b"]},
+        {"ja":"実数","vi":"Số thực","en":"Real numbers","planned":[
+          {"ja":"実数","vi":"Số thực","en":"Real numbers"},
+          {"ja":"根号を含む式の計算","vi":"Tính toán biểu thức chứa căn","en":"Expressions with square roots"}]},
+        {"ja":"1次不等式","vi":"Bất phương trình bậc nhất","en":"Linear inequalities","planned":[
+          {"ja":"絶対値を含む方程式・不等式","vi":"Phương trình, bất phương trình chứa giá trị tuyệt đối","en":"Equations and inequalities with absolute values"}]}
+      ]
+    },
+    {
+      "no": 2, "tag": "数学Ⅰ", "ja": "集合と命題", "vi": "Tập hợp và mệnh đề", "en": "Sets and propositions",
+      "sections": [
+        {"ja":"集合","vi":"Tập hợp","en":"Sets","planned":[{"ja":"集合","vi":"Tập hợp","en":"Sets"}]},
+        {"ja":"命題と条件","vi":"Mệnh đề và điều kiện","en":"Propositions and conditions","planned":[{"ja":"命題と条件","vi":"Mệnh đề và điều kiện","en":"Propositions and conditions"}]}
+      ]
+    },
+    {
+      "no": 3, "tag": "数学Ⅰ", "ja": "2次関数", "vi": "Hàm số bậc hai", "en": "Quadratic functions",
+      "sections": [
+        {"ja":"2次関数とグラフ","vi":"Hàm số bậc hai và đồ thị","en":"Quadratic functions and graphs","lessons":["m2a","m2b","m2c","m2d"],"planned":[
+          {"ja":"2次関数の決定","vi":"Xác định hàm số bậc hai","en":"Finding a quadratic function"}]},
+        {"ja":"2次方程式と2次不等式","vi":"Phương trình và bất phương trình bậc hai","en":"Quadratic equations and inequalities","lessons":["m2e"],"planned":[
+          {"ja":"2次関数のグラフと2次方程式","vi":"Đồ thị hàm bậc hai và phương trình bậc hai","en":"Graphs and quadratic equations"},
+          {"ja":"2次関数のグラフと2次不等式","vi":"Đồ thị hàm bậc hai và bất phương trình bậc hai","en":"Graphs and quadratic inequalities"}]}
+      ]
+    },
+    {
+      "no": 4, "tag": "数学Ⅰ", "ja": "図形と計量", "vi": "Hình học và lượng giác", "en": "Trigonometry and measurement",
+      "sections": [
+        {"ja":"三角比","vi":"Tỷ số lượng giác","en":"Trigonometric ratios","planned":[
+          {"ja":"正弦，余弦，正接","vi":"Sin, cosin, tang","en":"Sine, cosine and tangent"},
+          {"ja":"三角比の相互関係","vi":"Mối quan hệ giữa các tỷ số lượng giác","en":"Relations between trigonometric ratios"}]},
+        {"ja":"三角比と図形","vi":"Tỷ số lượng giác và hình học","en":"Trigonometry and figures","planned":[
+          {"ja":"正弦定理，余弦定理","vi":"Định lý sin, định lý cosin","en":"Law of sines and law of cosines"},
+          {"ja":"図形の計量（空間図形への応用を含む）","vi":"Đo lường hình học (kể cả ứng dụng vào không gian)","en":"Measuring figures (including solids)"}]}
+      ]
+    },
+    {
+      "no": 5, "tag": "数学A", "ja": "場合の数と確率", "vi": "Tổ hợp và xác suất", "en": "Counting and probability",
+      "sections": [
+        {"ja":"場合の数","vi":"Số trường hợp","en":"Counting","planned":[
+          {"ja":"数え上げの原則（集合の要素の個数，和の法則，積の法則を含む）","vi":"Nguyên tắc đếm (số phần tử tập hợp, quy tắc cộng, quy tắc nhân)","en":"Counting principles (number of elements, sum rule, product rule)"},
+          {"ja":"順列・組合せ","vi":"Hoán vị, tổ hợp","en":"Permutations and combinations"}]},
+        {"ja":"確率","vi":"Xác suất","en":"Probability","planned":[
+          {"ja":"確率とその基本的な性質","vi":"Xác suất và tính chất cơ bản","en":"Probability and its basic properties"},
+          {"ja":"独立な試行と確率","vi":"Phép thử độc lập và xác suất","en":"Independent trials"},
+          {"ja":"反復試行の確率","vi":"Xác suất phép thử lặp lại","en":"Repeated trials"},
+          {"ja":"条件付き確率","vi":"Xác suất có điều kiện","en":"Conditional probability"},
+          {"ja":"期待値","vi":"Kỳ vọng","en":"Expected value"}]}
+      ]
+    },
+    {
+      "no": 6, "tag": "数学A", "ja": "整数の性質", "vi": "Tính chất số nguyên", "en": "Properties of integers",
+      "sections": [
+        {"ja":"約数と倍数","vi":"Ước và bội","en":"Divisors and multiples","planned":[
+          {"ja":"倍数の判定法","vi":"Cách xác định bội số","en":"Divisibility tests"},
+          {"ja":"素数と素因数分解","vi":"Số nguyên tố và phân tích thừa số nguyên tố","en":"Primes and prime factorization"},
+          {"ja":"最大公約数，最小公倍数","vi":"ƯCLN, BCNN","en":"GCD and LCM"},
+          {"ja":"整数の割り算","vi":"Phép chia số nguyên","en":"Integer division"}]},
+        {"ja":"ユークリッドの互除法","vi":"Thuật toán Euclid","en":"The Euclidean algorithm","planned":[{"ja":"ユークリッドの互除法","vi":"Thuật toán Euclid","en":"The Euclidean algorithm"}]},
+        {"ja":"1次不定方程式","vi":"Phương trình vô định bậc nhất","en":"Linear Diophantine equations","planned":[{"ja":"1次不定方程式","vi":"Phương trình vô định bậc nhất","en":"Linear Diophantine equations"}]},
+        {"ja":"記数法","vi":"Hệ đếm (cách ghi số)","en":"Number bases","planned":[{"ja":"記数法","vi":"Hệ đếm (cách ghi số)","en":"Number bases"}]}
+      ]
+    },
+    {
+      "no": 7, "tag": "数学A", "ja": "図形の性質", "vi": "Tính chất hình học", "en": "Properties of figures",
+      "sections": [
+        {"ja":"平面図形","vi":"Hình phẳng","en":"Plane figures","planned":[
+          {"ja":"三角形の性質（辺の比／五心：外心，内心，重心，垂心，傍心／チェバの定理，メネラウスの定理）","vi":"Tính chất tam giác (tỷ lệ cạnh; 5 tâm: ngoại tiếp, nội tiếp, trọng tâm, trực tâm, bàng tiếp; định lý Ceva, Menelaus)","en":"Triangles (side ratios; the five centers; Ceva's and Menelaus' theorems)"},
+          {"ja":"円の性質（内接四角形／円と直線／方べきの定理／2円の位置関係）","vi":"Tính chất đường tròn (tứ giác nội tiếp; đường tròn và đường thẳng; định lý phương tích; vị trí tương đối 2 đường tròn)","en":"Circles (inscribed quadrilaterals; circles and lines; power of a point; two circles)"}]},
+        {"ja":"空間図形","vi":"Hình không gian","en":"Solid figures","planned":[
+          {"ja":"直線と平面","vi":"Đường thẳng và mặt phẳng","en":"Lines and planes"},
+          {"ja":"多面体","vi":"Đa diện","en":"Polyhedra"}]}
+      ]
+    },
+    {
+      "no": 8, "tag": "数学Ⅱ", "ja": "いろいろな式", "vi": "Các loại biểu thức khác nhau", "en": "Various expressions",
+      "sections": [
+        {"ja":"式と証明","vi":"Biểu thức và chứng minh","en":"Expressions and proofs","planned":[
+          {"ja":"多項式の除法，分数式，二項定理，恒等式","vi":"Phép chia đa thức, phân thức, nhị thức Newton, đẳng thức","en":"Polynomial division, rational expressions, binomial theorem, identities"},
+          {"ja":"等式と不等式の証明","vi":"Chứng minh đẳng thức, bất đẳng thức","en":"Proving equalities and inequalities"}]},
+        {"ja":"高次方程式","vi":"Phương trình bậc cao","en":"Higher-degree equations","planned":[
+          {"ja":"複素数と2次方程式の解","vi":"Số phức và nghiệm phương trình bậc hai","en":"Complex numbers and roots of quadratics"},
+          {"ja":"解と係数の関係","vi":"Quan hệ giữa nghiệm và hệ số","en":"Roots and coefficients"},
+          {"ja":"剰余の定理と因数定理","vi":"Định lý số dư, định lý nhân tử","en":"Remainder and factor theorems"},
+          {"ja":"高次方程式の解法と性質","vi":"Cách giải và tính chất phương trình bậc cao","en":"Solving higher-degree equations"}]}
+      ]
+    },
+    {
+      "no": 9, "tag": "数学Ⅱ", "ja": "図形と方程式", "vi": "Hình học giải tích", "en": "Coordinate geometry",
+      "sections": [
+        {"ja":"点と直線","vi":"Điểm và đường thẳng","en":"Points and lines","planned":[
+          {"ja":"点の座標","vi":"Tọa độ điểm","en":"Coordinates of points"},
+          {"ja":"直線の方程式","vi":"Phương trình đường thẳng","en":"Equations of lines"},
+          {"ja":"点と直線の距離","vi":"Khoảng cách từ điểm đến đường thẳng","en":"Distance from a point to a line"}]},
+        {"ja":"円","vi":"Đường tròn","en":"Circles","planned":[
+          {"ja":"円の方程式","vi":"Phương trình đường tròn","en":"Equations of circles"},
+          {"ja":"円と直線の関係","vi":"Quan hệ đường tròn và đường thẳng","en":"Circles and lines"}]},
+        {"ja":"軌跡と領域","vi":"Quỹ tích và miền","en":"Loci and regions","planned":[
+          {"ja":"軌跡と方程式","vi":"Quỹ tích và phương trình","en":"Loci and equations"},
+          {"ja":"不等式の表す領域","vi":"Miền biểu diễn bởi bất phương trình","en":"Regions given by inequalities"}]}
+      ]
+    },
+    {
+      "no": 10, "tag": "数学Ⅱ", "ja": "指数関数・対数関数", "vi": "Hàm số mũ – Hàm số lôgarit", "en": "Exponential and logarithmic functions",
+      "sections": [
+        {"ja":"指数関数","vi":"Hàm số mũ","en":"Exponential functions","planned":[
+          {"ja":"指数の拡張","vi":"Mở rộng khái niệm số mũ","en":"Extending exponents"},
+          {"ja":"指数関数とそのグラフ","vi":"Hàm số mũ và đồ thị","en":"Exponential functions and graphs"}]},
+        {"ja":"対数関数","vi":"Hàm số lôgarit","en":"Logarithmic functions","planned":[
+          {"ja":"対数の性質","vi":"Tính chất lôgarit","en":"Properties of logarithms"},
+          {"ja":"対数関数とそのグラフ","vi":"Hàm số lôgarit và đồ thị","en":"Logarithmic functions and graphs"},
+          {"ja":"常用対数","vi":"Lôgarit thập phân","en":"Common logarithms"}]}
+      ]
+    },
+    {
+      "no": 11, "tag": "数学Ⅱ", "ja": "三角関数", "vi": "Hàm số lượng giác", "en": "Trigonometric functions",
+      "sections": [
+        {"ja":"三角関数","vi":"Hàm số lượng giác","en":"Trigonometric functions","planned":[
+          {"ja":"一般角と弧度法","vi":"Góc tổng quát và radian","en":"General angles and radians"},
+          {"ja":"三角関数とその基本的な性質","vi":"Tính chất cơ bản của hàm lượng giác","en":"Basic properties"},
+          {"ja":"三角関数とそのグラフ","vi":"Đồ thị hàm lượng giác","en":"Graphs of trigonometric functions"}]},
+        {"ja":"加法定理","vi":"Công thức cộng","en":"Addition formulas","planned":[
+          {"ja":"三角関数の加法定理","vi":"Công thức cộng của hàm lượng giác","en":"Addition formulas"},
+          {"ja":"加法定理の応用","vi":"Ứng dụng công thức cộng","en":"Applying the addition formulas"},
+          {"ja":"三角関数の合成","vi":"Biến đổi (tổng hợp) hàm lượng giác","en":"Combining trigonometric functions"}]}
+      ]
+    },
+    {
+      "no": 12, "tag": "数学B", "ja": "数列", "vi": "Dãy số", "en": "Sequences",
+      "sections": [
+        {"ja":"数列とその和","vi":"Dãy số và tổng dãy số","en":"Sequences and sums","planned":[
+          {"ja":"等差数列と等比数列","vi":"Cấp số cộng, cấp số nhân","en":"Arithmetic and geometric sequences"},
+          {"ja":"階差数列","vi":"Dãy số sai phân","en":"Difference sequences"},
+          {"ja":"いろいろな数列","vi":"Các loại dãy số khác","en":"Other sequences"}]},
+        {"ja":"漸化式と数学的帰納法","vi":"Công thức truy hồi và quy nạp toán học","en":"Recurrences and induction","planned":[
+          {"ja":"漸化式と数列","vi":"Công thức truy hồi và dãy số","en":"Recurrence relations"},
+          {"ja":"数学的帰納法","vi":"Phương pháp quy nạp toán học","en":"Mathematical induction"}]}
+      ]
+    },
+    {
+      "no": 13, "tag": "数学Ⅰ・数学B", "ja": "確率分布", "vi": "Phân phối xác suất", "en": "Probability distributions",
+      "sections": [
+        {"ja":"確率変数と確率分布","vi":"Biến ngẫu nhiên và phân phối xác suất","en":"Random variables and distributions","planned":[{"ja":"確率変数と確率分布","vi":"Biến ngẫu nhiên và phân phối xác suất","en":"Random variables and distributions"}]},
+        {"ja":"期待値，分散，標準偏差","vi":"Kỳ vọng, phương sai, độ lệch chuẩn","en":"Mean, variance and standard deviation","planned":[{"ja":"期待値，分散，標準偏差","vi":"Kỳ vọng, phương sai, độ lệch chuẩn","en":"Mean, variance and standard deviation"}]},
+        {"ja":"共分散，相関係数","vi":"Hiệp phương sai, hệ số tương quan","en":"Covariance and correlation","planned":[{"ja":"共分散，相関係数","vi":"Hiệp phương sai, hệ số tương quan","en":"Covariance and correlation"}]},
+        {"ja":"確率変数の変換","vi":"Biến đổi biến ngẫu nhiên","en":"Transforming random variables","planned":[{"ja":"確率変数の変換","vi":"Biến đổi biến ngẫu nhiên","en":"Transforming random variables"}]},
+        {"ja":"確率変数の和と期待値","vi":"Tổng các biến ngẫu nhiên và kỳ vọng","en":"Sums of random variables","planned":[{"ja":"確率変数の和と期待値","vi":"Tổng các biến ngẫu nhiên và kỳ vọng","en":"Sums of random variables"}]}
+      ]
+    },
+    {
+      "no": 14, "tag": "数学C", "ja": "ベクトル", "vi": "Vectơ", "en": "Vectors",
+      "sections": [
+        {"ja":"平面上のベクトル","vi":"Vectơ trong mặt phẳng","en":"Vectors in the plane","planned":[{"ja":"平面上のベクトル（演算／成分／内積）","vi":"Vectơ trong mặt phẳng (phép toán; tọa độ; tích vô hướng)","en":"Plane vectors (operations, components, dot product)"}]},
+        {"ja":"ベクトルと平面図形","vi":"Vectơ và hình phẳng","en":"Vectors and plane figures","planned":[{"ja":"ベクトルと平面図形（位置ベクトル／図形／方程式）","vi":"Vectơ và hình phẳng (vectơ vị trí; hình học; phương trình vectơ)","en":"Vectors and plane figures (position vectors, figures, equations)"}]},
+        {"ja":"空間座標とベクトル","vi":"Tọa độ không gian và vectơ","en":"Space coordinates and vectors","planned":[{"ja":"空間座標とベクトル（座標／演算・内積／成分／空間図形／方程式）","vi":"Tọa độ không gian và vectơ (tọa độ; phép toán, tích vô hướng; tọa độ vectơ; hình không gian; phương trình vectơ)","en":"Space vectors (coordinates, operations, dot product, solids, equations)"}]}
+      ]
+    },
+    {
+      "no": 15, "tag": "数学C", "ja": "複素数平面", "vi": "Mặt phẳng số phức", "en": "The complex plane",
+      "sections": [
+        {"ja":"複素数平面","vi":"Mặt phẳng số phức","en":"The complex plane","planned":[
+          {"ja":"複素数平面","vi":"Mặt phẳng số phức","en":"The complex plane"},
+          {"ja":"複素数の極形式","vi":"Dạng lượng giác (cực) của số phức","en":"Polar form of complex numbers"}]},
+        {"ja":"ド・モアブルの定理","vi":"Định lý De Moivre","en":"De Moivre's theorem","planned":[{"ja":"ド・モアブルの定理","vi":"Định lý De Moivre","en":"De Moivre's theorem"}]},
+        {"ja":"複素数と図形","vi":"Số phức và hình học","en":"Complex numbers and figures","planned":[{"ja":"複素数と図形","vi":"Số phức và hình học","en":"Complex numbers and figures"}]}
+      ]
+    },
+    {
+      "no": 16, "tag": "数学C", "ja": "式と曲線", "vi": "Biểu thức và đường cong", "en": "Equations and curves",
+      "sections": [
+        {"ja":"2次曲線","vi":"Đường cong bậc hai","en":"Conic sections","planned":[{"ja":"2次曲線（放物線，楕円，双曲線）","vi":"Đường cong bậc hai (parabol, elip, hyperbol)","en":"Conics (parabola, ellipse, hyperbola)"}]},
+        {"ja":"媒介変数による表示","vi":"Biểu diễn bằng tham số","en":"Parametric equations","planned":[{"ja":"媒介変数による表示","vi":"Biểu diễn bằng tham số","en":"Parametric equations"}]},
+        {"ja":"極座標と極方程式","vi":"Tọa độ cực và phương trình cực","en":"Polar coordinates","planned":[{"ja":"極座標と極方程式","vi":"Tọa độ cực và phương trình cực","en":"Polar coordinates and equations"}]}
+      ]
+    },
+    {
+      "no": 17, "tag": "数学Ⅲ", "ja": "関数", "vi": "Hàm số", "en": "Functions",
+      "sections": [
+        {"ja":"分数関数と無理関数","vi":"Hàm phân thức và hàm vô tỷ (chứa căn)","en":"Rational and irrational functions","planned":[{"ja":"分数関数と無理関数","vi":"Hàm phân thức và hàm vô tỷ (chứa căn)","en":"Rational and irrational functions"}]},
+        {"ja":"逆関数と合成関数","vi":"Hàm ngược và hàm hợp","en":"Inverse and composite functions","planned":[{"ja":"逆関数と合成関数","vi":"Hàm ngược và hàm hợp","en":"Inverse and composite functions"}]}
+      ]
+    },
+    {
+      "no": 18, "tag": "数学Ⅲ", "ja": "極限", "vi": "Giới hạn", "en": "Limits",
+      "sections": [
+        {"ja":"数列とその極限","vi":"Dãy số và giới hạn dãy số","en":"Limits of sequences","planned":[
+          {"ja":"数列の極限","vi":"Giới hạn của dãy số","en":"Limits of sequences"},
+          {"ja":"無限級数の和","vi":"Tổng chuỗi vô hạn","en":"Sums of infinite series"}]},
+        {"ja":"関数とその極限","vi":"Hàm số và giới hạn hàm số","en":"Limits of functions","planned":[
+          {"ja":"関数の極限","vi":"Giới hạn hàm số","en":"Limits of functions"},
+          {"ja":"関数の連続性","vi":"Tính liên tục của hàm số","en":"Continuity"}]}
+      ]
+    },
+    {
+      "no": 19, "tag": "数学Ⅱ・数学Ⅲ", "ja": "微分法", "vi": "Phép tính vi phân", "en": "Differentiation",
+      "sections": [
+        {"ja":"導関数","vi":"Đạo hàm","en":"Derivatives","planned":[
+          {"ja":"微分係数と導関数","vi":"Hệ số vi phân và đạo hàm","en":"Differential coefficients and derivatives"},
+          {"ja":"関数の和・差・積・商の導関数","vi":"Đạo hàm tổng, hiệu, tích, thương","en":"Sum, difference, product and quotient rules"},
+          {"ja":"合成関数の導関数，逆関数の導関数","vi":"Đạo hàm hàm hợp, đạo hàm hàm ngược","en":"Chain rule and inverse functions"},
+          {"ja":"三角関数・指数関数・対数関数の導関数","vi":"Đạo hàm hàm lượng giác, hàm mũ, hàm lôgarit","en":"Derivatives of trig, exponential and log functions"},
+          {"ja":"第n次導関数","vi":"Đạo hàm cấp n","en":"Higher derivatives"}]},
+        {"ja":"導関数の応用","vi":"Ứng dụng đạo hàm","en":"Applications of derivatives","planned":[
+          {"ja":"接線","vi":"Tiếp tuyến","en":"Tangent lines"},
+          {"ja":"関数の値の変化","vi":"Sự biến thiên giá trị hàm số","en":"Increase and decrease"},
+          {"ja":"関数の最大と最小","vi":"GTLN, GTNN của hàm số","en":"Maximum and minimum"},
+          {"ja":"関数のグラフ","vi":"Đồ thị hàm số","en":"Graphs of functions"},
+          {"ja":"速度，加速度","vi":"Vận tốc, gia tốc","en":"Velocity and acceleration"},
+          {"ja":"近似式","vi":"Công thức gần đúng","en":"Approximations"}]}
+      ]
+    },
+    {
+      "no": 20, "tag": "数学Ⅱ・数学Ⅲ", "ja": "積分法", "vi": "Phép tính tích phân", "en": "Integration",
+      "sections": [
+        {"ja":"不定積分と定積分","vi":"Nguyên hàm và tích phân xác định","en":"Indefinite and definite integrals","planned":[
+          {"ja":"積分とその基本的な性質","vi":"Tích phân và tính chất cơ bản","en":"Integrals and basic properties"},
+          {"ja":"置換積分法・部分積分法","vi":"Phương pháp đổi biến, tích phân từng phần","en":"Substitution and integration by parts"},
+          {"ja":"いろいろな関数の積分","vi":"Tích phân các loại hàm số khác nhau","en":"Integrals of various functions"}]},
+        {"ja":"積分の応用","vi":"Ứng dụng tích phân","en":"Applications of integrals","planned":[
+          {"ja":"面積","vi":"Diện tích","en":"Area"},
+          {"ja":"体積","vi":"Thể tích","en":"Volume"},
+          {"ja":"曲線の長さ","vi":"Độ dài đường cong","en":"Arc length"}]}
+      ]
+    }
+  ]
+}

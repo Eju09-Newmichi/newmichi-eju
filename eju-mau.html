@@ -1,0 +1,1615 @@
+<title>EJU Toán · Hóa · Sinh</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@700&family=Be+Vietnam+Pro:wght@400;500;700&display=swap">
+<style>
+/* Layout: a bilingual (JP/VI) e-learning portal. Header + subject menu, a graph-paper profile band, lists/grids of lesson "boards", and a watch page with a text panel. */
+:root {
+  --paper: #F3F4F8;
+  --surface: #FFFFFF;
+  --hover: #EEF0F6;
+  --ink: #1B1F2A;
+  --muted: #5A6072;
+  --line: #D9DDE6;
+  --line-strong: #B9BFCC;
+  --accent: #2D4A9A;
+  --accent-soft: #E7ECF8;
+  --graphite: #2A2E37;
+  --on-graphite: #F4F5F9;
+  --ok: #1D7447;
+  --ok-soft: #E2F2E8;
+  --bad: #B23B27;
+  --bad-soft: #FBE8E3;
+  --gold: #D69A12;
+  --band: #2B4592;
+  --band-ink: #FFFFFF;
+  --band-grid: rgba(255, 255, 255, 0.09);
+  --band-track: rgba(255, 255, 255, 0.24);
+  --band-muted: rgba(255, 255, 255, 0.78);
+  --shadow: rgba(15, 20, 35, 0.18);
+
+  --c-nihongo: #C8372D;
+  --c-sugaku: #1F66C9;
+  --c-rika: #178548;
+  --c-shakai: #B86B10;
+  --c-tango: #B82D72;
+
+  /* lesson boards look the same in both themes, like real video thumbnails */
+  --board: #EEF4FB;
+  --board-ink: #22314B;
+  --board-line: #D6E3F2;
+  --sb-nihongo: #C8372D;
+  --sb-sugaku: #1F66C9;
+  --sb-rika: #178548;
+  --sb-shakai: #B86B10;
+  --sb-tango: #B82D72;
+  --badge: #111827;
+  --badge-ink: #FFFFFF;
+  --scrim: rgba(17, 24, 39, 0.62);
+  --scrim-track: rgba(255, 255, 255, 0.35);
+
+  --subj: var(--accent);
+  --subj-board: var(--accent);
+
+  --font-body: "Be Vietnam Pro", "BIZ UDPGothic", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-jp: "BIZ UDPGothic", "Be Vietnam Pro", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+  --font-display: "BIZ UDPMincho", "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  --radius: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111318;
+    --surface: #191C23;
+    --hover: #222631;
+    --ink: #E6E8EE;
+    --muted: #9BA2B2;
+    --line: #2D323D;
+    --line-strong: #4A5160;
+    --accent: #9DB2F2;
+    --accent-soft: #1F2840;
+    --graphite: #DDE1E8;
+    --on-graphite: #111318;
+    --ok: #63C78F;
+    --ok-soft: #16301F;
+    --bad: #F2836E;
+    --bad-soft: #3A1D17;
+    --gold: #E8B23A;
+    --band: #1C2850;
+    --band-ink: #EEF1FA;
+    --band-grid: rgba(255, 255, 255, 0.06);
+    --band-track: rgba(255, 255, 255, 0.18);
+    --band-muted: rgba(238, 241, 250, 0.72);
+    --shadow: rgba(0, 0, 0, 0.5);
+    --c-nihongo: #F07A6E;
+    --c-sugaku: #6FA4F2;
+    --c-rika: #5CC48A;
+    --c-shakai: #E9A54A;
+    --c-tango: #EE7BB5;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111318;
+  --surface: #191C23;
+  --hover: #222631;
+  --ink: #E6E8EE;
+  --muted: #9BA2B2;
+  --line: #2D323D;
+  --line-strong: #4A5160;
+  --accent: #9DB2F2;
+  --accent-soft: #1F2840;
+  --graphite: #DDE1E8;
+  --on-graphite: #111318;
+  --ok: #63C78F;
+  --ok-soft: #16301F;
+  --bad: #F2836E;
+  --bad-soft: #3A1D17;
+  --gold: #E8B23A;
+  --band: #1C2850;
+  --band-ink: #EEF1FA;
+  --band-grid: rgba(255, 255, 255, 0.06);
+  --band-track: rgba(255, 255, 255, 0.18);
+  --band-muted: rgba(238, 241, 250, 0.72);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --c-nihongo: #F07A6E;
+  --c-sugaku: #6FA4F2;
+  --c-rika: #5CC48A;
+  --c-shakai: #E9A54A;
+  --c-tango: #EE7BB5;
+  color-scheme: dark;
+}
+[data-subj="nihongo"] { --subj: var(--c-nihongo); --subj-board: var(--sb-nihongo); }
+[data-subj="sugaku"]  { --subj: var(--c-sugaku);  --subj-board: var(--sb-sugaku); }
+[data-subj="rika"]    { --subj: var(--c-rika);    --subj-board: var(--sb-rika); }
+[data-subj="shakai"]  { --subj: var(--c-shakai);  --subj-board: var(--sb-shakai); }
+[data-subj="tango"]   { --subj: var(--c-tango);   --subj-board: var(--sb-tango); }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.65; }
+button { font: inherit; color: inherit; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ic { width: 20px; height: 20px; flex: none; }
+.in {
+  max-width: 1200px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.muted { color: var(--muted); }
+.small { font-size: 0.875rem; }
+.jp { font-family: var(--font-jp); }
+.term { font-family: var(--font-jp); font-weight: 700; }
+.sec-label { margin: 6px 0 0; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; color: var(--muted); }
+
+/* ---------- Two languages ---------- */
+.sep::before { content: " · "; }
+.u::before { content: "/"; }
+body.lang-vi .sep::before, body.lang-vi .u::before { content: none; }
+body.lang-ja .lv { display: none !important; }
+body.lang-vi .lj { display: none !important; }
+body:not(.lang-vi) .vo { display: none !important; }
+:where(.lj + .lv) { color: var(--muted); font-size: 0.92em; }
+:where(body.lang-vi) :where(.lj + .lv) { color: inherit; font-size: inherit; }
+.bs { display: inline-grid; line-height: 1.25; justify-items: inherit; }
+.bs > .lv { font-size: 0.72em; font-weight: 400; }
+body.lang-vi .bs > .lv { font-size: 1em; font-weight: inherit; }
+.bl { display: grid; gap: 2px; }
+li > .lj, li > .lv, td > .lj, td > .lv, h4 > .lv, h2 > .lj, h2 > .lv, .tr { display: block; }
+.btn .lj, .btn .lv { color: inherit; }
+.tr { font-size: 0.9375rem; line-height: 1.6; color: var(--muted); }
+body.lang-vi .tr { color: var(--ink); }
+table.org { min-width: 540px; }
+.langsw { display: inline-flex; flex: none; gap: 2px; padding: 2px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.langsw button { border: 0; background: none; border-radius: 999px; padding: 4px 10px; font-size: 0.75rem; font-weight: 700; color: var(--muted); cursor: pointer; white-space: nowrap; }
+.langsw button:hover { color: var(--ink); }
+.langsw button[aria-pressed="true"] { background: var(--graphite); color: var(--on-graphite); }
+
+/* ---------- Header ---------- */
+.site-head { background: var(--surface); border-bottom: 1px solid var(--line); position: relative; z-index: 20; }
+.head-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; padding-block: 12px 2px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.cells { display: inline-flex; gap: 3px; }
+.cells b {
+  display: inline-grid; place-items: center; width: 1.6rem; height: 1.8rem;
+  border: 1.5px solid var(--ink); font-family: var(--font-jp); font-weight: 700; font-size: 0.95rem; line-height: 1;
+}
+.cells b:last-child { background: var(--graphite); color: var(--on-graphite); border-color: var(--graphite); }
+.logo-text { display: grid; line-height: 1.2; }
+.logo-text small { font-size: 0.6875rem; color: var(--muted); font-family: var(--font-jp); }
+.logo-text b { font-size: 1rem; }
+.search { flex: 1 1 300px; max-width: 640px; margin-left: auto; position: relative; }
+.search input {
+  width: 100%; height: 40px; border-radius: 6px; border: 1px solid transparent; background: var(--hover);
+  padding: 0 12px 0 38px; font: inherit; font-size: 0.9375rem; color: var(--ink); font-family: var(--font-jp);
+}
+.search input::placeholder { color: var(--muted); }
+.search input:focus { outline: 2px solid var(--accent); outline-offset: 0; background: var(--surface); }
+.search .ic { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--muted); pointer-events: none; }
+.avatar {
+  width: 40px; height: 40px; border-radius: 50%; border: 0; flex: none; cursor: pointer;
+  background: var(--graphite); color: var(--on-graphite); font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
+}
+.gnav { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+.gnav::-webkit-scrollbar { display: none; }
+.gnav a, .gnav button {
+  flex: none; display: inline-flex; align-items: center; gap: 5px; padding: 9px 12px 8px;
+  border: 0; border-bottom: 3px solid transparent; background: none; cursor: pointer; text-decoration: none;
+  font-family: var(--font-jp); font-weight: 700; font-size: 0.9375rem; color: var(--ink); text-align: left;
+}
+.gnav [data-subj] { color: var(--subj); }
+.gnav .is-on { border-bottom-color: currentColor; }
+.gnav button[data-subj]::after {
+  content: ""; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid currentColor; opacity: 0.55;
+}
+.menu {
+  position: absolute; z-index: 40; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: 0 14px 34px var(--shadow); max-height: min(62vh, 480px); overflow-y: auto; padding: 4px 0 6px;
+}
+.menu-head {
+  margin: 0 0 4px; padding: 10px 16px 8px; border-bottom: 1px solid var(--line);
+  display: flex; align-items: baseline; gap: 8px; font-family: var(--font-jp); font-weight: 700; color: var(--subj);
+}
+.menu-head span { font-family: var(--font-body); font-weight: 400; font-size: 0.8125rem; color: var(--muted); }
+.menu-item {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 16px;
+  text-decoration: none; color: var(--ink); font-family: var(--font-jp); font-size: 0.9375rem;
+}
+.menu-item:hover, .menu-item:focus-visible { background: var(--hover); outline: none; }
+.tag-plan {
+  flex: none; font-family: var(--font-body); font-size: 0.6875rem; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; white-space: nowrap;
+}
+
+/* ---------- Profile band ---------- */
+.band {
+  background-color: var(--band); color: var(--band-ink);
+  background-image: linear-gradient(var(--band-grid) 1px, transparent 1px), linear-gradient(90deg, var(--band-grid) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.band :where(.lj + .lv) { color: var(--band-muted); }
+body.lang-vi .band .lv { color: inherit; }
+.band-in { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 18px 32px; align-items: center; padding-block: 26px; }
+.me { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.avatar-lg {
+  width: 72px; height: 72px; border-radius: 50%; flex: none; display: grid; place-items: center;
+  background: var(--band-ink); color: var(--band); font-family: var(--font-display); font-weight: 700; font-size: 2rem;
+}
+.me p { margin: 0; }
+.me-name { font-size: 1.5rem; font-weight: 700; line-height: 1.3; }
+.me-sub { font-size: 0.8125rem; font-family: var(--font-jp); opacity: 0.92; }
+.me-stats p { margin: 0; }
+.st-row { display: flex; gap: 22px; font-size: 1.375rem; font-variant-numeric: tabular-nums; }
+.st { display: inline-flex; align-items: center; gap: 6px; }
+.st .ic { width: 22px; height: 22px; }
+.st-time { font-size: 0.8125rem; font-family: var(--font-jp); }
+.st-time b { font-family: var(--font-body); font-size: 1.375rem; font-weight: 500; margin: 0 3px 0 6px; font-variant-numeric: tabular-nums; }
+.me-level { display: grid; justify-items: end; gap: 6px; text-align: right; }
+.me-level p { margin: 0; }
+.lv-num { font-size: 0.875rem; }
+.lv-num b { font-size: 1.5rem; font-weight: 500; margin-left: 4px; }
+.lvbar { width: 100%; max-width: 280px; height: 12px; border-radius: 999px; background: var(--band-track); overflow: hidden; }
+.lvbar span { display: block; height: 100%; border-radius: inherit; background: var(--band-ink); }
+.lv-next { font-size: 0.8125rem; font-family: var(--font-jp); }
+
+/* ---------- Home tabs & lists ---------- */
+.tabsbar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.tabs-in { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+.tabs-in::-webkit-scrollbar { display: none; }
+.htab {
+  flex: none; border: 0; border-bottom: 3px solid transparent; background: none; cursor: pointer;
+  padding: 12px 16px 9px; font-family: var(--font-jp); font-size: 0.9375rem; color: var(--muted); text-align: left;
+}
+.htab:hover { color: var(--ink); }
+.htab[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); font-weight: 700; }
+.home-list { max-width: 660px; margin: 0 auto; padding-block: 18px 40px; display: grid; gap: 12px; }
+
+.vrow {
+  display: grid; grid-template-columns: 168px minmax(0, 1fr); gap: 16px; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px;
+  text-decoration: none; color: var(--ink);
+}
+.vrow:hover { border-color: var(--subj); }
+.vrow-body { min-width: 0; display: grid; gap: 1px; }
+.vrow-body p, .vcard p { margin: 0; }
+.clabel { font-size: 0.8125rem; color: var(--subj); font-family: var(--font-jp); line-height: 1.45; }
+.vtitle { font-family: var(--font-jp); font-size: 1rem; line-height: 1.5; overflow-wrap: anywhere; }
+.vvi { font-size: 0.8125rem; color: var(--muted); line-height: 1.45; }
+.vmeta { margin-top: 6px !important; font-size: 0.8125rem; color: var(--muted); font-family: var(--font-jp); font-variant-numeric: tabular-nums; }
+
+.crow {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px;
+  text-decoration: none; color: var(--ink);
+}
+.crow:hover { border-color: var(--subj); }
+.crow p { margin: 0; }
+.crow-series { font-size: 0.8125rem; color: var(--subj); font-family: var(--font-jp); }
+.crow-name { font-size: 1.125rem; font-family: var(--font-jp); line-height: 1.4; }
+.crow-side { display: grid; justify-items: end; gap: 5px; flex: none; }
+.crow-prog { font-size: 0.8125rem; color: var(--muted); font-variant-numeric: tabular-nums; font-family: var(--font-jp); }
+.minibar { width: 96px; height: 6px; border-radius: 999px; background: var(--hover); overflow: hidden; }
+.minibar span { display: block; height: 100%; background: var(--subj); }
+.sblock { display: grid; gap: 8px; }
+.sb-head { margin: 10px 0 0; display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.sb-name { font-family: var(--font-display); font-weight: 700; font-size: 1.375rem; color: var(--subj); }
+.sb-name small { font-family: var(--font-body); font-weight: 400; font-size: 0.8125rem; color: var(--muted); margin-left: 8px; }
+.sb-count { font-size: 0.8125rem; color: var(--muted); font-family: var(--font-jp); }
+.empty {
+  background: var(--surface); border: 1px dashed var(--line-strong); border-radius: var(--radius);
+  padding: 18px 20px; display: grid; gap: 6px;
+}
+.empty p { margin: 0; }
+.empty-t { font-weight: 700; }
+
+/* ---------- Thumbnails (lesson boards) ---------- */
+.thumb {
+  position: relative; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; border-radius: 4px; overflow: hidden;
+  container-type: inline-size; background: var(--board); border: 1px solid var(--board-line);
+}
+.board {
+  position: absolute; inset: 0; padding: 5cqw 6cqw; display: grid; grid-template-rows: auto 1fr;
+  color: var(--board-ink); background-image: linear-gradient(var(--board-line) 1px, transparent 1px); background-size: 100% 12cqw;
+}
+.b-tag { font-family: var(--font-jp); font-size: 4.6cqw; color: var(--subj-board); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.b-lines { display: grid; align-content: center; justify-items: start; gap: 1.5cqw; }
+.b-line { font-family: var(--font-jp); font-weight: 700; font-size: 8cqw; line-height: 1.2; white-space: nowrap; }
+.b-line.small { font-size: 6.2cqw; white-space: normal; }
+.b-mark { position: absolute; left: 6cqw; bottom: 4cqw; font-family: var(--font-display); font-weight: 700; font-size: 5cqw; color: var(--subj-board); }
+.dur {
+  position: absolute; right: 4cqw; bottom: 4cqw; background: var(--badge); color: var(--badge-ink);
+  font-size: max(10px, 5.5cqw); line-height: 1.25; padding: 0.15em 0.45em; border-radius: 2px; font-variant-numeric: tabular-nums;
+}
+.donebadge {
+  position: absolute; left: 3cqw; top: 3cqw; width: max(18px, 10cqw); height: max(18px, 10cqw);
+  border-radius: 50%; background: var(--gold); color: var(--badge-ink); display: grid; place-items: center;
+}
+.donebadge svg { width: 62%; height: 62%; }
+.thumb.plan { opacity: 0.6; }
+
+/* ---------- Pages ---------- */
+.page { padding-block: 20px 48px; display: grid; gap: 18px; }
+.crumb { margin: 0; font-size: 0.8125rem; color: var(--muted); font-family: var(--font-jp); overflow-wrap: anywhere; }
+.crumb a { color: var(--accent); text-decoration: none; }
+.crumb a:hover { text-decoration: underline; }
+.page-t { margin: 0; font-family: var(--font-jp); font-size: 1.5rem; }
+
+/* Course page */
+.chead {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px;
+  display: grid; grid-template-columns: minmax(0, 1.1fr) auto minmax(0, 1.3fr); gap: 18px 32px; align-items: center;
+}
+.chead p { margin: 0; }
+.chead-series { font-size: 0.875rem; font-family: var(--font-jp); color: var(--muted); }
+.chead-name { margin: 2px 0 0; font-family: var(--font-jp); font-size: 2rem; line-height: 1.2; color: var(--subj); }
+.chead-vi { font-size: 0.9375rem; color: var(--muted); margin-bottom: 6px !important; }
+.troph-line { display: flex; align-items: center; gap: 6px; font-size: 1.25rem; color: var(--muted); font-variant-numeric: tabular-nums; margin-top: 6px !important; }
+.troph-line b { color: var(--ink); font-weight: 500; }
+.ring { width: 128px; height: 128px; position: relative; flex: none; }
+.ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring-txt { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; line-height: 1.15; }
+.ring-txt b { font-size: 1.75rem; font-weight: 500; color: var(--subj); font-variant-numeric: tabular-nums; }
+.ring-txt span { font-size: 0.8125rem; color: var(--muted); }
+.chead-next { display: grid; gap: 6px; min-width: 0; }
+.next-link { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 12px; align-items: center; text-decoration: none; color: var(--ink); }
+.next-link:hover .vtitle { color: var(--subj); }
+.cbody { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 20px; align-items: start; }
+.caside { display: grid; gap: 12px; min-width: 0; }
+.sel {
+  display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 8px 14px; font-family: var(--font-jp); font-size: 0.875rem;
+}
+.sel select { flex: 1; min-width: 0; font: inherit; color: var(--ink); background: transparent; border: 0; padding: 4px 0; }
+.chlist { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 6px 0; display: grid; }
+.chbtn {
+  display: flex; align-items: center; gap: 10px; text-align: left; border: 0; background: none; cursor: pointer;
+  padding: 9px 16px; font-family: var(--font-jp); font-size: 0.9375rem; color: var(--ink);
+}
+.chbtn:hover { background: var(--hover); }
+.chbtn[aria-current="true"] { background: var(--accent-soft); font-weight: 700; }
+.chbtn .ic { color: var(--line-strong); }
+.chbtn .ic.gold { color: var(--gold); }
+.cmain { display: grid; gap: 26px; min-width: 0; }
+.chsec { display: grid; gap: 12px; }
+.chsec h2 { margin: 0; font-family: var(--font-jp); font-size: 1.25rem; line-height: 1.35; }
+.chsec h2 .lv { font-family: var(--font-body); font-weight: 500; }
+.vgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.vcard {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px;
+  display: grid; gap: 8px; align-content: start; text-decoration: none; color: var(--ink); min-width: 0;
+}
+.vcard > div:last-child { display: grid; gap: 1px; }
+a.vcard:hover { border-color: var(--subj); }
+.vcard.is-plan { cursor: default; }
+.vcard.is-plan .vtitle { color: var(--muted); }
+.notice { margin: 0; background: var(--accent-soft); border-radius: var(--radius); padding: 12px 16px; font-size: 0.9375rem; display: grid; gap: 2px; }
+.notice p { margin: 0; }
+
+/* Watch page */
+.watch { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.wleft { display: grid; gap: 14px; min-width: 0; }
+.player { position: relative; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; container-type: inline-size; background: var(--board); }
+.player .b-tag { font-size: 2.6cqw; }
+.player .b-line { font-size: 5.6cqw; }
+.player .b-mark { font-size: 3cqw; bottom: 12cqw; }
+.play-btn {
+  position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%);
+  width: 72px; height: 72px; border-radius: 50%; border: 3px solid var(--badge-ink); background: var(--scrim);
+  color: var(--badge-ink); display: grid; place-items: center; cursor: pointer;
+}
+.play-btn svg { width: 28px; height: 28px; margin-left: 4px; }
+.pnote {
+  position: absolute; left: 12px; right: 12px; top: 12px; margin: 0; padding: 10px 12px; border-radius: 6px; display: grid; gap: 2px;
+  background: var(--surface); color: var(--ink); font-size: 0.875rem; box-shadow: 0 6px 20px var(--shadow);
+}
+.pnote p { margin: 0; }
+.pbar {
+  position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 12px; padding: 8px 12px;
+  background: var(--scrim); color: var(--badge-ink); font-size: 0.75rem; font-variant-numeric: tabular-nums;
+}
+.pbar .ic { width: 16px; height: 16px; }
+.ptrack { flex: 1; height: 4px; border-radius: 2px; background: var(--scrim-track); position: relative; }
+.ptrack::before { content: ""; position: absolute; left: 0; top: 50%; width: 10px; height: 10px; border-radius: 50%; background: var(--badge-ink); transform: translate(-30%, -50%); }
+.winfo { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 18px; display: grid; gap: 2px; }
+.winfo p { margin: 0; }
+.wtitle { margin: 0; font-family: var(--font-jp); font-size: 1.25rem; font-weight: 400; line-height: 1.45; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; border-top: 1px solid var(--line); padding-top: 8px; margin-top: 8px; }
+.chips button {
+  border: 0; border-bottom: 2px solid transparent; background: none; cursor: pointer;
+  padding: 6px 12px; font-family: var(--font-jp); font-size: 0.875rem; color: var(--ink); text-align: left;
+}
+.chips button:hover { color: var(--accent); }
+.chips button[aria-pressed="true"] { color: var(--accent); border-bottom-color: var(--accent); }
+.wmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; border-top: 1px solid var(--line); padding-top: 10px; margin-top: 4px; font-size: 0.8125rem; color: var(--muted); font-family: var(--font-jp); }
+.bm { display: inline-flex; align-items: center; gap: 6px; border: 0; background: none; cursor: pointer; color: var(--muted); font-family: var(--font-jp); font-size: 0.8125rem; padding: 4px 0; }
+.bm .ic { width: 18px; height: 18px; }
+.bm[aria-pressed="true"] { color: var(--gold); }
+.bm[aria-pressed="true"] .ic polygon { fill: currentColor; }
+.wstatus.ok { color: var(--ok); font-weight: 700; }
+.wcount { margin-left: auto; font-variant-numeric: tabular-nums; }
+.prevnext { display: flex; justify-content: space-between; gap: 10px; margin-top: 4px; }
+.prevnext a { color: var(--accent); text-decoration: none; font-family: var(--font-jp); font-size: 0.875rem; padding: 4px 0; }
+.prevnext a:hover { text-decoration: underline; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); min-width: 0; }
+.ptabs { display: flex; overflow-x: auto; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+.ptabs::-webkit-scrollbar { display: none; }
+.ptabs button {
+  flex: none; border: 0; border-bottom: 2px solid transparent; background: none; cursor: pointer;
+  padding: 10px 16px 8px; font-family: var(--font-jp); font-size: 0.875rem; color: var(--muted); text-align: left;
+}
+.ptabs button[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); font-weight: 700; }
+.pbody { padding: 4px clamp(16px, 3vw, 28px) 22px; }
+.psec { padding-block: 18px; display: grid; gap: 12px; min-width: 0; border-bottom: 1px solid var(--line); scroll-margin-top: 12px; }
+.psec:last-child { border-bottom: 0; }
+.psec p { margin: 0; }
+.psec ul { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; }
+.ptitle { margin: 0; font-family: var(--font-jp); font-size: 1.5rem; font-weight: 400; color: var(--subj); letter-spacing: 0.03em; line-height: 1.3; }
+.ptitle .lv { font-family: var(--font-body); }
+.prob { background: var(--paper); border-radius: 6px; padding: 12px 14px; display: grid; gap: 4px; }
+.formula { overflow-x: auto; }
+.formula-line { font-family: var(--font-jp); font-weight: 700; font-size: 1.0625rem; text-align: center; padding: 6px 0; }
+mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width: 100%; margin: 0.35em 0 !important; }
+.compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.compare > div { border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; display: grid; gap: 6px; align-content: start; }
+.compare h4 { margin: 0; font-size: 1rem; font-family: var(--font-jp); }
+.compare h4 .lv { font-family: var(--font-body); font-weight: 400; }
+.compare p { font-size: 0.9375rem; }
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { font-size: 0.75rem; letter-spacing: 0.04em; color: var(--muted); font-weight: 700; background: var(--paper); }
+td.mark { text-align: center; font-family: var(--font-jp); font-weight: 700; width: 4.5rem; }
+td.mark.no { color: var(--muted); font-weight: 400; }
+.caption { font-size: 0.8125rem; color: var(--muted); }
+ruby { ruby-position: over; }
+rt { font-size: 0.55em; color: var(--muted); font-weight: 400; }
+.vocab td:first-child { font-family: var(--font-jp); font-size: 1.125rem; font-weight: 700; white-space: nowrap; width: 45%; }
+.vocab-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.vocab-bar .bl { font-size: 0.8125rem; color: var(--muted); }
+.vocab.hide-vi td.mean { cursor: pointer; }
+.vocab.hide-vi td.mean span { color: transparent; background: var(--line); border-radius: 3px; }
+.vocab.hide-vi tr.peek td.mean span { color: inherit; background: transparent; }
+.ansitem { display: grid; gap: 6px; padding-bottom: 12px; border-bottom: 1px dashed var(--line); }
+.ansitem:last-child { border-bottom: 0; padding-bottom: 0; }
+.ans-key { font-weight: 700; color: var(--ok); }
+.near-ch { font-weight: 700; font-family: var(--font-jp); font-size: 0.9375rem; margin-top: 4px !important; }
+ol.near { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.near a { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 6px; text-decoration: none; color: var(--ink); font-family: var(--font-jp); font-size: 0.9375rem; }
+.near a:hover { background: var(--hover); }
+.near a[aria-current="true"] { background: var(--accent-soft); font-weight: 700; }
+.near-t { flex: 1; min-width: 0; display: grid; }
+.near-t .lv { font-family: var(--font-body); font-size: 0.8125rem; color: var(--muted); font-weight: 400; }
+.near-d { color: var(--muted); font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+.near-ok { font-size: 0.75rem; font-weight: 700; color: var(--ok); }
+
+/* Buttons */
+.btn { border-radius: 6px; padding: 9px 16px; cursor: pointer; font-weight: 500; font-size: 0.9375rem; border: 1.5px solid var(--graphite); font-family: var(--font-jp); }
+.btn-primary { background: var(--graphite); color: var(--on-graphite); }
+.btn-primary:hover { opacity: 0.9; }
+.btn-ghost { background: transparent; }
+.btn-ghost:hover { background: var(--hover); }
+.btn-small { padding: 5px 12px; font-size: 0.8125rem; border-width: 1px; border-color: var(--line); }
+
+/* Practice (EJU answer formats) */
+.q { display: grid; gap: 10px; padding: 14px 0; border-bottom: 1px dashed var(--line); min-width: 0; }
+.q-stem { font-family: var(--font-jp); font-size: 1.0625rem; line-height: 1.9; margin: 0; }
+.q-no { font-weight: 700; margin-right: 0.6em; color: var(--subj); }
+.box {
+  display: inline-block; min-width: 1.5em; padding: 0 0.25em; margin: 0 0.12em; border: 1.5px solid var(--ink);
+  text-align: center; font-style: normal; font-weight: 700; line-height: 1.35;
+}
+.cells-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.cell { display: grid; justify-items: center; gap: 2px; }
+.cell span { font-family: var(--font-jp); font-weight: 700; font-size: 0.8125rem; color: var(--muted); }
+.cell input {
+  width: 2.6rem; height: 3rem; text-align: center; font-family: var(--font-jp); font-size: 1.375rem; font-weight: 700;
+  border: 1.5px solid var(--accent); border-radius: 4px; background: var(--surface); color: var(--ink);
+}
+.cell input.is-ok { border-color: var(--ok); background: var(--ok-soft); }
+.cell input.is-bad { border-color: var(--bad); background: var(--bad-soft); }
+.opts { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; }
+.opt { position: relative; display: flex; align-items: center; gap: 10px; padding: 7px 10px; border-radius: 6px; border: 1px solid transparent; cursor: pointer; min-width: 0; }
+.opt:hover { background: var(--hover); }
+.opt input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.oval {
+  flex: none; width: 1.15rem; height: 1.75rem; border-radius: 50%; border: 1.5px solid var(--accent); color: var(--accent);
+  display: grid; place-items: center; font-family: var(--font-jp); font-size: 0.75rem; font-weight: 700; line-height: 1;
+}
+.opt-text { font-family: var(--font-jp); min-width: 0; overflow-wrap: anywhere; }
+.opt input:checked + .oval { background: var(--graphite); border-color: var(--graphite); color: var(--on-graphite); }
+.opt input:focus-visible + .oval { outline: 2px solid var(--accent); outline-offset: 2px; }
+.opt.is-key { background: var(--ok-soft); border-color: var(--ok); }
+.opt.is-wrong { background: var(--bad-soft); border-color: var(--bad); }
+.q-result { font-size: 0.8125rem; font-weight: 700; margin: 0; }
+.q-result:empty { display: none; }
+.q.is-ok .q-result { color: var(--ok); }
+.q.is-bad .q-result { color: var(--bad); }
+.q.is-blank .q-result { color: var(--muted); }
+.q-result .lv { color: inherit; }
+.kaisetsu { background: var(--paper); border-radius: 6px; padding: 12px 14px; display: grid; gap: 4px; }
+.kaisetsu .k-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; color: var(--muted); }
+.score-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding-top: 16px; }
+.score-out { margin: 0 0 0 auto !important; color: var(--muted); font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
+.score-out strong { color: var(--ink); font-size: 1.1875rem; }
+
+ol.rank { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+ol.rank li { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); align-items: center; gap: 8px; }
+.rank-no { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; color: var(--muted); text-align: center; }
+
+.site-foot { border-top: 1px solid var(--line); color: var(--muted); font-size: 0.8125rem; padding-block: 16px 28px; display: grid; gap: 4px; }
+.site-foot p { margin: 0; }
+
+@media (max-width: 900px) {
+  .watch { grid-template-columns: minmax(0, 1fr); }
+  .chead { grid-template-columns: minmax(0, 1fr) auto; }
+  .chead-next { grid-column: 1 / -1; }
+}
+@media (max-width: 760px) {
+  .band-in { grid-template-columns: minmax(0, 1fr); padding-block: 20px; }
+  .me-level { justify-items: start; text-align: left; }
+  .lvbar { max-width: none; }
+  .cbody { grid-template-columns: minmax(0, 1fr); }
+  .chlist { display: flex; overflow-x: auto; padding: 6px; gap: 4px; }
+  .chbtn { flex: none; padding: 8px 12px; border-radius: 6px; }
+  .vgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .vcard { padding: 8px; }
+  .score-out { margin-left: 0 !important; width: 100%; }
+}
+@media (max-width: 640px) {
+  .search { order: 3; flex-basis: 100%; max-width: none; margin-left: 0; }
+  .langsw { margin-left: auto; }
+}
+@media (max-width: 480px) {
+  .logo-text { display: none; }
+  .vrow { grid-template-columns: 128px minmax(0, 1fr); gap: 12px; padding: 10px; }
+  .ring { width: 96px; height: 96px; }
+  .ring-txt b { font-size: 1.375rem; }
+  .chead { padding: 18px; }
+  .chead-name { font-size: 1.625rem; }
+  .next-link { grid-template-columns: 120px minmax(0, 1fr); }
+  .play-btn { width: 56px; height: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+
+<header class="site-head">
+  <div class="in head-row">
+    <a class="logo" href="#home" aria-label="Trang đầu">
+      <span class="cells" aria-hidden="true"><b>E</b><b>J</b><b>U</b></span>
+      <span class="logo-text"><small>オンライン授業</small><b>Toán · Hóa · Sinh</b></span>
+    </a>
+    <label class="search">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" autocomplete="off" placeholder="キーワード / Từ khóa（例：平方完成、物質量、tế bào）" aria-label="Tìm bài học">
+    </label>
+    <div class="langsw" role="group" aria-label="Ngôn ngữ · 言語">
+      <button type="button" data-lang="ja" aria-pressed="false" title="日本語だけ表示">JP</button>
+      <button type="button" data-lang="both" aria-pressed="true" title="日本語とベトナム語 · Song ngữ">JP+VI</button>
+      <button type="button" data-lang="vi" aria-pressed="false" title="Chỉ tiếng Việt">VI</button>
+    </div>
+    <button class="avatar" id="avatar" type="button" aria-label="Trang học tập của tôi">M</button>
+  </div>
+  <nav class="in gnav" id="gnav" aria-label="Menu chính">
+    <a href="#home" data-nav="home"><span class="bs"><span class="lj">学習状況</span><span class="lv">Học tập</span></span></a>
+    <button type="button" data-subj="nihongo" data-nav="nihongo" aria-haspopup="true" aria-expanded="false"><span class="bs"><span class="lj">日本語</span><span class="lv">Tiếng Nhật</span></span></button>
+    <button type="button" data-subj="sugaku" data-nav="sugaku" aria-haspopup="true" aria-expanded="false"><span class="bs"><span class="lj">数学</span><span class="lv">Toán</span></span></button>
+    <button type="button" data-subj="rika" data-nav="rika" aria-haspopup="true" aria-expanded="false"><span class="bs"><span class="lj">理科</span><span class="lv">Hóa · Sinh</span></span></button>
+    <button type="button" data-subj="shakai" data-nav="shakai" aria-haspopup="true" aria-expanded="false"><span class="bs"><span class="lj">社会</span><span class="lv">Xã hội</span></span></button>
+    <button type="button" data-subj="tango" data-nav="tango" aria-haspopup="true" aria-expanded="false"><span class="bs"><span class="lj">単語</span><span class="lv">Từ mới</span></span></button>
+    <a href="#bookmark" data-nav="bookmark"><span class="bs"><span class="lj">ブックマーク</span><span class="lv">Bài đã lưu</span></span></a>
+    <a href="#ranking" data-nav="ranking"><span class="bs"><span class="lj">ランキング</span><span class="lv">Xếp hạng</span></span></a>
+  </nav>
+  <div class="menu" id="menu" hidden></div>
+</header>
+
+<main id="app"></main>
+
+<footer class="in site-foot">
+  <p><span class="lj">見本ページです。授業内容・動画・会員情報はすべて例です。</span><span class="lv">Bản mẫu để xem cách trình bày. Nội dung, video và hồ sơ học viên ở đây là ví dụ.</span></p>
+  <p><span class="lj">学習の進み具合・視聴履歴・ブックマークは、このブラウザにだけ保存されます。</span><span class="lv">Tiến độ học, lịch sử xem và bookmark chỉ lưu trên trình duyệt của người học.</span></p>
+</footer>
+
+<script>
+(function () {
+  var R = String.raw;
+
+  /* ================= LANGUAGE HELPERS ================= */
+  function bi(ja, vi) { return '<span class="lj">' + ja + '</span><span class="lv sep">' + vi + "</span>"; }
+  function bs(ja, vi) { return '<span class="bs"><span class="lj">' + ja + '</span><span class="lv">' + vi + "</span></span>"; }
+  function unit(ja, vi) { return '<span class="lj">' + ja + '</span><span class="lv u">' + vi + "</span>"; }
+  function jv(ja, vi) { return '<span class="lj">' + ja + '</span><span class="vo">' + vi + "</span>"; }
+  function para(x) {
+    if (typeof x === "string") return "<p>" + x + "</p>";
+    return '<div class="bl"><p class="lj">' + x[0] + '</p><p class="lv">' + x[1] + "</p></div>";
+  }
+  function li(x) {
+    if (typeof x === "string") return "<li>" + x + "</li>";
+    return '<li><span class="lj">' + x[0] + '</span><span class="lv">' + x[1] + "</span></li>";
+  }
+  function blocks(arr) {
+    return arr.map(function (b) {
+      if (b[0] === "p") return para([b[1], b[2]]);
+      if (b[0] === "f") return '<div class="formula">' + b[1] + "</div>";
+      if (b[0] === "line") return '<p class="formula-line">' + b[1] + "</p>";
+      if (b[0] === "ul") return "<ul>" + b[1].map(li).join("") + "</ul>";
+      if (b[0] === "html") return b[1];
+      if (b[0] === "cmp") return '<div class="compare">' + b[1].map(function (c) {
+        return '<div><h4>' + c.hj + '<span class="lv">' + c.hv + "</span></h4>" + para([c.ja, c.vi]) + "</div>";
+      }).join("") + "</div>";
+      return "";
+    }).join("");
+  }
+
+  /* ================= DATA ================= */
+  var SUBJECTS = [
+    { id: "nihongo", ja: "日本語", vi: "Tiếng Nhật" },
+    { id: "sugaku", ja: "数学", vi: "Toán" },
+    { id: "rika", ja: "理科", vi: "Hóa học · Sinh học" },
+    { id: "shakai", ja: "社会", vi: "Xã hội (総合科目)" },
+    { id: "tango", ja: "単語", vi: "Từ mới" }
+  ];
+  var SUBJ = {};
+  SUBJECTS.forEach(function (s) { SUBJ[s.id] = s; });
+  var SERIES_VI = {
+    "日本語 EJU対策編": "Luyện thi EJU", "数学 通常学習編": "Học theo chương trình", "数学 EJU対策編": "Luyện thi EJU",
+    "化学 通常学習編": "Học theo chương trình", "生物 通常学習編": "Học theo chương trình", "化学 EJU対策編": "Luyện thi EJU",
+    "生物 EJU対策編": "Luyện thi EJU", "総合科目 通常学習編": "Học theo chương trình", "単語": "Từ mới"
+  };
+  function chs(list) { return list.map(function (t) { return { t: t }; }); }
+
+  var COURSES = [
+    { id: "n-dokkai", s: "nihongo", series: "日本語 EJU対策編", name: "読解", vi: "Đọc hiểu", ch: chs([["第1章 指示語と接続語", "Chương 1: Từ chỉ thị và từ nối"], ["第2章 筆者の主張をつかむ", "Chương 2: Nắm ý kiến của tác giả"], ["第3章 図表・資料の読み取り", "Chương 3: Đọc biểu đồ và tài liệu"]]) },
+    { id: "n-choudokkai", s: "nihongo", series: "日本語 EJU対策編", name: "聴読解", vi: "Nghe – đọc hiểu", ch: chs([["第1章 図表を見ながら聞く", "Chương 1: Vừa xem biểu đồ vừa nghe"], ["第2章 説明の要点をつかむ", "Chương 2: Nắm ý chính của phần giải thích"]]) },
+    { id: "n-choukai", s: "nihongo", series: "日本語 EJU対策編", name: "聴解", vi: "Nghe hiểu", ch: chs([["第1章 講義を聞く", "Chương 1: Nghe bài giảng"], ["第2章 会話を聞く", "Chương 2: Nghe hội thoại"]]) },
+    { id: "n-kijutsu", s: "nihongo", series: "日本語 EJU対策編", name: "記述", vi: "Viết luận", ch: chs([["第1章 記述問題の形式", "Chương 1: Dạng đề viết luận"], ["第2章 意見文の組み立て方", "Chương 2: Cách dựng bài nêu ý kiến"], ["第3章 よく使う表現", "Chương 3: Mẫu câu hay dùng"]]) },
+
+    { id: "m-1", s: "sugaku", series: "数学 通常学習編", name: "数学Ⅰ", vi: "Toán I", ch: [
+      { t: ["第1章 数と式", "Chương 1: Số và biểu thức"], v: ["m1a", "m1b"] },
+      { t: ["第2章 二次関数", "Chương 2: Hàm số bậc hai"], v: ["m2a", "m2b", "m2c", "m2d", "m2e"] },
+      { t: ["第3章 図形と計量", "Chương 3: Hình học và lượng giác"], p: [["「サイン・コサイン・タンジェント」とは？", "sin, cos, tan là gì?"], ["「正弦定理」の使い方", "Cách dùng định lý sin"], ["「余弦定理」の使い方", "Cách dùng định lý cos"]] },
+      { t: ["第4章 データの分析", "Chương 4: Phân tích dữ liệu"], p: [["平均値・中央値・最頻値", "Trung bình, trung vị, mốt"], ["「分散」と「標準偏差」", "Phương sai và độ lệch chuẩn"]] }
+    ] },
+    { id: "m-a", s: "sugaku", series: "数学 通常学習編", name: "数学A", vi: "Toán A", ch: chs([["第1章 場合の数と確率", "Chương 1: Tổ hợp và xác suất"], ["第2章 図形の性質", "Chương 2: Tính chất hình học"], ["第3章 整数の性質", "Chương 3: Tính chất số nguyên"]]) },
+    { id: "m-2", s: "sugaku", series: "数学 通常学習編", name: "数学Ⅱ", vi: "Toán II", ch: chs([["第1章 式と証明", "Chương 1: Biểu thức và chứng minh"], ["第2章 図形と方程式", "Chương 2: Hình học giải tích"], ["第3章 三角関数", "Chương 3: Hàm lượng giác"], ["第4章 指数関数・対数関数", "Chương 4: Hàm mũ và logarit"], ["第5章 微分法と積分法", "Chương 5: Đạo hàm và tích phân"]]) },
+    { id: "m-b", s: "sugaku", series: "数学 通常学習編", name: "数学B", vi: "Toán B", ch: chs([["第1章 数列", "Chương 1: Dãy số"], ["第2章 統計的な推測", "Chương 2: Suy luận thống kê"]]) },
+    { id: "m-3", s: "sugaku", series: "数学 通常学習編", name: "数学Ⅲ", vi: "Toán III", ch: chs([["第1章 極限", "Chương 1: Giới hạn"], ["第2章 微分法", "Chương 2: Đạo hàm"], ["第3章 積分法", "Chương 3: Tích phân"]]) },
+    { id: "m-c", s: "sugaku", series: "数学 通常学習編", name: "数学C", vi: "Toán C", ch: chs([["第1章 ベクトル", "Chương 1: Vectơ"], ["第2章 平面上の曲線と複素数平面", "Chương 2: Đường cong phẳng và mặt phẳng phức"]]) },
+    { id: "m-k1", s: "sugaku", series: "数学 EJU対策編", name: "コース1", vi: "Course 1", ch: chs([["第1章 出題傾向と時間配分", "Chương 1: Xu hướng đề và phân bổ thời gian"], ["第2章 模擬試験と解説", "Chương 2: Đề thi thử và lời giải"]]) },
+    { id: "m-k2", s: "sugaku", series: "数学 EJU対策編", name: "コース2", vi: "Course 2", ch: chs([["第1章 出題傾向と時間配分", "Chương 1: Xu hướng đề và phân bổ thời gian"], ["第2章 模擬試験と解説", "Chương 2: Đề thi thử và lời giải"]]) },
+
+    { id: "r-c1", s: "rika", series: "化学 通常学習編", name: "理論化学", vi: "Hóa học đại cương", ch: [
+      { t: ["第1章 物質の構成", "Chương 1: Cấu tạo chất"], v: ["c1a", "c1b"] },
+      { t: ["第2章 物質量", "Chương 2: Lượng chất (mol)"], v: ["c2a", "c2b", "c2c", "c2d"] },
+      { t: ["第3章 化学反応式", "Chương 3: Phương trình hóa học"], p: [["「化学反応式」の係数のつけ方", "Cách cân bằng phương trình"], ["反応式と量的関係", "Tính toán theo phương trình"]] },
+      { t: ["第4章 酸と塩基", "Chương 4: Axit và bazơ"], p: [["酸・塩基の定義", "Định nghĩa axit, bazơ"], ["「中和反応」とは？", "Phản ứng trung hòa là gì?"], ["「pH」とは？", "pH là gì?"]] }
+    ] },
+    { id: "r-c2", s: "rika", series: "化学 通常学習編", name: "無機化学", vi: "Hóa vô cơ", ch: chs([["第1章 非金属元素", "Chương 1: Nguyên tố phi kim"], ["第2章 金属元素", "Chương 2: Nguyên tố kim loại"]]) },
+    { id: "r-c3", s: "rika", series: "化学 通常学習編", name: "有機化学", vi: "Hóa hữu cơ", ch: chs([["第1章 有機化合物の特徴", "Chương 1: Đặc điểm hợp chất hữu cơ"], ["第2章 脂肪族化合物", "Chương 2: Hợp chất mạch hở"], ["第3章 芳香族化合物", "Chương 3: Hợp chất thơm"]]) },
+    { id: "r-b1", s: "rika", series: "生物 通常学習編", name: "生物基礎", vi: "Sinh học cơ bản", ch: [
+      { t: ["第1章 細胞", "Chương 1: Tế bào"], v: ["b1a", "b1b", "b1c"] },
+      { t: ["第2章 代謝", "Chương 2: Trao đổi chất"], v: ["b2a", "b2b"] },
+      { t: ["第3章 遺伝子とそのはたらき", "Chương 3: Gen và chức năng của gen"], p: [["「DNA」の構造", "Cấu trúc DNA"], ["転写と翻訳", "Phiên mã và dịch mã"]] },
+      { t: ["第4章 体内環境", "Chương 4: Môi trường trong cơ thể"], p: [["血液のはたらき", "Chức năng của máu"], ["「ホルモン」とは？", "Hormone là gì?"]] }
+    ] },
+    { id: "r-b2", s: "rika", series: "生物 通常学習編", name: "生物", vi: "Sinh học", ch: chs([["第1章 生命現象と物質", "Chương 1: Hiện tượng sống và vật chất"], ["第2章 生殖と発生", "Chương 2: Sinh sản và phát triển"], ["第3章 生物の進化と系統", "Chương 3: Tiến hóa và phân loại"]]) },
+    { id: "r-kc", s: "rika", series: "化学 EJU対策編", name: "化学", vi: "Hóa học", ch: chs([["第1章 出題傾向と時間配分", "Chương 1: Xu hướng đề và phân bổ thời gian"], ["第2章 模擬試験と解説", "Chương 2: Đề thi thử và lời giải"]]) },
+    { id: "r-kb", s: "rika", series: "生物 EJU対策編", name: "生物", vi: "Sinh học", ch: chs([["第1章 出題傾向と時間配分", "Chương 1: Xu hướng đề và phân bổ thời gian"], ["第2章 模擬試験と解説", "Chương 2: Đề thi thử và lời giải"]]) },
+
+    { id: "s-pol", s: "shakai", series: "総合科目 通常学習編", name: "政治・経済・社会", vi: "Chính trị · Kinh tế · Xã hội", ch: chs([["第1章 日本国憲法と政治のしくみ", "Chương 1: Hiến pháp Nhật Bản và bộ máy chính trị"], ["第2章 市場経済のしくみ", "Chương 2: Cơ chế kinh tế thị trường"], ["第3章 国際経済と国際社会", "Chương 3: Kinh tế và xã hội quốc tế"]]) },
+    { id: "s-geo", s: "shakai", series: "総合科目 通常学習編", name: "地理", vi: "Địa lý", ch: chs([["第1章 地図と時差", "Chương 1: Bản đồ và múi giờ"], ["第2章 世界の気候と産業", "Chương 2: Khí hậu và sản xuất trên thế giới"]]) },
+    { id: "s-his", s: "shakai", series: "総合科目 通常学習編", name: "歴史", vi: "Lịch sử", ch: chs([["第1章 近代の世界", "Chương 1: Thế giới cận đại"], ["第2章 第二次世界大戦後の世界", "Chương 2: Thế giới sau Thế chiến II"]]) },
+
+    { id: "t-m", s: "tango", series: "単語", name: "数学の用語", vi: "Thuật ngữ Toán", ch: [
+      { t: ["第1章 数と式・二次関数", "Chương 1: Số, biểu thức và hàm bậc hai"], v: ["tm1", "tm2"] },
+      { t: ["第2章 図形と計量", "Chương 2: Hình học và lượng giác"], p: [["「三角比」の用語", "Từ vựng: lượng giác"]] }
+    ] },
+    { id: "t-c", s: "tango", series: "単語", name: "化学の用語", vi: "Thuật ngữ Hóa", ch: [
+      { t: ["第1章 物質の構成と物質量", "Chương 1: Cấu tạo chất và mol"], v: ["tc1", "tc2"] },
+      { t: ["第2章 酸と塩基", "Chương 2: Axit và bazơ"], p: [["「酸・塩基」の用語", "Từ vựng: axit, bazơ"]] }
+    ] },
+    { id: "t-b", s: "tango", series: "単語", name: "生物の用語", vi: "Thuật ngữ Sinh", ch: [
+      { t: ["第1章 細胞と代謝", "Chương 1: Tế bào và trao đổi chất"], v: ["tb1", "tb2"] },
+      { t: ["第2章 遺伝子", "Chương 2: Gen"], p: [["「遺伝子」の用語", "Từ vựng: gen"]] }
+    ] },
+    { id: "t-n", s: "tango", series: "単語", name: "日本語 頻出語", vi: "Từ tiếng Nhật hay gặp", ch: chs([["第1章 読解でよく出る言葉", "Chương 1: Từ hay gặp trong đọc hiểu"], ["第2章 記述で使える言葉", "Chương 2: Từ dùng khi viết luận"]]) }
+  ];
+
+  var ORGANELLE_ROWS = [
+    ["核", "Nhân", "DNA をもち、細胞の活動を調節する", "Chứa DNA, điều khiển hoạt động tế bào", "○", "○"],
+    ["ミトコンドリア", "Ty thể", "呼吸を行い、ATP をつくる", "Hô hấp tế bào, tạo ATP", "○", "○"],
+    ["葉緑体", "Lục lạp", "光合成を行う", "Quang hợp", "×", "○"],
+    ["細胞壁", "Thành tế bào", "細胞の形を保ち、保護する", "Giữ hình dạng, bảo vệ tế bào", "×", "○"],
+    ["液胞", "Không bào", "水や物質をたくわえる", "Chứa nước và các chất hòa tan", "△", "○"],
+    ["リボソーム", "Ribosome", "タンパク質を合成する", "Tổng hợp protein", "○", "○"],
+    ["細胞膜", "Màng tế bào", "物質の出入りを調節する", "Kiểm soát chất ra vào tế bào", "○", "○"]
+  ];
+  var ORGANELLES = '<div class="table-scroll"><table class="org"><thead><tr><th>' + bi("細胞小器官", "Bào quan") + "</th><th>" + bi("はたらき", "Chức năng") + "</th><th>" + bi("動物", "Động vật") + "</th><th>" + bi("植物", "Thực vật") + "</th></tr></thead><tbody>" +
+    ORGANELLE_ROWS.map(function (r) {
+      return '<tr><td><span class="term">' + r[0] + '</span><span class="lv">' + r[1] + '</span></td><td><span class="lj">' + r[2] + '</span><span class="lv">' + r[3] + '</span></td><td class="mark' + (r[4] === "×" ? " no" : "") + '">' + r[4] + '</td><td class="mark">' + r[5] + "</td></tr>";
+    }).join("") + "</tbody></table></div>" +
+    '<p class="caption">' + bi("○ あり · × なし · △ 小さく、あまり発達しない", "○ có · × không có · △ có nhưng nhỏ, ít phát triển") + "</p>";
+
+  var V = {
+    /* ----- 数学Ⅰ ----- */
+    m1a: { t: "「展開」の公式", vi: "Công thức khai triển", dur: "06:12", board: ["(a+b)² = a²+2ab+b²"],
+      point: [
+        ["p", R`<b class="term">展開</b>とは、かっこをはずして、式を項の和の形に表すことである。よく使う公式は次の3つ。`, R`Khai triển (<b class="term">展開</b>) là bỏ dấu ngoặc để viết biểu thức thành tổng các hạng tử. Ba công thức dùng nhiều nhất:`],
+        ["f", R`\[ (a+b)^2 = a^2 + 2ab + b^2 \]\[ (a-b)^2 = a^2 - 2ab + b^2 \]\[ (a+b)(a-b) = a^2 - b^2 \]`]
+      ],
+      rei: { q: R`\((x+3)^2\) を展開せよ。`, tr: "Khai triển (x + 3)².", a: R`\((x+3)^2 = x^2 + 2 \cdot 3 \cdot x + 3^2 = x^2 + 6x + 9\)` },
+      pr: [{ k: "fill", q: R`\((2x-1)^2 =\) <i class="box">A</i>\(x^2 -\) <i class="box">B</i>\(x +\) <i class="box">C</i>`, tr: "Điền các hệ số khi khai triển (2x − 1)².",
+        cells: [["A", "4"], ["B", "4"], ["C", "1"]],
+        ex: [R`\((2x)^2 - 2 \cdot 2x \cdot 1 + 1^2 = 4x^2 - 4x + 1\)。よって A = 4, B = 4, C = 1。`, R`\((2x)^2 - 2 \cdot 2x \cdot 1 + 1^2 = 4x^2 - 4x + 1\). Vậy A = 4, B = 4, C = 1.`] }],
+      sum: [R`\((a+b)^2 = a^2 + 2ab + b^2\)`, R`\((a-b)^2 = a^2 - 2ab + b^2\)`, R`\((a+b)(a-b) = a^2 - b^2\)`],
+      terms: [["展開", "てんかい", "khai triển"], ["係数", "けいすう", "hệ số"], ["多項式", "たこうしき", "đa thức"]] },
+
+    m1b: { t: "「因数分解」とは？", vi: "Phân tích thành nhân tử", dur: "07:05", board: ["x²+5x+6", "= (x+2)(x+3)"],
+      point: [
+        ["p", R`<b class="term">因数分解</b>は展開の逆で、多項式を積の形に表すことである。`, R`Phân tích thành nhân tử (<b class="term">因数分解</b>) là việc làm ngược với khai triển: viết đa thức thành một tích.`],
+        ["f", R`\[ x^2 + (a+b)x + ab = (x+a)(x+b) \]`],
+        ["p", R`<b>和</b>が \(x\) の係数に、<b>積</b>が定数項になる2つの数を探す。`, R`Tìm hai số có <b>tổng</b> bằng hệ số của \(x\) và <b>tích</b> bằng hằng số.`]
+      ],
+      rei: { q: R`\(x^2 + 5x + 6\) を因数分解せよ。`, tr: "Phân tích x² + 5x + 6 thành nhân tử.",
+        a: [R`和が5、積が6になる2数は2と3。\(x^2 + 5x + 6 = (x+2)(x+3)\)`, R`Tổng 5, tích 6 → hai số 2 và 3. \(x^2 + 5x + 6 = (x+2)(x+3)\)`] },
+      pr: [{ k: "fill", q: R`\(x^2 - x - 12 = (x +\) <i class="box">A</i>\()(x -\) <i class="box">B</i>\()\)`, tr: "Phân tích x² − x − 12 thành nhân tử.",
+        cells: [["A", "3"], ["B", "4"]],
+        ex: [R`和が −1、積が −12 になる2数は 3 と −4。\(x^2 - x - 12 = (x+3)(x-4)\)。よって A = 3, B = 4。`, R`Tổng −1, tích −12 → hai số 3 và −4. \(x^2 - x - 12 = (x+3)(x-4)\). Vậy A = 3, B = 4.`] }],
+      sum: [["因数分解は展開の逆の操作。", "Phân tích thành nhân tử là làm ngược với khai triển."],
+        [R`\(x^2 + (a+b)x + ab = (x+a)(x+b)\)：和と積から2数を探す。`, R`\(x^2 + (a+b)x + ab = (x+a)(x+b)\): tìm hai số theo tổng và tích.`],
+        ["答えを展開して確かめる。", "Khai triển lại kết quả để tự kiểm tra."]],
+      terms: [["因数分解", "いんすうぶんかい", "phân tích thành nhân tử"], ["因数", "いんすう", "nhân tử"], ["定数項", "ていすうこう", "hạng tử tự do"]] },
+
+    m2a: { t: "「二次関数」とは？", vi: "Hàm số bậc hai là gì?", dur: "05:48", board: ["y = ax² + bx + c"],
+      point: [
+        ["p", R`<b class="term">二次関数</b>は \(y = ax^2 + bx + c\ (a \neq 0)\) の形の関数で、グラフは<b class="term">放物線</b>になる。`, R`Hàm số bậc hai (<b class="term">二次関数</b>) có dạng \(y = ax^2 + bx + c\) với \(a \neq 0\). Đồ thị là một parabol (<b class="term">放物線</b>).`],
+        ["ul", [
+          [R`\(a \gt 0\)：<b class="term">下に凸</b>（したにとつ）。最小値をもつ。`, R`\(a \gt 0\): parabol quay lên (下に凸), có giá trị nhỏ nhất.`],
+          [R`\(a \lt 0\)：<b class="term">上に凸</b>（うえにとつ）。最大値をもつ。`, R`\(a \lt 0\): parabol quay xuống (上に凸), có giá trị lớn nhất.`]
+        ]]
+      ],
+      rei: { q: R`\(y = -2x^2 + 3\) のグラフは上に凸か、下に凸か。`, tr: "Đồ thị y = −2x² + 3 quay xuống hay quay lên?",
+        a: [R`\(a = -2 \lt 0\) なので、グラフは<b>上に凸</b>。`, R`\(a = -2 \lt 0\) nên đồ thị <b>上に凸</b> (quay xuống).`] },
+      pr: [{ k: "mc", q: R`放物線 \(y = 3x^2 - x + 1\) について正しいものはどれか。`, tr: "Nhận định nào đúng về parabol y = 3x² − x + 1?",
+        o: ["上に凸で、最大値をもつ", "下に凸で、最小値をもつ", "上に凸で、最小値をもつ", "下に凸で、最大値をもつ"], a: 2,
+        ex: [R`\(a = 3 \gt 0\) なので下に凸で、最小値をもつ。正解は②。`, R`\(a = 3 \gt 0\) nên parabol 下に凸 và có giá trị nhỏ nhất. Đáp án ②.`] }],
+      sum: [[R`\(y = ax^2 + bx + c\ (a \neq 0)\)、グラフは放物線。`, R`Dạng \(y = ax^2 + bx + c\ (a \neq 0)\), đồ thị là parabol.`],
+        [R`\(a \gt 0\)：下に凸、最小値をもつ。`, R`\(a \gt 0\): quay lên, có giá trị nhỏ nhất.`],
+        [R`\(a \lt 0\)：上に凸、最大値をもつ。`, R`\(a \lt 0\): quay xuống, có giá trị lớn nhất.`]],
+      terms: [["二次関数", "にじかんすう", "hàm số bậc hai"], ["放物線", "ほうぶつせん", "parabol"], ["下に凸", "したにとつ", "quay lên (lõm)"], ["上に凸", "うえにとつ", "quay xuống (lồi)"]] },
+
+    m2b: { t: "「平方完成」のやり方", vi: "Cách hoàn thành bình phương", dur: "08:35", board: ["y = (x − p)² + q"],
+      point: [
+        ["p", R`<b class="term">平方完成</b>とは、\(y = x^2 + bx + c\) を \(y = (x-p)^2 + q\) の形に変形することである。\(x\) の係数の半分を使う。`, R`Hoàn thành bình phương (<b class="term">平方完成</b>) là đưa \(y = x^2 + bx + c\) về dạng \(y = (x-p)^2 + q\). Lấy một nửa hệ số của \(x\):`],
+        ["f", R`\[ x^2 + bx = \left(x + \frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2 \]`],
+        ["p", R`例：\(x^2 - 4x + 1 = (x-2)^2 - 4 + 1 = (x-2)^2 - 3\)`, R`Ví dụ: \(x^2 - 4x + 1 = (x-2)^2 - 4 + 1 = (x-2)^2 - 3\).`]
+      ],
+      rei: { q: R`\(y = x^2 + 6x + 4\) を平方完成せよ。`, tr: "Hoàn thành bình phương y = x² + 6x + 4.", a: R`\(y = (x+3)^2 - 9 + 4 = (x+3)^2 - 5\)` },
+      pr: [{ k: "fill", q: R`\(y = x^2 - 10x + 20 = (x -\) <i class="box">A</i>\()^2 -\) <i class="box">B</i>`, tr: "Hoàn thành bình phương y = x² − 10x + 20.",
+        cells: [["A", "5"], ["B", "5"]],
+        ex: [R`−10 の半分は −5。\((x-5)^2 - 25 + 20 = (x-5)^2 - 5\)。よって A = 5, B = 5。`, R`Một nửa của −10 là −5: \((x-5)^2 - 25 + 20 = (x-5)^2 - 5\). Vậy A = 5, B = 5.`] }],
+      sum: [[R`\(x\) の係数の半分を2乗して引く。`, R`Lấy một nửa hệ số của \(x\), bình phương lên rồi trừ đi.`],
+        R`\(x^2 + bx + c = \left(x + \frac{b}{2}\right)^2 - \frac{b^2}{4} + c\)`],
+      terms: [["平方完成", "へいほうかんせい", "hoàn thành bình phương"], ["係数", "けいすう", "hệ số"]] },
+
+    m2c: { t: "頂点と軸", vi: "Đỉnh và trục đối xứng", dur: "06:24", board: ["頂点 (p, q)", "軸 x = p"],
+      point: [
+        ["p", R`\(y = a(x-p)^2 + q\) のとき、<b class="term">頂点</b>は \((p,\ q)\)、<b class="term">軸</b>は直線 \(x = p\) である。`, R`Khi \(y = a(x-p)^2 + q\), đỉnh (<b class="term">頂点</b>) là \((p,\ q)\) và trục đối xứng (<b class="term">軸</b>) là đường thẳng \(x = p\).`],
+        ["p", R`\(a \neq 1\) のときは、まず \(a\) でくくってから平方完成する。`, R`Nếu \(a \neq 1\), đặt \(a\) ra ngoài trước rồi mới hoàn thành bình phương:`],
+        ["f", R`\[ y = 2x^2 - 8x + 5 = 2(x-2)^2 - 3 \]`]
+      ],
+      rei: { q: R`\(y = 2x^2 - 8x + 5\) の頂点の座標を求めよ。`, tr: "Tìm tọa độ đỉnh của y = 2x² − 8x + 5.",
+        a: [R`\(y = 2(x^2 - 4x) + 5 = 2(x-2)^2 - 8 + 5 = 2(x-2)^2 - 3\)。頂点は \((2,\ -3)\)。`, R`\(y = 2(x^2 - 4x) + 5 = 2(x-2)^2 - 8 + 5 = 2(x-2)^2 - 3\). Đỉnh là \((2,\ -3)\).`] },
+      pr: [{ k: "fill", q: R`放物線 \(y = x^2 - 4x + 1\) の頂点の座標は (&thinsp;<i class="box">A</i>,&ensp;−<i class="box">B</i>&thinsp;) である。`, tr: "Tọa độ đỉnh của parabol y = x² − 4x + 1 là (A, −B).",
+        cells: [["A", "2"], ["B", "3"]],
+        ex: [R`\(y = (x-2)^2 - 3\) より頂点は \((2,\ -3)\)。よって A = 2, B = 3。`, R`\(y = (x-2)^2 - 3\) nên đỉnh là \((2,\ -3)\). Vậy A = 2, B = 3.`] }],
+      sum: [[R`\(y = a(x-p)^2 + q\) の頂点は \((p,\ q)\)、軸は \(x = p\)。`, R`\(y = a(x-p)^2 + q\) có đỉnh \((p,\ q)\), trục \(x = p\).`],
+        [R`\(a \neq 1\) のときは \(a\) でくくってから平方完成する。`, R`Khi \(a \neq 1\), đặt \(a\) ra ngoài trước khi hoàn thành bình phương.`]],
+      terms: [["頂点", "ちょうてん", "đỉnh"], ["軸", "じく", "trục đối xứng"], ["座標", "ざひょう", "tọa độ"]] },
+
+    m2d: { t: "最大値・最小値", vi: "GTLN, GTNN trên một đoạn", dur: "07:57", board: ["0 ≤ x ≤ 5", "最大値・最小値"],
+      point: [
+        ["p", R`\(x\) の範囲（<b class="term">定義域</b>）が決まっているときは、次の2つを確かめる。`, R`Khi \(x\) chỉ lấy giá trị trong một đoạn (miền xác định, <b class="term">定義域</b>), làm theo hai bước:`],
+        ["ul", [["頂点が定義域に含まれるかどうか。", "Xem đỉnh có nằm trong đoạn không."], ["頂点での値と、両端での値を比べる。", "So sánh giá trị tại đỉnh với giá trị tại hai đầu mút."]]]
+      ],
+      rei: { q: R`\(y = (x-1)^2 + 2 \ \ (0 \le x \le 3)\) の最大値と最小値を求めよ。`, tr: "Tìm GTLN và GTNN của hàm số trên đoạn 0 ≤ x ≤ 3.",
+        a: [R`頂点 \(x = 1\) は定義域内なので、最小値は \(2\)。\(y(0) = 3\)、\(y(3) = 6\) より、最大値は \(6\)（\(x = 3\) のとき）。`, R`Đỉnh \(x = 1\) nằm trong đoạn nên GTNN là \(2\). \(y(0) = 3\), \(y(3) = 6\) nên GTLN là \(6\) (tại \(x = 3\)).`] },
+      pr: [{ k: "fill", q: R`関数 \(y = x^2 - 4x + 1 \ \ (0 \le x \le 5)\) の最大値は <i class="box">A</i>、最小値は −<i class="box">B</i> である。`, tr: "Với 0 ≤ x ≤ 5, GTLN là A và GTNN là −B.",
+        cells: [["A", "6"], ["B", "3"]],
+        ex: [R`頂点 \(x = 2\) は定義域内なので、最小値は \(-3\)。両端は \(y(0) = 1\)、\(y(5) = 6\) なので、最大値は \(6\)。よって A = 6, B = 3。`, R`Đỉnh \(x = 2\) nằm trong đoạn nên GTNN là \(-3\). Tại hai đầu mút: \(y(0) = 1\), \(y(5) = 6\), nên GTLN là \(6\). Vậy A = 6, B = 3.`] }],
+      sum: [["頂点が定義域に入るかを確かめる。", "Xem đỉnh có nằm trong 定義域 hay không."], ["頂点と両端の値を比べる。", "So sánh giá trị tại đỉnh và tại hai đầu mút."], ["下に凸なら、最大値は必ず端でとる。", "Parabol quay lên thì GTLN luôn nằm ở một đầu mút."]],
+      terms: [["最大値", "さいだいち", "giá trị lớn nhất"], ["最小値", "さいしょうち", "giá trị nhỏ nhất"], ["定義域", "ていぎいき", "miền xác định"]] },
+
+    m2e: { t: "判別式と重解", vi: "Biệt thức và nghiệm kép", dur: "06:55", board: ["D = b² − 4ac"],
+      point: [
+        ["p", R`2次方程式 \(ax^2 + bx + c = 0\) の<b class="term">判別式</b>は \(D = b^2 - 4ac\) である。`, R`Với phương trình \(ax^2 + bx + c = 0\), biệt thức (<b class="term">判別式</b>) là \(D = b^2 - 4ac\).`],
+        ["ul", [[R`\(D \gt 0\)：異なる2つの実数解`, R`\(D \gt 0\): hai nghiệm thực phân biệt`], [R`\(D = 0\)：<b class="term">重解</b>`, R`\(D = 0\): nghiệm kép`], [R`\(D \lt 0\)：実数解をもたない`, R`\(D \lt 0\): không có nghiệm thực`]]]
+      ],
+      rei: { q: R`2次方程式 \(x^2 + 2x + 5 = 0\) は実数解をもつか。`, tr: "Phương trình x² + 2x + 5 = 0 có nghiệm thực không?",
+        a: [R`\(D = 2^2 - 4 \cdot 1 \cdot 5 = -16 \lt 0\) なので、実数解をもたない。`, R`\(D = 2^2 - 4 \cdot 1 \cdot 5 = -16 \lt 0\) nên không có nghiệm thực.`] },
+      pr: [{ k: "fill", q: R`2次方程式 \(x^2 - 8x + k = 0\) が重解をもつとき、\(k =\) <i class="box">A</i><i class="box">B</i> である。`, tr: "Phương trình có nghiệm kép khi k = AB (số có hai chữ số).",
+        cells: [["A", "1"], ["B", "6"]],
+        ex: [R`重解をもつのは \(D = 0\) のとき。\((-8)^2 - 4k = 0\) より \(k = 16\)。よって A = 1, B = 6。`, R`Nghiệm kép khi \(D = 0\): \((-8)^2 - 4k = 0\), suy ra \(k = 16\). Vậy A = 1, B = 6.`] }],
+      sum: [R`\(D = b^2 - 4ac\)`, [R`\(D \gt 0\)：2つの解 · \(D = 0\)：重解 · \(D \lt 0\)：実数解なし`, R`\(D \gt 0\): 2 nghiệm · \(D = 0\): nghiệm kép · \(D \lt 0\): không có nghiệm thực`]],
+      terms: [["判別式", "はんべつしき", "biệt thức"], ["重解", "じゅうかい", "nghiệm kép"], ["実数解", "じっすうかい", "nghiệm thực"]] },
+
+    /* ----- 理論化学 ----- */
+    c1a: { t: "「原子」の構造", vi: "Cấu tạo nguyên tử", dur: "06:40", board: ["陽子・中性子・電子"],
+      point: [
+        ["p", R`<b class="term">原子</b>は、中心にある<b class="term">原子核</b>と、そのまわりの<b class="term">電子</b>からできている。原子核は<b class="term">陽子</b>と<b class="term">中性子</b>からなる。`, R`Nguyên tử (<b class="term">原子</b>) gồm hạt nhân (<b class="term">原子核</b>) ở giữa và các electron (<b class="term">電子</b>) bên ngoài. Hạt nhân gồm proton (<b class="term">陽子</b>) và neutron (<b class="term">中性子</b>).`],
+        ["ul", [["原子番号 ＝ 陽子の数", "Số hiệu nguyên tử (原子番号) = số proton"], ["質量数 ＝ 陽子の数 ＋ 中性子の数", "Số khối (質量数) = số proton + số neutron"]]],
+        ["p", R`記号 \({}^{12}_{6}\mathrm{C}\)：左上が質量数 12、左下が原子番号 6。`, R`Kí hiệu \({}^{12}_{6}\mathrm{C}\): số khối 12 ở trên, số hiệu nguyên tử 6 ở dưới.`]
+      ],
+      rei: { q: R`\({}^{23}_{11}\mathrm{Na}\) の中性子の数はいくつか。`, tr: "Nguyên tử Na này có bao nhiêu neutron?",
+        a: [R`中性子の数 ＝ 質量数 − 陽子の数 ＝ \(23 - 11 = 12\)`, R`Số neutron = số khối − số proton = \(23 - 11 = 12\).`] },
+      pr: [{ k: "mc", q: R`\({}^{35}_{17}\mathrm{Cl}\) の中性子の数はいくつか。`, tr: "Nguyên tử Cl này có bao nhiêu neutron?", o: ["17", "18", "35", "52"], a: 2,
+        ex: [R`\(35 - 17 = 18\)。正解は②。`, R`\(35 - 17 = 18\). Đáp án ②.`] }],
+      sum: [["原子番号 ＝ 陽子の数（中性の原子では電子の数も同じ）", "原子番号 = số proton (= số electron ở nguyên tử trung hòa)."], ["質量数 ＝ 陽子の数 ＋ 中性子の数", "質量数 = số proton + số neutron."], ["中性子の数 ＝ 質量数 − 原子番号", "Số neutron = 質量数 − 原子番号."]],
+      terms: [["原子核", "げんしかく", "hạt nhân nguyên tử"], ["陽子", "ようし", "proton"], ["中性子", "ちゅうせいし", "neutron"], ["電子", "でんし", "electron"], ["質量数", "しつりょうすう", "số khối"]] },
+
+    c1b: { t: "「同位体」とは？", vi: "Đồng vị là gì?", dur: "05:12", board: ["¹²C と ¹³C"],
+      point: [
+        ["p", R`<b class="term">同位体</b>：陽子の数が同じで、中性子の数が異なる原子どうし。質量数は異なるが、化学的性質はほぼ同じである。`, R`Đồng vị (<b class="term">同位体</b>): các nguyên tử có cùng số proton nhưng khác số neutron, nên khác số khối. Tính chất hóa học của chúng gần như giống nhau.`],
+        ["p", R`<b class="term">同素体</b>と混同しないこと。同素体は、同じ元素からなる性質の異なる<b>単体</b>どうしである（例：\(\ce{O2}\) と \(\ce{O3}\)、黒鉛とダイヤモンド）。`, R`Đừng nhầm với thù hình (<b class="term">同素体</b>): các <b>đơn chất</b> khác nhau tạo từ cùng một nguyên tố, ví dụ \(\ce{O2}\) và \(\ce{O3}\), than chì và kim cương.`]
+      ],
+      rei: { q: R`\({}^{1}\mathrm{H}\) と \({}^{2}\mathrm{H}\) は互いに何というか。`, tr: "Hai nguyên tử này được gọi là gì của nhau?",
+        a: [R`陽子の数（1）が同じで中性子の数が異なるので、<b>同位体</b>。`, R`Cùng số proton (1), khác số neutron → <b>同位体</b>.`] },
+      pr: [{ k: "mc", q: "互いに同位体であるものはどれか。", tr: "Cặp nào là đồng vị của nhau?",
+        o: [R`\(\ce{O2}\) と \(\ce{O3}\)`, R`\({}^{12}\mathrm{C}\) と \({}^{13}\mathrm{C}\)`, "黒鉛とダイヤモンド", R`\(\ce{H2O}\) と \(\ce{H2O2}\)`], a: 2,
+        ex: ["①と③は同素体、④は異なる化合物。同位体は②だけ。正解は②。", "① và ③ là 同素体 (thù hình), ④ là hai hợp chất khác nhau. Chỉ ② là đồng vị. Đáp án ②."] }],
+      sum: [["同位体：同じ元素で、中性子の数が異なる。", "同位体: cùng nguyên tố, khác số neutron."], ["同素体：同じ元素からなる異なる単体（O₂ と O₃）。", "同素体: đơn chất khác nhau của cùng nguyên tố (O₂ và O₃)."], ["試験ではこの2つがよく入れかえて出される。", "Đề hay trộn hai khái niệm này để đánh lừa."]],
+      terms: [["同位体", "どういたい", "đồng vị"], ["同素体", "どうそたい", "thù hình"], ["単体", "たんたい", "đơn chất"], ["化合物", "かごうぶつ", "hợp chất"]] },
+
+    c2a: { t: "「物質量（mol）」とは？", vi: "Lượng chất (mol) là gì?", dur: "07:23", board: ["1 mol = 6.0×10²³ 個"],
+      point: [
+        ["p", R`粒子（原子・分子・イオン）\(6.0 \times 10^{23}\) 個の集団を 1 mol という。この数を<b class="term">アボガドロ定数</b> \(N_A = 6.0 \times 10^{23}\ /\mathrm{mol}\) という。`, R`1 mol là lượng chất chứa \(6.0 \times 10^{23}\) hạt (nguyên tử, phân tử hoặc ion). Con số này là hằng số Avogadro (<b class="term">アボガドロ定数</b>) \(N_A = 6.0 \times 10^{23}\ /\mathrm{mol}\).`],
+        ["f", R`\[ n = \frac{N}{N_A} \]`],
+        ["p", R`\(N\)：粒子の数、\(n\)：<b class="term">物質量</b>（mol）`, R`\(N\): số hạt, \(n\): số mol (<b class="term">物質量</b>).`]
+      ],
+      rei: { q: R`水分子 \(3.0 \times 10^{23}\) 個は何 mol か。`, tr: "3.0×10²³ phân tử nước là bao nhiêu mol?", a: R`\(n = 3.0 \times 10^{23} \div (6.0 \times 10^{23}) = 0.50\) mol` },
+      pr: [{ k: "mc", q: R`\(1.2 \times 10^{24}\) 個の分子は何 mol か。`, tr: "1.2×10²⁴ phân tử là bao nhiêu mol?", o: ["0.20", "0.50", "2.0", "5.0"], a: 3,
+        ex: [R`\(1.2 \times 10^{24} \div (6.0 \times 10^{23}) = 2.0\) mol。正解は③。`, R`\(1.2 \times 10^{24} \div (6.0 \times 10^{23}) = 2.0\) mol. Đáp án ③.`] }],
+      sum: [[R`1 mol ＝ \(6.0 \times 10^{23}\) 個`, R`1 mol = \(6.0 \times 10^{23}\) hạt.`], R`\(n = N \div N_A\)`, ["小数点は「.」で書く（0.50）。", "Đề Nhật dùng dấu chấm thập phân (0.50), không dùng dấu phẩy."]],
+      terms: [["物質量", "ぶっしつりょう", "lượng chất (số mol)"], ["アボガドロ定数", "", "hằng số Avogadro"], ["分子", "ぶんし", "phân tử"]] },
+
+    c2b: { t: "質量と物質量", vi: "Khối lượng và số mol", dur: "06:55", board: ["n = m / M"],
+      point: [
+        ["p", R`1 mol あたりの質量を<b class="term">モル質量</b>といい、分子量に単位 g/mol をつけた値になる。`, R`Khối lượng mol (<b class="term">モル質量</b>) là khối lượng của 1 mol chất, bằng phân tử khối (<b class="term">分子量</b>) kèm đơn vị g/mol.`],
+        ["f", R`\[ n = \frac{m}{M} \]`],
+        ["p", R`\(m\)：質量（g）、\(M\)：モル質量（g/mol）。<b class="term">原子量</b>は問題文に与えられる。`, R`\(m\): khối lượng (g), \(M\): khối lượng mol (g/mol). Nguyên tử khối (<b class="term">原子量</b>) luôn được cho sẵn trong đề.`]
+      ],
+      rei: { q: R`二酸化炭素 \(\ce{CO2}\) 22 g は何 mol か。（C = 12, O = 16）`, tr: "22 g CO₂ là bao nhiêu mol?", a: R`\(M = 12 + 16 \times 2 = 44\) g/mol, \(n = 22 \div 44 = 0.50\) mol` },
+      pr: [{ k: "mc", q: R`水 \(\ce{H2O}\) 9.0 g の物質量は何 mol か。（H = 1.0, O = 16）`, tr: "9.0 g nước là bao nhiêu mol?", o: ["0.25", "0.50", "1.0", "2.0", "9.0", "18"], a: 2,
+        ex: [R`\(M = 2 \times 1.0 + 16 = 18\) g/mol より \(n = 9.0 \div 18 = 0.50\) mol。正解は②。`, R`\(M = 2 \times 1.0 + 16 = 18\) g/mol nên \(n = 9.0 \div 18 = 0.50\) mol. Đáp án ②.`] }],
+      sum: [R`\(n = m \div M\)`, ["モル質量 ＝ 分子量（単位 g/mol）", "Khối lượng mol = phân tử khối, đơn vị g/mol."]],
+      terms: [["モル質量", "モルしつりょう", "khối lượng mol"], ["分子量", "ぶんしりょう", "phân tử khối"], ["原子量", "げんしりょう", "nguyên tử khối"]] },
+
+    c2c: { t: "気体の体積と物質量", vi: "Thể tích khí và số mol", dur: "06:10", board: ["22.4 L/mol", "（標準状態）"],
+      point: [
+        ["p", R`<b class="term">標準状態</b>（0 °C、\(1.013 \times 10^5\) Pa）では、気体 1 mol の体積は種類によらず 22.4 L である。`, R`Ở điều kiện tiêu chuẩn (<b class="term">標準状態</b>: 0 °C, \(1.013 \times 10^5\) Pa), 1 mol khí bất kỳ chiếm 22.4 L.`],
+        ["f", R`\[ n = \frac{V}{22.4} \]`],
+        ["p", R`\(V\)：気体の体積（L）`, R`\(V\): thể tích khí (L).`]
+      ],
+      rei: { q: R`標準状態で 11.2 L の酸素 \(\ce{O2}\) は何 mol か。`, tr: "Ở điều kiện tiêu chuẩn, 11.2 L khí oxi là bao nhiêu mol?", a: R`\(n = 11.2 \div 22.4 = 0.500\) mol` },
+      pr: [{ k: "mc", q: R`標準状態で、二酸化炭素 \(\ce{CO2}\) 4.4 g の体積は何 L か。（C = 12, O = 16）`, tr: "Ở điều kiện tiêu chuẩn, 4.4 g CO₂ có thể tích bao nhiêu lít?",
+        o: ["22.4", "11.2", "4.48", "2.24", "1.12", "0.224"], a: 4,
+        ex: [R`\(M = 44\) g/mol より \(n = 4.4 \div 44 = 0.10\) mol。\(V = 0.10 \times 22.4 = 2.24\) L。正解は④。`, R`\(M = 44\) g/mol nên \(n = 4.4 \div 44 = 0.10\) mol. \(V = 0.10 \times 22.4 = 2.24\) L. Đáp án ④.`] }],
+      sum: [["標準状態：0 °C、1.013×10⁵ Pa", "標準状態: 0 °C, 1.013×10⁵ Pa."], [R`気体 1 mol ＝ 22.4 L、\(n = V \div 22.4\)`, R`1 mol khí = 22.4 L, nên \(n = V \div 22.4\).`]],
+      terms: [["標準状態", "ひょうじゅんじょうたい", "điều kiện tiêu chuẩn"], ["気体", "きたい", "chất khí"], ["体積", "たいせき", "thể tích"]] },
+
+    c2d: { t: "「モル濃度」とは？", vi: "Nồng độ mol", dur: "07:04", board: ["C = n / V"],
+      point: [
+        ["p", R`<b class="term">モル濃度</b>は、溶液 1 L 中に含まれる<b class="term">溶質</b>の物質量（mol）である。`, R`Nồng độ mol (<b class="term">モル濃度</b>) cho biết 1 L dung dịch chứa bao nhiêu mol chất tan (<b class="term">溶質</b>).`],
+        ["f", R`\[ C = \frac{n}{V} \quad\Leftrightarrow\quad n = C \times V \]`],
+        ["p", R`\(V\) の単位は L。mL で与えられたら L に直す（500 mL = 0.500 L）。`, R`\(V\) tính bằng lít. Đề Nhật hay cho mL, nhớ đổi: 500 mL = 0.500 L.`]
+      ],
+      rei: { q: R`水酸化ナトリウム \(\ce{NaOH}\) 0.20 mol を水に溶かして 500 mL にした。モル濃度は何 mol/L か。`, tr: "Hòa tan 0.20 mol NaOH thành 500 mL dung dịch. Nồng độ mol là bao nhiêu?", a: R`\(C = 0.20 \div 0.500 = 0.40\) mol/L` },
+      pr: [{ k: "mc", q: R`0.20 mol/L の塩化ナトリウム \(\ce{NaCl}\) 水溶液 500 mL に含まれる NaCl は何 g か。（Na = 23, Cl = 35.5）`, tr: "500 mL dung dịch NaCl 0.20 mol/L chứa bao nhiêu gam NaCl?",
+        o: ["117", "58.5", "29.3", "11.7", "5.85", "2.93"], a: 5,
+        ex: [R`500 mL = 0.500 L。\(n = 0.20 \times 0.500 = 0.10\) mol、\(M = 23 + 35.5 = 58.5\) g/mol より \(m = 0.10 \times 58.5 = 5.85\) g。正解は⑤。`, R`Đổi 500 mL = 0.500 L. \(n = 0.20 \times 0.500 = 0.10\) mol; \(M = 23 + 35.5 = 58.5\) g/mol nên \(m = 0.10 \times 58.5 = 5.85\) g. Đáp án ⑤.`] }],
+      sum: [[R`\(C = n \div V\)（\(V\) は L）`, R`\(C = n \div V\), \(V\) tính bằng L.`], ["mL は L に直してから計算する。", "Đổi mL sang L trước khi tính."]],
+      terms: [["モル濃度", "モルのうど", "nồng độ mol"], ["溶質", "ようしつ", "chất tan"], ["溶媒", "ようばい", "dung môi"], ["水溶液", "すいようえき", "dung dịch nước"]] },
+
+    /* ----- 生物基礎 ----- */
+    b1a: { t: "「細胞」とは？", vi: "Tế bào là gì?", dur: "05:30", board: ["すべての生物は", "細胞からできている"],
+      point: [
+        ["p", R`すべての生物は<b class="term">細胞</b>からできている。細胞は<b class="term">細胞膜</b>に包まれ、DNA をもつ。`, R`Mọi sinh vật đều được cấu tạo từ tế bào (<b class="term">細胞</b>). Mỗi tế bào được bao bởi màng tế bào (<b class="term">細胞膜</b>) và chứa DNA.`],
+        ["ul", [
+          [R`<b class="term">単細胞生物</b>：からだが1つの細胞からなる（例：ゾウリムシ、大腸菌）`, "Sinh vật đơn bào: cơ thể chỉ có 1 tế bào, ví dụ trùng đế giày, vi khuẩn E. coli."],
+          [R`<b class="term">多細胞生物</b>：からだが多くの細胞からなる（例：ヒト、イネ）`, "Sinh vật đa bào: cơ thể gồm nhiều tế bào, ví dụ người, cây lúa."]
+        ]]
+      ],
+      rei: { q: "ゾウリムシは単細胞生物か、多細胞生物か。", tr: "Trùng đế giày là sinh vật đơn bào hay đa bào?",
+        a: ["ゾウリムシは1つの細胞からなるので<b>単細胞生物</b>。", "Trùng đế giày chỉ có 1 tế bào → <b>単細胞生物</b>."] },
+      pr: [{ k: "mc", q: "単細胞生物はどれか。", tr: "Đâu là sinh vật đơn bào?", o: ["ヒト", "イネ", "大腸菌", "カエル"], a: 3,
+        ex: ["大腸菌は細菌で、1つの細胞からなる。正解は③。", "大腸菌 (E. coli) là vi khuẩn, cơ thể chỉ có 1 tế bào. Đáp án ③."] }],
+      sum: [["すべての生物は細胞からできている。", "Mọi sinh vật đều cấu tạo từ tế bào."], ["単細胞生物：細胞1つ · 多細胞生物：細胞が多数", "Đơn bào: 1 tế bào · Đa bào: nhiều tế bào."]],
+      terms: [["細胞", "さいぼう", "tế bào"], ["細胞膜", "さいぼうまく", "màng tế bào"], ["単細胞生物", "たんさいぼうせいぶつ", "sinh vật đơn bào"], ["多細胞生物", "たさいぼうせいぶつ", "sinh vật đa bào"]] },
+
+    b1b: { t: "原核細胞と真核細胞", vi: "Tế bào nhân sơ và nhân thực", dur: "07:40", board: ["核膜 あり／なし"],
+      point: [
+        ["cmp", [
+          { hj: "原核細胞", hv: "Tế bào nhân sơ", ja: "核膜がなく、DNA は細胞質中にある。ミトコンドリアや葉緑体をもたない。例：大腸菌などの細菌、シアノバクテリア。", vi: "Không có màng nhân, DNA nằm trực tiếp trong tế bào chất. Không có ty thể, lục lạp. Ví dụ: vi khuẩn như E. coli, vi khuẩn lam." },
+          { hj: "真核細胞", hv: "Tế bào nhân thực", ja: "核膜に包まれた核と、さまざまな細胞小器官をもつ。例：動物・植物・菌類の細胞。", vi: "Có nhân được bao bởi màng nhân và có các bào quan. Ví dụ: tế bào động vật, thực vật, nấm." }
+        ]]
+      ],
+      rei: { q: "大腸菌は原核細胞か、真核細胞か。", tr: "Vi khuẩn E. coli là tế bào nhân sơ hay nhân thực?",
+        a: ["細菌には核膜がないので<b>原核細胞</b>。", "Vi khuẩn không có màng nhân → <b>原核細胞</b>."] },
+      pr: [{ k: "mc", q: "原核細胞について述べた文として正しいものはどれか。", tr: "Câu nào đúng về tế bào nhân sơ? ① có màng nhân ② có ty thể ③ không có DNA ④ có ribosome ⑤ có lục lạp",
+        o: ["核膜をもつ", "ミトコンドリアをもつ", "DNA をもたない", "リボソームをもつ", "葉緑体をもつ"], a: 4,
+        ex: ["原核細胞は核膜・ミトコンドリア・葉緑体をもたないが、DNA とリボソームはもつ。正解は④。", "Tế bào nhân sơ không có màng nhân, ty thể hay lục lạp, nhưng vẫn có DNA và ribosome để tổng hợp protein. Đáp án ④."] }],
+      sum: [["原核細胞：核膜・ミトコンドリア・葉緑体がない。", "原核細胞: không có màng nhân, ty thể, lục lạp."], ["どちらの細胞も DNA・リボソーム・細胞膜をもつ。", "Cả hai loại đều có DNA, ribosome và màng tế bào."]],
+      terms: [["原核細胞", "げんかくさいぼう", "tế bào nhân sơ"], ["真核細胞", "しんかくさいぼう", "tế bào nhân thực"], ["核膜", "かくまく", "màng nhân"], ["細菌", "さいきん", "vi khuẩn"]] },
+
+    b1c: { t: "細胞小器官のはたらき", vi: "Chức năng các bào quan", dur: "08:12", board: ["核・ミトコンドリア", "葉緑体"],
+      point: [
+        ["p", R`真核細胞には多くの<b class="term">細胞小器官</b>があり、それぞれはたらきが決まっている。`, R`Tế bào nhân thực có nhiều bào quan (<b class="term">細胞小器官</b>), mỗi loại một chức năng:`],
+        ["html", ORGANELLES]
+      ],
+      rei: { q: "動物細胞と植物細胞の両方にある細胞小器官を一つ答えよ。", tr: "Kể một bào quan có ở cả tế bào động vật và thực vật.",
+        a: ["例：核、ミトコンドリア、リボソーム（いずれも両方にある）", "Ví dụ: 核, ミトコンドリア, リボソーム (đều có ở cả hai)."] },
+      pr: [
+        { k: "mc", q: "植物細胞にはあるが、動物細胞にはない細胞小器官はどれか。", tr: "Bào quan nào có ở tế bào thực vật nhưng không có ở tế bào động vật?",
+          o: ["核", "ミトコンドリア", "葉緑体", "細胞膜", "リボソーム"], a: 3,
+          ex: ["葉緑体は光合成の場で、植物細胞だけにある。ほかの4つは両方にある。正解は③。", "Lục lạp（葉緑体）là nơi quang hợp, chỉ có ở tế bào thực vật. Bốn bào quan còn lại có ở cả hai. Đáp án ③."] },
+        { k: "mc", q: "呼吸を行い、ATP をつくる細胞小器官はどれか。", tr: "Bào quan nào thực hiện hô hấp tế bào và tạo ra ATP?",
+          o: ["核", "ゴルジ体", "葉緑体", "ミトコンドリア", "液胞"], a: 4,
+          ex: ["呼吸はミトコンドリアで行われる。葉緑体は光合成の場である。正解は④。", "Hô hấp tế bào diễn ra ở ty thể（ミトコンドリア）. Lục lạp là nơi quang hợp. Đáp án ④."] }
+      ],
+      sum: [["植物細胞だけ：葉緑体・細胞壁（液胞も発達）", "Chỉ ở thực vật: 葉緑体, 細胞壁 (液胞 phát triển)."], ["呼吸はミトコンドリア、光合成は葉緑体。", "Hô hấp ở ミトコンドリア, quang hợp ở 葉緑体."]],
+      terms: [["細胞小器官", "さいぼうしょうきかん", "bào quan"], ["葉緑体", "ようりょくたい", "lục lạp"], ["細胞壁", "さいぼうへき", "thành tế bào"], ["液胞", "えきほう", "không bào"]] },
+
+    b2a: { t: "「ATP」とは？", vi: "ATP là gì?", dur: "06:05", board: ["ATP → ADP + リン酸", "＋ エネルギー"],
+      point: [
+        ["p", R`<b class="term">ATP</b>（アデノシン三リン酸）は、細胞内の「エネルギーの通貨」である。アデニン・<b class="term">リボース</b>（糖）・3つの<b class="term">リン酸</b>からなる。`, R`ATP (アデノシン三リン酸) là "đồng tiền năng lượng" của tế bào. Phân tử ATP gồm adenine, đường ribose (<b class="term">リボース</b>) và 3 nhóm phosphate (<b class="term">リン酸</b>).`],
+        ["p", "リン酸どうしの結合が切れると、エネルギーが放出される。", "Khi liên kết giữa các nhóm phosphate bị cắt, năng lượng được giải phóng:"],
+        ["line", "ATP → ADP ＋ リン酸 ＋ エネルギー"]
+      ],
+      rei: { q: "ATP に含まれるリン酸の数はいくつか。", tr: "Trong ATP có bao nhiêu nhóm phosphate?", a: ["3つ（三リン酸）", "3 nhóm (三リン酸 = ba phosphate)."] },
+      pr: [{ k: "mc", q: "ATP を構成する糖はどれか。", tr: "Đường cấu tạo nên ATP là loại nào?", o: ["グルコース", "リボース", "デオキシリボース", "スクロース"], a: 2,
+        ex: ["ATP の糖はリボース。デオキシリボースは DNA の糖である。正解は②。", "Đường trong ATP là ribose（リボース）. デオキシリボース là đường của DNA. Đáp án ②."] }],
+      sum: [["ATP ＝ アデニン ＋ リボース ＋ リン酸3つ", "ATP = adenine + ribose + 3 phosphate."], ["ATP → ADP ＋ リン酸 のとき、エネルギーを放出する。", "ATP → ADP + phosphate, giải phóng năng lượng cho tế bào."]],
+      terms: [["代謝", "たいしゃ", "trao đổi chất"], ["アデノシン三リン酸", "アデノシンさんリンさん", "ATP"], ["リン酸", "リンさん", "phosphate"]] },
+
+    b2b: { t: "光合成と呼吸", vi: "Quang hợp và hô hấp", dur: "07:48", board: ["光合成 ⇄ 呼吸"],
+      point: [
+        ["cmp", [
+          { hj: "光合成", hv: "Quang hợp", ja: R`葉緑体で行われる。光エネルギーを使って \(\ce{CO2}\) と \(\ce{H2O}\) から有機物をつくり、\(\ce{O2}\) を放出する。`, vi: R`Diễn ra ở lục lạp. Dùng năng lượng ánh sáng để tạo chất hữu cơ từ \(\ce{CO2}\) và \(\ce{H2O}\), giải phóng \(\ce{O2}\).` },
+          { hj: "呼吸", hv: "Hô hấp", ja: R`おもにミトコンドリアで行われる。\(\ce{O2}\) を使って有機物を分解し、\(\ce{CO2}\)・\(\ce{H2O}\)・ATP をつくる。`, vi: R`Chủ yếu ở ty thể. Phân giải chất hữu cơ nhờ \(\ce{O2}\), tạo \(\ce{CO2}\), \(\ce{H2O}\) và ATP.` }
+        ]],
+        ["p", "植物は光合成と呼吸の両方を行い、動物は呼吸だけを行う。", "Thực vật làm cả hai việc; động vật chỉ hô hấp."]
+      ],
+      rei: { q: "光合成で放出される気体は何か。", tr: "Khí nào được thải ra trong quang hợp?", a: [R`酸素 \(\ce{O2}\)`, R`Khí oxi \(\ce{O2}\)（酸素）.`] },
+      pr: [{ k: "mc", q: "呼吸について正しいものはどれか。", tr: "Câu nào đúng về hô hấp tế bào?", o: ["葉緑体で行われる", "二酸化炭素を吸収する", "有機物を分解して ATP をつくる", "植物は呼吸を行わない"], a: 3,
+        ex: ["呼吸は有機物を分解して ATP をつくる。①はミトコンドリアなので誤り、②は二酸化炭素を放出するので誤り、④は植物も呼吸するので誤り。正解は③。",
+          "Hô hấp phân giải chất hữu cơ để tạo ATP. ① sai (diễn ra ở ty thể), ② sai (hô hấp thải CO₂), ④ sai (thực vật cũng hô hấp). Đáp án ③."] }],
+      sum: [["光合成：葉緑体で有機物をつくり、O₂ を放出する。", "光合成: ở 葉緑体, tạo chất hữu cơ, thải O₂."], ["呼吸：おもにミトコンドリアで有機物を分解し、ATP をつくる。", "呼吸: chủ yếu ở ミトコンドリア, phân giải chất hữu cơ, tạo ATP."], ["植物は両方、動物は呼吸だけ。", "Thực vật làm cả hai, động vật chỉ hô hấp."]],
+      terms: [["光合成", "こうごうせい", "quang hợp"], ["呼吸", "こきゅう", "hô hấp"], ["有機物", "ゆうきぶつ", "chất hữu cơ"], ["酸素", "さんそ", "oxi"]] },
+
+    /* ----- 単語 ----- */
+    tm1: { kind: "vocab", t: "「数と式」の用語", vi: "Từ vựng: số và biểu thức", dur: "03:10", board: ["展開・因数分解"],
+      words: [["展開", "てんかい", "khai triển"], ["因数分解", "いんすうぶんかい", "phân tích thành nhân tử"], ["係数", "けいすう", "hệ số"], ["定数項", "ていすうこう", "hạng tử tự do"],
+        ["次数", "じすう", "bậc"], ["多項式", "たこうしき", "đa thức"], ["単項式", "たんこうしき", "đơn thức"], ["因数", "いんすう", "nhân tử"]] },
+    tm2: { kind: "vocab", t: "「二次関数」の用語", vi: "Từ vựng: hàm số bậc hai", dur: "03:45", board: ["放物線・頂点・軸"],
+      words: [["二次関数", "にじかんすう", "hàm số bậc hai"], ["放物線", "ほうぶつせん", "parabol"], ["頂点", "ちょうてん", "đỉnh"], ["軸", "じく", "trục đối xứng"],
+        ["平方完成", "へいほうかんせい", "hoàn thành bình phương"], ["最大値", "さいだいち", "giá trị lớn nhất"], ["最小値", "さいしょうち", "giá trị nhỏ nhất"],
+        ["判別式", "はんべつしき", "biệt thức"], ["重解", "じゅうかい", "nghiệm kép"], ["定義域", "ていぎいき", "miền xác định"]] },
+    tc1: { kind: "vocab", t: "「原子」の用語", vi: "Từ vựng: nguyên tử", dur: "03:20", board: ["陽子・中性子・電子"],
+      words: [["原子", "げんし", "nguyên tử"], ["原子核", "げんしかく", "hạt nhân nguyên tử"], ["陽子", "ようし", "proton"], ["中性子", "ちゅうせいし", "neutron"],
+        ["電子", "でんし", "electron"], ["原子番号", "げんしばんごう", "số hiệu nguyên tử"], ["質量数", "しつりょうすう", "số khối"], ["同位体", "どういたい", "đồng vị"], ["同素体", "どうそたい", "thù hình"]] },
+    tc2: { kind: "vocab", t: "「物質量」の用語", vi: "Từ vựng: lượng chất", dur: "03:05", board: ["物質量・モル濃度"],
+      words: [["物質量", "ぶっしつりょう", "lượng chất (số mol)"], ["原子量", "げんしりょう", "nguyên tử khối"], ["分子量", "ぶんしりょう", "phân tử khối"], ["モル質量", "モルしつりょう", "khối lượng mol"],
+        ["アボガドロ定数", "", "hằng số Avogadro"], ["標準状態", "ひょうじゅんじょうたい", "điều kiện tiêu chuẩn"], ["モル濃度", "モルのうど", "nồng độ mol"], ["水溶液", "すいようえき", "dung dịch nước"]] },
+    tb1: { kind: "vocab", t: "「細胞」の用語", vi: "Từ vựng: tế bào", dur: "03:30", board: ["細胞・核・葉緑体"],
+      words: [["細胞", "さいぼう", "tế bào"], ["原核細胞", "げんかくさいぼう", "tế bào nhân sơ"], ["真核細胞", "しんかくさいぼう", "tế bào nhân thực"], ["細胞小器官", "さいぼうしょうきかん", "bào quan"],
+        ["核膜", "かくまく", "màng nhân"], ["細菌", "さいきん", "vi khuẩn"], ["細胞膜", "さいぼうまく", "màng tế bào"], ["細胞壁", "さいぼうへき", "thành tế bào"], ["葉緑体", "ようりょくたい", "lục lạp"]] },
+    tb2: { kind: "vocab", t: "「代謝」の用語", vi: "Từ vựng: trao đổi chất", dur: "03:15", board: ["代謝・酵素・光合成"],
+      words: [["代謝", "たいしゃ", "trao đổi chất"], ["同化", "どうか", "đồng hóa"], ["異化", "いか", "dị hóa"], ["酵素", "こうそ", "enzyme"],
+        ["光合成", "こうごうせい", "quang hợp"], ["呼吸", "こきゅう", "hô hấp"], ["有機物", "ゆうきぶつ", "chất hữu cơ"], ["無機物", "むきぶつ", "chất vô cơ"]] }
+  };
+
+  var CMAP = {};
+  COURSES.forEach(function (c) {
+    c.label = c.series + " " + c.name;
+    c.seriesVi = SERIES_VI[c.series] || "";
+    c.labelVi = c.vi + " · " + c.seriesVi;
+    c.vids = [];
+    c.ch.forEach(function (ch, i) {
+      (ch.v || []).forEach(function (id) { V[id].id = id; V[id].c = c.id; V[id].chi = i; c.vids.push(id); });
+    });
+    CMAP[c.id] = c;
+  });
+
+  /* ================= STATE ================= */
+  var KEY = "eju-site-v2", LANG_KEY = "eju-lang";
+  function load() {
+    try { var d = JSON.parse(localStorage.getItem(KEY)); if (d && d.hist) return d; } catch (e) {}
+    return { hist: [], done: {}, marks: {} };
+  }
+  var st = load();
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} }
+
+  var lang = "both";
+  try { var savedLang = localStorage.getItem(LANG_KEY); if (savedLang === "ja" || savedLang === "vi" || savedLang === "both") lang = savedLang; } catch (e) {}
+  function applyLang(l) {
+    lang = l;
+    document.body.classList.toggle("lang-ja", l === "ja");
+    document.body.classList.toggle("lang-vi", l === "vi");
+    document.querySelectorAll(".langsw button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.lang === l ? "true" : "false"); });
+    try { localStorage.setItem(LANG_KEY, l); } catch (e) {}
+  }
+  document.querySelectorAll(".langsw button").forEach(function (b) {
+    b.addEventListener("click", function () { applyLang(b.dataset.lang); });
+  });
+  applyLang(lang);
+
+  /* ================= HELPERS ================= */
+  var app = document.getElementById("app");
+  var CIRCLED = ["", "①", "②", "③", "④", "⑤", "⑥"];
+  var ICON = {
+    trophy: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z" fill="currentColor" fill-opacity=".18"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>',
+    check: '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7.5 12.5l3 3 6-6" fill="none" stroke="var(--band)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    tick: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    star: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2.5 15 8.6 21.7 9.5 16.8 14.2 18 20.9 12 17.7 6 20.9 7.2 14.2 2.3 9.5 9 8.6"/></svg>',
+    play: '<svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="7 4 20 12 7 20" fill="currentColor"/></svg>',
+    playSm: '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><polygon points="7 4 20 12 7 20" fill="currentColor"/></svg>',
+    vol: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7" stroke-linecap="round"/></svg>',
+    full: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>'
+  };
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function ruby(w) { return w[1] ? "<ruby>" + w[0] + "<rt>" + w[1] + "</rt></ruby>" : w[0]; }
+  function durSec(d) { var p = d.split(":"); return (+p[0]) * 60 + (+p[1]); }
+  function fmtDate(t) { var d = new Date(t); return d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate(); }
+  function uniqueViews() {
+    var seen = {}, out = [];
+    for (var i = st.hist.length - 1; i >= 0; i--) {
+      var h = st.hist[i];
+      if (!seen[h.id] && V[h.id]) { seen[h.id] = 1; out.push(h); }
+    }
+    return out;
+  }
+  function viewCount(id) { return st.hist.filter(function (h) { return h.id === id; }).length; }
+  function chapterDone(ch) { return !!(ch.v && ch.v.length && ch.v.every(function (id) { return st.done[id]; })); }
+  function trophies(c) { return c.ch.filter(chapterDone).length; }
+  function doneIn(c) { return c.vids.filter(function (id) { return st.done[id]; }).length; }
+  function stats() {
+    var uniq = uniqueViews();
+    var done = Object.keys(st.done).filter(function (id) { return st.done[id] && V[id]; }).length;
+    var troph = COURSES.reduce(function (a, c) { return a + trophies(c); }, 0);
+    var sec = uniq.reduce(function (a, h) { return a + durSec(V[h.id].dur); }, 0);
+    var xp = uniq.length * 10 + done * 40 + troph * 100;
+    return { uniq: uniq, done: done, troph: troph, sec: sec, lv: 1 + Math.floor(xp / 200), into: xp % 200 };
+  }
+
+  /* MathJax */
+  var mjReady = false;
+  function typeset(el) { if (mjReady && el) { window.MathJax.typesetPromise([el]).catch(function () {}); } }
+  function setHTML(el, html) {
+    if (mjReady && window.MathJax.typesetClear) { try { window.MathJax.typesetClear([el]); } catch (e) {} }
+    el.innerHTML = html;
+    typeset(el);
+  }
+  window.MathJax = {
+    tex: { inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]] },
+    svg: { fontCache: "global" },
+    options: { enableMenu: false },
+    startup: {
+      typeset: false,
+      ready: function () {
+        window.MathJax.startup.defaultReady();
+        window.MathJax.startup.promise.then(function () { mjReady = true; typeset(app); });
+      }
+    }
+  };
+
+  /* ================= PIECES ================= */
+  function thumb(v) {
+    var s = CMAP[v.c].s;
+    return '<div class="thumb" data-subj="' + s + '"><div class="board"><span class="b-tag">' + (v.kind === "vocab" ? "単語" : "要点") + " | " + v.t + '</span><div class="b-lines">' +
+      v.board.map(function (l) { return '<span class="b-line">' + l + "</span>"; }).join("") +
+      '</div><span class="b-mark">' + SUBJ[s].ja + '</span></div><span class="dur">' + v.dur + "</span>" +
+      (st.done[v.id] ? '<span class="donebadge" aria-label="完了 · Hoàn thành">' + ICON.tick + "</span>" : "") + "</div>";
+  }
+  function planThumb(title, s) {
+    return '<div class="thumb plan" data-subj="' + s + '"><div class="board"><span class="b-tag">準備中</span><div class="b-lines"><span class="b-line small">' + title + "</span></div></div></div>";
+  }
+  function clabel(c) { return '<p class="clabel lj">' + c.label + '</p><p class="clabel lv">' + c.labelVi + "</p>"; }
+  function vrow(id, meta) {
+    var v = V[id], c = CMAP[v.c];
+    return '<a class="vrow" href="#v-' + id + '" data-subj="' + c.s + '">' + thumb(v) + '<div class="vrow-body">' + clabel(c) + '<p class="vtitle">' + v.t +
+      '</p><p class="vvi lv">' + v.vi + "</p>" + (meta ? '<p class="vmeta">' + meta + "</p>" : "") + "</div></a>";
+  }
+  function vcard(id) {
+    var v = V[id];
+    return '<a class="vcard" href="#v-' + id + '">' + thumb(v) + '<div><p class="vtitle">' + v.t + '</p><p class="vvi lv">' + v.vi + "</p></div></a>";
+  }
+  function pcard(p, s) {
+    return '<div class="vcard is-plan" aria-disabled="true">' + planThumb(p[0], s) + '<div><p class="vtitle">' + p[0] + '</p><p class="vvi lv">' + p[1] + '</p><p class="vvi">' + bi("準備中", "Sắp có") + "</p></div></div>";
+  }
+  function crow(c) {
+    var tot = c.vids.length, d = doneIn(c);
+    return '<a class="crow" href="#c-' + c.id + '" data-subj="' + c.s + '"><div><p class="crow-series">' + bi(c.series, c.seriesVi) + '</p><p class="crow-name">' + c.name + '</p><p class="vvi lv">' + c.vi + '</p></div><div class="crow-side">' +
+      (tot ? '<span class="crow-prog">' + d + " / " + tot + " " + unit("本", "bài") + '</span><span class="minibar"><span style="width:' + Math.round(d / tot * 100) + '%"></span></span>' : '<span class="tag-plan">' + bi("準備中", "Sắp có") + "</span>") +
+      "</div></a>";
+  }
+  function emptyBox(title, body) {
+    return '<div class="empty"><p class="empty-t">' + bi(title[0], title[1]) + "</p>" + (body ? '<div class="muted">' + para(body) + "</div>" : "") + "</div>";
+  }
+
+  /* ================= HOME ================= */
+  var homeTab = "hist";
+  var HOME_TABS = [["often", "最近よく学習している科目", "Môn học nhiều gần đây"], ["nihongo", "日本語", "Tiếng Nhật"], ["sugaku", "数学", "Toán"], ["rika", "理科", "Hóa · Sinh"], ["shakai", "社会", "Xã hội"], ["tango", "単語", "Từ mới"], ["hist", "視聴履歴", "Lịch sử xem"]];
+
+  function renderHome() {
+    var S = stats();
+    var h = Math.floor(S.sec / 3600), m = Math.floor((S.sec % 3600) / 60);
+    var html =
+      '<section class="band"><div class="in band-in">' +
+        '<div class="me"><div class="avatar-lg" aria-hidden="true">M</div><div><p class="me-name">Minh さん</p>' +
+          '<p class="me-sub">' + bi("2027年6月 EJU 受験予定", "Dự thi EJU tháng 6/2027") + "</p>" +
+          '<p class="me-sub">' + bi("ハノイ · 会員（例）", "Hà Nội · Học viên (ví dụ)") + "</p></div></div>" +
+        '<div class="me-stats"><p class="st-row"><span class="st" title="完了した章 · Chương đã hoàn thành">' + ICON.trophy + "<b>" + S.troph + '</b></span><span class="st" title="完了した授業 · Bài đã hoàn thành">' + ICON.check + "<b>" + S.done + "</b></span></p>" +
+          '<p class="st-time">' + bi("総学習時間", "Tổng thời gian học") + "<b>" + h + "</b>" + unit("時間", "giờ") + "<b>" + m + "</b>" + unit("分", "phút") + "</p></div>" +
+        '<div class="me-level"><p class="lv-num">Lv<b>' + S.lv + '</b></p><div class="lvbar"><span style="width:' + (S.into / 2) + '%"></span></div>' +
+          '<p class="lv-next">' + bi("次のレベルまであと " + (200 - S.into), "Còn " + (200 - S.into) + " điểm để lên cấp") + "</p></div>" +
+      "</div></section>" +
+      '<div class="tabsbar"><div class="in tabs-in" role="tablist" aria-label="Lịch sử học">' +
+        HOME_TABS.map(function (t) { return '<button type="button" role="tab" class="htab" data-k="' + t[0] + '" aria-selected="' + (t[0] === homeTab) + '">' + bs(t[1], t[2]) + "</button>"; }).join("") +
+      '</div></div><div class="in"><div class="home-list" id="homeList"></div></div>';
+    setHTML(app, html);
+    app.querySelectorAll(".htab").forEach(function (b) {
+      b.addEventListener("click", function () {
+        homeTab = b.dataset.k;
+        app.querySelectorAll(".htab").forEach(function (x) { x.setAttribute("aria-selected", x === b ? "true" : "false"); });
+        renderHomeList();
+      });
+    });
+    renderHomeList();
+  }
+
+  function renderHomeList() {
+    var box = document.getElementById("homeList");
+    var html = "";
+    if (homeTab === "hist") {
+      var u = uniqueViews();
+      if (u.length) {
+        html = u.map(function (h) { return vrow(h.id, bi(fmtDate(h.t) + "に視聴", "Xem ngày " + fmtDate(h.t))); }).join("");
+      } else {
+        html = emptyBox(["まだ視聴した授業はありません。", "Bạn chưa xem bài nào."], ["上のメニューから科目を選ぶか、下のおすすめの授業から始めましょう。", "Chọn một môn trên thanh menu, hoặc bắt đầu với các bài gợi ý dưới đây."]) +
+          '<p class="sec-label">' + bi("おすすめの授業", "Bài gợi ý") + "</p>" + ["m2a", "c2a", "b1a", "tm2"].map(function (id) { return vrow(id); }).join("");
+      }
+    } else if (homeTab === "often") {
+      var counts = {};
+      st.hist.forEach(function (x) { if (V[x.id]) { var s = CMAP[V[x.id].c].s; counts[s] = (counts[s] || 0) + 1; } });
+      var used = SUBJECTS.filter(function (s) { return counts[s.id]; }).sort(function (a, b) { return counts[b.id] - counts[a.id]; });
+      if (!used.length) {
+        html = emptyBox(["まだデータがありません。", "Chưa có dữ liệu."], ["授業を見ると、よく学習している科目がここに表示されます。", "Khi bạn xem bài, các môn học nhiều nhất sẽ hiện ở đây."]);
+      } else {
+        html = used.map(function (s) {
+          var seen = {};
+          st.hist.forEach(function (x) { if (V[x.id] && CMAP[V[x.id].c].s === s.id) seen[V[x.id].c] = 1; });
+          return '<div class="sblock" data-subj="' + s.id + '"><p class="sb-head"><span class="sb-name">' + s.ja + '<small class="lv">' + s.vi + '</small></span><span class="sb-count">' + bi(counts[s.id] + " 回視聴", "Đã xem " + counts[s.id] + " lần") + "</span></p>" +
+            COURSES.filter(function (c) { return seen[c.id]; }).map(crow).join("") + "</div>";
+        }).join("");
+      }
+    } else {
+      var s = SUBJ[homeTab];
+      html = '<div class="sblock" data-subj="' + s.id + '"><p class="sb-head"><span class="sb-name">' + s.ja + '<small class="lv">' + s.vi + "</small></span></p>" +
+        COURSES.filter(function (c) { return c.s === s.id; }).map(crow).join("") + "</div>";
+    }
+    setHTML(box, html);
+  }
+
+  /* ================= COURSE ================= */
+  var cState = { id: null, chap: "all", filter: "all" };
+
+  function renderCourse(id) {
+    var c = CMAP[id];
+    if (!c) { renderHome(); return; }
+    if (cState.id !== id) cState = { id: id, chap: "all", filter: "all" };
+    var tot = c.vids.length, d = doneIn(c), tro = trophies(c);
+    var next = c.vids.filter(function (x) { return !st.done[x]; })[0];
+    var len = 2 * Math.PI * 52, pct = tot ? d / tot : 0;
+    var ring = '<div class="ring" aria-label="Đã hoàn thành ' + d + " trên " + tot + ' bài"><svg viewBox="0 0 120 120" aria-hidden="true">' +
+      '<circle cx="60" cy="60" r="52" fill="none" stroke="var(--hover)" stroke-width="12"/>' +
+      (pct > 0 ? '<circle cx="60" cy="60" r="52" fill="none" stroke="var(--subj)" stroke-width="12" stroke-linecap="round" stroke-dasharray="' + (len * pct).toFixed(1) + " " + len.toFixed(1) + '"/>' : "") +
+      '</svg><div class="ring-txt"><b>' + d + "</b><span>/ " + tot + "</span></div></div>";
+    var nextLabel = '<p class="sec-label">' + bi("次の授業", "Bài tiếp theo") + "</p>";
+    var nextHTML = next
+      ? nextLabel + '<a class="next-link" href="#v-' + next + '">' + thumb(V[next]) + '<span><span class="vtitle">' + V[next].t + '</span><br><span class="vvi lv">' + V[next].vi + "</span></span></a>"
+      : tot ? nextLabel + para(["このコースの授業をすべて完了しました。", "Bạn đã hoàn thành tất cả bài trong khóa này."]) : nextLabel + '<div class="muted">' + para(["このコースは準備中です。", "Khóa học đang được soạn."]) + "</div>";
+
+    var chapters = c.ch.map(function (ch, i) { return { ch: ch, i: i }; }).filter(function (x) { return cState.chap === "all" || String(x.i) === cState.chap; });
+    var mainHTML = (tot ? "" : '<div class="notice">' + para(["このコースは準備中です。予定している章は次のとおりです。", "Khóa học này đang được soạn. Dưới đây là các chương dự kiến."]) + "</div>") +
+      chapters.map(function (x) {
+        var ch = x.ch, body;
+        if (ch.v || ch.p) {
+          var vids = (ch.v || []).filter(function (vid) { return cState.filter === "all" || !st.done[vid]; });
+          var plans = cState.filter === "all" ? (ch.p || []) : [];
+          body = vids.length || plans.length
+            ? '<div class="vgrid">' + vids.map(vcard).join("") + plans.map(function (p) { return pcard(p, c.s); }).join("") + "</div>"
+            : '<div class="muted">' + para(["この章の授業はすべて完了しました。", "Đã hoàn thành tất cả bài trong chương này."]) + "</div>";
+        } else {
+          body = '<div class="muted">' + para(["この章は準備中です。", "Chương này đang được soạn."]) + "</div>";
+        }
+        return '<section class="chsec"><h2><span class="lj">' + ch.t[0] + '</span><span class="lv">' + ch.t[1] + "</span></h2>" + body + "</section>";
+      }).join("");
+
+    var html = '<div class="in page" data-subj="' + c.s + '">' +
+      '<p class="crumb"><a href="#home">' + jv("学習状況", "Học tập") + "</a> › " + jv(SUBJ[c.s].ja, SUBJ[c.s].vi) + " › " + jv(c.label, c.labelVi) + "</p>" +
+      '<section class="chead"><div><p class="chead-series">' + bi(c.series, c.seriesVi) + '</p><h1 class="chead-name">' + c.name + '</h1><p class="chead-vi lv">' + c.vi + '</p><p class="troph-line">' + ICON.trophy + "<b>" + tro + "</b> / " + c.ch.length + "</p></div>" +
+        ring + '<div class="chead-next">' + nextHTML + "</div></section>" +
+      '<div class="cbody"><aside class="caside">' +
+        '<label class="sel"><span>' + bi("表示", "Hiển thị") + '</span><select id="cfilter"><option value="all"' + (cState.filter === "all" ? " selected" : "") + '>すべての授業 · Tất cả bài</option><option value="todo"' + (cState.filter === "todo" ? " selected" : "") + ">未完了の授業 · Bài chưa xong</option></select></label>" +
+        '<nav class="chlist" aria-label="Các chương"><button type="button" class="chbtn" data-ch="all" aria-current="' + (cState.chap === "all") + '">' + bs("すべて表示", "Hiện tất cả") + "</button>" +
+        c.ch.map(function (ch, i) {
+          return '<button type="button" class="chbtn" data-ch="' + i + '" aria-current="' + (cState.chap === String(i)) + '">' + ICON.trophy.replace('class="ic"', 'class="ic' + (chapterDone(ch) ? " gold" : "") + '"') + bs(ch.t[0], ch.t[1]) + "</button>";
+        }).join("") +
+        "</nav></aside>" +
+      '<div class="cmain">' + mainHTML + "</div></div></div>";
+    setHTML(app, html);
+    app.querySelectorAll(".chbtn").forEach(function (b) {
+      b.addEventListener("click", function () { cState.chap = b.dataset.ch; renderCourse(id); });
+    });
+    document.getElementById("cfilter").addEventListener("change", function (e) { cState.filter = e.target.value; renderCourse(id); });
+  }
+
+  /* ================= VIDEO ================= */
+  var vState = { id: null, tab: "text" };
+
+  function renderVideo(id) {
+    var v = V[id];
+    if (!v) { renderHome(); return; }
+    var c = CMAP[v.c];
+    var isVocab = v.kind === "vocab";
+    if (vState.id !== id) {
+      vState = { id: id, tab: isVocab ? "list" : "text" };
+      st.hist.push({ id: id, t: Date.now() });
+      if (st.hist.length > 300) st.hist = st.hist.slice(-300);
+      save();
+    }
+    var idx = c.vids.indexOf(id), prev = c.vids[idx - 1], next = c.vids[idx + 1];
+    var chips = isVocab ? [["単語", "Từ vựng", "list", null], ["テスト", "Kiểm tra", "test", null]]
+      : [["ポイント", "Điểm chính", "text", "p-point"], ["例題", "Ví dụ", "text", "p-rei"], ["練習", "Luyện tập", "text", "p-prac"], ["まとめ", "Tóm tắt", "sum", null]];
+    var tabs = isVocab ? [["list", "単語リスト", "Danh sách từ"], ["test", "テスト", "Kiểm tra"], ["near", "前後の授業", "Các bài khác"]]
+      : [["text", "テキスト", "Bài giảng"], ["ans", "解答", "Lời giải"], ["sum", "要点まとめ", "Tóm tắt"], ["near", "前後の授業", "Các bài khác"]];
+    var marked = !!st.marks[id];
+    var n = viewCount(id);
+
+    var html = '<div class="in page" data-subj="' + c.s + '">' +
+      '<p class="crumb"><a href="#home">' + jv("学習状況", "Học tập") + '</a> › <a href="#c-' + c.id + '">' + jv(c.label, c.labelVi) + "</a> › " + jv(c.ch[v.chi].t[0], c.ch[v.chi].t[1]) + "</p>" +
+      '<div class="watch"><div class="wleft">' +
+        '<div class="player"><div class="board"><span class="b-tag">' + (isVocab ? "単語" : "要点") + " | " + v.t + '</span><div class="b-lines">' +
+          v.board.map(function (l) { return '<span class="b-line">' + l + "</span>"; }).join("") + '</div><span class="b-mark">' + SUBJ[c.s].ja + "</span></div>" +
+          '<button type="button" class="play-btn" id="playBtn" aria-label="再生 · Phát video">' + ICON.play + "</button>" +
+          '<div class="pnote" id="pnote" hidden>' + para(["本番のサイトでは、ここで YouTube の授業動画が再生されます。", "Trên trang thật, video bài giảng (YouTube) của bạn sẽ phát ở đây."]) + "</div>" +
+          '<div class="pbar" aria-hidden="true">' + ICON.playSm + ICON.vol + "<span>0:00 / " + v.dur + '</span><span class="ptrack"></span><span>1x</span>' + ICON.full + "</div>" +
+        "</div>" +
+        '<div class="winfo">' + clabel(c) + '<h1 class="wtitle">' + v.t + '</h1><p class="vvi lv">' + v.vi + "</p>" +
+          '<div class="chips">' + chips.map(function (x, i) { return '<button type="button" data-tab="' + x[2] + '"' + (x[3] ? ' data-target="' + x[3] + '"' : "") + ' aria-pressed="' + (i === 0) + '">' + bs(x[0], x[1]) + "</button>"; }).join("") + "</div>" +
+          '<div class="wmeta"><button type="button" class="bm" id="bmBtn" aria-pressed="' + marked + '">' + ICON.star + bi("ブックマーク", "Lưu bài") + "</button>" +
+            '<span class="wstatus" id="wstatus"></span><span class="wcount">' + bi("視聴 " + n + " 回", "Đã xem " + n + " lần") + "</span></div>" +
+          '<div class="prevnext">' + (prev ? '<a href="#v-' + prev + '">← ' + bi("前の授業", "Bài trước") + "</a>" : "<span></span>") + (next ? '<a href="#v-' + next + '">' + bi("次の授業", "Bài sau") + " →</a>" : "") + "</div>" +
+        "</div>" +
+      "</div>" +
+      '<section class="panel" aria-label="Tài liệu bài học"><div class="ptabs" role="tablist">' +
+        tabs.map(function (t) { return '<button type="button" role="tab" data-tab="' + t[0] + '" aria-selected="' + (t[0] === vState.tab) + '">' + bs(t[1], t[2]) + "</button>"; }).join("") +
+      '</div><div class="pbody" id="pbody"></div></section>' +
+      "</div></div>";
+    setHTML(app, html);
+    updateStatus();
+
+    document.getElementById("playBtn").addEventListener("click", function () {
+      var note = document.getElementById("pnote"); note.hidden = !note.hidden;
+    });
+    document.getElementById("bmBtn").addEventListener("click", function (e) {
+      st.marks[id] = !st.marks[id]; save();
+      e.currentTarget.setAttribute("aria-pressed", st.marks[id] ? "true" : "false");
+    });
+    app.querySelectorAll(".ptabs button").forEach(function (b) {
+      b.addEventListener("click", function () { setTab(b.dataset.tab); });
+    });
+    app.querySelectorAll(".chips button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        app.querySelectorAll(".chips button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        if (vState.tab !== b.dataset.tab) setTab(b.dataset.tab);
+        var target = b.dataset.target ? document.getElementById(b.dataset.target) : document.querySelector(".panel");
+        if (target) target.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+      });
+    });
+    renderPanel();
+  }
+
+  function updateStatus() {
+    var el = document.getElementById("wstatus");
+    if (!el) return;
+    var done = !!st.done[vState.id];
+    el.innerHTML = done ? "✓ " + bi("完了", "Hoàn thành") : bi("未完了", "Chưa xong");
+    el.className = "wstatus" + (done ? " ok" : "");
+  }
+
+  function setTab(tab) {
+    vState.tab = tab;
+    app.querySelectorAll(".ptabs button").forEach(function (x) { x.setAttribute("aria-selected", x.dataset.tab === tab ? "true" : "false"); });
+    renderPanel();
+  }
+
+  function trHTML(tr) { return tr ? '<p class="tr lv">' + tr + "</p>" : ""; }
+  function qHTML(pid, q, i) {
+    var no = "問" + (i + 1);
+    var head = '<p class="q-stem"><span class="q-no">' + no + "</span>" + q.q + "</p>" + trHTML(q.tr);
+    var tail = '<p class="q-result" aria-live="polite"></p><div class="kaisetsu" hidden><p class="k-label">' + bi("解説", "Lời giải") + "</p>" + para(q.ex) + "</div>";
+    if (q.k === "fill") {
+      return '<div class="q" data-kind="fill">' + head + '<div class="cells-row">' +
+        q.cells.map(function (cl) { return '<label class="cell"><span>' + cl[0] + '</span><input id="' + pid + "-" + i + "-" + cl[0] + '" type="text" inputmode="numeric" autocomplete="off" maxlength="1" data-answer="' + cl[1] + '" aria-label="Ô ' + cl[0] + '"></label>'; }).join("") +
+        "</div>" + tail + "</div>";
+    }
+    return '<div class="q" data-kind="mc" data-answer="' + q.a + '">' + head + '<div class="opts" role="radiogroup" aria-label="' + no + '">' +
+      q.o.map(function (o, j) { return '<label class="opt"><input type="radio" name="' + pid + "-" + i + '" id="' + pid + "-" + i + "-" + (j + 1) + '" value="' + (j + 1) + '"><span class="oval">' + (j + 1) + '</span><span class="opt-text">' + o + "</span></label>"; }).join("") +
+      "</div>" + tail + "</div>";
+  }
+  function doneNote() { return bi("この授業は完了しています。", "Bài này đã hoàn thành."); }
+  function quizHTML(pid, qs) {
+    return qs.map(function (q, i) { return qHTML(pid, q, i); }).join("") +
+      '<div class="score-bar"><button type="button" class="btn btn-primary" data-grade>' + bi("答え合わせ", "Chấm điểm") + '</button><button type="button" class="btn btn-ghost" data-reset>' + bi("やり直す", "Làm lại") + '</button><p class="score-out" aria-live="polite">' +
+      (st.done[vState.id] ? doneNote() : bi("未採点", "Chưa chấm")) + "</p></div>";
+  }
+  function vocabTable(words) {
+    return '<div class="table-scroll"><table class="vocab"><thead><tr><th>' + bi("用語", "Thuật ngữ") + "</th><th>" + bi("意味", "Nghĩa") + "</th></tr></thead><tbody>" +
+      words.map(function (w) { return "<tr><td>" + ruby(w) + '</td><td class="mean"><span>' + w[2] + "</span></td></tr>"; }).join("") + "</tbody></table></div>";
+  }
+  function vocabQs(words) {
+    var n = words.length, k = Math.min(5, n), qs = [];
+    for (var i = 0; i < k; i++) {
+      var idx = Math.floor(i * n / k), w = words[idx], opts = [w[2]];
+      for (var d = 1; opts.length < 4 && d < n * 2; d++) {
+        var cand = words[(idx + d * 2) % n][2];
+        if (opts.indexOf(cand) === -1) opts.push(cand);
+      }
+      var rot = i % opts.length, o = opts.slice(rot).concat(opts.slice(0, rot));
+      qs.push({ k: "mc", q: "「" + ruby(w) + "」の意味はどれか。", tr: "Từ này nghĩa là gì?", o: o, a: o.indexOf(w[2]) + 1, ex: ruby(w) + ": " + w[2] + "." });
+    }
+    return qs;
+  }
+  function ptitle(ja, vi) { return '<h2 class="ptitle">' + (vi ? bs(ja, vi) : ja) + "</h2>"; }
+
+  function renderPanel() {
+    var v = V[vState.id], c = CMAP[v.c], tab = vState.tab, html = "";
+    var pid = "q-" + v.id;
+    if (tab === "text") {
+      var hasFill = v.pr.some(function (q) { return q.k === "fill"; });
+      var hint = hasFill ? ["各ボックスに数字（または −）を1つずつ入れて、「答え合わせ」を押そう。", "Điền mỗi ô một chữ số (hoặc dấu −), rồi bấm Chấm điểm."]
+        : ["各問で1つ選んで、「答え合わせ」を押そう。", "Chọn một đáp án cho mỗi câu, rồi bấm Chấm điểm."];
+      html = '<section class="psec" id="p-point">' + ptitle("Point") + blocks(v.point) + "</section>" +
+        '<section class="psec" id="p-rei">' + ptitle("例題", "Ví dụ") + '<div class="prob"><p class="q-stem">' + v.rei.q + "</p>" + trHTML(v.rei.tr) + '</div><div class="muted small">' + para(["解答は「解答」タブで確認しよう。", "Lời giải xem ở tab Lời giải (解答)."]) + "</div></section>" +
+        '<section class="psec quiz" id="p-prac">' + ptitle("練習", "Luyện tập") + '<div class="muted small">' + para(hint) + "</div>" + quizHTML(pid, v.pr) + "</section>";
+    } else if (tab === "ans") {
+      html = '<section class="psec">' + ptitle("例題の解答", "Lời giải ví dụ") + '<div class="prob"><p class="q-stem">' + v.rei.q + "</p>" + trHTML(v.rei.tr) + "</div>" + para(v.rei.a) + "</section>" +
+        '<section class="psec">' + ptitle("練習の解答", "Lời giải luyện tập") + v.pr.map(function (q, i) {
+          var key = q.k === "fill" ? q.cells.map(function (cl) { return cl[0] + " = " + cl[1]; }).join(", ") : CIRCLED[q.a] + " " + q.o[q.a - 1];
+          return '<div class="ansitem"><p class="q-stem"><span class="q-no">問' + (i + 1) + "</span>" + q.q + '</p><p class="ans-key">' + bi("答え", "Đáp án") + ": " + key + "</p>" + para(q.ex) + "</div>";
+        }).join("") + "</section>";
+    } else if (tab === "sum") {
+      html = '<section class="psec">' + ptitle("要点まとめ", "Tóm tắt") + "<ul>" + v.sum.map(li).join("") + "</ul></section>" +
+        '<section class="psec">' + ptitle("用語", "Thuật ngữ") + vocabTable(v.terms) + "</section>";
+    } else if (tab === "list") {
+      html = '<section class="psec">' + ptitle("単語リスト", "Danh sách từ") + '<div class="vocab-bar">' + para(["「意味をかくす」で自分をテスト。灰色の部分をタップすると表示されます。", "Bấm Ẩn nghĩa để tự kiểm tra, chạm vào ô xám để xem lại."]) +
+        '<button type="button" class="btn btn-ghost btn-small" id="hideVi" aria-pressed="false">' + bi("意味をかくす", "Ẩn nghĩa") + "</button></div>" + vocabTable(v.words) + "</section>";
+    } else if (tab === "test") {
+      html = '<section class="psec quiz" id="p-test">' + ptitle("テスト", "Kiểm tra") + '<div class="muted small">' + para(["正しい意味を選ぼう。全問正解でこの単語セットは完了です。", "Chọn nghĩa đúng của mỗi từ. Đúng hết là hoàn thành bộ từ này."]) + "</div>" + quizHTML(pid, vocabQs(v.words)) + "</section>";
+    } else {
+      html = '<section class="psec">' + ptitle(c.label, c.labelVi) + c.ch.filter(function (ch) { return ch.v; }).map(function (ch) {
+        return '<p class="near-ch">' + bi(ch.t[0], ch.t[1]) + '</p><ol class="near">' + ch.v.map(function (x) {
+          return '<li><a href="#v-' + x + '"' + (x === v.id ? ' aria-current="true"' : "") + '><span class="near-t"><span>' + V[x].t + '</span><span class="lv">' + V[x].vi + '</span></span><span class="near-d">' + V[x].dur + "</span>" + (st.done[x] ? '<span class="near-ok">' + bi("完了", "Xong") + "</span>" : "") + "</a></li>";
+        }).join("") + "</ol>";
+      }).join("") + "</section>";
+    }
+    var body = document.getElementById("pbody");
+    setHTML(body, html);
+    var quiz = body.querySelector(".quiz");
+    if (quiz) bindQuiz(quiz);
+    var hv = document.getElementById("hideVi");
+    if (hv) {
+      var table = body.querySelector(".vocab");
+      hv.addEventListener("click", function () {
+        var on = !table.classList.contains("hide-vi");
+        table.classList.toggle("hide-vi", on);
+        table.querySelectorAll("tr.peek").forEach(function (tr) { tr.classList.remove("peek"); });
+        hv.setAttribute("aria-pressed", on ? "true" : "false");
+        hv.innerHTML = on ? bi("意味を表示", "Hiện nghĩa") : bi("意味をかくす", "Ẩn nghĩa");
+      });
+      table.addEventListener("click", function (e) {
+        var cell = e.target.closest("td.mean");
+        if (cell && table.classList.contains("hide-vi")) cell.parentElement.classList.toggle("peek");
+      });
+    }
+  }
+
+  function bindQuiz(quiz) {
+    var cells = Array.prototype.slice.call(quiz.querySelectorAll(".cell input"));
+    cells.forEach(function (input, i) {
+      input.addEventListener("input", function () {
+        var val = input.value.replace(/[０-９]/g, function (ch) { return String.fromCharCode(ch.charCodeAt(0) - 0xFEE0); })
+          .replace(/[ー－‐—–]/g, "-").replace(/[^0-9-]/g, "");
+        input.value = val.slice(-1);
+        input.classList.remove("is-ok", "is-bad");
+        if (input.value && cells[i + 1]) cells[i + 1].focus();
+      });
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Backspace" && !input.value && cells[i - 1]) cells[i - 1].focus();
+      });
+    });
+    function clearMarks() {
+      quiz.querySelectorAll(".q").forEach(function (q) {
+        q.classList.remove("is-ok", "is-bad", "is-blank");
+        q.querySelector(".q-result").innerHTML = "";
+        q.querySelector(".kaisetsu").hidden = true;
+        q.querySelectorAll(".opt").forEach(function (o) { o.classList.remove("is-key", "is-wrong"); });
+        q.querySelectorAll(".cell input").forEach(function (x) { x.classList.remove("is-ok", "is-bad"); });
+      });
+    }
+    quiz.querySelector("[data-grade]").addEventListener("click", function () {
+      clearMarks();
+      var qs = quiz.querySelectorAll(".q"), score = 0;
+      qs.forEach(function (q) {
+        var correct = false, blank = false;
+        if (q.dataset.kind === "fill") {
+          correct = true;
+          q.querySelectorAll(".cell input").forEach(function (x) {
+            var ok = x.value === x.dataset.answer;
+            if (!x.value) blank = true;
+            if (!ok) correct = false;
+            x.classList.add(ok ? "is-ok" : "is-bad");
+          });
+        } else {
+          var picked = q.querySelector("input:checked");
+          var key = q.querySelector('input[value="' + q.dataset.answer + '"]');
+          blank = !picked;
+          correct = !!picked && picked.value === q.dataset.answer;
+          if (key) key.closest(".opt").classList.add("is-key");
+          if (picked && !correct) picked.closest(".opt").classList.add("is-wrong");
+        }
+        if (correct) score++;
+        q.classList.add(correct ? "is-ok" : (blank ? "is-blank" : "is-bad"));
+        var circ = CIRCLED[+q.dataset.answer];
+        var ans = q.dataset.kind === "mc" && !correct ? " · " + bi("正解は" + circ, "Đáp án " + circ) : "";
+        q.querySelector(".q-result").innerHTML = (correct ? bi("正解", "Đúng") : (blank ? bi("未解答", "Bỏ trống") : bi("不正解", "Chưa đúng"))) + ans;
+        q.querySelector(".kaisetsu").hidden = false;
+      });
+      var total = qs.length, perfect = score === total;
+      if (perfect && !st.done[vState.id]) { st.done[vState.id] = true; save(); updateStatus(); }
+      quiz.querySelector(".score-out").innerHTML = bi("得点", "Điểm") + " <strong>" + score + " / " + total + "</strong>" + (perfect ? " · " + bi("この授業を完了しました！", "Hoàn thành bài này!") : "");
+    });
+    quiz.querySelector("[data-reset]").addEventListener("click", function () {
+      clearMarks();
+      quiz.querySelectorAll(".cell input").forEach(function (x) { x.value = ""; });
+      quiz.querySelectorAll('input[type="radio"]').forEach(function (r) { r.checked = false; });
+      quiz.querySelector(".score-out").innerHTML = st.done[vState.id] ? doneNote() : bi("未採点", "Chưa chấm");
+    });
+  }
+
+  /* ================= OTHER VIEWS ================= */
+  function pageTitle(ja, vi) { return '<h1 class="page-t">' + bs(ja, vi) + "</h1>"; }
+  function renderBookmarks() {
+    var ids = Object.keys(st.marks).filter(function (id) { return st.marks[id] && V[id]; });
+    setHTML(app, '<div class="in page">' + pageTitle("ブックマーク", "Bài đã lưu") + '<div class="home-list" style="padding-block:0">' +
+      (ids.length ? ids.map(function (id) { return vrow(id); }).join("")
+        : emptyBox(["ブックマークした授業はありません。", "Chưa có bài nào được lưu."], ["動画のページで「☆ ブックマーク」を押すと、ここに保存されます。", "Trong trang video, bấm ☆ Lưu bài để giữ lại bài muốn xem lại."])) +
+      "</div></div>");
+  }
+  function renderRanking() {
+    var counts = {};
+    st.hist.forEach(function (h) { if (V[h.id]) counts[h.id] = (counts[h.id] || 0) + 1; });
+    var top = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; }).slice(0, 10);
+    setHTML(app, '<div class="in page">' + pageTitle("ランキング", "Xếp hạng") + '<div class="home-list" style="padding-block:0">' +
+      '<div class="notice">' + para(["会員どうしのランキングはログイン機能が必要なため、本番のサイトで表示されます。いまは、あなたがよく見た授業を表示しています。", "Bảng xếp hạng giữa các học viên cần tài khoản đăng nhập, sẽ có trên trang thật. Tạm thời đây là các bài bạn xem nhiều nhất."]) + "</div>" +
+      '<p class="sec-label">' + bi("よく見た授業", "Bài xem nhiều nhất") + "</p>" +
+      (top.length ? '<ol class="rank">' + top.map(function (id, i) { return '<li><span class="rank-no">' + (i + 1) + "</span>" + vrow(id, bi(counts[id] + " 回視聴", "Đã xem " + counts[id] + " lần")) + "</li>"; }).join("") + "</ol>"
+        : emptyBox(["まだデータがありません。", "Chưa có dữ liệu."], ["授業をいくつか見ると、ここが自動で更新されます。", "Xem vài bài học, bảng này sẽ tự cập nhật."])) +
+      "</div></div>");
+  }
+  function renderSearch(q) {
+    var ql = q.toLowerCase();
+    var hits = Object.keys(V).filter(function (id) {
+      var v = V[id], c = CMAP[v.c];
+      return (v.t + " " + v.vi + " " + c.label + " " + c.labelVi + " " + v.board.join(" ") + " " + (v.words ? v.words.map(function (w) { return w.join(" "); }).join(" ") : "") + " " + (v.terms ? v.terms.map(function (w) { return w.join(" "); }).join(" ") : "")).toLowerCase().indexOf(ql) > -1;
+    });
+    setHTML(app, '<div class="in page">' + pageTitle("「" + esc(q) + "」の検索結果", "Kết quả cho “" + esc(q) + "”") + '<div class="home-list" style="padding-block:0">' +
+      '<p class="muted small">' + bi(hits.length + " 件", hits.length + " bài") + "</p>" +
+      (hits.length ? hits.map(function (id) { return vrow(id); }).join("")
+        : emptyBox(["見つかりませんでした。", "Không tìm thấy bài nào."], ["別のキーワードで試してみよう（例：平方完成、mol、細胞）。", "Thử từ khóa khác, ví dụ: 平方完成, mol, tế bào."])) +
+      "</div></div>");
+  }
+
+  /* ================= MENU ================= */
+  var head = document.querySelector(".site-head");
+  var menu = document.getElementById("menu");
+  var gnav = document.getElementById("gnav");
+  var menuFor = null, hideTimer = null;
+  var canHover = window.matchMedia && matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  function openMenu(btn) {
+    clearTimeout(hideTimer);
+    var s = btn.dataset.subj;
+    if (menuFor === s && !menu.hidden) return;
+    menuFor = s;
+    menu.setAttribute("data-subj", s);
+    menu.innerHTML = '<p class="menu-head">' + SUBJ[s].ja + '<span class="lv">' + SUBJ[s].vi + "</span></p>" +
+      COURSES.filter(function (c) { return c.s === s; }).map(function (c) {
+        return '<a class="menu-item" href="#c-' + c.id + '">' + bs(c.label, c.labelVi) + (c.vids.length ? "" : '<span class="tag-plan">' + bi("準備中", "Sắp có") + "</span>") + "</a>";
+      }).join("");
+    menu.hidden = false;
+    gnav.querySelectorAll("button[data-subj]").forEach(function (b) { b.setAttribute("aria-expanded", b === btn ? "true" : "false"); });
+    placeMenu(btn);
+  }
+  function placeMenu(btn) {
+    var hr = head.getBoundingClientRect(), br = btn.getBoundingClientRect();
+    menu.style.top = (br.bottom - hr.top + 2) + "px";
+    if (window.innerWidth < 640) {
+      menu.style.left = "12px"; menu.style.right = "12px"; menu.style.width = "auto";
+    } else {
+      var w = 360, left = Math.min(br.left - hr.left, hr.width - w - 12);
+      menu.style.left = Math.max(12, left) + "px"; menu.style.right = "auto"; menu.style.width = w + "px";
+    }
+  }
+  function closeMenu() {
+    menu.hidden = true; menuFor = null;
+    gnav.querySelectorAll("button[data-subj]").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+  }
+  gnav.querySelectorAll("button[data-subj]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      if (menuFor === btn.dataset.subj && !menu.hidden) closeMenu(); else openMenu(btn);
+    });
+    if (canHover) btn.addEventListener("mouseenter", function () { openMenu(btn); });
+  });
+  gnav.addEventListener("scroll", function () {
+    var open = gnav.querySelector('button[aria-expanded="true"]');
+    if (open && !menu.hidden) placeMenu(open);
+  }, { passive: true });
+  if (canHover) {
+    head.addEventListener("mouseleave", function () { hideTimer = setTimeout(closeMenu, 180); });
+    head.addEventListener("mouseenter", function () { clearTimeout(hideTimer); });
+  }
+  document.addEventListener("click", function (e) {
+    if (!menu.hidden && !menu.contains(e.target) && !e.target.closest("#gnav button[data-subj]")) closeMenu();
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
+  menu.addEventListener("click", function (e) { if (e.target.closest("a")) closeMenu(); });
+  window.addEventListener("resize", closeMenu);
+
+  /* ================= ROUTER ================= */
+  var searchBox = document.getElementById("q");
+  function markNav(key) {
+    gnav.querySelectorAll("[data-nav]").forEach(function (a) { a.classList.toggle("is-on", a.dataset.nav === key); });
+  }
+  function route() {
+    closeMenu();
+    var h = (location.hash || "").slice(1);
+    if (searchBox.value && h) searchBox.value = "";
+    if (h.indexOf("c-") === 0 && CMAP[h.slice(2)]) { renderCourse(h.slice(2)); markNav(CMAP[h.slice(2)].s); }
+    else if (h.indexOf("v-") === 0 && V[h.slice(2)]) { renderVideo(h.slice(2)); markNav(CMAP[V[h.slice(2)].c].s); }
+    else if (h === "bookmark") { renderBookmarks(); markNav("bookmark"); }
+    else if (h === "ranking") { renderRanking(); markNav("ranking"); }
+    else { renderHome(); markNav("home"); }
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", route);
+  document.getElementById("avatar").addEventListener("click", function () {
+    homeTab = "hist";
+    if (location.hash === "#home") route(); else location.hash = "home";
+  });
+  var sTimer;
+  searchBox.addEventListener("input", function () {
+    clearTimeout(sTimer);
+    sTimer = setTimeout(function () {
+      var q = searchBox.value.trim();
+      if (q) { renderSearch(q); markNav(""); } else route();
+    }, 180);
+  });
+  route();
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js" defer></script>
