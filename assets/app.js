@@ -583,7 +583,7 @@
 
     var html = '<div class="in page" data-subj="' + c.s + '">' +
       '<p class="crumb"><a href="#home">' + jv("学習状況", "Học tập") + '</a> › <a href="#c-' + c.id + '">' + jv(c.label, c.labelVi, c.labelEn) + "</a> › " + jv(c.ch[chi].t[0], c.ch[chi].t[1], c.ch[chi].t[2]) + "</p>" +
-      '<div class="watch"><div class="wleft"><div class="wstick">' +
+      '<div class="watch" id="watch" style="--vcol:' + videoWidth() + '%"><div class="wleft"><div class="wstick">' +
         '<div class="player" id="player"><div class="board"><span class="b-tag">' + (isVocab ? "単語" : "要点") + " | " + v.t + '</span><div class="b-lines">' +
           v.board.map(function (l) { return '<span class="b-line">' + l + "</span>"; }).join("") + '</div><span class="b-mark">' + SUBJ[c.s].ja + "</span></div>" +
           '<button type="button" class="play-btn" id="playBtn" aria-label="再生 · Phát video">' + ICON.play + "</button>" +
@@ -599,6 +599,8 @@
           '<div class="prevnext">' + (prev ? '<a href="#v-' + prev + '">← ' + bi("前の授業", "Bài trước") + "</a>" : "<span></span>") + (next ? '<a href="#v-' + next + '">' + bi("次の授業", "Bài sau") + " →</a>" : "") + "</div>" +
         "</div>" +
       "</div>" +
+      '<div class="wsplit" id="wsplit" role="separator" aria-orientation="vertical" tabindex="0" aria-label="動画の大きさ · Cỡ video · Video size"' +
+        ' title="' + esc(langText("ドラッグで動画の大きさを変更（ダブルクリックで元に戻す）", "Kéo để chỉnh cỡ video (bấm đúp để về mặc định)", "Drag to resize the video (double-click to reset)")) + '"><span aria-hidden="true">⋮</span></div>' +
       '<section class="panel" aria-label="Tài liệu bài học"><div class="ptabs" role="tablist">' +
         tabs.map(function (t) { return '<button type="button" role="tab" data-tab="' + t[0] + '" aria-selected="' + (t[0] === vState.tab) + '">' + bs(t[1], t[2]) + "</button>"; }).join("") +
       '</div><div class="pbody" id="pbody"></div></section>' +
@@ -660,7 +662,45 @@
         setTimeout(function () { if (document.body.contains(target) && Math.abs(target.getBoundingClientRect().top) > 40) target.scrollIntoView({ block: "start" }); }, 800);
       });
     });
+    bindSplit();
     renderPanel();
+  }
+
+  /* video column width (% of the lesson page), set by dragging the bar between video and text; remembered in this browser */
+  var VCOL_KEY = "eju-video-width", VCOL_DEFAULT = 42, VCOL_MIN = 28, VCOL_MAX = 70;
+  function videoWidth() {
+    var w = VCOL_DEFAULT;
+    try { var s = parseFloat(localStorage.getItem(VCOL_KEY)); if (s >= VCOL_MIN && s <= VCOL_MAX) w = s; } catch (e) {}
+    return w;
+  }
+  function bindSplit() {
+    var bar = document.getElementById("wsplit"), watch = document.getElementById("watch");
+    if (!bar || !watch) return;
+    function set(w) {
+      w = Math.round(Math.min(VCOL_MAX, Math.max(VCOL_MIN, w)) * 10) / 10;
+      watch.style.setProperty("--vcol", w + "%");
+      try { localStorage.setItem(VCOL_KEY, String(w)); } catch (e) {}
+    }
+    function fromX(x) { var r = watch.getBoundingClientRect(); return (x - r.left) / r.width * 100; }
+    bar.addEventListener("pointerdown", function (e) {
+      e.preventDefault();
+      bar.setPointerCapture(e.pointerId);
+      document.body.classList.add("is-resizing");
+      function move(ev) { set(fromX(ev.clientX)); }
+      function up() {
+        document.body.classList.remove("is-resizing");
+        bar.removeEventListener("pointermove", move); bar.removeEventListener("pointerup", up); bar.removeEventListener("pointercancel", up);
+        if (mjReady) fitMath(app);
+      }
+      bar.addEventListener("pointermove", move); bar.addEventListener("pointerup", up); bar.addEventListener("pointercancel", up);
+    });
+    bar.addEventListener("dblclick", function () { set(VCOL_DEFAULT); });
+    bar.addEventListener("keydown", function (e) {
+      var cur = parseFloat(watch.style.getPropertyValue("--vcol")) || VCOL_DEFAULT;
+      if (e.key === "ArrowLeft") { set(cur - 2); e.preventDefault(); }
+      else if (e.key === "ArrowRight") { set(cur + 2); e.preventDefault(); }
+      else if (e.key === "Home" || e.key === "Enter") { set(VCOL_DEFAULT); e.preventDefault(); }
+    });
   }
 
   function updateStatus() {

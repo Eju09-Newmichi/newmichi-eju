@@ -415,8 +415,16 @@ a.vcard:hover { border-color: var(--subj); }
 .notice p { margin: 0; }
 
 /* Watch page */
-/* lesson page: video column ~42%, text column ~58% */
-.watch { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 20px; align-items: start; }
+/* lesson page: video column (default 42%, learners drag the bar to resize), bar, text column */
+.watch { display: grid; grid-template-columns: minmax(0, var(--vcol, 42%)) 14px minmax(0, 1fr); gap: 4px; align-items: start; }
+.wsplit {
+  align-self: stretch; display: flex; justify-content: center; cursor: col-resize; touch-action: none;
+  border-radius: 6px; color: var(--muted); user-select: none;
+}
+.wsplit span { position: sticky; top: 45vh; height: 48px; width: 8px; display: grid; place-items: center; border-radius: 4px; background: var(--line); font-weight: 700; line-height: 1; }
+.wsplit:hover span, .wsplit:focus-visible span, body.is-resizing .wsplit span { background: var(--accent); color: var(--on-graphite); }
+body.is-resizing { cursor: col-resize; user-select: none; }
+body.is-resizing iframe { pointer-events: none; }
 .wleft { display: grid; gap: 14px; min-width: 0; align-self: stretch; align-content: start; }
 /* the video and its buttons; on wide screens they stay in view while the text on the right scrolls */
 .wstick { display: grid; gap: 10px; min-width: 0; }
@@ -696,7 +704,8 @@ ol.rank li { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); align-
 .site-foot p { margin: 0; }
 
 @media (max-width: 900px) {
-  .watch { grid-template-columns: minmax(0, 1fr); }
+  .watch { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .wsplit { display: none; }
   .chead { grid-template-columns: minmax(0, 1fr) auto; }
   .chead-next { grid-column: 1 / -1; }
 }
