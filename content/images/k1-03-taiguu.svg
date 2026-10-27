@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="210" viewBox="0 0 460 210" role="img" aria-labelledby="t d">
+  <title id="t">逆・裏・対偶</title>
+  <desc id="d">Từ mệnh đề p ⇒ q: đảo là q ⇒ p, phản là không p ⇒ không q, phản đảo là không q ⇒ không p. Mệnh đề gốc và phản đảo luôn cùng đúng hoặc cùng sai.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 16px; }
+    .b { font-weight: 700; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .r { fill: #C62828; font-weight: 700; font-size: 14px; }
+  </style>
+  <line x1="170" y1="44" x2="290" y2="44" stroke="#9AA1B2" stroke-width="2"/>
+  <line x1="100" y1="66" x2="100" y2="144" stroke="#9AA1B2" stroke-width="2"/>
+  <line x1="360" y1="66" x2="360" y2="144" stroke="#9AA1B2" stroke-width="2"/>
+  <line x1="170" y1="166" x2="290" y2="166" stroke="#9AA1B2" stroke-width="2"/>
+  <line x1="170" y1="64" x2="290" y2="146" stroke="#C62828" stroke-width="2.5"/>
+
+  <rect x="30" y="22" width="140" height="44" rx="6" fill="#FFFFFF" stroke="#1B1F2A" stroke-width="1.5"/>
+  <text class="b" x="100" y="50" text-anchor="middle">命題　p ⇒ q</text>
+  <rect x="290" y="22" width="140" height="44" rx="6" fill="#FFFFFF" stroke="#1B1F2A" stroke-width="1.2"/>
+  <text x="360" y="50" text-anchor="middle">逆　q ⇒ p</text>
+  <rect x="30" y="144" width="140" height="44" rx="6" fill="#FFFFFF" stroke="#1B1F2A" stroke-width="1.2"/>
+  <text x="100" y="172" text-anchor="middle">裏　<tspan text-decoration="overline">p</tspan> ⇒ <tspan text-decoration="overline">q</tspan></text>
+  <rect x="290" y="144" width="140" height="44" rx="6" fill="#FDECEA" stroke="#C62828" stroke-width="2"/>
+  <text class="b" x="360" y="172" text-anchor="middle" style="fill:#C62828">対偶　<tspan text-decoration="overline">q</tspan> ⇒ <tspan text-decoration="overline">p</tspan></text>
+
+  <text class="s" x="230" y="36" text-anchor="middle">逆 · đảo</text>
+  <text class="s" x="92" y="110" text-anchor="end">裏 · phản</text>
+  <text class="r" x="250" y="96">真偽が一致</text>
+  <text class="s" x="250" y="114">cùng đúng / cùng sai</text>
+</svg>

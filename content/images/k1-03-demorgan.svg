@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="190" viewBox="0 0 460 190" role="img" aria-labelledby="t d">
+  <title id="t">ド・モルガンの法則</title>
+  <desc id="d">Bên trái: phần bù của A ∪ B (phần ngoài cả hai hình tròn) bằng giao các phần bù. Bên phải: phần bù của A ∩ B (mọi chỗ trừ phần chung) bằng hợp các phần bù.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 16px; }
+    .h { font-size: 17px; font-weight: 700; }
+  </style>
+  <defs>
+    <clipPath id="dB2"><circle cx="374" cy="105" r="42"/></clipPath>
+  </defs>
+  <text class="h" x="107" y="24" text-anchor="middle"><tspan text-decoration="overline">A ∪ B</tspan> = <tspan text-decoration="overline">A</tspan> ∩ <tspan text-decoration="overline">B</tspan></text>
+  <rect x="12" y="40" width="190" height="132" fill="#C62828" fill-opacity="0.3" stroke="#1B1F2A" stroke-width="1.2"/>
+  <circle cx="86" cy="105" r="42" fill="#FFFFFF"/><circle cx="128" cy="105" r="42" fill="#FFFFFF"/>
+  <circle cx="86" cy="105" r="42" fill="none" stroke="#1F66C9" stroke-width="2"/>
+  <circle cx="128" cy="105" r="42" fill="none" stroke="#B9531A" stroke-width="2"/>
+  <text x="62" y="110">A</text><text x="146" y="110">B</text>
+
+  <text class="h" x="355" y="24" text-anchor="middle"><tspan text-decoration="overline">A ∩ B</tspan> = <tspan text-decoration="overline">A</tspan> ∪ <tspan text-decoration="overline">B</tspan></text>
+  <rect x="258" y="40" width="190" height="132" fill="#C62828" fill-opacity="0.3" stroke="#1B1F2A" stroke-width="1.2"/>
+  <circle cx="332" cy="105" r="42" fill="#FFFFFF" clip-path="url(#dB2)"/>
+  <circle cx="332" cy="105" r="42" fill="none" stroke="#1F66C9" stroke-width="2"/>
+  <circle cx="374" cy="105" r="42" fill="none" stroke="#B9531A" stroke-width="2"/>
+  <text x="308" y="110">A</text><text x="392" y="110">B</text>
+</svg>

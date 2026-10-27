@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="170" viewBox="0 0 460 170" role="img" aria-labelledby="t d">
+  <title id="t">補集合</title>
+  <desc id="d">Trong tập toàn thể U, phần bù của A là toàn bộ phần nằm ngoài hình tròn A.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 17px; }
+    .s { font-size: 14px; fill: #5A6072; }
+    .r { fill: #C62828; font-weight: 700; }
+  </style>
+  <rect x="60" y="16" width="230" height="140" fill="#C62828" fill-opacity="0.3" stroke="#1B1F2A" stroke-width="1.2"/>
+  <circle cx="175" cy="86" r="48" fill="#FFFFFF" stroke="#1F66C9" stroke-width="2"/>
+  <text x="70" y="38">U</text>
+  <text x="168" y="92">A</text>
+  <text class="r" x="250" y="146"><tspan text-decoration="overline">A</tspan></text>
+  <text x="310" y="70">　<tspan class="r" text-decoration="overline">A</tspan>：A の補集合</text>
+  <text class="s" x="310" y="96">U の中で A に属さないもの</text>
+  <text class="s" x="310" y="118">Phần bù của A</text>
+</svg>

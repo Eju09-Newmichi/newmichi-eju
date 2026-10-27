@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="210" viewBox="0 0 460 210" role="img" aria-labelledby="t d">
+  <title id="t">必要条件と十分条件</title>
+  <desc id="d">Tập P nằm trong tập Q: mệnh đề p ⇒ q đúng. Khi đó p là điều kiện đủ (tập hẹp), q là điều kiện cần (tập rộng).</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 16px; }
+    .b { font-weight: 700; }
+    .s { font-size: 13px; fill: #5A6072; }
+  </style>
+  <circle cx="150" cy="100" r="82" fill="#E3F0FC" stroke="#1F66C9" stroke-width="2"/>
+  <circle cx="128" cy="112" r="38" fill="#FDECEA" stroke="#C62828" stroke-width="2"/>
+  <text class="b" x="128" y="118" text-anchor="middle" style="fill:#C62828">P</text>
+  <text class="b" x="196" y="58" text-anchor="middle" style="fill:#1F66C9">Q</text>
+  <text class="s" x="150" y="200" text-anchor="middle">P ⊂ Q</text>
+
+  <text class="b" x="262" y="56">p ⇒ q が真　⟺　P ⊂ Q</text>
+  <text x="262" y="96"><tspan class="b" style="fill:#C62828">p</tspan>：十分条件（せまい方）</text>
+  <text class="s" x="262" y="116">điều kiện đủ (tập hẹp)</text>
+  <text x="262" y="150"><tspan class="b" style="fill:#1F66C9">q</tspan>：必要条件（広い方）</text>
+  <text class="s" x="262" y="170">điều kiện cần (tập rộng)</text>
+</svg>

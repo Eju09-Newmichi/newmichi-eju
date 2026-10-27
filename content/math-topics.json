@@ -12,7 +12,7 @@
     {
       "no": 2, "tag": "数学Ⅰ", "ja": "集合と命題", "vi": "Tập hợp và mệnh đề", "en": "Sets and propositions",
       "sections": [
-        {"ja":"集合","vi":"Tập hợp","en":"Sets","planned":[{"ja":"集合","vi":"Tập hợp","en":"Sets"}]},
+        {"ja":"集合","vi":"Tập hợp","en":"Sets","lessons":["k1-03"]},
         {"ja":"命題と条件","vi":"Mệnh đề và điều kiện","en":"Propositions and conditions","planned":[{"ja":"命題と条件","vi":"Mệnh đề và điều kiện","en":"Propositions and conditions"}]}
       ]
     },
