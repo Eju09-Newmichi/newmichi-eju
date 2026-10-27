@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="160" viewBox="0 0 460 160" role="img" aria-labelledby="t d">
+  <title id="t">分母の有理化</title>
+  <desc id="d">Nhân cả tử và mẫu với biểu thức liên hợp √a − √b; mẫu trở thành a − b, không còn dấu căn.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 21px; }
+    .op { font-size: 24px; }
+    .r { fill: #C62828; font-weight: 700; }
+    .s { font-size: 15px; fill: #5A6072; }
+  </style>
+  <text x="62" y="54" text-anchor="middle">1</text>
+  <line x1="22" y1="64" x2="102" y2="64" stroke="#1B1F2A" stroke-width="1.5"/>
+  <text x="62" y="92" text-anchor="middle">√a + √b</text>
+  <text class="op" x="122" y="72" text-anchor="middle">×</text>
+  <text class="r" x="192" y="54" text-anchor="middle">√a − √b</text>
+  <line x1="148" y1="64" x2="236" y2="64" stroke="#C62828" stroke-width="1.5"/>
+  <text class="r" x="192" y="92" text-anchor="middle">√a − √b</text>
+  <text class="op" x="258" y="72" text-anchor="middle">=</text>
+  <text x="340" y="54" text-anchor="middle">√a − √b</text>
+  <line x1="290" y1="64" x2="390" y2="64" stroke="#1B1F2A" stroke-width="1.5"/>
+  <text x="340" y="92" text-anchor="middle">a − b</text>
+  <text class="s" x="192" y="122" text-anchor="middle">共役な式を掛ける</text>
+  <text class="s" x="230" y="148" text-anchor="middle">(√a + √b)(√a − √b) = a − b　→ 分母から √ が消える</text>
+</svg>

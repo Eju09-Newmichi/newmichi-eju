@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="180" viewBox="0 0 460 180" role="img" aria-labelledby="t d">
+  <title id="t">負の数を掛けると不等号の向きが変わる</title>
+  <desc id="d">Trên trục số a nằm bên trái b (a nhỏ hơn b). Nhân với −1 thì hai điểm đổi chỗ đối xứng qua 0: −b nằm bên trái −a, nên −a lớn hơn −b.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 16px; }
+    .b { font-size: 18px; font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; font-size: 18px; }
+  </style>
+  <line x1="30" y1="50" x2="330" y2="50" stroke="#1B1F2A" stroke-width="1.5"/>
+  <line x1="180" y1="44" x2="180" y2="56" stroke="#1B1F2A"/><text x="180" y="74" text-anchor="middle">0</text>
+  <circle cx="220" cy="50" r="5" fill="#1F66C9"/><text x="220" y="36" text-anchor="middle">a</text>
+  <circle cx="290" cy="50" r="5" fill="#1F66C9"/><text x="290" y="36" text-anchor="middle">b</text>
+  <text class="b" x="350" y="56">a &lt; b</text>
+
+  <line x1="30" y1="140" x2="330" y2="140" stroke="#1B1F2A" stroke-width="1.5"/>
+  <line x1="180" y1="134" x2="180" y2="146" stroke="#1B1F2A"/><text x="180" y="164" text-anchor="middle">0</text>
+  <circle cx="140" cy="140" r="5" fill="#C62828"/><text x="140" y="126" text-anchor="middle">−a</text>
+  <circle cx="70" cy="140" r="5" fill="#C62828"/><text x="70" y="126" text-anchor="middle">−b</text>
+  <text class="r" x="350" y="146">−a &gt; −b</text>
+
+  <path d="M220 58 L144 130" fill="none" stroke="#9AA1B2" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M290 58 L74 130" fill="none" stroke="#9AA1B2" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="350" y="100" style="fill:#5A6072">× (−1)</text>
+  <text x="350" y="120" style="fill:#5A6072;font-size:13px">向きが逆になる</text>
+</svg>

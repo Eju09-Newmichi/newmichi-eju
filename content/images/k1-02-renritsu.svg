@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="170" viewBox="0 0 460 170" role="img" aria-labelledby="t d">
+  <title id="t">連立不等式の共通範囲</title>
+  <desc id="d">x > −5 là tia từ −5 (không lấy −5) sang phải; x ≤ 0 là tia từ 0 (lấy 0) sang trái; phần chung là −5 &lt; x ≤ 0.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 16px; }
+    .r { fill: #C62828; font-weight: 700; font-size: 17px; }
+  </style>
+  <rect x="146" y="44" width="165" height="74" fill="#FDECEA"/>
+  <line x1="30" y1="118" x2="430" y2="118" stroke="#1B1F2A" stroke-width="1.5"/>
+  <path d="M424 113 L432 118 L424 123" fill="none" stroke="#1B1F2A" stroke-width="1.5"/>
+  <line x1="146" y1="112" x2="146" y2="124" stroke="#1B1F2A"/><text x="146" y="142" text-anchor="middle">−5</text>
+  <line x1="311" y1="112" x2="311" y2="124" stroke="#1B1F2A"/><text x="311" y="142" text-anchor="middle">0</text>
+
+  <line x1="146" y1="62" x2="146" y2="118" stroke="#1F66C9" stroke-dasharray="3 3"/>
+  <line x1="152" y1="62" x2="420" y2="62" stroke="#1F66C9" stroke-width="3"/>
+  <path d="M412 56 L422 62 L412 68" fill="none" stroke="#1F66C9" stroke-width="2"/>
+  <circle cx="146" cy="62" r="6" fill="#FFFFFF" stroke="#1F66C9" stroke-width="2"/>
+  <text x="430" y="52" text-anchor="end" style="fill:#1F66C9">x &gt; −5</text>
+
+  <line x1="311" y1="88" x2="311" y2="118" stroke="#B9531A" stroke-dasharray="3 3"/>
+  <line x1="40" y1="88" x2="311" y2="88" stroke="#B9531A" stroke-width="3"/>
+  <path d="M48 82 L38 88 L48 94" fill="none" stroke="#B9531A" stroke-width="2"/>
+  <circle cx="311" cy="88" r="6" fill="#B9531A"/>
+  <text x="40" y="80" style="fill:#B9531A">x ≤ 0</text>
+
+  <text class="r" x="228" y="164" text-anchor="middle">共通範囲 · Phần chung：−5 &lt; x ≤ 0</text>
+</svg>

@@ -657,9 +657,11 @@
           var lj = h.querySelector(".lj"); return lj && lj.textContent.trim().indexOf(x.head) > -1;
         })[0];
         target = target || document.querySelector(".panel");
-        target.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
-        /* formulas finish drawing after the jump and push the text down; land on the section again if it moved */
-        setTimeout(function () { if (document.body.contains(target) && Math.abs(target.getBoundingClientRect().top) > 40) target.scrollIntoView({ block: "start" }); }, 800);
+        target.scrollIntoView({ block: "start" });
+        /* formulas and figures finish drawing after the jump and move the text; land on the section again if it moved */
+        [400, 1200].forEach(function (ms) {
+          setTimeout(function () { if (document.body.contains(target) && Math.abs(target.getBoundingClientRect().top) > 20) target.scrollIntoView({ block: "start" }); }, ms);
+        });
       });
     });
     bindSplit();

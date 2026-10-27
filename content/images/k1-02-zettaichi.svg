@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="160" viewBox="0 0 460 160" role="img" aria-labelledby="t d">
+  <title id="t">絶対値と数直線</title>
+  <desc id="d">Trên trục số, điểm −3 và điểm 3 đều cách gốc O một khoảng 3, nên |−3| = 3 và |3| = 3.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; }
+    .n { font-size: 15px; }
+    .b { font-size: 18px; font-weight: 700; fill: #C62828; }
+  </style>
+  <line x1="34" y1="100" x2="430" y2="100" stroke="#1B1F2A" stroke-width="1.5"/>
+  <path d="M424 95 L432 100 L424 105" fill="none" stroke="#1B1F2A" stroke-width="1.5"/>
+  <g stroke="#1B1F2A" stroke-width="1.2">
+    <line x1="50" y1="94" x2="50" y2="106"/><line x1="86" y1="94" x2="86" y2="106"/><line x1="122" y1="94" x2="122" y2="106"/>
+    <line x1="158" y1="94" x2="158" y2="106"/><line x1="194" y1="94" x2="194" y2="106"/><line x1="230" y1="92" x2="230" y2="108"/>
+    <line x1="266" y1="94" x2="266" y2="106"/><line x1="302" y1="94" x2="302" y2="106"/><line x1="338" y1="94" x2="338" y2="106"/>
+    <line x1="374" y1="94" x2="374" y2="106"/><line x1="410" y1="94" x2="410" y2="106"/>
+  </g>
+  <text class="n" x="50" y="126" text-anchor="middle">−5</text><text class="n" x="122" y="126" text-anchor="middle">−3</text>
+  <text class="n" x="230" y="126" text-anchor="middle">0 (O)</text><text class="n" x="338" y="126" text-anchor="middle">3</text><text class="n" x="410" y="126" text-anchor="middle">5</text>
+  <circle cx="122" cy="100" r="5" fill="#1F66C9"/><circle cx="338" cy="100" r="5" fill="#1F66C9"/>
+  <text class="n" x="122" y="148" text-anchor="middle">A(−3)</text><text class="n" x="338" y="148" text-anchor="middle">B(3)</text>
+  <path d="M124 88 Q176 46 228 88" fill="none" stroke="#C62828" stroke-width="2"/>
+  <path d="M232 88 Q284 46 336 88" fill="none" stroke="#C62828" stroke-width="2"/>
+  <text class="b" x="176" y="42" text-anchor="middle">|−3| = 3</text>
+  <text class="b" x="284" y="42" text-anchor="middle">|3| = 3</text>
+</svg>
