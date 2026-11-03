@@ -21,6 +21,7 @@
   - `[hidden]` luôn ẩn (`display:none !important`): lời giải 解説 chỉ hiện sau khi bấm Chấm điểm.
   - Môn Toán theo **20 chủ đề đề cương EJU** (`content/math-topics.json`). Menu Toán: 数学Ⅰ → 数学A → 数学Ⅱ → 数学B → 数学Ⅲ → 数学C (通常学習編), rồi コース1 (chủ đề 1–7) và コース2 (chủ đề 1–20). Chủ đề 13 thuộc 数学B; 19 và 20 thuộc cả 数学Ⅱ và 数学Ⅲ.
   - Trong chương Toán có **dòng tiêu đề mục lớn** (1), (2)… (class `tsec-t`).
+  - **Trang từ vựng** (`tk1-01`…, mục 単語 · Từ mới, Thuật ngữ Toán): 5 nút dưới video (Mở đầu · 3 nhóm · Bảng tổng kết, không có nút Ôn tập, Kết thúc). Mỗi từ là một **thẻ** (`.vcard`): chữ Hán + cách đọc, âm Hán Việt, nghĩa, cách nhớ, ví dụ, nút ▶ tua video tới từ đó. Âm Hán Việt và cách nhớ chỉ hiện ở VI và JP+VI. Cuối trang có Bảng tổng kết. Mốc thời gian phải khớp video **đang đăng trên YouTube**.
   - Trang bài có tối đa 3 video: video chính (bài giảng) ở khung trên, dưới khung là nút **授業 · 解説 · 単語** (`video`, `video_kaisetsu`, `video_tango`).
 - Muốn thay đổi giao diện ngoài những điểm trên thì **hỏi chủ dự án trước**.
 - Màu chỉ khai báo dạng biến ở đầu `assets/style.css`, có bản cho chế độ tối. Không viết mã màu rời rạc trong code.

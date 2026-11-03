@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="200" viewBox="0 0 460 200" role="img" aria-labelledby="t d">
+  <title id="t">定義域がある場合の最大値・最小値</title>
+  <desc id="d">Hàm y = (x−2)² + 1 trên đoạn 0 ≤ x ≤ 3: giá trị nhỏ nhất 1 tại đỉnh x = 2, giá trị lớn nhất 5 tại đầu mút x = 0; tại x = 3 thì y = 2.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .n { font-size: 13px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+  </style>
+  <line x1="40" y1="170" x2="292" y2="170" stroke="#1B1F2A" stroke-width="1.5"/>
+  <path d="M286 165 L294 170 L286 175" fill="none" stroke="#1B1F2A" stroke-width="1.5"/>
+  <line x1="70" y1="192" x2="70" y2="8" stroke="#1B1F2A" stroke-width="1.5"/>
+  <path d="M65 14 L70 6 L75 14" fill="none" stroke="#1B1F2A" stroke-width="1.5"/>
+  <line x1="70" y1="170" x2="220" y2="170" stroke="#C62828" stroke-width="4"/>
+  <line x1="170" y1="142" x2="170" y2="170" stroke="#9AA1B2" stroke-dasharray="3 3"/>
+  <line x1="220" y1="114" x2="220" y2="170" stroke="#9AA1B2" stroke-dasharray="3 3"/>
+  <line x1="70" y1="142" x2="170" y2="142" stroke="#9AA1B2" stroke-dasharray="3 3"/>
+  <line x1="70" y1="114" x2="220" y2="114" stroke="#9AA1B2" stroke-dasharray="3 3"/>
+  <path d="M220 114 Q245 86 270 30" fill="none" stroke="#C9CEDA" stroke-width="2"/>
+  <path d="M70 30 Q145 198 220 114" fill="none" stroke="#1F66C9" stroke-width="3"/>
+  <circle cx="70" cy="30" r="5.5" fill="#C62828"/><circle cx="170" cy="142" r="5.5" fill="#1F66C9"/><circle cx="220" cy="114" r="4.5" fill="#1B1F2A"/>
+  <text class="n" x="60" y="186" text-anchor="end">O</text><text class="n" x="170" y="186" text-anchor="middle">2</text><text class="n" x="220" y="186" text-anchor="middle">3</text>
+  <text class="n" x="62" y="146" text-anchor="end">1</text><text class="n" x="62" y="118" text-anchor="end">2</text><text class="n" x="62" y="34" text-anchor="end">5</text>
+  <text class="r" x="80" y="28">最大 · lớn nhất</text><text class="u" x="170" y="161" text-anchor="middle" style="font-size:13px">最小 · nhỏ nhất</text>
+
+  <text x="306" y="32">y = (x − 2)² + 1</text>
+  <text class="s" x="306" y="52">0 ≤ x ≤ 3</text>
+  <text class="r" x="306" y="76">x = 0 で最大値 5</text>
+  <text class="s" x="306" y="92">lớn nhất = 5 tại x = 0</text>
+  <text class="u" x="306" y="114">x = 2 で最小値 1</text>
+  <text class="s" x="306" y="130">nhỏ nhất = 1 tại x = 2</text>
+  <text class="s" x="306" y="150">x = 3 → y = 2</text>
+  <text class="s" x="306" y="172">頂点と両端を比べる</text>
+  <text class="s" x="306" y="190">So sánh đỉnh và 2 đầu mút</text>
+</svg>

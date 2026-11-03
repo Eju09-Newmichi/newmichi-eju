@@ -559,13 +559,14 @@
     var idx = c.vids.indexOf(id), prev = c.vids[idx - 1], next = c.vids[idx + 1];
     /* buttons under the video: the lesson's own list (## 動画) when it has one, else the four sections.
        Each is { ja, vi, en, tab, target (element id), head (### heading words), sec (lecture time), video (other video) } */
-    var SECTION_OF = { point: ["text", "p-point"], rei: ["text", "p-rei"], pr: ["text", "p-prac"], sum: ["sum", null], terms: ["sum", "p-terms"] };
-    var chips = isVocab ? [{ ja: "単語", vi: "Từ vựng", tab: "list" }, { ja: "テスト", vi: "Kiểm tra", tab: "test" }]
-      : v.chapters ? v.chapters.map(function (ch) {
+    var SECTION_OF = isVocab ? { point: ["list", null], sum: ["list", "p-vsum"], test: ["test", "p-test"] }
+      : { point: ["text", "p-point"], rei: ["text", "p-rei"], pr: ["text", "p-prac"], sum: ["sum", null], terms: ["sum", "p-terms"] };
+    var chips = v.chapters ? v.chapters.map(function (ch) {
           var s = SECTION_OF[ch.to];
-          return { ja: ch.ja, vi: ch.vi, en: ch.en, tab: s ? s[0] : "text", target: s ? s[1] : (ch.to ? null : "p-point"), head: s || !ch.to ? null : ch.to,
+          return { ja: ch.ja, vi: ch.vi, en: ch.en, tab: s ? s[0] : isVocab ? "list" : "text", target: s ? s[1] : (ch.to ? null : "p-point"), head: s || !ch.to ? null : ch.to,
             sec: ch.sec, time: ch.time, video: ch.video && v[ch.video] ? ch.video : null };
         })
+      : isVocab ? [{ ja: "単語", vi: "Từ vựng", tab: "list" }, { ja: "テスト", vi: "Kiểm tra", tab: "test" }]
       : [{ ja: "ポイント", vi: "Điểm chính", tab: "text", target: "p-point", has: v.point.length }, { ja: "例題", vi: "Ví dụ", tab: "text", target: "p-rei", has: v.rei },
           { ja: "練習", vi: "Luyện tập", tab: "text", target: "p-prac", has: v.pr.length }, { ja: "まとめ", vi: "Tóm tắt", tab: "sum", has: v.sum.length || v.terms.length }]
           .filter(function (x) { return x.has; });
@@ -664,6 +665,13 @@
         });
       });
     });
+    /* the time button on a word card moves the video to that word; on a phone the video is above, so go back to it */
+    document.getElementById("pbody").addEventListener("click", function (e) {
+      var b = e.target.closest(".vseek");
+      if (!b || !v.video) return;
+      seekLecture(+b.dataset.sec);
+      if (window.matchMedia("(max-width: 900px)").matches) document.getElementById("player").scrollIntoView({ block: "start" });
+    });
     bindSplit();
     renderPanel();
   }
@@ -739,9 +747,32 @@
       '<div class="score-bar"><button type="button" class="btn btn-primary" data-grade>' + bi("答え合わせ", "Chấm điểm") + '</button><button type="button" class="btn btn-ghost" data-reset>' + bi("やり直す", "Làm lại") + '</button><p class="score-out" aria-live="polite">' +
       (st.done[vState.id] ? doneNote() : bi("未採点", "Chưa chấm")) + "</p></div>";
   }
-  function vocabTable(words) {
+  function vocabTable(words, groups) {
     return '<div class="table-scroll"><table class="vocab"><thead><tr><th>' + bi("用語", "Thuật ngữ") + "</th><th>" + bi("意味", "Nghĩa") + "</th></tr></thead><tbody>" +
-      words.map(function (w) { return "<tr><td>" + ruby(w) + '</td><td class="mean"><span>' + meaning(w) + "</span></td></tr>"; }).join("") + "</tbody></table></div>";
+      words.map(function (w, i) {
+        var head = (groups || []).filter(function (g) { return g.at === i; }).map(function (g) {
+          return '<tr class="vgroup"><td colspan="2"><div class="sub-t">' + stack(g.ja, g.vi, g.en) + "</div></td></tr>";
+        }).join("");
+        return head + "<tr><td>" + ruby(w) + '</td><td class="mean"><span>' + meaning(w) + "</span></td></tr>";
+      }).join("") + "</tbody></table></div>";
+  }
+  /* word cards: reading, Sino-Vietnamese, meaning, memory tip, example. Sino-Vietnamese and tips are for Vietnamese learners (hidden in JP and EN) */
+  function vocabCards(words, groups) {
+    return '<div class="vcards">' + words.map(function (w, i) {
+      var head = (groups || []).filter(function (g) { return g.at === i; }).map(function (g) {
+        return '<div class="sub-t vgroup-t">' + stack(g.ja, g.vi, g.en) + "</div>";
+      }).join("");
+      var seek = w.sec != null ? '<button type="button" class="vseek" data-sec="' + w.sec + '" aria-label="' + esc(langText("この単語から再生", "Xem video từ này", "Play this word")) + '">' + ICON.playSm + w.time + "</button>" : "";
+      var ex = (w.ex || []).map(function (x) {
+        return x.f ? x.f : '<div class="vnote">' + para([x.ja, x.vi == null ? null : x.vi, x.en == null ? null : x.en]) + "</div>";
+      }).join("");
+      return head + '<article class="vcard"><div class="vhead"><span class="vno">' + (i + 1) + '</span><span class="vword">' + ruby(w) + "</span>" + seek + "</div>" +
+        (w.hv ? '<p class="vhv lv">' + w.hv + "</p>" : "") +
+        '<p class="vmean vr"><span>' + meaning(w) + "</span></p>" +
+        (w.memo ? '<p class="vmemo lv vr"><span><b class="vmemo-l">' + bi("覚え方", "Cách nhớ", "Memory tip") + "</b> " + w.memo + "</span></p>" : "") +
+        (ex ? '<div class="vex"><p class="vex-l">' + bi("例", "Ví dụ", "Example") + "</p>" + ex + "</div>" : "") +
+        "</article>";
+    }).join("") + "</div>";
   }
   /* a word's meaning: Vietnamese, or English in EN mode when the word has one (4th column) */
   function meaning(w) { return w[3] ? '<span class="nle">' + w[2] + '</span><span class="le">' + w[3] + "</span>" : w[2]; }
@@ -785,7 +816,10 @@
       if (!html) html = emptyPanel(["まとめは準備中です。", "Phần tóm tắt đang được soạn."]);
     } else if (tab === "list") {
       html = '<section class="psec">' + ptitle("単語リスト", "Danh sách từ") + '<div class="vocab-bar">' + para(["「意味をかくす」で自分をテスト。灰色の部分をタップすると表示されます。", "Bấm Ẩn nghĩa để tự kiểm tra, chạm vào ô xám để xem lại."]) +
-        '<button type="button" class="btn btn-ghost btn-small" id="hideVi" aria-pressed="false">' + bi("意味をかくす", "Ẩn nghĩa") + "</button></div>" + vocabTable(v.words) + "</section>";
+        '<button type="button" class="btn btn-ghost btn-small" id="hideVi" aria-pressed="false">' + bi("意味をかくす", "Ẩn nghĩa") + "</button></div>" +
+        (v.words.some(function (w) { return w.hv || w.memo || w.ex; })
+          ? vocabCards(v.words, v.wordGroups) + '</section><section class="psec" id="p-vsum">' + ptitle("まとめ表", "Bảng tổng kết", "Summary table") + vocabTable(v.words)
+          : vocabTable(v.words, v.wordGroups)) + "</section>";
     } else if (tab === "test") {
       html = '<section class="psec quiz" id="p-test">' + ptitle("テスト", "Kiểm tra") + '<div class="muted small">' + para(["正しい意味を選ぼう。全問正解でこの単語セットは完了です。", "Chọn nghĩa đúng của mỗi từ. Đúng hết là hoàn thành bộ từ này."]) + "</div>" + quizHTML(pid, vocabQs(v.words)) + "</section>";
     } else {
@@ -801,17 +835,23 @@
     if (quiz) bindQuiz(quiz);
     var hv = document.getElementById("hideVi");
     if (hv) {
-      var table = body.querySelector(".vocab");
+      var lists = body.querySelectorAll(".vocab, .vcards");
       hv.addEventListener("click", function () {
-        var on = !table.classList.contains("hide-vi");
-        table.classList.toggle("hide-vi", on);
-        table.querySelectorAll("tr.peek").forEach(function (tr) { tr.classList.remove("peek"); });
+        var on = hv.getAttribute("aria-pressed") !== "true";
+        lists.forEach(function (l) {
+          l.classList.toggle("hide-vi", on);
+          l.querySelectorAll(".peek").forEach(function (x) { x.classList.remove("peek"); });
+        });
         hv.setAttribute("aria-pressed", on ? "true" : "false");
         hv.innerHTML = on ? bi("意味を表示", "Hiện nghĩa") : bi("意味をかくす", "Ẩn nghĩa");
       });
-      table.addEventListener("click", function (e) {
-        var cell = e.target.closest("td.mean");
-        if (cell && table.classList.contains("hide-vi")) cell.parentElement.classList.toggle("peek");
+      lists.forEach(function (l) {
+        l.addEventListener("click", function (e) {
+          if (!l.classList.contains("hide-vi") || e.target.closest(".vseek")) return;
+          var cell = e.target.closest("td.mean"), card = e.target.closest(".vcard");
+          if (cell) cell.parentElement.classList.toggle("peek");
+          else if (card) card.classList.toggle("peek");
+        });
       });
     }
   }

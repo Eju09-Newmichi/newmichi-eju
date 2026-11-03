@@ -45,7 +45,7 @@ và xóa mục "Sắp có" tương ứng trong `"planned"`. Bài sẽ tự hiệ
 **Các môn khác** ghi vào `content/courses.json`: tìm đúng khóa học và chương, thêm mã bài vào danh sách `"lessons"`:
 
 ```json
-{"ja":"第2章 二次関数","vi":"Chương 2: Hàm số bậc hai","lessons":["m2a","m2b","m2c","m2d","m2e","m2f"]},
+{"ja":"第2章 二次関数","vi":"Chương 2: Hàm số bậc hai","lessons":["k1-04","k1-05"]},
 ```
 
 Thứ tự trong danh sách là thứ tự bài trên web (nút Bài trước / Bài sau đi theo thứ tự này).
@@ -240,7 +240,48 @@ Bài kiểm tra trắc nghiệm của bài từ vựng được tạo tự độ
 Muốn có nghĩa tiếng Anh thì thêm cột thứ tư: `- 細胞 | さいぼう | tế bào | cell`.
 Ở chế độ EN, từ có cột tiếng Anh hiện nghĩa tiếng Anh, từ chưa có thì vẫn hiện nghĩa tiếng Việt.
 
-Bài `content/lessons/m2a.md` là ví dụ đầy đủ có cả `VI:` và `EN:`.
+Video từ vựng có mục lục thì thêm mục `## 動画` và chia từ thành nhóm bằng dòng `###` (ví dụ đầy đủ: `content/lessons/tk1-04.md`):
+
+```markdown
+## 動画
+
+- 0:00 | はじめに | Mở đầu | Introduction | point
+- 0:15 | グループ1 関数とグラフ | Nhóm 1: Hàm số và đồ thị | Group 1: Functions and graphs | 関数とグラフ
+- 9:32 | まとめ表 | Bảng tổng kết | Summary table | sum
+- - | テスト | Kiểm tra | Test | test
+
+## 単語
+
+### グループ1 関数とグラフ
+VI: Nhóm 1: Hàm số và đồ thị
+EN: Group 1: Functions and graphs
+
+- 関数 | かんすう | hàm số | function
+```
+
+Cột 5 của bài từ vựng: `point` (đầu danh sách từ), `sum` (Bảng tổng kết), `test` (tab Kiểm tra), hoặc đúng chữ của một dòng `###` nhóm từ.
+Không có mục `## 動画` thì hàng nút là 単語 · テスト.
+
+Muốn từ hiện thành **thẻ đầy đủ** thì viết thêm các dòng ngay dưới từ (dòng nào không có thì bỏ):
+
+```markdown
+- 定義域 | ていぎいき | miền xác định | domain
+Mốc: 0:49
+HV: ĐỊNH · NGHĨA · VỰC
+Nhớ: 定義 ĐỊNH NGHĨA · 域 VỰC = vùng → vùng giá trị của x
+\[y=x^2\quad(-1\leqq x\leqq 2)\]
+注: かっこの中が定義域
+VI: Phần trong ngoặc là 定義域
+EN: The part in parentheses is the domain
+```
+
+- `Mốc:` thời điểm của từ trong video: thẻ có nút ▶ tua tới đúng từ đó.
+- `HV:` âm Hán Việt, `Nhớ:` cách nhớ: dành cho học viên Việt, chỉ hiện ở chế độ VI và JP+VI.
+- `\[ … \]` công thức ví dụ (mỗi công thức một dòng), `注:` lời chú thích ví dụ, kèm `VI:` và `EN:`.
+
+Bài có thẻ thì cuối danh sách tự có **Bảng tổng kết**. Bài không có thẻ vẫn hiện bảng từ như cũ.
+
+Bài `content/lessons/k1-04.md` là ví dụ đầy đủ có cả `VI:` và `EN:`.
 
 ## 5. Video YouTube
 
@@ -359,7 +400,7 @@ Mỗi dòng chữ có `ja`, `vi` và `en` (tiếng Anh, không bắt buộc).
 
 Web sẽ hiện **hộp đỏ** phía trên trang, ghi rõ tên file, số dòng và lỗi gì, ví dụ:
 
-> `content/lessons/m2b.md` · dòng 30: Các ô trong đề (A, B) không khớp với đáp án (A).
+> `content/lessons/k1-04.md` · dòng 30: Các ô trong đề (A, B) không khớp với đáp án (A).
 
 Bài bị lỗi tạm thời bị ẩn, các bài khác vẫn chạy bình thường. Sửa xong, tải lại trang là hộp đỏ biến mất.
 
@@ -430,5 +471,5 @@ Vào **Authentication → Settings → Authorized domains → Add domain**, thê
 ### Giới hạn cần biết
 
 Màn đăng nhập chặn người lạ vào trang học, nhưng các file trong `content/` vẫn nằm công khai trên máy chủ web:
-ai biết đường dẫn chính xác (ví dụ `.../content/lessons/m2a.md`) vẫn tải được. Video YouTube cũng vậy nếu để chế độ Không công khai.
+ai biết đường dẫn chính xác (ví dụ `.../content/lessons/k1-04.md`) vẫn tải được. Video YouTube cũng vậy nếu để chế độ Không công khai.
 Muốn khóa hẳn nội dung thì cần chuyển bài học vào Firebase (làm thêm sau nếu cần).

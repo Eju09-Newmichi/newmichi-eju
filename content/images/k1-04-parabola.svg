@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="200" viewBox="0 0 460 200" role="img" aria-labelledby="t d">
+  <title id="t">放物線の向きと頂点・軸</title>
+  <desc id="d">Bên trái a dương: parabol lồi xuống, đỉnh là điểm thấp nhất nên có giá trị nhỏ nhất. Bên phải a âm: parabol lồi lên, đỉnh là điểm cao nhất nên có giá trị lớn nhất.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .b { font-weight: 700; font-size: 16px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .r { fill: #C62828; font-weight: 700; }
+  </style>
+  <line x1="115" y1="20" x2="115" y2="145" stroke="#9AA1B2" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M55 30 Q115 210 175 30" fill="none" stroke="#1F66C9" stroke-width="2.5"/>
+  <circle cx="115" cy="120" r="5" fill="#C62828"/>
+  <text class="r" x="125" y="136" style="font-size:13px">頂点 · đỉnh (p, q)</text>
+  <text class="s" x="110" y="14" text-anchor="end">軸 · trục x = p</text>
+  <text class="b" x="115" y="168" text-anchor="middle">a &gt; 0：下に凸</text>
+  <text class="s" x="115" y="188" text-anchor="middle">最小値あり · có giá trị nhỏ nhất</text>
+
+  <line x1="345" y1="20" x2="345" y2="145" stroke="#9AA1B2" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M285 140 Q345 -40 405 140" fill="none" stroke="#B9531A" stroke-width="2.5"/>
+  <circle cx="345" cy="50" r="5" fill="#C62828"/>
+  <text class="r" x="355" y="42" style="font-size:13px">頂点 · đỉnh (p, q)</text>
+  <text class="s" x="340" y="14" text-anchor="end">軸 · trục x = p</text>
+  <text class="b" x="345" y="168" text-anchor="middle">a &lt; 0：上に凸</text>
+  <text class="s" x="345" y="188" text-anchor="middle">最大値あり · có giá trị lớn nhất</text>
+</svg>

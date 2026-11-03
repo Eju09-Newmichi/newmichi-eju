@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="220" viewBox="0 0 460 220" role="img" aria-labelledby="t d">
+  <title id="t">平方完成とグラフ</title>
+  <desc id="d">y = x² − 6x + 5 = (x − 3)² − 4, đỉnh (3, −4), trục x = 3, cắt trục x tại 1 và 5, cắt trục y tại 5.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 16px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .r { fill: #C62828; font-weight: 700; }
+    .n { font-size: 13px; }
+  </style>
+  <text x="12" y="34">y = x² − 6x + 5</text>
+  <text x="26" y="62">= (x − 3)² − 9 + 5</text>
+  <text class="r" x="26" y="90">= (x − 3)² − 4</text>
+  <text class="s" x="12" y="118">x の係数 −6 の半分 −3 を使う</text>
+  <text class="s" x="12" y="136">Lấy một nửa hệ số của x</text>
+  <text class="r" x="12" y="168">頂点 · đỉnh (3, −4)</text>
+  <text class="r" x="12" y="192">軸 · trục x = 3</text>
+
+  <line x1="236" y1="118" x2="402" y2="118" stroke="#1B1F2A" stroke-width="1.5"/>
+  <path d="M396 113 L404 118 L396 123" fill="none" stroke="#1B1F2A" stroke-width="1.5"/>
+  <line x1="258" y1="212" x2="258" y2="8" stroke="#1B1F2A" stroke-width="1.5"/>
+  <path d="M253 14 L258 6 L263 14" fill="none" stroke="#1B1F2A" stroke-width="1.5"/>
+  <line x1="318" y1="10" x2="318" y2="208" stroke="#9AA1B2" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M258 18 Q318 378 378 18" fill="none" stroke="#1F66C9" stroke-width="2.5"/>
+  <circle cx="318" cy="198" r="5" fill="#C62828"/>
+  <circle cx="278" cy="118" r="3.5" fill="#1B1F2A"/><circle cx="358" cy="118" r="3.5" fill="#1B1F2A"/><circle cx="258" cy="18" r="3.5" fill="#1B1F2A"/>
+  <text class="n" x="272" y="134" text-anchor="end">1</text><text class="n" x="366" y="134">5</text>
+  <text class="n" x="250" y="24" text-anchor="end">5</text><text class="n" x="250" y="134" text-anchor="end">O</text>
+  <text class="n" x="322" y="134">3</text>
+  <text class="r" x="330" y="204">(3, −4)</text>
+  <text class="n" x="398" y="108" text-anchor="end">x</text><text class="n" x="266" y="16">y</text>
+</svg>

@@ -631,6 +631,27 @@ td.mark.no { color: var(--muted); font-weight: 400; }
 ruby { ruby-position: over; }
 rt { font-size: 0.55em; color: var(--muted); font-weight: 400; }
 .vocab td:first-child { font-family: var(--font-jp); font-size: 1.125rem; font-weight: 700; white-space: nowrap; width: 45%; }
+.vocab tr.vgroup td { width: auto; padding-top: 14px; white-space: normal; font-weight: 400; }
+.vcards { display: grid; gap: 12px; min-width: 0; }
+.vgroup-t { margin-top: 10px; }
+.vcard { min-width: 0; display: grid; gap: 6px; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.vhead { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.vno { flex: none; font-size: 0.8125rem; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+.vword { flex: 1; min-width: 0; font-family: var(--font-jp); font-size: 1.75rem; font-weight: 700; line-height: 1.5; }
+.vseek { flex: none; display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; font: inherit; font-size: 0.8125rem; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--subj); background: transparent; border: 1px solid var(--line-strong); border-radius: 999px; cursor: pointer; }
+.vseek:hover { background: var(--hover); }
+.vhv { margin: 0; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.06em; color: var(--ok); }
+.vmean { margin: 0; font-size: 1.125rem; font-weight: 700; }
+.vmemo { margin: 0; font-size: 0.9375rem; color: var(--muted); }
+.vmemo-l { margin-right: 4px; color: var(--ok); }
+.vex { min-width: 0; display: grid; gap: 4px; padding: 8px 12px; background: var(--lesson-bg); border-left: 3px solid var(--subj); border-radius: 4px; overflow-x: auto; }
+.vex-l { margin: 0; font-size: 0.75rem; font-weight: 700; color: var(--muted); }
+.vex mjx-container[display="true"] { margin: 2px 0 !important; }
+.vnote p { margin: 0; font-size: 0.9375rem; font-weight: 700; color: var(--subj); }
+.vnote p + p { font-weight: 400; color: var(--ink); }
+.vcards.hide-vi .vcard { cursor: pointer; }
+.vcards.hide-vi .vcard:not(.peek) .vr > span, .vcards.hide-vi .vcard:not(.peek) .vr > span * { color: transparent; }
+.vcards.hide-vi .vcard:not(.peek) .vr > span { background: var(--line); border-radius: 3px; }
 .vocab-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
 .vocab-bar .bl { font-size: 0.8125rem; color: var(--muted); }
 .vocab.hide-vi td.mean { cursor: pointer; }

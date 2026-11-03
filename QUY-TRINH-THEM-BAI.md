@@ -54,12 +54,19 @@ Mục lục video bài giảng:
 9:30 Tổng kết
 Video chữa bài tập: https://youtu.be/...
 Video từ vựng: https://youtu.be/...
+Mục lục video từ vựng (nếu có):
+0:00 Mở đầu
+0:15 Nhóm 1: ...
+2:36 Ôn tập nhanh nhóm 1
+9:32 Bảng tổng kết
 
 Hình minh họa cần vẽ: (ví dụ: trục số cho căn bậc hai; sơ đồ ...)
 Ghi chú khác: ...
 ```
 
 **Mã bài:** `k1-01`, `k1-02`… cho Toán Course 1. Tên file hình bắt đầu bằng mã bài, ví dụ `k1-02-trucso.svg`.
+
+**Trang từ vựng:** mỗi bài Toán có video từ vựng thì Claude Code tạo thêm trang `tk1-02`… trong mục 単語 · Từ mới (Thuật ngữ Toán), dùng cùng video và danh sách 用語 của bài. Có mục lục video từ vựng thì thêm hàng nút và chia từ thành nhóm. Có PDF và phụ đề từ vựng (thư mục `3_tu_vung`) thì làm thẻ đầy đủ như `tk1-04` (âm Hán Việt, cách nhớ, ví dụ, nút tua tới từng từ). Sửa từ ở bài thì sửa cả ở trang này.
 
 ## 4. Giao diện đã chốt (không cần bàn lại)
 

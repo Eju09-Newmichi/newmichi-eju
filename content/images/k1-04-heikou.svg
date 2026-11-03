@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="200" viewBox="0 0 460 200" role="img" aria-labelledby="t d">
+  <title id="t">放物線の平行移動</title>
+  <desc id="d">Parabol y = ax² tịnh tiến p theo trục x và q theo trục y thành y = a(x−p)² + q; đỉnh chuyển từ gốc O đến điểm (p, q), trục là đường thẳng x = p.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .r { fill: #C62828; font-weight: 700; }
+  </style>
+  <line x1="30" y1="150" x2="430" y2="150" stroke="#1B1F2A" stroke-width="1.5"/>
+  <path d="M424 145 L432 150 L424 155" fill="none" stroke="#1B1F2A" stroke-width="1.5"/>
+  <line x1="120" y1="192" x2="120" y2="6" stroke="#1B1F2A" stroke-width="1.5"/>
+  <path d="M115 12 L120 4 L125 12" fill="none" stroke="#1B1F2A" stroke-width="1.5"/>
+  <text x="434" y="168" text-anchor="end">x</text><text x="130" y="16">y</text>
+
+  <path d="M80 70 Q120 230 160 70" fill="none" stroke="#9AA1B2" stroke-width="2.5"/>
+  <path d="M260 10 Q300 170 340 10" fill="none" stroke="#1F66C9" stroke-width="2.5"/>
+  <line x1="300" y1="8" x2="300" y2="150" stroke="#9AA1B2" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="120" y1="90" x2="300" y2="90" stroke="#9AA1B2" stroke-width="1" stroke-dasharray="2 3"/>
+  <line x1="126" y1="147" x2="293" y2="93" stroke="#C62828" stroke-width="2"/>
+  <path d="M284 90 L296 92 L288 101" fill="none" stroke="#C62828" stroke-width="2"/>
+  <circle cx="120" cy="150" r="4.5" fill="#1B1F2A"/><circle cx="300" cy="90" r="5" fill="#C62828"/>
+
+  <text x="108" y="168" text-anchor="end">O</text>
+  <text class="s" x="66" y="64" text-anchor="middle">y = ax²</text>
+  <text class="r" x="310" y="104">(p, q)</text>
+  <text x="350" y="30" style="fill:#1F66C9">y = a(x − p)² + q</text>
+  <text x="300" y="168" text-anchor="middle">p</text>
+  <text x="108" y="95" text-anchor="end">q</text>
+  <text class="s" x="306" y="134">軸 · trục x = p</text>
+</svg>

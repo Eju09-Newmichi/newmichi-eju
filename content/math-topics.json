@@ -19,9 +19,9 @@
     {
       "no": 3, "tag": "数学Ⅰ", "ja": "2次関数", "vi": "Hàm số bậc hai", "en": "Quadratic functions",
       "sections": [
-        {"ja":"2次関数とグラフ","vi":"Hàm số bậc hai và đồ thị","en":"Quadratic functions and graphs","lessons":["m2a","m2b","m2c","m2d"],"planned":[
+        {"ja":"2次関数とグラフ","vi":"Hàm số bậc hai và đồ thị","en":"Quadratic functions and graphs","lessons":["k1-04"],"planned":[
           {"ja":"2次関数の決定","vi":"Xác định hàm số bậc hai","en":"Finding a quadratic function"}]},
-        {"ja":"2次方程式と2次不等式","vi":"Phương trình và bất phương trình bậc hai","en":"Quadratic equations and inequalities","lessons":["m2e"],"planned":[
+        {"ja":"2次方程式と2次不等式","vi":"Phương trình và bất phương trình bậc hai","en":"Quadratic equations and inequalities","planned":[
           {"ja":"2次関数のグラフと2次方程式","vi":"Đồ thị hàm bậc hai và phương trình bậc hai","en":"Graphs and quadratic equations"},
           {"ja":"2次関数のグラフと2次不等式","vi":"Đồ thị hàm bậc hai và bất phương trình bậc hai","en":"Graphs and quadratic inequalities"}]}
       ]

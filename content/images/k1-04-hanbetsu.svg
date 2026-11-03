@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="180" viewBox="0 0 460 180" role="img" aria-labelledby="t d">
+  <title id="t">判別式と x 軸との共有点</title>
+  <desc id="d">D dương: parabol cắt trục x tại 2 điểm. D bằng 0: parabol tiếp xúc trục x tại 1 điểm. D âm: parabol không có điểm chung với trục x.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .b { font-weight: 700; }
+    .s { font-size: 12.5px; fill: #5A6072; }
+  </style>
+  <g stroke="#1B1F2A" stroke-width="1.5">
+    <line x1="12" y1="90" x2="148" y2="90"/><line x1="162" y1="90" x2="298" y2="90"/><line x1="312" y1="90" x2="448" y2="90"/>
+  </g>
+  <path d="M40 50 Q80 190 120 50" fill="none" stroke="#1F66C9" stroke-width="2.5"/>
+  <circle cx="53.8" cy="90" r="4.5" fill="#C62828"/><circle cx="106.2" cy="90" r="4.5" fill="#C62828"/>
+  <path d="M190 20 Q230 160 270 20" fill="none" stroke="#1F66C9" stroke-width="2.5"/>
+  <circle cx="230" cy="90" r="4.5" fill="#C62828"/>
+  <path d="M345 10 Q380 110 415 10" fill="none" stroke="#1F66C9" stroke-width="2.5"/>
+
+  <text class="b" x="80" y="134" text-anchor="middle">D &gt; 0</text>
+  <text class="s" x="80" y="153" text-anchor="middle">異なる2つの実数解</text>
+  <text class="s" x="80" y="171" text-anchor="middle">共有点 2個 · 2 nghiệm</text>
+  <text class="b" x="230" y="134" text-anchor="middle">D = 0</text>
+  <text class="s" x="230" y="153" text-anchor="middle">重解（接する）</text>
+  <text class="s" x="230" y="171" text-anchor="middle">共有点 1個 · nghiệm kép</text>
+  <text class="b" x="380" y="134" text-anchor="middle">D &lt; 0</text>
+  <text class="s" x="380" y="153" text-anchor="middle">実数解なし</text>
+  <text class="s" x="380" y="171" text-anchor="middle">共有点 0個 · vô nghiệm thực</text>
+</svg>

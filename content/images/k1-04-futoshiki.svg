@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="245" viewBox="0 0 460 245" role="img" aria-labelledby="t d">
+  <title id="t">2次不等式とグラフ</title>
+  <desc id="d">Với a dương, parabol cắt trục x tại α và β. Phần đồ thị trên trục x (ngoài hai nghiệm) ứng với lớn hơn 0; phần dưới trục x (giữa hai nghiệm) ứng với nhỏ hơn 0.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .n { font-size: 14px; }
+  </style>
+  <defs>
+    <clipPath id="fIn"><rect x="150" y="90" width="160" height="80"/></clipPath>
+    <clipPath id="fOut"><rect x="60" y="0" width="90" height="90"/><rect x="310" y="0" width="90" height="90"/></clipPath>
+  </defs>
+  <line x1="60" y1="90" x2="400" y2="90" stroke="#1B1F2A" stroke-width="1.5"/>
+  <path d="M394 85 L402 90 L394 95" fill="none" stroke="#1B1F2A" stroke-width="1.5"/>
+  <path d="M110 15 Q230 285 350 15" fill="none" stroke="#C62828" stroke-width="3" clip-path="url(#fOut)"/>
+  <path d="M110 15 Q230 285 350 15" fill="none" stroke="#1F66C9" stroke-width="3" clip-path="url(#fIn)"/>
+  <circle cx="150" cy="90" r="4" fill="#1B1F2A"/><circle cx="310" cy="90" r="4" fill="#1B1F2A"/>
+  <text x="144" y="108" text-anchor="end">α</text><text x="316" y="108">β</text>
+  <text class="r" x="62" y="30">y &gt; 0</text><text class="r" x="398" y="30" text-anchor="end">y &gt; 0</text>
+  <text class="u" x="230" y="130" text-anchor="middle">y &lt; 0</text>
+
+  <text class="r n" x="10" y="186">&gt; 0</text>
+  <line x1="60" y1="181" x2="360" y2="181" stroke="#9AA1B2"/>
+  <line x1="60" y1="181" x2="144" y2="181" stroke="#C62828" stroke-width="4"/><line x1="316" y1="181" x2="360" y2="181" stroke="#C62828" stroke-width="4"/>
+  <circle cx="150" cy="181" r="5.5" fill="#FFFFFF" stroke="#C62828" stroke-width="2"/><circle cx="310" cy="181" r="5.5" fill="#FFFFFF" stroke="#C62828" stroke-width="2"/>
+  <text class="r n" x="368" y="186">x &lt; α, β &lt; x</text>
+
+  <text class="u n" x="10" y="226">&lt; 0</text>
+  <line x1="60" y1="221" x2="360" y2="221" stroke="#9AA1B2"/>
+  <line x1="156" y1="221" x2="304" y2="221" stroke="#1F66C9" stroke-width="4"/>
+  <circle cx="150" cy="221" r="5.5" fill="#FFFFFF" stroke="#1F66C9" stroke-width="2"/><circle cx="310" cy="221" r="5.5" fill="#FFFFFF" stroke="#1F66C9" stroke-width="2"/>
+  <text class="u n" x="368" y="226">α &lt; x &lt; β</text>
+</svg>

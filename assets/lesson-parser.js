@@ -120,7 +120,10 @@
     /* まとめ takes the same blocks as Point (lists, formulas, key-point boxes, sub-headings, figures) */
     L.sum = body.sum ? parseBlocks(body.sum) : [];
     L.terms = body.terms ? parseWords(body.terms) : [];
-    if (body.words) L.words = parseWords(body.words);
+    if (body.words) {
+      L.words = parseWords(body.words, true);
+      if (L.words.groups.length) L.wordGroups = L.words.groups;
+    }
     if (body.chapters) L.chapters = parseChapters(body.chapters);
     if (L.kind === "vocab" && !(L.words && L.words.length)) fail("Bài từ vựng (kind: vocab) cần có mục ## 単語 với ít nhất một từ.", lines.length);
     return L;
@@ -377,17 +380,53 @@
     return out;
   }
 
-  /* ---- ## 用語 / ## 単語: 漢字 | reading | Vietnamese [| English] ---- */
-  function parseWords(rows) {
-    var out = [];
+  /* ---- ## 用語 / ## 単語: 漢字 | reading | Vietnamese [| English] ----
+     ## 単語 may split the words into groups: a "### 見出し" line (with VI: / EN: lines) before each group,
+     and each word may be followed by lines that make it a full card:
+     Mốc: 0:20 (time in the video) · HV: QUAN · SỐ · Nhớ: memory tip · \[formula\] · 注: note (with VI: / EN:) */
+  function parseWords(rows, allowGroups) {
+    var out = [], target = null, word = null, tr;
+    out.groups = [];
+    function needWord(n) { if (!word) fail("Dòng này phải nằm ngay dưới một từ (- 漢字 | cách đọc | nghĩa).", n); }
     rows.forEach(function (r) {
       var t = r.t, m;
       if (!t) return;
+      if (allowGroups) {
+        if ((m = t.match(/^###\s+(.+)$/))) {
+          target = { at: out.length, ja: inline(m[1]) };
+          out.groups.push(target);
+          word = null;
+          return;
+        }
+        if ((tr = trLine(t))) { setTr(target, tr, r.n, "dòng ### tên nhóm từ hoặc dòng 注:"); return; }
+        target = null;
+        if ((m = t.match(/^Mốc\s*[:：]\s*(?:(\d+):)?(\d{1,2}):(\d{2})$/))) {
+          needWord(r.n);
+          word.time = t.replace(/^Mốc\s*[:：]\s*/, "");
+          word.sec = (m[1] ? +m[1] * 3600 : 0) + (+m[2]) * 60 + (+m[3]);
+          return;
+        }
+        if ((m = t.match(/^HV\s*[:：]\s*(.+)$/))) { needWord(r.n); word.hv = m[1]; return; }
+        if ((m = t.match(/^Nhớ\s*[:：]\s*(.+)$/))) { needWord(r.n); word.memo = inline(m[1]); return; }
+        if (t.indexOf("\\[") === 0) {
+          needWord(r.n);
+          if (!formulaClosed(t)) fail("Công thức của từ phải nằm gọn trên một dòng \\[ ... \\].", r.n);
+          (word.ex = word.ex || []).push({ f: t });
+          return;
+        }
+        if ((m = t.match(RE.caption))) {
+          needWord(r.n);
+          target = { ja: inline(m[1]) };
+          (word.ex = word.ex || []).push(target);
+          return;
+        }
+      }
       m = t.match(RE.item);
       var parts = (m ? m[1] : t).split("|").map(function (s) { return s.trim(); });
       if ((parts.length !== 3 && parts.length !== 4) || !parts[0] || !parts[2]) fail("Mỗi từ viết dạng  - 漢字 | cách đọc | nghĩa tiếng Việt  (cách đọc có thể để trống; có thể thêm  | nghĩa tiếng Anh).", r.n);
       if (parts.length === 4 && !parts[3]) parts.pop();
       out.push(parts);
+      word = parts;
     });
     return out;
   }
