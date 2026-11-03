@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="120" viewBox="0 0 460 120" role="img" aria-labelledby="t d">
+  <title id="t">内分と外分</title>
+  <desc id="d">Điểm P chia trong đoạn AB theo tỉ số 2:1, điểm Q chia ngoài đoạn AB theo tỉ số 2:1.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <line class="l" x1="40" y1="60" x2="240" y2="60"/><line class="d" x1="240" y1="60" x2="440" y2="60"/>
+  <circle cx="40" cy="60" r="4" fill="#1B1F2A"/><circle cx="240" cy="60" r="4" fill="#1B1F2A"/><circle class="p" cx="173" cy="60" r="5"/><circle cx="440" cy="60" r="5" fill="#1F66C9"/>
+  <text x="34" y="48">A</text><text x="236" y="48">B</text><text class="r" x="168" y="48">P</text><text class="u" x="434" y="48">Q</text><text class="r" x="106" y="82" text-anchor="middle">m</text><text class="r" x="206" y="82" text-anchor="middle">n</text>
+  <text class="r" x="106" y="106" text-anchor="middle" style="font-size:13px">内分 · chia trong</text><text class="u" x="340" y="82" text-anchor="middle" style="font-size:13px">外分 · chia ngoài</text><text class="s" x="340" y="106" text-anchor="middle">AQ : QB = m : n</text>
+</svg>

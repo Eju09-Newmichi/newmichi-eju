@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="190" viewBox="0 0 460 190" role="img" aria-labelledby="t d">
+  <title id="t">半円と 180°−θ の三角比</title>
+  <desc id="d">Nửa đường tròn tâm O bán kính r, điểm P(x, y) với góc theta, điểm P phẩy đối xứng qua trục y ứng với góc 180 độ trừ theta.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <line class="t" x1="20" y1="150" x2="290" y2="150"/><line class="t" x1="155" y1="170" x2="155" y2="15"/><path class="ul" d="M45 150 A110 110 0 0 1 265 150"/>
+  <line class="rl" x1="155" y1="150" x2="233" y2="72"/><line class="ol" x1="155" y1="150" x2="77" y2="72"/><line class="d" x1="233" y1="72" x2="233" y2="150"/><line class="d" x1="77" y1="72" x2="77" y2="150"/>
+  <path class="rl" d="M180 150 A25 25 0 0 0 173 132"/><circle class="p" cx="233" cy="72" r="4"/><circle cx="77" cy="72" r="4" fill="#B9531A"/>
+  <text class="r" x="240" y="68">P(x, y)</text><text x="12" y="66">P′(−x, y)</text><text x="143" y="170">O</text><text x="268" y="168">A</text><text class="r" x="188" y="142">θ</text><text x="196" y="106">r</text>
+  <text class="s" x="300" y="34">180°−θ のとき · khi đó</text><text x="300" y="66">sin は同じ</text><text class="s" x="300" y="84">sin không đổi</text><text x="300" y="112">cos, tan は符号が逆</text><text class="s" x="300" y="130">cos, tan đổi dấu</text>
+</svg>

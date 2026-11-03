@@ -66,6 +66,8 @@ Ghi chú khác: ...
 
 **Mã bài:** `k1-01`, `k1-02`… cho Toán Course 1. Tên file hình bắt đầu bằng mã bài, ví dụ `k1-02-trucso.svg`.
 
+**Gửi nhiều bài một lần:** chỉ cần gửi số bài và link bảng tính tổng hợp (tab `Tài Liệu`: Lý thuyết, Bài tập, Từ mới, đặt đúng dòng chủ đề › mục). File bài, mục lục, PDF và phụ đề Claude Code tự lấy trong `C:\Users\PC\Videos\Toàn bộ Toán Course 1\EJU Toan - Bai NN`. Làm xong cả lô mới mời xem và đưa lên web một lần. Claude Code đo độ dài từng video trên YouTube; video khác bản trong thư mục thì chỉnh mốc theo video đang đăng.
+
 **Trang từ vựng:** mỗi bài Toán có video từ vựng thì Claude Code tạo thêm trang `tk1-02`… trong mục 単語 · Từ mới (Thuật ngữ Toán), dùng cùng video và danh sách 用語 của bài. Có mục lục video từ vựng thì thêm hàng nút và chia từ thành nhóm. Có PDF và phụ đề từ vựng (thư mục `3_tu_vung`) thì làm thẻ đầy đủ như `tk1-04` (âm Hán Việt, cách nhớ, ví dụ, nút tua tới từng từ). Sửa từ ở bài thì sửa cả ở trang này.
 
 ## 4. Giao diện đã chốt (không cần bàn lại)

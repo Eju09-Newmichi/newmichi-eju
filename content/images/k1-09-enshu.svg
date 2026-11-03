@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="222" viewBox="0 0 460 222" role="img" aria-labelledby="t d">
+  <title id="t">円周角と内接四角形</title>
+  <desc id="d">Bên trái: góc nội tiếp APB bằng nửa góc ở tâm AOB. Bên phải: tứ giác ABCD nội tiếp có tổng hai góc đối bằng 180 độ.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <circle class="ul" cx="110" cy="90" r="75"/><path class="l" d="M110 15 L45 127.5 M110 15 L175 127.5"/><path class="rl" d="M45 127.5 L110 90 L175 127.5"/><circle class="p" cx="110" cy="90" r="3.5"/>
+  <text x="104" y="12">P</text><text x="28" y="140">A</text><text x="178" y="140">B</text><text class="r" x="116" y="84">O</text>
+  <text class="b" x="110" y="194" text-anchor="middle" style="font-size:13px">∠APB = ½ ∠AOB</text><text class="s" x="110" y="212" text-anchor="middle">円周角 · góc nội tiếp</text>
+  <circle class="ul" cx="340" cy="90" r="75"/><path class="fu" d="M291.8 32.6 L269.5 64.3 L367.5 159.8 L405 52.5 Z"/><path class="l" d="M291.8 32.6 L269.5 64.3 L367.5 159.8 L405 52.5 Z"/>
+  <text x="282" y="26">A</text><text x="254" y="62">B</text><text x="366" y="176">C</text><text x="410" y="50">D</text>
+  <text class="b" x="340" y="194" text-anchor="middle" style="font-size:13px">∠A + ∠C = 180°</text><text class="s" x="340" y="212" text-anchor="middle">内接四角形 · tứ giác nội tiếp</text>
+</svg>

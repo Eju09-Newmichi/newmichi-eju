@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="180" viewBox="0 0 460 180" role="img" aria-labelledby="t d">
+  <title id="t">要素の個数</title>
+  <desc id="d">Biểu đồ Venn của hai tập A, B trong tập toàn thể U; phần giao bị đếm hai lần nên phải trừ đi một lần.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <rect class="t" x="10" y="10" width="270" height="160"/><circle cx="115" cy="90" r="62" fill="#E3F0FC" stroke="#1F66C9" stroke-width="2.5"/><circle cx="185" cy="90" r="62" fill="#FDECEA" fill-opacity="0.7" stroke="#C62828" stroke-width="2.5"/>
+  <text class="u" x="78" y="96">A</text><text class="r" x="212" y="96">B</text><text class="b" x="150" y="96" text-anchor="middle">A∩B</text><text x="20" y="30">U</text>
+  <text x="295" y="60">n(A∪B)</text><text x="295" y="84">= n(A) + n(B)</text><text class="r" x="306" y="108">− n(A∩B)</text><text class="s" x="295" y="140">重なりを1回引く</text><text class="s" x="295" y="158">Trừ phần chung 1 lần</text>
+</svg>

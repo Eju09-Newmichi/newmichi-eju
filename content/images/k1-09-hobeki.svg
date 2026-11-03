@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="190" viewBox="0 0 460 190" role="img" aria-labelledby="t d">
+  <title id="t">方べきの定理</title>
+  <desc id="d">Điểm P nằm ngoài đường tròn, hai cát tuyến PAB và PCD, tiếp tuyến PT.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <circle class="ul" cx="110" cy="95" r="65"/><g class="l"><path d="M270 100 L45 93"/><path d="M270 100 L61 137.6"/></g><line class="rl" x1="270" y1="100" x2="138.2" y2="36.5"/>
+  <circle cx="270" cy="100" r="4" fill="#1B1F2A"/><circle cx="175" cy="97" r="3.5" fill="#1B1F2A"/><circle cx="45" cy="93" r="3.5" fill="#1B1F2A"/><circle cx="170.8" cy="117.9" r="3.5" fill="#1B1F2A"/><circle cx="61" cy="137.6" r="3.5" fill="#1B1F2A"/><circle class="p" cx="138.2" cy="36.5" r="4"/>
+  <text x="276" y="105">P</text><text x="180" y="90">A</text><text x="28" y="92">B</text><text x="172" y="134">C</text><text x="46" y="154">D</text><text class="r" x="130" y="28">T</text>
+  <text x="310" y="70">PA·PB = PC·PD</text><text class="r" x="310" y="100">PA·PB = PT²</text><text class="s" x="310" y="130">PT は接線</text><text class="s" x="310" y="148">PT là tiếp tuyến</text>
+</svg>

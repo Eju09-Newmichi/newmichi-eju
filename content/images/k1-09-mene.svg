@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="180" viewBox="0 0 460 180" role="img" aria-labelledby="t d">
+  <title id="t">メネラウスの定理とチェバの定理</title>
+  <desc id="d">Bên trái: một đường thẳng cắt ba cạnh tam giác tại P, Q, R. Bên phải: ba đường thẳng từ ba đỉnh đồng quy tại O.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <path class="l" d="M80 20 L20 140 L150 140 Z"/><line class="d" x1="150" y1="140" x2="210" y2="140"/><line class="rl" x1="210" y1="140" x2="44" y2="62"/>
+  <circle class="p" cx="210" cy="140" r="4"/><circle class="p" cx="127.5" cy="101.4" r="4"/><circle class="p" cx="56" cy="68" r="4"/>
+  <text x="72" y="16">A</text><text x="6" y="154">B</text><text x="150" y="156">C</text><text class="r" x="208" y="158">P</text><text class="r" x="134" y="96">Q</text><text class="r" x="38" y="60">R</text>
+  <path class="l" d="M320 20 L260 140 L390 140 Z"/><g class="ul"><path d="M320 20 L327.5 140"/><path d="M260 140 L355.7 81.1"/><path d="M390 140 L290.6 78.8"/></g><circle class="p" cx="325" cy="100" r="4"/>
+  <text x="312" y="16">A</text><text x="246" y="154">B</text><text x="392" y="154">C</text><text class="r" x="330" y="96">O</text><text class="u" x="322" y="156">P</text><text class="u" x="360" y="78">Q</text><text class="u" x="276" y="76">R</text>
+  <text class="b" x="110" y="174" text-anchor="middle" style="font-size:13px">メネラウス · Menelaus</text><text class="b" x="325" y="174" text-anchor="middle" style="font-size:13px">チェバ · Ceva</text>
+</svg>

@@ -172,7 +172,10 @@
       "id": "t-m", "subject": "tango", "series": "単語", "name": "数学の用語", "vi": "Thuật ngữ Toán", "en": "Math terms",
       "chapters": [
         {"ja":"第1章 数と式・集合・2次関数","vi":"Chương 1: Số và biểu thức, tập hợp, hàm số bậc hai","en":"Chapter 1: Expressions, sets and quadratic functions","lessons":["tk1-01","tk1-02","tk1-03","tk1-04"]},
-        {"ja":"第2章 図形と計量","vi":"Chương 2: Hình học và lượng giác","en":"Chapter 2: Trigonometry and measurement","planned":[{"ja":"「三角比」の用語","vi":"Từ vựng: lượng giác","en":"Terms: trigonometric ratios"}]}
+        {"ja":"第2章 図形と計量","vi":"Chương 2: Hình học và lượng giác","en":"Chapter 2: Trigonometry and measurement","lessons":["tk1-05"]},
+        {"ja":"第3章 場合の数と確率","vi":"Chương 3: Tổ hợp và xác suất","en":"Chapter 3: Counting and probability","lessons":["tk1-07","tk1-08"]},
+        {"ja":"第4章 整数の性質","vi":"Chương 4: Tính chất số nguyên","en":"Chapter 4: Properties of integers","lessons":["tk1-10"]},
+        {"ja":"第5章 図形の性質","vi":"Chương 5: Tính chất hình học","en":"Chapter 5: Properties of figures","lessons":["tk1-09"]}
       ]
     },
     {

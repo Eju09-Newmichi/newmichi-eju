@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="190" viewBox="0 0 460 190" role="img" aria-labelledby="t d">
+  <title id="t">直角三角形の辺と三角比</title>
+  <desc id="d">Tam giác vuông ABC, góc C vuông: AB cạnh huyền, BC cạnh đối, AC cạnh kề của góc A.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <path class="fu" d="M50 160 L270 160 L270 40 Z"/><path class="l" d="M50 160 L270 160 L270 40 Z"/><path class="t" d="M258 160 V148 H270"/><path class="rl" d="M85 160 A35 35 0 0 0 81 143"/>
+  <text x="36" y="178">A</text><text x="274" y="178">C</text><text x="274" y="38">B</text><text class="r" x="92" y="154">A</text>
+  <text class="b" x="130" y="82" text-anchor="middle">斜辺</text><text class="s" x="130" y="98" text-anchor="middle">cạnh huyền</text>
+  <text class="b" x="280" y="96">対辺</text><text class="s" x="280" y="112">cạnh đối</text><text class="b" x="160" y="178" text-anchor="middle">隣辺 <tspan class="s">cạnh kề</tspan></text>
+  <text x="345" y="60">sin A = BC/AB</text><text x="345" y="86">cos A = AC/AB</text><text x="345" y="112">tan A = BC/AC</text>
+</svg>

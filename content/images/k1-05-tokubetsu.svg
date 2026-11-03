@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="170" viewBox="0 0 460 170" role="img" aria-labelledby="t d">
+  <title id="t">特別な直角三角形</title>
+  <desc id="d">Hai tam giác vuông đặc biệt: 30°, 60°, 90° tỉ lệ 1:2:căn 3 và 45°, 45°, 90° tỉ lệ 1:1:căn 2.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <path class="fu" d="M30 140 L203 140 L203 40 Z"/><path class="l" d="M30 140 L203 140 L203 40 Z"/><path class="t" d="M193 140 V130 H203"/>
+  <text class="r" x="66" y="134">30°</text><text class="r" x="176" y="70">60°</text><text x="108" y="84" text-anchor="middle">2</text><text x="210" y="95">1</text><text x="116" y="160" text-anchor="middle">√3</text>
+  <path class="fr" d="M270 140 L400 140 L400 10 Z"/><path class="l" d="M270 140 L400 140 L400 10 Z"/><path class="t" d="M390 140 V130 H400"/>
+  <text class="r" x="304" y="134">45°</text><text class="r" x="372" y="56">45°</text><text x="325" y="70" text-anchor="middle">√2</text><text x="407" y="80">1</text><text x="335" y="160" text-anchor="middle">1</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="150" viewBox="0 0 460 150" role="img" aria-labelledby="t d">
+  <title id="t">ユークリッドの互除法</title>
+  <desc id="d">391 và 299: chia liên tiếp, số dư 92, 23, 0; số chia cuối cùng 23 là ước chung lớn nhất.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <text x="20" y="34">391 = 299 × 1 + <tspan class="u">92</tspan></text><text x="20" y="64">299 = <tspan class="u">92</tspan> × 3 + <tspan class="r">23</tspan></text><text x="20" y="94">92 = <tspan class="r">23</tspan> × 4 + 0</text>
+  <path class="t" d="M190 28 H230"/><path class="t" d="M224 23 L232 28 L224 33"/><path class="t" d="M190 58 H230"/><path class="t" d="M224 53 L232 58 L224 63"/><path class="t" d="M190 88 H230"/><path class="t" d="M224 83 L232 88 L224 93"/>
+  <text x="240" y="34">(391, 299)</text><text x="240" y="64">(299, 92)</text><text x="240" y="94">(92, 23)</text><text class="r" x="20" y="130">最大公約数 · ƯCLN = 23</text>
+</svg>

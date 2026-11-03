@@ -29,7 +29,7 @@
     {
       "no": 4, "tag": "数学Ⅰ", "ja": "図形と計量", "vi": "Hình học và lượng giác", "en": "Trigonometry and measurement",
       "sections": [
-        {"ja":"三角比","vi":"Tỷ số lượng giác","en":"Trigonometric ratios","planned":[
+        {"ja":"三角比","vi":"Tỷ số lượng giác","en":"Trigonometric ratios","lessons":["k1-05"],"planned":[
           {"ja":"正弦，余弦，正接","vi":"Sin, cosin, tang","en":"Sine, cosine and tangent"},
           {"ja":"三角比の相互関係","vi":"Mối quan hệ giữa các tỷ số lượng giác","en":"Relations between trigonometric ratios"}]},
         {"ja":"三角比と図形","vi":"Tỷ số lượng giác và hình học","en":"Trigonometry and figures","planned":[
@@ -40,10 +40,10 @@
     {
       "no": 5, "tag": "数学A", "ja": "場合の数と確率", "vi": "Tổ hợp và xác suất", "en": "Counting and probability",
       "sections": [
-        {"ja":"場合の数","vi":"Số trường hợp","en":"Counting","planned":[
+        {"ja":"場合の数","vi":"Số trường hợp","en":"Counting","lessons":["k1-07"],"planned":[
           {"ja":"数え上げの原則（集合の要素の個数，和の法則，積の法則を含む）","vi":"Nguyên tắc đếm (số phần tử tập hợp, quy tắc cộng, quy tắc nhân)","en":"Counting principles (number of elements, sum rule, product rule)"},
           {"ja":"順列・組合せ","vi":"Hoán vị, tổ hợp","en":"Permutations and combinations"}]},
-        {"ja":"確率","vi":"Xác suất","en":"Probability","planned":[
+        {"ja":"確率","vi":"Xác suất","en":"Probability","lessons":["k1-08"],"planned":[
           {"ja":"確率とその基本的な性質","vi":"Xác suất và tính chất cơ bản","en":"Probability and its basic properties"},
           {"ja":"独立な試行と確率","vi":"Phép thử độc lập và xác suất","en":"Independent trials"},
           {"ja":"反復試行の確率","vi":"Xác suất phép thử lặp lại","en":"Repeated trials"},
@@ -54,7 +54,7 @@
     {
       "no": 6, "tag": "数学A", "ja": "整数の性質", "vi": "Tính chất số nguyên", "en": "Properties of integers",
       "sections": [
-        {"ja":"約数と倍数","vi":"Ước và bội","en":"Divisors and multiples","planned":[
+        {"ja":"約数と倍数","vi":"Ước và bội","en":"Divisors and multiples","lessons":["k1-10"],"planned":[
           {"ja":"倍数の判定法","vi":"Cách xác định bội số","en":"Divisibility tests"},
           {"ja":"素数と素因数分解","vi":"Số nguyên tố và phân tích thừa số nguyên tố","en":"Primes and prime factorization"},
           {"ja":"最大公約数，最小公倍数","vi":"ƯCLN, BCNN","en":"GCD and LCM"},
@@ -67,7 +67,7 @@
     {
       "no": 7, "tag": "数学A", "ja": "図形の性質", "vi": "Tính chất hình học", "en": "Properties of figures",
       "sections": [
-        {"ja":"平面図形","vi":"Hình phẳng","en":"Plane figures","planned":[
+        {"ja":"平面図形","vi":"Hình phẳng","en":"Plane figures","lessons":["k1-09"],"planned":[
           {"ja":"三角形の性質（辺の比／五心：外心，内心，重心，垂心，傍心／チェバの定理，メネラウスの定理）","vi":"Tính chất tam giác (tỷ lệ cạnh; 5 tâm: ngoại tiếp, nội tiếp, trọng tâm, trực tâm, bàng tiếp; định lý Ceva, Menelaus)","en":"Triangles (side ratios; the five centers; Ceva's and Menelaus' theorems)"},
           {"ja":"円の性質（内接四角形／円と直線／方べきの定理／2円の位置関係）","vi":"Tính chất đường tròn (tứ giác nội tiếp; đường tròn và đường thẳng; định lý phương tích; vị trí tương đối 2 đường tròn)","en":"Circles (inscribed quadrilaterals; circles and lines; power of a point; two circles)"}]},
         {"ja":"空間図形","vi":"Hình không gian","en":"Solid figures","planned":[

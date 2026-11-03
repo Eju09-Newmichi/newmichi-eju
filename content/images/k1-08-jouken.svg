@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="180" viewBox="0 0 460 180" role="img" aria-labelledby="t d">
+  <title id="t">くじ引きの樹形図</title>
+  <desc id="d">Sơ đồ cây: a trúng với xác suất 4/10, khi đó b trúng 3/9; a không trúng 6/10, khi đó b trúng 4/9.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <g class="t"><path d="M30 90 L140 45"/><path d="M30 90 L140 135"/><path d="M185 45 L290 22"/><path d="M185 45 L290 68"/><path d="M185 135 L290 112"/><path d="M185 135 L290 158"/></g>
+  <circle class="p" cx="28" cy="90" r="4"/><text class="s" x="62" y="56">4/10</text><text class="s" x="62" y="134">6/10</text><text class="s" x="225" y="24">3/9</text><text class="s" x="225" y="76">6/9</text><text class="s" x="225" y="112">4/9</text><text class="s" x="225" y="164">5/9</text>
+  <text class="u" x="145" y="50">a 当</text><text x="145" y="140">a 外</text><text class="r" x="296" y="27">b 当たり</text><text x="296" y="73">b はずれ</text><text class="r" x="296" y="117">b 当たり</text><text x="296" y="163">b はずれ</text>
+  <text class="s" x="370" y="27">trúng</text><text class="s" x="370" y="73">không trúng</text><text class="s" x="370" y="117">trúng</text><text class="s" x="370" y="163">không trúng</text>
+</svg>

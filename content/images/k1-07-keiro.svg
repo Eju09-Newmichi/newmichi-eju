@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="190" viewBox="0 0 460 190" role="img" aria-labelledby="t d">
+  <title id="t">最短経路</title>
+  <desc id="d">Lưới 4 ô ngang, 3 ô dọc, đường đi ngắn nhất từ A đến B gồm 4 mũi tên sang phải và 3 mũi tên lên trên.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <g class="t"><path d="M40 30 H240 M40 80 H240 M40 130 H240 M40 180 H240"/><path d="M40 30 V180 M90 30 V180 M140 30 V180 M190 30 V180 M240 30 V180"/></g>
+  <path class="rl" d="M40 180 H90 V130 H190 V80 H240 V30"/><circle class="p" cx="40" cy="180" r="5"/><circle class="p" cx="240" cy="30" r="5"/><text class="b" x="20" y="176">A</text><text class="b" x="248" y="30">B</text>
+  <text x="275" y="70">→ 4個、↑ 3個</text><text class="s" x="275" y="90">4 lần phải, 3 lần lên</text><text class="r" x="275" y="130">7! / (4! 3!) = 35</text>
+</svg>

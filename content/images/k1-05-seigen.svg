@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="190" viewBox="0 0 460 190" role="img" aria-labelledby="t d">
+  <title id="t">正弦定理と余弦定理</title>
+  <desc id="d">Tam giác ABC nội tiếp đường tròn bán kính R, cạnh a, b, c đối diện các góc A, B, C.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <circle class="ul" cx="125" cy="95" r="85"/><path class="fu" d="M110 11 L51 137 L199 137 Z"/><path class="l" d="M110 11 L51 137 L199 137 Z"/><line class="rl" x1="125" y1="95" x2="199" y2="137"/><circle class="p" cx="125" cy="95" r="3"/>
+  <text x="96" y="14">A</text><text x="34" y="150">B</text><text x="202" y="152">C</text><text x="125" y="154" text-anchor="middle">a</text><text x="160" y="76">b</text><text x="64" y="76">c</text><text class="r" x="160" y="110">R</text>
+  <text class="b" x="225" y="40">正弦定理 <tspan class="s">định lý sin</tspan></text><text x="225" y="64">a/sin A = b/sin B = c/sin C = 2R</text>
+  <text class="b" x="225" y="112">余弦定理 <tspan class="s">định lý cos</tspan></text><text x="225" y="136">a² = b² + c² − 2bc cos A</text>
+</svg>

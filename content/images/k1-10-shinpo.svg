@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="170" viewBox="0 0 460 170" role="img" aria-labelledby="t d">
+  <title id="t">10進法から2進法へ</title>
+  <desc id="d">Chia liên tiếp 13 cho 2, các số dư đọc từ dưới lên là 1101.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <g><text x="40" y="30">2 ) 13</text><text class="r" x="130" y="30">… 1</text><text x="40" y="60">2 ) 6</text><text class="r" x="130" y="60">… 0</text><text x="40" y="90">2 ) 3</text><text class="r" x="130" y="90">… 1</text><text x="72" y="120">1</text><text class="r" x="130" y="120">… 1</text></g>
+  <path class="rl" d="M178 120 V26"/><path class="rl" d="M172 34 L178 22 L184 34"/>
+  <text class="s" x="200" y="50">下から読む</text><text class="s" x="200" y="68">Đọc từ dưới lên</text><text class="r" x="200" y="104">13 = 1101₍₂₎</text><text x="200" y="134">8 + 4 + 0 + 1 = 13</text>
+</svg>

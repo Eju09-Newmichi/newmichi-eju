@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="190" viewBox="0 0 460 190" role="img" aria-labelledby="t d">
+  <title id="t">さいころ2個の目の出方</title>
+  <desc id="d">Bảng 6 nhân 6 ô cho 2 xúc xắc, có 4 ô tô đỏ là các trường hợp tích hai số bằng 12.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <g class="t"><path d="M50 25 H230 M50 50 H230 M50 75 H230 M50 100 H230 M50 125 H230 M50 150 H230 M50 175 H230"/><path d="M50 25 V175 M80 25 V175 M110 25 V175 M140 25 V175 M170 25 V175 M200 25 V175 M230 25 V175"/></g>
+  <rect x="80" y="150" width="30" height="25" fill="#C62828"/><rect x="110" y="100" width="30" height="25" fill="#C62828"/><rect x="140" y="75" width="30" height="25" fill="#C62828"/><rect x="200" y="50" width="30" height="25" fill="#C62828"/>
+  <g class="s" text-anchor="middle"><text x="65" y="18">1</text><text x="95" y="18">2</text><text x="125" y="18">3</text><text x="155" y="18">4</text><text x="185" y="18">5</text><text x="215" y="18">6</text><text x="38" y="43">1</text><text x="38" y="68">2</text><text x="38" y="93">3</text><text x="38" y="118">4</text><text x="38" y="143">5</text><text x="38" y="168">6</text></g>
+  <text x="250" y="50">6 × 6 = 36 通り</text><text class="s" x="250" y="70">36 trường hợp</text><text class="r" x="250" y="110">積が 12：4 通り</text><text class="s" x="250" y="130">Tích bằng 12: 4 trường hợp</text><text class="r" x="250" y="160">4/36 = 1/9</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="165" viewBox="0 0 460 165" role="img" aria-labelledby="t d">
+  <title id="t">排反と重なり</title>
+  <desc id="d">Bên trái: hai biến cố xung khắc không có phần chung. Bên phải: hai biến cố có phần chung.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+  </style>
+  <rect class="t" x="10" y="10" width="205" height="115"/><circle cx="65" cy="68" r="42" fill="#E3F0FC" stroke="#1F66C9" stroke-width="2.5"/><circle cx="160" cy="68" r="42" fill="#FDECEA" stroke="#C62828" stroke-width="2.5"/><text class="u" x="60" y="74">A</text><text class="r" x="155" y="74">B</text>
+  <rect class="t" x="245" y="10" width="205" height="115"/><circle cx="320" cy="68" r="48" fill="#E3F0FC" stroke="#1F66C9" stroke-width="2.5"/><circle cx="380" cy="68" r="48" fill="#FDECEA" fill-opacity="0.7" stroke="#C62828" stroke-width="2.5"/><text class="u" x="290" y="74">A</text><text class="r" x="402" y="74">B</text><text class="b" x="350" y="74" text-anchor="middle" style="font-size:13px">A∩B</text>
+  <text class="b" x="112" y="146" text-anchor="middle" style="font-size:13px">排反 · xung khắc</text><text class="s" x="112" y="162" text-anchor="middle">P(A) + P(B)</text><text class="b" x="347" y="146" text-anchor="middle" style="font-size:13px">重なりあり · có phần chung</text><text class="s" x="347" y="162" text-anchor="middle">P(A) + P(B) − P(A∩B)</text>
+</svg>
