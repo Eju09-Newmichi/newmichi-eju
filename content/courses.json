@@ -8,6 +8,7 @@
   ],
   "series_vi": {
     "日本語 EJU対策編": "Luyện thi EJU",
+    "日本語 JLPT対策編": "Luyện thi JLPT",
     "数学 通常学習編": "Học theo chương trình",
     "数学 EJU対策編": "Luyện thi EJU",
     "化学 通常学習編": "Học theo chương trình",
@@ -19,6 +20,7 @@
   },
   "series_en": {
     "日本語 EJU対策編": "EJU prep",
+    "日本語 JLPT対策編": "JLPT prep",
     "数学 通常学習編": "Core course",
     "数学 EJU対策編": "EJU prep",
     "化学 通常学習編": "Core course",
@@ -60,6 +62,59 @@
       ]
     },
     {
+      "id": "n-n5", "subject": "nihongo", "series": "日本語 JLPT対策編", "name": "N5", "vi": "Tiếng Nhật N5", "en": "Japanese N5",
+      "chapters": [
+        {"ja":"第1章 文字・語彙","vi":"Chương 1: Chữ và từ vựng","en":"Chapter 1: Characters and vocabulary"},
+        {"ja":"第2章 文法","vi":"Chương 2: Ngữ pháp","en":"Chapter 2: Grammar"},
+        {"ja":"第3章 読解","vi":"Chương 3: Đọc hiểu","en":"Chapter 3: Reading"},
+        {"ja":"第4章 聴解","vi":"Chương 4: Nghe hiểu","en":"Chapter 4: Listening"}
+      ]
+    },
+    {
+      "id": "n-n4", "subject": "nihongo", "series": "日本語 JLPT対策編", "name": "N4", "vi": "Tiếng Nhật N4", "en": "Japanese N4",
+      "chapters": [
+        {"ja":"第1章 文字・語彙","vi":"Chương 1: Chữ và từ vựng","en":"Chapter 1: Characters and vocabulary"},
+        {"ja":"第2章 文法","vi":"Chương 2: Ngữ pháp","en":"Chapter 2: Grammar"},
+        {"ja":"第3章 読解","vi":"Chương 3: Đọc hiểu","en":"Chapter 3: Reading"},
+        {"ja":"第4章 聴解","vi":"Chương 4: Nghe hiểu","en":"Chapter 4: Listening"}
+      ]
+    },
+    {
+      "id": "n-n3", "subject": "nihongo", "series": "日本語 JLPT対策編", "name": "N3", "vi": "Tiếng Nhật N3", "en": "Japanese N3",
+      "chapters": [
+        {"ja":"第1章 文字・語彙","vi":"Chương 1: Chữ và từ vựng","en":"Chapter 1: Characters and vocabulary"},
+        {"ja":"第2章 文法","vi":"Chương 2: Ngữ pháp","en":"Chapter 2: Grammar"},
+        {"ja":"第3章 読解","vi":"Chương 3: Đọc hiểu","en":"Chapter 3: Reading"},
+        {"ja":"第4章 聴解","vi":"Chương 4: Nghe hiểu","en":"Chapter 4: Listening"}
+      ]
+    },
+    {
+      "id": "n-n2", "subject": "nihongo", "series": "日本語 JLPT対策編", "name": "N2", "vi": "Tiếng Nhật N2", "en": "Japanese N2",
+      "chapters": [
+        {"ja":"第1章 文字・語彙","vi":"Chương 1: Chữ và từ vựng","en":"Chapter 1: Characters and vocabulary"},
+        {"ja":"第2章 文法","vi":"Chương 2: Ngữ pháp","en":"Chapter 2: Grammar"},
+        {"ja":"第3章 読解","vi":"Chương 3: Đọc hiểu","en":"Chapter 3: Reading"},
+        {"ja":"第4章 聴解","vi":"Chương 4: Nghe hiểu","en":"Chapter 4: Listening"}
+      ]
+    },
+    {
+      "id": "n-n1", "subject": "nihongo", "series": "日本語 JLPT対策編", "name": "N1", "vi": "Tiếng Nhật N1", "en": "Japanese N1",
+      "chapters": [
+        {"ja":"第1章 文字・語彙","vi":"Chương 1: Chữ và từ vựng","en":"Chapter 1: Characters and vocabulary"},
+        {"ja":"第2章 文法","vi":"Chương 2: Ngữ pháp","en":"Chapter 2: Grammar"},
+        {"ja":"第3章 読解","vi":"Chương 3: Đọc hiểu","en":"Chapter 3: Reading"},
+        {"ja":"第4章 聴解","vi":"Chương 4: Nghe hiểu","en":"Chapter 4: Listening"}
+      ]
+    },
+    {
+      "id": "m-k1", "subject": "sugaku", "series": "数学 EJU対策編", "name": "コース1", "vi": "Course 1", "en": "Course 1",
+      "topics": [1, 2, 3, 4, 5, 6, 7], "showTag": true
+    },
+    {
+      "id": "m-k2", "subject": "sugaku", "series": "数学 EJU対策編", "name": "コース2", "vi": "Course 2", "en": "Course 2",
+      "topics": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], "showTag": true
+    },
+    {
       "id": "m-1", "subject": "sugaku", "series": "数学 通常学習編", "name": "数学Ⅰ", "vi": "Toán I", "en": "Math I",
       "topics": [1, 2, 3, 4]
     },
@@ -82,14 +137,6 @@
     {
       "id": "m-c", "subject": "sugaku", "series": "数学 通常学習編", "name": "数学C", "vi": "Toán C", "en": "Math C",
       "topics": [14, 15, 16]
-    },
-    {
-      "id": "m-k1", "subject": "sugaku", "series": "数学 EJU対策編", "name": "コース1", "vi": "Course 1", "en": "Course 1",
-      "topics": [1, 2, 3, 4, 5, 6, 7], "showTag": true
-    },
-    {
-      "id": "m-k2", "subject": "sugaku", "series": "数学 EJU対策編", "name": "コース2", "vi": "Course 2", "en": "Course 2",
-      "topics": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], "showTag": true
     },
     {
       "id": "r-c1", "subject": "rika", "series": "化学 通常学習編", "name": "理論化学", "vi": "Hóa học đại cương", "en": "Theoretical chemistry",

@@ -412,8 +412,8 @@ Website đang chạy trên **GitHub Pages**:
 - Mã nguồn (kho GitHub): https://github.com/Eju09-Newmichi/newmichi-eju
 
 Mỗi lần có bài mới, Claude Code kiểm tra trên máy rồi commit và `git push`; khoảng 1 phút sau web tự cập nhật.
-Link trực tiếp tới một bài có dạng `https://eju09-newmichi.github.io/newmichi-eju/#v-<mã-bài>`; người chưa đăng nhập
-sẽ được đưa vào đúng bài đó ngay sau khi đăng nhập.
+Link trực tiếp tới một bài có dạng `https://eju09-newmichi.github.io/newmichi-eju/#v-<mã-bài>`: ai mở link cũng vào học được ngay,
+không cần đăng nhập.
 
 Không xóa file `.nojekyll` ở thư mục gốc (thiếu nó GitHub không phục vụ các file `.md` của bài học).
 Khi kết nối Firebase, nhớ thêm `eju09-newmichi.github.io` vào **Authorized domains** (mục 11).
@@ -431,7 +431,9 @@ Trên mạng thì không cần `xem-thu.bat`.
 
 ## 11. Đăng nhập (Firebase)
 
-Website có trang chào với hai nút **ログイン** (Đăng nhập) và **新規登録** (Đăng ký). Chưa đăng nhập thì không vào được trang học.
+**Ai cũng xem và học được không cần đăng nhập** (bài giảng, video, bài tập, từ vựng). Nút **ログイン · Đăng nhập** ở góc trên bên phải mở trang
+Đăng nhập / Đăng ký. Khách chưa đăng nhập: tiến độ, bài đã lưu chỉ nằm trên trình duyệt đang dùng; khi đăng nhập, tiến độ đó tự gộp vào tài khoản.
+Đăng nhập để lưu tiến độ theo tài khoản (học tiếp trên máy khác) và có tên trong bảng xếp hạng.
 
 ### Chế độ thử
 
@@ -470,6 +472,6 @@ Vào **Authentication → Settings → Authorized domains → Add domain**, thê
 
 ### Giới hạn cần biết
 
-Màn đăng nhập chặn người lạ vào trang học, nhưng các file trong `content/` vẫn nằm công khai trên máy chủ web:
-ai biết đường dẫn chính xác (ví dụ `.../content/lessons/k1-04.md`) vẫn tải được. Video YouTube cũng vậy nếu để chế độ Không công khai.
-Muốn khóa hẳn nội dung thì cần chuyển bài học vào Firebase (làm thêm sau nếu cần).
+Bài học để công khai cho mọi người. Các file trong `content/` cũng nằm công khai trên máy chủ web
+(ví dụ `.../content/lessons/k1-04.md`). Video YouTube cũng vậy nếu để chế độ Không công khai.
+Muốn khóa riêng một số bài cho người đã đăng nhập thì cần làm thêm (chuyển bài đó vào Firebase).

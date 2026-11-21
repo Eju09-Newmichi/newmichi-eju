@@ -19,7 +19,7 @@
   - Bài có thể có **tiêu đề nhỏ** (`### …`) và **hình minh họa** (`![chú thích](file)` trong `content/images/`). Sơ đồ Toán Claude tự vẽ bằng SVG (nền trắng, chữ Times/Shippori).
   - Mục まとめ phải đầy đủ: công thức và ví dụ cho từng ý, không chỉ vài câu chung chung.
   - `[hidden]` luôn ẩn (`display:none !important`): lời giải 解説 chỉ hiện sau khi bấm Chấm điểm.
-  - Môn Toán theo **20 chủ đề đề cương EJU** (`content/math-topics.json`). Menu Toán: 数学Ⅰ → 数学A → 数学Ⅱ → 数学B → 数学Ⅲ → 数学C (通常学習編), rồi コース1 (chủ đề 1–7) và コース2 (chủ đề 1–20). Chủ đề 13 thuộc 数学B; 19 và 20 thuộc cả 数学Ⅱ và 数学Ⅲ.
+  - Môn Toán theo **20 chủ đề đề cương EJU** (`content/math-topics.json`). Menu Toán (đổi 21/11/2026): コース1 (chủ đề 1–7) và コース2 (chủ đề 1–20) (EJU対策編) **lên đầu**, rồi 数学Ⅰ → 数学A → 数学Ⅱ → 数学B → 数学Ⅲ → 数学C (通常学習編). Menu Tiếng Nhật: 4 khóa EJU (読解, 聴読解, 聴解, 記述), rồi **N5 → N4 → N3 → N2 → N1** (日本語 JLPT対策編, mỗi khóa 4 chương 文字・語彙, 文法, 読解, 聴解). Hóa, Sinh giữ nguyên; Xã hội sẽ đổi sau. Chủ đề 13 thuộc 数学B; 19 và 20 thuộc cả 数学Ⅱ và 数学Ⅲ.
   - Trong chương Toán có **dòng tiêu đề mục lớn** (1), (2)… (class `tsec-t`).
   - **Trang từ vựng** (`tk1-01`…, mục 単語 · Từ mới, Thuật ngữ Toán): 5 nút dưới video (Mở đầu · 3 nhóm · Bảng tổng kết, không có nút Ôn tập, Kết thúc). Mỗi từ là một **thẻ** (`.vcard`): chữ Hán + cách đọc, âm Hán Việt, nghĩa, cách nhớ, ví dụ, nút ▶ tua video tới từ đó. Âm Hán Việt và cách nhớ chỉ hiện ở VI và JP+VI. Cuối trang có Bảng tổng kết. Mốc thời gian phải khớp video **đang đăng trên YouTube**.
   - Trang bài có tối đa 3 video: video chính (bài giảng) ở khung trên, dưới khung là nút **授業 · 解説 · 単語** (`video`, `video_kaisetsu`, `video_tango`).
@@ -44,7 +44,8 @@
 
 ## 3. Đăng nhập và dữ liệu học viên
 
-- Phải đăng nhập mới vào được trang học. Trang chào kiểu Try IT: logo Newmichi, nút ログイン và 新規登録, link điều khoản. Ai cũng tự đăng ký được.
+- **Ai cũng xem và học được không cần đăng nhập** (đổi theo yêu cầu chủ dự án 21/11/2026). Góc trên bên phải: khách thấy nút **ログイン · Đăng nhập** (menu: Đăng nhập, Đăng ký, Điều khoản); dải hồ sơ trang đầu hiện "Khách" và lời mời đăng ký. Trang Đăng nhập / Đăng ký / Quên mật khẩu kiểu Try IT (logo Newmichi) giữ nguyên, có nút "← Quay lại học" về trang đang xem; đăng nhập xong cũng quay về trang đó. Ai cũng tự đăng ký được.
+- Tiến độ của khách lưu trong trình duyệt (`eju-progress:guest`) và tự gộp vào tài khoản khi đăng nhập. Khách xem được bảng xếp hạng nhưng không có tên trong đó.
 - Tài khoản dùng Firebase (Authentication + Firestore), cấu hình trong `firebase-config.js`. Để trống thì chạy chế độ thử (tài khoản lưu trong trình duyệt). Mọi chỗ gọi tài khoản đi qua `window.EJUAuth` (`assets/auth.js`), cả hai chế độ cùng một giao diện hàm.
 - Tiến độ học lưu theo tài khoản (`users/{uid}`); bảng xếp hạng (`ranking/{uid}`) chỉ có tên hiển thị và số bài hoàn thành, **không bao giờ hiện email người khác**.
 - Tên hiển thị là dữ liệu người dùng nhập: luôn `esc()` trước khi đưa vào HTML.

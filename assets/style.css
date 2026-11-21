@@ -219,6 +219,21 @@ table.org { min-width: 540px; }
   width: 40px; height: 40px; border-radius: 50%; border: 0; flex: none; cursor: pointer;
   background: var(--graphite); color: var(--on-graphite); font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
 }
+.avatar.is-guest { width: auto; height: 36px; padding: 0 14px; border-radius: 999px; background: var(--band); color: var(--band-ink); font-family: var(--font-jp); font-size: 0.875rem; white-space: nowrap; }
+.avatar.is-guest { display: inline-flex; align-items: center; gap: 6px; }
+.avatar.is-guest .ic { width: 18px; height: 18px; flex: none; }
+.avatar.is-guest .lv, .avatar.is-guest .le { color: inherit; }
+/* phones: the guest button shrinks to a round person icon so the header stays on one row */
+@media (max-width: 480px) {
+  .avatar.is-guest { width: 40px; height: 40px; padding: 0; justify-content: center; border-radius: 50%; }
+  .avatar.is-guest .bs { display: none; }
+}
+.me-join { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 8px 0 0; }
+.join-btn { display: inline-block; padding: 6px 16px; border-radius: 999px; background: var(--surface); color: var(--accent); font-weight: 700; text-decoration: none; }
+.join-link { color: inherit; font-weight: 700; }
+.join-btn .lv, .join-btn .le, .join-link .lv, .join-link .le { color: inherit; }
+.notice .join-btn { background: var(--accent); color: var(--surface); }
+.notice .join-link { color: var(--accent); }
 .gnav { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
 .gnav::-webkit-scrollbar { display: none; }
 .gnav a, .gnav button {

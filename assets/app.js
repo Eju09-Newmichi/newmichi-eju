@@ -228,8 +228,9 @@
 
   /* ================= STATE ================= */
   /* Progress belongs to the signed-in account: cached in this browser under its uid and pushed to the
-     account (Firebase) a moment after each change. "eju-site-v2" is the old, account-less progress. */
-  var LEGACY_KEY = "eju-site-v2", LANG_KEY = "eju-lang";
+     account (Firebase) a moment after each change. A visitor who hasn't signed in keeps progress in this
+     browser only ("eju-progress:guest"), merged into the account at sign-in. "eju-site-v2" is the old progress. */
+  var LEGACY_KEY = "eju-site-v2", GUEST_KEY = "eju-progress:guest", LANG_KEY = "eju-lang";
   var user = null;
   function emptyState() { return { hist: [], done: {}, marks: {}, updated: 0 }; }
   function loadKey(k) {
@@ -237,7 +238,7 @@
     return null;
   }
   var st = emptyState();
-  function cacheKey() { return "eju-progress:" + user.uid; }
+  function cacheKey() { return user ? "eju-progress:" + user.uid : GUEST_KEY; }
   function doneCount() { return Object.keys(st.done).filter(function (id) { return st.done[id]; }).length; }
   var pushTimer = null;
   function pushProgress() {
@@ -245,9 +246,9 @@
     if (user) window.EJUAuth.saveProgress(user, st, doneCount()).catch(function () {});
   }
   function save() {
-    if (!user) return;
     st.updated = Date.now();
     try { localStorage.setItem(cacheKey(), JSON.stringify(st)); } catch (e) {}
+    if (!user) return;
     clearTimeout(pushTimer);
     pushTimer = setTimeout(pushProgress, 1500);
   }
@@ -299,6 +300,7 @@
   var app = document.getElementById("app");
   var CIRCLED = ["", "①", "②", "③", "④", "⑤", "⑥"];
   var ICON = {
+    person: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>',
     trophy: '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z" fill="currentColor" fill-opacity=".18"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>',
     check: '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7.5 12.5l3 3 6-6" fill="none" stroke="var(--band)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     tick: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -414,10 +416,15 @@
     var h = Math.floor(S.sec / 3600), m = Math.floor((S.sec % 3600) / 60);
     var html =
       '<section class="band"><div class="in band-in">' +
-        '<div class="me"><div class="avatar-lg" aria-hidden="true">' + esc(initialOf(user.name)) + '</div><div><p class="me-name">' + esc(user.name) +
-          /* the honorific belongs to the Japanese view only (hidden in VI and EN) */
-          '<span class="lj xe"> さん</span></p>' +
-          (SITE.member ? '<p class="me-sub">' + bi(SITE.member.ja, SITE.member.vi, SITE.member.en) + "</p>" : "") + "</div></div>" +
+        (user
+          ? '<div class="me"><div class="avatar-lg" aria-hidden="true">' + esc(initialOf(user.name)) + '</div><div><p class="me-name">' + esc(user.name) +
+            /* the honorific belongs to the Japanese view only (hidden in VI and EN) */
+            '<span class="lj xe"> さん</span></p>' +
+            (SITE.member ? '<p class="me-sub">' + bi(SITE.member.ja, SITE.member.vi, SITE.member.en) + "</p>" : "") + "</div></div>"
+          /* a visitor who hasn't signed in: invite them to sign up so progress follows them across devices */
+          : '<div class="me"><div class="avatar-lg" aria-hidden="true">?</div><div><p class="me-name">' + bi("ゲスト", "Khách", "Guest") + "</p>" +
+            '<p class="me-sub">' + bi("無料登録で、学習の記録をどの端末でも続けられます。", "Đăng ký miễn phí để lưu tiến độ trên mọi thiết bị.", "Sign up free to keep your progress on every device.") + "</p>" +
+            '<p class="me-join"><a class="join-btn" href="#register">' + bi("新規登録", "Đăng ký", "Sign up") + '</a><a class="join-link" href="#login">' + bi("ログイン", "Đăng nhập", "Log in") + "</a></p></div></div>") +
         '<div class="me-stats"><p class="st-row"><span class="st" title="完了した章 · Chương đã hoàn thành">' + ICON.trophy + "<b>" + S.troph + '</b></span><span class="st" title="完了した授業 · Bài đã hoàn thành">' + ICON.check + "<b>" + S.done + "</b></span></p>" +
           '<p class="st-time">' + bi("総学習時間", "Tổng thời gian học") + "<b>" + h + "</b>" + unit("時間", "giờ") + "<b>" + m + "</b>" + unit("分", "phút") + "</p></div>" +
         '<div class="me-level"><p class="lv-num">Lv<b>' + S.lv + '</b></p><div class="lvbar"><span style="width:' + (S.into / 2) + '%"></span></div>' +
@@ -942,17 +949,20 @@
         : emptyBox(["まだデータがありません。", "Chưa có dữ liệu."], ["授業をいくつか見ると、ここが自動で更新されます。", "Xem vài bài học, bảng này sẽ tự cập nhật."])) +
       "</div></div>");
     var box = document.getElementById("rankBox");
-    /* publish this account's latest count first so the list includes it */
+    /* publish this account's latest count first so the list includes it; a visitor only reads the list */
     clearTimeout(pushTimer);
-    window.EJUAuth.saveProgress(user, st, doneCount()).catch(function () {}).then(function () { return window.EJUAuth.ranking(); }).then(function (rows) {
+    var publish = user ? window.EJUAuth.saveProgress(user, st, doneCount()).catch(function () {}) : Promise.resolve();
+    var join = user ? "" : '<div class="notice">' + para(["ログインすると、あなたの名前もランキングに載ります。", "Đăng nhập để có tên của bạn trong bảng xếp hạng.", "Log in to put your name on the ranking."]) +
+      '<p class="me-join"><a class="join-btn" href="#login">' + bi("ログイン", "Đăng nhập", "Log in") + '</a><a class="join-link" href="#register">' + bi("新規登録", "Đăng ký", "Sign up") + "</a></p></div>";
+    publish.then(function () { return window.EJUAuth.ranking(); }).then(function (rows) {
       if (!document.body.contains(box)) return;
-      box.innerHTML = rows.length ? '<ol class="rank">' + rows.map(function (r, i) {
+      box.innerHTML = join + (rows.length ? '<ol class="rank">' + rows.map(function (r, i) {
         var me = user && r.uid === user.uid;
         return '<li><span class="rank-no">' + (i + 1) + '</span><div class="rrow' + (me ? " is-me" : "") + '"><span class="rr-av" aria-hidden="true">' + esc(initialOf(r.name)) + '</span><span class="rr-name">' + esc(r.name) +
           (me ? ' <span class="rr-you">' + bi("あなた", "Bạn", "You") + "</span>" : "") + '</span><span class="rr-done">' + r.done + " " + unit("本", "bài") + "</span></div></li>";
-      }).join("") + "</ol>" : emptyBox(["まだデータがありません。", "Chưa có dữ liệu."]);
+      }).join("") + "</ol>" : emptyBox(["まだデータがありません。", "Chưa có dữ liệu."]));
     }).catch(function () {
-      if (document.body.contains(box)) box.innerHTML = '<div class="muted">' + para(["ランキングを読み込めませんでした。", "Không tải được bảng xếp hạng.", "Couldn't load the ranking."]) + "</div>";
+      if (document.body.contains(box)) box.innerHTML = join + '<div class="muted">' + para(["ランキングを読み込めませんでした。", "Không tải được bảng xếp hạng.", "Couldn't load the ranking."]) + "</div>";
     });
   }
   function renderSearch(q) {
@@ -1028,8 +1038,18 @@
   var acct = document.getElementById("acctMenu");
   var avatarBtn = document.getElementById("avatar");
   function initialOf(name) { var a = Array.from(String(name || "").trim()); return a.length ? a[0].toUpperCase() : "?"; }
+  /* the button at the top right: the account's initial, or "Log in" for a visitor */
+  function showAvatar() {
+    avatarBtn.classList.toggle("is-guest", !user);
+    avatarBtn.innerHTML = user ? esc(initialOf(user.name)) : ICON.person + bs("ログイン", "Đăng nhập", "Log in");
+  }
   function openAcct() {
-    acct.innerHTML = '<p class="menu-head acct-head">' + esc(user.name) + "<span>" + esc(user.email) + "</span></p>" +
+    acct.innerHTML = !user
+      ? '<p class="menu-head acct-head">' + bi("ゲスト", "Khách", "Guest") + '<span class="small">' + bi("学習の記録はこのブラウザに保存されています。", "Tiến độ đang được lưu trên trình duyệt này.", "Your progress is saved in this browser.") + "</span></p>" +
+        '<a class="menu-item" href="#login">' + bs("ログイン", "Đăng nhập", "Log in") + "</a>" +
+        '<a class="menu-item" href="#register">' + bs("新規登録", "Đăng ký", "Sign up") + "</a>" +
+        '<a class="menu-item" href="#terms">' + bs("利用規約", "Điều khoản", "Terms") + "</a>"
+      : '<p class="menu-head acct-head">' + esc(user.name) + "<span>" + esc(user.email) + "</span></p>" +
       '<a class="menu-item" href="#home" data-hist>' + bs("学習状況", "Học tập") + "</a>" +
       '<a class="menu-item" href="#terms">' + bs("利用規約", "Điều khoản", "Terms") + "</a>" +
       '<button type="button" class="menu-item" id="logoutBtn">' + bs("ログアウト", "Đăng xuất", "Sign out") + "</button>";
@@ -1092,7 +1112,8 @@
   }
   var F_EMAIL = ["メールアドレス", "Email", "Email"], F_PW = ["パスワード", "Mật khẩu", "Password"];
   function gateHTML(view) {
-    var back = '<a class="gate-back" href="#welcome">← ' + bi("戻る", "Quay lại", "Back") + "</a>";
+    /* back to the lesson or page the visitor was on before opening the sign-in screens */
+    var back = '<a class="gate-back" href="#' + esc(returnTo || "home") + '">← ' + bi("学習に戻る", "Quay lại học", "Back to learning") + "</a>";
     var err = '<p class="gate-err" role="alert"></p>';
     if (view === "login") return '<h1 class="gate-t">' + bs("ログイン", "Đăng nhập", "Log in") + "</h1>" +
       '<form class="gate-form" id="loginForm" novalidate>' + field("liEmail", "email", F_EMAIL, null, "email") + field("liPw", "password", F_PW, null, "current-password") + err +
@@ -1111,21 +1132,20 @@
       '<div class="muted small">' + para(["登録したメールアドレスに、パスワード再設定用のリンクを送ります。", "Chúng tôi sẽ gửi link đặt lại mật khẩu tới email bạn đã đăng ký.", "We'll email you a link to reset your password."]) + "</div>" +
       '<form class="gate-form" id="resetForm" novalidate>' + field("rsEmail", "email", F_EMAIL, null, "email") + err +
       '<p class="gate-ok" role="status" hidden></p><button type="submit" class="gate-btn">' + bi("送信する", "Gửi email", "Send link") + "</button></form>" +
-      '<p class="gate-alt"><a href="#login">' + bi("ログイン画面に戻る", "Quay lại đăng nhập", "Back to log in") + "</a></p>";
+      '<p class="gate-alt"><a href="#login">' + bi("ログイン画面に戻る", "Quay lại đăng nhập", "Back to log in") + "</a></p>" + back;
     if (view === "terms") return '<h1 class="gate-t">' + bs("利用規約及びプライバシーポリシー", "Điều khoản sử dụng và chính sách riêng tư", "Terms of use and privacy policy") + "</h1>" +
       '<div class="panel"><div class="pbody" id="termsBody"><p class="muted small">' + bi("読み込み中…", "Đang tải…", "Loading…") + "</p></div></div>" + back;
     return (gateNotice ? '<p class="gate-err">' + authMsg(gateNotice) + "</p>" : "") +
       '<div class="gate-actions"><a class="gate-btn" href="#login">' + bi("ログイン", "Đăng nhập", "Log in") + '</a><a class="gate-btn" href="#register">' + bi("新規登録", "Đăng ký", "Sign up") + "</a></div>" +
-      '<p class="gate-alt"><a href="#terms">' + bi("利用規約及びプライバシーポリシー", "Điều khoản sử dụng và chính sách riêng tư", "Terms of use and privacy policy") + "</a></p>";
+      '<p class="gate-alt"><a href="#terms">' + bi("利用規約及びプライバシーポリシー", "Điều khoản sử dụng và chính sách riêng tư", "Terms of use and privacy policy") + "</a></p>" + back;
   }
   function renderGate(h) {
-    var view = { login: 1, register: 1, reset: 1, terms: 1 }[h] ? h : "welcome";
+    var view = { login: 1, register: 1, reset: 1 }[h] ? h : "welcome";
     gate.innerHTML = '<div class="gate-top">' + langSwitch() + '</div><div class="gate-box' + (view === "terms" ? " is-wide" : "") + '">' +
       '<a class="gate-logo" href="#welcome" aria-label="Newmichi EJU"><span class="cells" aria-hidden="true"><b>E</b><b>J</b><b>U</b></span><span class="gate-name"><b>Newmichi EJU</b><small>With haiyen.1995</small></span></a>' +
       (window.EJUAuth.mode === "demo" ? '<div class="notice gate-demo">' + para(["お試しモード：Firebase が未設定のため、アカウントはこのブラウザにだけ保存されます。", "Chế độ thử: chưa kết nối Firebase, tài khoản chỉ lưu trên trình duyệt này.", "Demo mode: Firebase isn't set up yet, so accounts are saved in this browser only."]) + "</div>" : "") +
       gateHTML(view) + "</div>";
     bindGate(view);
-    if (view === "terms") showTerms(document.getElementById("termsBody"));
     var first = gate.querySelector("input");
     if (first && view !== "welcome") first.focus();
     window.scrollTo(0, 0);
@@ -1194,15 +1214,20 @@
     gnav.querySelectorAll("[data-nav]").forEach(function (a) { a.classList.toggle("is-on", a.dataset.nav === key); });
   }
   var ready = false, authKnown = false;
+  /* Everyone can read and study without an account. The sign-in screens are separate pages over the site;
+     after signing in (or going back) the visitor returns to the page they were on. */
   var GATE_VIEWS = { welcome: 1, login: 1, register: 1, reset: 1 };
-  var afterLogin = null;
+  var returnTo = null;
   function route() {
     if (!authKnown) return;
     var h = (location.hash || "").slice(1);
-    /* a shared link (e.g. #v-k1-01) opened while signed out: remember it and go there after signing in */
-    if (!user) { if (h && !GATE_VIEWS[h] && h !== "terms") afterLogin = h; renderGate(h); return; }
-    closeMenu();
-    if (GATE_VIEWS[h]) { h = afterLogin || "home"; afterLogin = null; history.replaceState(null, "", "#" + h); }
+    closeMenu(); closeAcct();
+    if (GATE_VIEWS[h]) {
+      if (!user) { setScreen("gated"); renderGate(h); return; }
+      h = returnTo || "home"; history.replaceState(null, "", "#" + h);
+    }
+    setScreen("");
+    if (h !== "terms") returnTo = h || null;
     if (h === "terms") { renderTermsPage(); markNav(""); window.scrollTo(0, 0); return; }
     if (!ready) return;
     if (searchBox.value && h) searchBox.value = "";
@@ -1244,21 +1269,25 @@
     authKnown = true;
     closeAcct(); closeMenu();
     if (!u) {
+      /* signed out (or never signed in): study as a guest with this browser's progress */
       clearTimeout(pushTimer);
-      user = null; st = emptyState();
+      user = null;
+      st = loadKey(GUEST_KEY) || emptyState();
       gateNotice = e ? e.code : null;
-      app.innerHTML = "";
-      setScreen("gated");
+      showAvatar();
       route();
       return;
     }
     user = u;
-    var local = loadKey(cacheKey()), legacy = loadKey(LEGACY_KEY);
-    st = mergeState(local, legacy);
-    if (legacy) { try { localStorage.removeItem(LEGACY_KEY); } catch (x) {} save(); }
-    avatarBtn.textContent = initialOf(u.name);
+    /* progress made as a guest, and the old account-less progress, join the account */
+    var local = loadKey(cacheKey()), legacy = loadKey(LEGACY_KEY), guest = loadKey(GUEST_KEY);
+    st = mergeState(mergeState(local, legacy), guest);
+    if (legacy || guest) {
+      try { localStorage.removeItem(LEGACY_KEY); localStorage.removeItem(GUEST_KEY); } catch (x) {}
+      save();
+    }
+    showAvatar();
     gate.innerHTML = "";
-    setScreen("");
     route();
     window.EJUAuth.loadProgress(u.uid).then(function (remote) {
       if (!user || user.uid !== u.uid || !remote) return;
