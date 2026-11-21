@@ -475,3 +475,29 @@ Vào **Authentication → Settings → Authorized domains → Add domain**, thê
 Bài học để công khai cho mọi người. Các file trong `content/` cũng nằm công khai trên máy chủ web
 (ví dụ `.../content/lessons/k1-04.md`). Video YouTube cũng vậy nếu để chế độ Không công khai.
 Muốn khóa riêng một số bài cho người đã đăng nhập thì cần làm thêm (chuyển bài đó vào Firebase).
+
+## 12. App trên điện thoại (PWA)
+
+Website cài được thành **app** trên điện thoại, không cần lên Google Play / App Store. App chính là website:
+thêm bài lên web thì app cũng có bài mới, **không phải làm gì thêm**.
+
+### Học viên cài app thế nào
+
+- **Android (Chrome):** mở web → menu ⋮ → **Cài đặt ứng dụng** (hoặc "Thêm vào màn hình chính").
+- **iPhone/iPad (Safari):** mở web → nút **Chia sẻ** (ô vuông có mũi tên) → **Thêm vào MH chính**.
+- **Máy tính (Chrome/Edge):** biểu tượng cài đặt ở cuối thanh địa chỉ.
+
+Trên màn hình sẽ có biểu tượng logo E·J·U, tên **Newmichi EJU**. App mở toàn màn hình như app thường.
+
+### Hoạt động thế nào
+
+- Có mạng: app luôn lấy bản mới nhất từ web (mạng quá chậm, hơn 4 giây, thì tạm hiện bản đã lưu).
+- Mất mạng: vẫn mở được app và **đọc chữ, công thức, hình** của mọi bài (lưu từ lần mở gần nhất có mạng).
+  **Video YouTube, đăng nhập và lưu tiến độ lên tài khoản cần có mạng.**
+
+### Các file của app (không xóa)
+
+- `manifest.webmanifest`: tên app, màu, biểu tượng.
+- `sw.js`: phần lưu bản sao để dùng khi mất mạng. Thêm bài **không cần sửa** file này.
+  Chỉ khi đổi cách lưu trong file thì tăng `VERSION` (vd `v1` → `v2`) để xóa bản lưu cũ.
+- `assets/icons/`: biểu tượng các cỡ (vẽ theo logo ba ô E xanh · J cam · U trắng).

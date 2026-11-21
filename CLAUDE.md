@@ -70,6 +70,7 @@
   4. Thiếu dòng `VI:` thì báo cho chủ dự án, không tự bịa bản dịch khi chưa được đồng ý.
   5. Mở web kiểm tra bài mới (hộp đỏ báo lỗi, công thức, chấm điểm, bốn chế độ ngôn ngữ) rồi mới báo xong.
 - Website đưa lên **GitHub Pages**. Sau khi kiểm tra xong: chạy `tools/cap-nhat-phien-ban.ps1` (gắn số phiên bản mới vào CSS/JS trong `index.html`, để trình duyệt học viên không dùng bản lưu tạm cũ — GitHub cho lưu tạm 10 phút), rồi `git add` các file đã đổi, commit (lời nhắn tiếng Việt ngắn gọn), `git push`, rồi báo chủ dự án link trang bài mới (`https://<username>.github.io/<repo>/#v-<mã-bài>`). Git ở `C:\Program Files\Git\cmd\git.exe`. Có file `.nojekyll` ở thư mục gốc, không được xóa (thiếu nó GitHub sẽ không phục vụ file `.md`).
+- Website cài được thành **app (PWA)**: `manifest.webmanifest`, `sw.js`, `assets/icons/` (HUONG-DAN.md mục 12). `sw.js` lấy bản mới khi có mạng, chỉ dùng bản lưu khi mất mạng, nên thêm bài không cần sửa gì cho app. Không xóa các file này; đổi cách lưu trong `sw.js` thì tăng `VERSION`.
 
 ## 6. Kiểm tra trước khi báo xong
 

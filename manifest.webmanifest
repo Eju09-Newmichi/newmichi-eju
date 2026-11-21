@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "Newmichi EJU With haiyen.1995",
+  "short_name": "Newmichi EJU",
+  "description": "EJU対策・日越バイリンガル学習 · Học EJU song ngữ Nhật–Việt · Bilingual EJU study (Japanese–Vietnamese)",
+  "lang": "ja",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F3F4F8",
+  "theme_color": "#FFFFFF",
+  "categories": ["education"],
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
