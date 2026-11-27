@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="510" height="220" viewBox="0 0 510 220" role="img" aria-labelledby="t d">
+  <title id="t">相加平均と相乗平均</title>
+  <desc id="d">Nửa đường tròn đường kính a + b: bán kính (a + b)/2 lớn hơn hoặc bằng đoạn vuông góc √ab.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="l" d="M40 180 A130 130 0 0 1 300 180"/><path class="l" d="M40 180 H300"/>
+  <path class="rl" d="M210 180 V56.3"/>
+  <path class="ul" d="M170 180 L210 56.3"/>
+  <circle class="k" cx="170" cy="180" r="3"/><circle class="k" cx="210" cy="180" r="3"/>
+  <text x="110" y="200">a</text><text x="250" y="200">b</text>
+  <path class="t" d="M40 188 V194 H210 V188 M210 194 H300 V188"/>
+  <text class="r" x="216" y="130">√ab</text>
+  <text class="u" x="128" y="120">(a+b)/2</text>
+  <text x="320" y="60">半径 ≧ 垂線</text><text class="s" x="320" y="80">Bán kính ≥ đoạn vuông góc</text>
+  <text class="r" x="320" y="120">(a+b)/2 ≧ √ab</text>
+  <text class="s" x="320" y="150">等号は a = b</text><text class="s" x="320" y="168">Dấu bằng khi a = b</text>
+</svg>

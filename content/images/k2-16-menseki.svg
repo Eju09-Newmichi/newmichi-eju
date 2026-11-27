@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="230" viewBox="0 0 420 230" role="img" aria-labelledby="t d">
+  <title id="t">放物線と直線で囲まれた部分</title>
+  <desc id="d">Phần tô màu giới hạn bởi y = x² và y = x + 2, giữa x = −1 và x = 2; diện tích bằng 9/2.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="fu" d="M120 160 L240 40 L120.0 160.0 L123.0 165.8 L126.0 171.1 L129.0 176.0 L132.0 180.4 L135.0 184.4 L138.0 187.9 L141.0 191.0 L144.0 193.6 L147.0 195.8 L150.0 197.5 L153.0 198.8 L156.0 199.6 L159.0 200.0 L162.0 199.9 L165.0 199.4 L168.0 198.4 L171.0 197.0 L174.0 195.1 L177.0 192.8 L180.0 190.0 L183.0 186.8 L186.0 183.1 L189.0 179.0 L192.0 174.4 L195.0 169.4 L198.0 163.9 L201.0 158.0 L204.0 151.6 L207.0 144.8 L210.0 137.5 L213.0 129.8 L216.0 121.6 L219.0 113.0 L222.0 103.9 L225.0 94.4 L228.0 84.4 L231.0 74.0 L234.0 63.1 L237.0 51.8 L240.0 40.0  Z"/>
+  <path class="ax" d="M50 200 H330 M160 220 V15"/>
+  <path class="ul" d="M76.0 23.6 L79.7 38.9 L83.4 53.5 L87.2 67.4 L90.9 80.6 L94.6 93.1 L98.3 104.9 L102.0 116.0 L105.8 126.5 L109.5 136.2 L113.2 145.2 L116.9 153.6 L120.6 161.3 L124.4 168.2 L128.1 174.5 L131.8 180.1 L135.5 185.0 L139.2 189.2 L143.0 192.7 L146.7 195.6 L150.4 197.7 L154.1 199.1 L157.8 199.9 L161.6 199.9 L165.3 199.3 L169.0 198.0 L172.7 196.0 L176.4 193.2 L180.2 189.8 L183.9 185.7 L187.6 181.0 L191.3 175.5 L195.0 169.3 L198.8 162.4 L202.5 154.9 L206.2 146.6 L209.9 137.7 L213.6 128.1 L217.4 117.7 L221.1 106.7 L224.8 95.0 L228.5 82.6 L232.2 69.5 L236.0 55.8 L239.7 41.3 L243.4 26.1 L247.1 10.3 L250.8 -6.3 L254.6 -23.5 L258.3 -41.5 L262.0 -60.1 "/>
+  <path class="rl" d="M80 200 L260 20"/>
+  <circle class="k" cx="120" cy="160" r="3.5"/><circle class="k" cx="240" cy="40" r="3.5"/>
+  <text class="s" x="80" y="156">(−1, 1)</text><text class="s" x="248" y="44">(2, 4)</text>
+  <text class="u" x="40" y="60">y = x²</text><text class="r" x="262" y="80">y = x + 2</text>
+  <text class="b" x="166" y="140">S</text>
+  <text x="290" y="150">S = 3³/6 = 9/2</text>
+</svg>

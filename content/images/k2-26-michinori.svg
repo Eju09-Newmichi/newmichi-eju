@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="220" viewBox="0 0 460 220" role="img" aria-labelledby="t d">
+  <title id="t">位置の変化と道のり</title>
+  <desc id="d">Đồ thị v = (t − 1)(t − 3): phần dương trên [0, 1] và phần âm trên [1, 3] đều có diện tích 4/3; độ dời bằng 0, quãng đường bằng 8/3.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="fu" d="M50 110 L50.0 5.0 L54.0 11.9 L58.0 18.7 L62.0 25.2 L66.0 31.6 L70.0 37.8 L74.0 43.9 L78.0 49.7 L82.0 55.4 L86.0 60.9 L90.0 66.2 L94.0 71.4 L98.0 76.4 L102.0 81.2 L106.0 85.9 L110.0 90.3 L114.0 94.6 L118.0 98.7 L122.0 102.7 L126.0 106.4 L130.0 110.0  Z"/>
+  <path class="fr" d="M130 110 L130.0 110.0 L134.0 113.4 L138.0 116.7 L142.0 119.7 L146.0 122.6 L150.0 125.3 L154.0 127.9 L158.0 130.2 L162.0 132.4 L166.0 134.4 L170.0 136.2 L174.0 137.9 L178.0 139.4 L182.0 140.7 L186.0 141.9 L190.0 142.8 L194.0 143.6 L198.0 144.2 L202.0 144.7 L206.0 144.9 L210.0 145.0 L214.0 144.9 L218.0 144.7 L222.0 144.2 L226.0 143.6 L230.0 142.8 L234.0 141.8 L238.0 140.7 L242.0 139.4 L246.0 137.9 L250.0 136.3 L254.0 134.4 L258.0 132.4 L262.0 130.2 L266.0 127.9 L270.0 125.3 L274.0 122.6 L278.0 119.7 L282.0 116.7 L286.0 113.4 L290.0 110.0  Z"/>
+  <path class="ax" d="M30 110 H340 M50 210 V5"/>
+  <path class="ul" d="M50.0 5.0 L54.0 11.9 L58.0 18.7 L62.0 25.2 L66.0 31.6 L70.0 37.8 L74.0 43.9 L78.0 49.7 L82.0 55.4 L86.0 60.9 L90.0 66.2 L94.0 71.4 L98.0 76.4 L102.0 81.2 L106.0 85.9 L110.0 90.3 L114.0 94.6 L118.0 98.7 L122.0 102.7 L126.0 106.4 L130.0 110.0 L134.0 113.4 L138.0 116.7 L142.0 119.7 L146.0 122.6 L150.0 125.3 L154.0 127.9 L158.0 130.2 L162.0 132.4 L166.0 134.4 L170.0 136.3 L174.0 137.9 L178.0 139.4 L182.0 140.7 L186.0 141.9 L190.0 142.8 L194.0 143.6 L198.0 144.2 L202.0 144.7 L206.0 144.9 L210.0 145.0 L214.0 144.9 L218.0 144.7 L222.0 144.2 L226.0 143.6 L230.0 142.8 L234.0 141.8 L238.0 140.7 L242.0 139.4 L246.0 137.9 L250.0 136.3 L254.0 134.4 L258.0 132.4 L262.0 130.2 L266.0 127.9 L270.0 125.3 L274.0 122.6 L278.0 119.7 L282.0 116.7 L286.0 113.4 L290.0 110.0 L294.0 106.4 L298.0 102.7 L302.0 98.7 L306.0 94.6 L310.0 90.3 L314.0 85.9 "/>
+  <text class="s" x="40" y="126">0</text><text class="s" x="126" y="126">1</text><text class="s" x="286" y="104">3</text><text class="s" x="344" y="114">t</text><text class="s" x="56" y="16">v</text>
+  <text class="u" x="64" y="90">+4/3</text><text class="r" x="196" y="140">−4/3</text>
+  <text class="s" x="300" y="160">位置の変化 ∫v dt = 0</text><text class="s" x="300" y="178">Độ dời = 0</text>
+  <text class="b" x="300" y="200">道のり ∫|v| dt = 8/3</text>
+</svg>

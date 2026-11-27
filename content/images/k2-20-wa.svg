@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="200" viewBox="0 0 440 200" role="img" aria-labelledby="t d">
+  <title id="t">ベクトルの和と差</title>
+  <desc id="d">Hình bình hành dựng trên a và b: đường chéo từ O là a + b, đường chéo còn lại là a − b.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1B1F2A"/></marker>
+  <marker id="rr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#C62828"/></marker>
+  <marker id="ur" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1F66C9"/></marker></defs>
+  <path class="d" d="M200 170 L280 50 M120 50 L280 50"/>
+  <path class="l" d="M40 170 L198 170" marker-end="url(#ar)"/>
+  <path class="l" d="M40 170 L119 52" marker-end="url(#ar)"/>
+  <path class="rl" d="M40 170 L277 53" marker-end="url(#rr)"/>
+  <path class="ul" d="M120 50 L198 167" marker-end="url(#ur)"/>
+  <text x="110" y="190" class="b">a</text><text x="60" y="100" class="b">b</text><text x="30" y="186">O</text>
+  <text class="r" x="190" y="96">a + b</text><text class="u" x="166" y="140">a − b</text>
+  <text class="s" x="300" y="80">平行四辺形で作る</text><text class="s" x="300" y="98">Dựng hình bình hành</text>
+  <text x="300" y="140" class="s">AB = OB − OA</text>
+</svg>

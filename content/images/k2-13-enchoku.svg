@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="190" viewBox="0 0 480 190" role="img" aria-labelledby="t d">
+  <title id="t">円と直線の位置関係</title>
+  <desc id="d">Ba trường hợp: d &lt; r cắt tại hai điểm, d = r tiếp xúc, d &gt; r không có điểm chung.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <circle class="ul" cx="80" cy="85" r="50"/><circle class="ul" cx="240" cy="85" r="50"/><circle class="ul" cx="400" cy="85" r="50"/>
+  <circle class="k" cx="80" cy="85" r="3"/><circle class="k" cx="240" cy="85" r="3"/><circle class="k" cx="400" cy="85" r="3"/>
+  <path class="l" d="M15 110 H145"/><path class="l" d="M175 135 H305"/><path class="l" d="M335 150 H465"/>
+  <path class="rl" d="M80 85 V110"/><path class="rl" d="M240 85 V135"/><path class="rl" d="M400 85 V150"/>
+  <circle class="p" cx="35" cy="110" r="4"/><circle class="p" cx="125" cy="110" r="4"/><circle class="p" cx="240" cy="135" r="4"/>
+  <g text-anchor="middle"><text class="r" x="80" y="172">d &lt; r</text><text class="s" x="80" y="188">2 点で交わる · cắt 2 điểm</text>
+  <text class="r" x="240" y="172">d = r</text><text class="s" x="240" y="188">接する · tiếp xúc</text>
+  <text class="r" x="400" y="172">d &gt; r</text><text class="s" x="400" y="188">共有点なし · không cắt</text></g>
+  <text class="s" x="86" y="102">d</text><text class="s" x="246" y="115">d</text><text class="s" x="406" y="122">d</text>
+</svg>

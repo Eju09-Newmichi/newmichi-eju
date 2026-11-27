@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="220" viewBox="0 0 440 220" role="img" aria-labelledby="t d">
+  <title id="t">楕円</title>
+  <desc id="d">Elip x²/25 + y²/9 = 1 có tiêu điểm F(4, 0), F'(−4, 0); với mọi điểm P trên elip, PF + PF' = 10.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="ax" d="M30 110 H320 M170 190 V20"/>
+  <ellipse class="ul" cx="170" cy="110" rx="125" ry="75"/>
+  <path class="rl" d="M232.5 45 L270 110 M232.5 45 L70 110"/>
+  <circle class="k" cx="70" cy="110" r="4"/><circle class="k" cx="270" cy="110" r="4"/><circle class="p" cx="232.5" cy="45" r="4.5"/>
+  <text x="262" y="128">F</text><text x="60" y="128">F'</text><text class="r" x="238" y="40">P</text>
+  <text class="s" x="282" y="106">5</text><text class="s" x="174" y="32">3</text>
+  <text class="r" x="330" y="70">PF + PF' = 10</text><text class="s" x="330" y="100">長軸 10 · trục lớn</text><text class="s" x="330" y="118">短軸 6 · trục nhỏ</text>
+</svg>

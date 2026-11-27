@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="210" viewBox="0 0 420 210" role="img" aria-labelledby="t d">
+  <title id="t">確率分布</title>
+  <desc id="d">Biểu đồ cột phân phối xác suất của X: P(X=0) = 1/10, P(X=1) = 6/10, P(X=2) = 3/10.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="ax" d="M50 170 H300 M60 180 V20"/>
+  <rect x="85" y="146" width="40" height="24" fill="#E3F0FC" stroke="#1F66C9" stroke-width="2"/>
+  <rect x="155" y="26" width="40" height="144" fill="#FDECEA" stroke="#C62828" stroke-width="2"/>
+  <rect x="225" y="98" width="40" height="72" fill="#E3F0FC" stroke="#1F66C9" stroke-width="2"/>
+  <g text-anchor="middle"><text x="105" y="190">0</text><text x="175" y="190">1</text><text x="245" y="190">2</text>
+  <text class="s" x="105" y="140">1/10</text><text class="r" x="175" y="20">6/10</text><text class="s" x="245" y="92">3/10</text></g>
+  <text class="s" x="290" y="195">X（赤玉の個数）</text>
+  <text x="310" y="60">E(X) = 6/5</text><text x="310" y="85">V(X) = 9/25</text><text x="310" y="110">σ(X) = 3/5</text>
+  <text class="s" x="310" y="140">確率の和 = 1</text><text class="s" x="310" y="156">Tổng xác suất = 1</text>
+</svg>

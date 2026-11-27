@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="220" viewBox="0 0 440 220" role="img" aria-labelledby="t d">
+  <title id="t">区分求積法</title>
+  <desc id="d">Sáu hình chữ nhật mỏng chiều rộng 1/n dưới đường y = x² trên [0, 1]; khi n tăng, tổng diện tích tiến tới tích phân bằng 1/3.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <rect x="50.0" y="185.3" width="41.7" height="4.7" fill="#E3F0FC" stroke="#1F66C9" stroke-width="1.2"/><rect x="91.7" y="171.1" width="41.7" height="18.9" fill="#E3F0FC" stroke="#1F66C9" stroke-width="1.2"/><rect x="133.3" y="147.5" width="41.7" height="42.5" fill="#E3F0FC" stroke="#1F66C9" stroke-width="1.2"/><rect x="175.0" y="114.4" width="41.7" height="75.6" fill="#E3F0FC" stroke="#1F66C9" stroke-width="1.2"/><rect x="216.7" y="71.9" width="41.7" height="118.1" fill="#E3F0FC" stroke="#1F66C9" stroke-width="1.2"/><rect x="258.3" y="20.0" width="41.7" height="170.0" fill="#E3F0FC" stroke="#1F66C9" stroke-width="1.2"/>
+  <path class="ax" d="M30 190 H330 M50 205 V10"/>
+  <path class="rl" d="M50.0 190.0 L55.0 189.9 L60.0 189.7 L65.0 189.4 L70.0 188.9 L75.0 188.3 L80.0 187.6 L85.0 186.7 L90.0 185.6 L95.0 184.5 L100.0 183.2 L105.0 181.8 L110.0 180.2 L115.0 178.5 L120.0 176.7 L125.0 174.7 L130.0 172.6 L135.0 170.3 L140.0 168.0 L145.0 165.5 L150.0 162.8 L155.0 160.0 L160.0 157.1 L165.0 154.0 L170.0 150.8 L175.0 147.5 L180.0 144.0 L185.0 140.4 L190.0 136.7 L195.0 132.8 L200.0 128.8 L205.0 124.7 L210.0 120.4 L215.0 115.9 L220.0 111.4 L225.0 106.7 L230.0 101.9 L235.0 96.9 L240.0 91.8 L245.0 86.6 L250.0 81.2 L255.0 75.7 L260.0 70.0 L265.0 64.3 L270.0 58.4 L275.0 52.3 L280.0 46.1 L285.0 39.8 L290.0 33.3 L295.0 26.7 L300.0 20.0 L305.0 13.1 L310.0 6.1 "/>
+  <text class="s" x="40" y="206">0</text><text class="s" x="296" y="206">1</text>
+  <text class="r" x="250" y="40">y = x²</text>
+  <text class="s" x="320" y="90">(1/n) Σ f(k/n)</text><text class="s" x="320" y="110">→ ∫₀¹ x² dx = 1/3</text>
+  <text class="s" x="320" y="140">n → ∞</text>
+</svg>

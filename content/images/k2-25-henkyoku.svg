@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="200" viewBox="0 0 440 200" role="img" aria-labelledby="t d">
+  <title id="t">変曲点</title>
+  <desc id="d">Đồ thị y = x³ − 3x²: bên trái x = 1 lồi lên trên (xanh), bên phải lồi xuống dưới (đỏ); điểm uốn (1, −2).</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="ax" d="M30 90 H300 M100 190 V10"/>
+  <path class="ul" d="M55.0 137.4 L57.5 131.7 L60.0 126.5 L62.5 121.6 L65.0 117.2 L67.5 113.1 L70.0 109.4 L72.5 106.1 L75.0 103.1 L77.5 100.5 L80.0 98.2 L82.5 96.2 L85.0 94.5 L87.5 93.0 L90.0 91.9 L92.5 91.1 L95.0 90.5 L97.5 90.1 L100.0 90.0 L102.5 90.1 L105.0 90.4 L107.5 91.0 L110.0 91.7 L112.5 92.6 L115.0 93.6 L117.5 94.9 L120.0 96.2 L122.5 97.7 L125.0 99.4 L127.5 101.1 L130.0 103.0 L132.5 104.9 L135.0 106.9 L137.5 109.0 L140.0 111.1 L142.5 113.3 L145.0 115.5 L147.5 117.8 L150.0 120.0 L152.5 122.2 L155.0 124.5 L157.5 126.7 L160.0 128.9 L162.5 131.0 L165.0 133.1 L167.5 135.1 L170.0 137.0 L172.5 138.9 L175.0 140.6 L177.5 142.3 L180.0 143.8 L182.5 145.1 L185.0 146.4 L187.5 147.4 L190.0 148.3 L192.5 149.0 L195.0 149.6 L197.5 149.9 L200.0 150.0 L202.5 149.9 L205.0 149.5 L207.5 148.9 L210.0 148.1 L212.5 147.0 L215.0 145.5 L217.5 143.8 L220.0 141.8 L222.5 139.5 L225.0 136.9 L227.5 133.9 L230.0 130.6 L232.5 126.9 L235.0 122.8 L237.5 118.4 L240.0 113.5 L242.5 108.3 L245.0 102.6 L247.5 96.5 L250.0 90.0 L252.5 83.0 L255.0 75.6 L257.5 67.7 "/><path class="rl" d="M150.0 120.0 L152.5 122.2 L155.0 124.5 L157.5 126.7 L160.0 128.9 L162.5 131.0 L165.0 133.1 L167.5 135.1 L170.0 137.0 L172.5 138.9 L175.0 140.6 L177.5 142.3 L180.0 143.8 L182.5 145.1 L185.0 146.4 L187.5 147.4 L190.0 148.3 L192.5 149.0 L195.0 149.6 L197.5 149.9 L200.0 150.0 L202.5 149.9 L205.0 149.5 L207.5 148.9 L210.0 148.1 L212.5 147.0 L215.0 145.5 L217.5 143.8 L220.0 141.8 L222.5 139.5 L225.0 136.9 L227.5 133.9 L230.0 130.6 L232.5 126.9 L235.0 122.8 L237.5 118.4 L240.0 113.5 L242.5 108.3 L245.0 102.6 L247.5 96.5 L250.0 90.0 L252.5 83.0 L255.0 75.6 L257.5 67.7 "/>
+  <circle class="k" cx="150" cy="120" r="5"/>
+  <text x="158" y="116" class="b">(1, −2)</text>
+  <text class="u" x="20" y="30">上に凸 f'' &lt; 0</text><text class="r" x="200" y="30">下に凸 f'' &gt; 0</text>
+  <text class="s" x="310" y="100">f''(x) = 6x − 6</text><text class="s" x="310" y="120">変曲点 · điểm uốn</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="230" viewBox="0 0 440 230" role="img" aria-labelledby="t d">
+  <title id="t">単位円と三角関数</title>
+  <desc id="d">Đường tròn đơn vị, điểm P(cos θ, sin θ) với góc θ từ tia đầu Ox.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="ax" d="M20 115 H230 M125 215 V15"/>
+  <circle class="ul" cx="125" cy="115" r="85"/>
+  <path class="l" d="M125 115 L185.1 54.9"/>
+  <path class="d" d="M185.1 54.9 V115 M185.1 54.9 H125"/>
+  <path class="rl" d="M185.1 115 V54.9"/>
+  <path class="ol" d="M125 115 H185.1"/>
+  <circle class="p" cx="185.1" cy="54.9" r="4.5"/>
+  <path class="t" d="M150 115 A25 25 0 0 0 142.7 97.3"/>
+  <text x="154" y="108" class="s">θ</text><text x="112" y="132">O</text><text x="214" y="132">1</text>
+  <text class="r" x="190" y="48">P(cos θ, sin θ)</text>
+  <text class="r" x="190" y="90">sin θ</text><text x="140" y="132" style="fill:#B9531A;font-weight:700">cos θ</text>
+  <text class="s" x="250" y="150">単位円 x² + y² = 1</text><text class="s" x="250" y="168">Đường tròn đơn vị</text>
+  <text x="250" y="198">sin²θ + cos²θ = 1</text>
+</svg>

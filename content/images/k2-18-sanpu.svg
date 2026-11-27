@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="220" viewBox="0 0 400 220" role="img" aria-labelledby="t d">
+  <title id="t">散布図と相関係数</title>
+  <desc id="d">Biểu đồ phân tán năm điểm (1,1), (2,3), (3,2), (4,5), (5,4); các điểm có xu hướng đi lên, hệ số tương quan r = 0,8.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="ax" d="M40 190 H260 M50 200 V20"/>
+  <path class="d" d="M60 186 L250 24"/>
+  <g class="p"><circle cx="86" cy="158" r="5"/><circle cx="122" cy="94" r="5"/><circle cx="158" cy="126" r="5"/><circle cx="194" cy="30" r="5"/><circle cx="230" cy="62" r="5"/></g>
+  <g class="s" text-anchor="middle"><text x="86" y="206">1</text><text x="122" y="206">2</text><text x="158" y="206">3</text><text x="194" y="206">4</text><text x="230" y="206">5</text></g>
+  <text class="s" x="264" y="194">x</text><text class="s" x="56" y="24">y</text>
+  <text class="r" x="275" y="80">r = 0.8</text>
+  <text class="s" x="275" y="104">正の相関</text><text class="s" x="275" y="120">Tương quan dương</text>
+  <text class="s" x="275" y="150">r = s_xy /(s_x s_y)</text>
+</svg>

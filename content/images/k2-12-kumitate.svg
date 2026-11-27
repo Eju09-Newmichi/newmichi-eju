@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="190" viewBox="0 0 460 190" role="img" aria-labelledby="t d">
+  <title id="t">組立除法</title>
+  <desc id="d">Sơ đồ Horner chia x³ + x² + 0x + 4 cho x + 2 (α = −2): hệ số thương 1, −1, 2 và số dư 0.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <g text-anchor="middle">
+  <text class="s" x="110" y="22">x³</text><text class="s" x="170" y="22">x²</text><text class="s" x="230" y="22">x</text><text class="s" x="290" y="22">定数</text>
+  <text x="110" y="50">1</text><text x="170" y="50">1</text><text x="230" y="50">0</text><text x="290" y="50">4</text>
+  <text class="u" x="170" y="84">−2</text><text class="u" x="230" y="84">2</text><text class="u" x="290" y="84">−4</text>
+  <text class="b" x="110" y="122">1</text><text class="b" x="170" y="122">−1</text><text class="b" x="230" y="122">2</text><text class="r" x="290" y="122">0</text>
+  <text class="r" x="40" y="66">−2</text>
+  </g>
+  <path class="l" d="M70 30 V100 H330"/><path class="d" d="M260 30 V130"/>
+  <text class="s" x="80" y="158">商 x² − x + 2 · Thương x² − x + 2</text>
+  <text class="r" x="300" y="158">余り 0</text><text class="s" x="300" y="176">Dư 0 → x + 2 là nhân tử</text>
+  <text class="s" x="345" y="60">× (−2) して</text><text class="s" x="345" y="78">下に足す</text><text class="s" x="345" y="98">Nhân −2 rồi cộng</text>
+</svg>

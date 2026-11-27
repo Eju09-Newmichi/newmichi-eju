@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="150" viewBox="0 0 440 150" role="img" aria-labelledby="t d">
+  <title id="t">階差数列</title>
+  <desc id="d">Dãy 2, 3, 6, 11, 18 có dãy hiệu 1, 3, 5, 7 (dạng 2k − 1).</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <g text-anchor="middle">
+  <text class="s" x="30" y="40">aₙ</text>
+  <text class="b" x="80" y="40">2</text><text class="b" x="150" y="40">3</text><text class="b" x="220" y="40">6</text><text class="b" x="290" y="40">11</text><text class="b" x="360" y="40">18</text>
+  <text class="s" x="30" y="110">bₙ</text>
+  <text class="r" x="115" y="110">1</text><text class="r" x="185" y="110">3</text><text class="r" x="255" y="110">5</text><text class="r" x="325" y="110">7</text>
+  </g>
+  <path class="t" d="M84 48 L112 94 M146 48 L118 94 M154 48 L182 94 M216 48 L188 94 M224 48 L252 94 M286 48 L258 94 M294 48 L322 94 M356 48 L328 94"/>
+  <text class="s" x="60" y="140">bₖ = 2k − 1 → aₙ = 2 + Σ(2k − 1) = n² − 2n + 3</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="230" viewBox="0 0 420 230" role="img" aria-labelledby="t d">
+  <title id="t">四面体 OABC</title>
+  <desc id="d">Tứ diện OABC với đỉnh O ở trên; G là trọng tâm tam giác ABC, OG = (a + b + c)/3.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="fu" d="M70 190 L300 200 L210 140 Z"/>
+  <path class="l" d="M160 30 L70 190 M160 30 L300 200 M160 30 L210 140 M70 190 L300 200"/>
+  <path class="d" d="M70 190 L210 140 L300 200"/>
+  <path class="rl" d="M160 30 L193.3 176.7"/>
+  <circle class="p" cx="193.3" cy="176.7" r="4.5"/>
+  <text x="154" y="22">O</text><text x="54" y="200">A</text><text x="304" y="212">B</text><text x="214" y="134">C</text>
+  <text class="r" x="200" y="190">G</text>
+  <text class="s" x="300" y="60">OG = (a + b + c)/3</text>
+  <text class="s" x="300" y="90">四面体の重心</text><text class="s" x="300" y="106">(a + b + c + d)/4</text>
+</svg>

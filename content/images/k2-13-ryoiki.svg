@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="240" viewBox="0 0 440 240" role="img" aria-labelledby="t d">
+  <title id="t">領域と最大・最小</title>
+  <desc id="d">Miền tứ giác đỉnh (0,0), (3,0), (9/5,14/5), (0,4); đường 3x + 2y = 11 chạm miền tại đỉnh (9/5, 14/5).</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="fu" d="M50 210 L170 210 L122 98 L50 50 Z"/>
+  <path class="ax" d="M30 210 H260 M50 225 V20"/>
+  <path class="l" d="M170 210 L98 42"/><path class="l" d="M50 50 L210 156.7"/>
+  <path class="rl" d="M82 38 L186 194"/>
+  <circle class="p" cx="122" cy="98" r="5"/><circle class="k" cx="50" cy="210" r="3"/>
+  <text x="38" y="226">O</text><text x="164" y="228">3</text><text x="34" y="55">4</text>
+  <text class="r" x="128" y="92">(9/5, 14/5)</text>
+  <text class="s" x="100" y="30">7x+3y=21</text><text class="s" x="214" y="160">2x+3y=12</text>
+  <text x="270" y="70">3x + 2y = k</text><text class="s" x="270" y="90">k を動かす · cho k thay đổi</text>
+  <text class="r" x="270" y="130">最大 k = 11</text><text class="s" x="270" y="150">Lớn nhất tại đỉnh</text>
+  <text x="270" y="190">最小 k = 0 (O)</text>
+</svg>

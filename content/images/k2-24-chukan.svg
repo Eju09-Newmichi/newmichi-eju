@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="240" viewBox="0 0 420 240" role="img" aria-labelledby="t d">
+  <title id="t">中間値の定理</title>
+  <desc id="d">Đồ thị y = x³ + x − 1 liên tục trên [0, 1]; f(0) = −1 &lt; 0, f(1) = 1 &gt; 0 nên cắt trục x tại c với 0 &lt; c &lt; 1.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="ax" d="M30 150 H270 M60 235 V20"/>
+  <path class="d" d="M210 150 V80"/>
+  <path class="ul" d="M45.0 227.1 L48.8 225.3 L52.5 223.5 L56.2 221.8 L60.0 220.0 L63.8 218.2 L67.5 216.5 L71.2 214.7 L75.0 212.9 L78.8 211.1 L82.5 209.3 L86.2 207.4 L90.0 205.4 L93.8 203.5 L97.5 201.4 L101.2 199.3 L105.0 197.1 L108.8 194.8 L112.5 192.5 L116.2 190.1 L120.0 187.5 L123.8 184.9 L127.5 182.1 L131.3 179.2 L135.0 176.2 L138.8 173.1 L142.5 169.9 L146.3 166.4 L150.0 162.9 L153.8 159.2 L157.5 155.3 L161.3 151.2 L165.0 147.0 L168.8 142.6 L172.5 138.0 L176.3 133.2 L180.0 128.2 L183.8 122.9 L187.5 117.5 L191.3 111.9 L195.0 106.0 L198.8 99.8 L202.5 93.5 L206.3 86.9 L210.0 80.0 L213.8 72.9 L217.5 65.5 L221.3 57.8 L225.0 49.8 L228.8 41.6 L232.5 33.0 "/>
+  <circle class="k" cx="60" cy="220" r="4"/><circle class="k" cx="210" cy="80" r="4"/><circle class="p" cx="162.4" cy="150" r="5"/>
+  <text class="s" x="66" y="232">f(0) = −1</text><text class="s" x="216" y="76">f(1) = 1</text>
+  <text class="r" x="150" y="170">c</text><text class="s" x="46" y="146">O</text><text class="s" x="206" y="166">1</text>
+  <text class="s" x="280" y="100">f(a)f(b) &lt; 0</text><text class="s" x="280" y="120">⇒ f(c) = 0</text><text class="s" x="280" y="150">Đổi dấu ⇒ có nghiệm</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="120" viewBox="0 0 460 120" role="img" aria-labelledby="t d">
+  <title id="t">群数列</title>
+  <desc id="d">Dãy số lẻ chia nhóm 1 | 3, 5 | 7, 9, 11 | 13, 15, 17, 19; nhóm thứ n có n số, tổng nhóm thứ n là n³.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <g text-anchor="middle">
+  <text x="40" y="50">1</text>
+  <text x="100" y="50">3, 5</text>
+  <text x="190" y="50">7, 9, 11</text>
+  <text x="320" y="50">13, 15, 17, 19</text>
+  <text class="s" x="40" y="80">第1群</text><text class="s" x="100" y="80">第2群</text><text class="s" x="190" y="80">第3群</text><text class="s" x="320" y="80">第4群</text>
+  <text class="r" x="40" y="104">1</text><text class="r" x="100" y="104">8</text><text class="r" x="190" y="104">27</text><text class="r" x="320" y="104">64</text>
+  </g>
+  <path class="ol" d="M65 30 V90 M135 30 V90 M245 30 V90 M400 30 V90"/>
+  <text class="s" x="10" y="20">第 n 群に n 個 · Nhóm n có n số</text>
+  <text class="r" x="410" y="104">= n³</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280" role="img" aria-labelledby="t d">
+  <title id="t">指数関数と対数関数</title>
+  <desc id="d">y = 2^x và y = log₂x đối xứng nhau qua đường thẳng y = x; log₂x đi qua (1, 0), trục y là tiệm cận.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="ax" d="M30 180 H360 M160 270 V10"/>
+  <path class="d" d="M50 290 L340 0"/>
+  <path class="rl" d="M40.0 175.0 L43.2 174.7 L46.4 174.4 L49.6 174.1 L52.8 173.8 L56.0 173.4 L59.2 173.0 L62.4 172.6 L65.6 172.2 L68.8 171.8 L72.0 171.3 L75.2 170.8 L78.4 170.3 L81.6 169.7 L84.8 169.1 L88.0 168.5 L91.2 167.9 L94.4 167.2 L97.6 166.4 L100.8 165.7 L104.0 164.8 L107.2 164.0 L110.4 163.1 L113.6 162.1 L116.8 161.1 L120.0 160.0 L123.2 158.9 L126.4 157.7 L129.6 156.4 L132.8 155.0 L136.0 153.6 L139.2 152.1 L142.4 150.5 L145.6 148.8 L148.8 147.1 L152.0 145.2 L155.2 143.2 L158.4 141.1 L161.6 138.9 L164.8 136.5 L168.0 134.1 L171.2 131.4 L174.4 128.7 L177.6 125.7 L180.8 122.6 L184.0 119.4 L187.2 115.9 L190.4 112.3 L193.6 108.4 L196.8 104.3 L200.0 100.0 L203.2 95.4 L206.4 90.6 L209.6 85.5 L212.8 80.1 L216.0 74.4 L219.2 68.4 L222.4 62.1 L225.6 55.3 L228.8 48.2 L232.0 40.7 "/><path class="ul" d="M165.0 300.0 L165.3 296.8 L165.6 293.6 L165.9 290.4 L166.2 287.2 L166.6 284.0 L167.0 280.8 L167.4 277.6 L167.8 274.4 L168.2 271.2 L168.7 268.0 L169.2 264.8 L169.7 261.6 L170.3 258.4 L170.9 255.2 L171.5 252.0 L172.1 248.8 L172.8 245.6 L173.6 242.4 L174.3 239.2 L175.2 236.0 L176.0 232.8 L176.9 229.6 L177.9 226.4 L178.9 223.2 L180.0 220.0 L181.1 216.8 L182.3 213.6 L183.6 210.4 L185.0 207.2 L186.4 204.0 L187.9 200.8 L189.5 197.6 L191.2 194.4 L192.9 191.2 L194.8 188.0 L196.8 184.8 L198.9 181.6 L201.1 178.4 L203.5 175.2 L205.9 172.0 L208.6 168.8 L211.3 165.6 L214.3 162.4 L217.4 159.2 L220.6 156.0 L224.1 152.8 L227.7 149.6 L231.6 146.4 L235.7 143.2 L240.0 140.0 L244.6 136.8 L249.4 133.6 L254.5 130.4 L259.9 127.2 L265.6 124.0 L271.6 120.8 L277.9 117.6 L284.7 114.4 L291.8 111.2 L299.3 108.0 "/>
+  <circle class="k" cx="160" cy="140" r="4"/><circle class="k" cx="200" cy="180" r="4"/>
+  <text class="s" x="120" y="136">(0, 1)</text><text class="s" x="204" y="198">(1, 0)</text>
+  <text class="r" x="210" y="40">y = 2ˣ</text><text class="u" x="290" y="125">y = log₂x</text>
+  <text class="s" x="300" y="30">y = x</text>
+  <text class="s" x="250" y="240">y = x に関して対称</text><text class="s" x="250" y="258">Đối xứng qua y = x</text>
+</svg>

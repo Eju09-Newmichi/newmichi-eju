@@ -222,7 +222,13 @@
         {"ja":"第2章 図形と計量","vi":"Chương 2: Hình học và lượng giác","en":"Chapter 2: Trigonometry and measurement","lessons":["tk1-05"]},
         {"ja":"第3章 場合の数と確率","vi":"Chương 3: Tổ hợp và xác suất","en":"Chapter 3: Counting and probability","lessons":["tk1-07","tk1-08"]},
         {"ja":"第4章 整数の性質","vi":"Chương 4: Tính chất số nguyên","en":"Chapter 4: Properties of integers","lessons":["tk1-10"]},
-        {"ja":"第5章 図形の性質","vi":"Chương 5: Tính chất hình học","en":"Chapter 5: Properties of figures","lessons":["tk1-09"]}
+        {"ja":"第5章 図形の性質","vi":"Chương 5: Tính chất hình học","en":"Chapter 5: Properties of figures","lessons":["tk1-09"]},
+        {"ja":"第6章 いろいろな式・図形と方程式","vi":"Chương 6: Các loại biểu thức, hình học giải tích","en":"Chapter 6: Various expressions and coordinate geometry","lessons":["tk2-11","tk2-12","tk2-13"]},
+        {"ja":"第7章 三角関数・指数関数・対数関数","vi":"Chương 7: Hàm lượng giác, hàm mũ, hàm lôgarit","en":"Chapter 7: Trigonometric, exponential and logarithmic functions","lessons":["tk2-14","tk2-15"]},
+        {"ja":"第8章 微分・積分（数学Ⅱ）","vi":"Chương 8: Đạo hàm và tích phân (数学Ⅱ)","en":"Chapter 8: Differentiation and integration (Math II)","lessons":["tk2-16"]},
+        {"ja":"第9章 数列・確率分布","vi":"Chương 9: Dãy số, phân phối xác suất","en":"Chapter 9: Sequences and probability distributions","lessons":["tk2-17","tk2-18"]},
+        {"ja":"第10章 ベクトル・複素数平面・式と曲線","vi":"Chương 10: Vectơ, mặt phẳng số phức, đường cong","en":"Chapter 10: Vectors, the complex plane and curves","lessons":["tk2-20","tk2-21","tk2-22","tk2-23"]},
+        {"ja":"第11章 関数・極限・微分・積分（数学Ⅲ）","vi":"Chương 11: Hàm số, giới hạn, đạo hàm, tích phân (数学Ⅲ)","en":"Chapter 11: Functions, limits, differentiation and integration (Math III)","lessons":["tk2-19","tk2-24","tk2-25","tk2-26"]}
       ]
     },
     {

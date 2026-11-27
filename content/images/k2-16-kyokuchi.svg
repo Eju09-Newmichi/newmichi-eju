@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="250" viewBox="0 0 470 250" role="img" aria-labelledby="t d">
+  <title id="t">y = x³ − 3x² + 2 のグラフ</title>
+  <desc id="d">Đồ thị bậc ba có cực đại 2 tại x = 0, cực tiểu −2 tại x = 2; đường y = a với −2 &lt; a &lt; 2 cắt đồ thị tại 3 điểm.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="ax" d="M50 130 H360 M140 240 V10"/>
+  <path class="d" d="M60 80 H340 M60 180 H340"/>
+  <path class="ul" d="M68.0 231.2 L71.0 217.2 L74.0 204.0 L77.0 191.6 L80.0 180.0 L83.0 169.1 L86.0 159.0 L89.0 149.5 L92.0 140.8 L95.0 132.7 L98.0 125.3 L101.0 118.6 L104.0 112.4 L107.0 106.8 L110.0 101.9 L113.0 97.5 L116.0 93.6 L119.0 90.3 L122.0 87.4 L125.0 85.1 L128.0 83.2 L131.0 81.8 L134.0 80.8 L137.0 80.2 L140.0 80.0 L143.0 80.2 L146.0 80.7 L149.0 81.6 L152.0 82.8 L155.0 84.3 L158.0 86.1 L161.0 88.1 L164.0 90.4 L167.0 92.9 L170.0 95.6 L173.0 98.5 L176.0 101.6 L179.0 104.8 L182.0 108.2 L185.0 111.6 L188.0 115.2 L191.0 118.8 L194.0 122.5 L197.0 126.3 L200.0 130.0 L203.0 133.7 L206.0 137.5 L209.0 141.2 L212.0 144.8 L215.0 148.4 L218.0 151.8 L221.0 155.2 L224.0 158.4 L227.0 161.5 L230.0 164.4 L233.0 167.1 L236.0 169.6 L239.0 171.9 L242.0 173.9 L245.0 175.7 L248.0 177.2 L251.0 178.4 L254.0 179.3 L257.0 179.8 L260.0 180.0 L263.0 179.8 L266.0 179.2 L269.0 178.2 L272.0 176.8 L275.0 174.9 L278.0 172.6 L281.0 169.7 L284.0 166.4 L287.0 162.5 L290.0 158.1 L293.0 153.2 L296.0 147.6 L299.0 141.4 L302.0 134.7 L305.0 127.3 L308.0 119.2 L311.0 110.5 L314.0 101.0 L317.0 90.9 L320.0 80.0 L323.0 68.4 L326.0 56.0 L329.0 42.8 L332.0 28.8 "/>
+  <path class="rl" d="M55 105 H345"/>
+  <circle class="p" cx="140" cy="80" r="4"/><circle class="p" cx="260" cy="180" r="4"/>
+  <text class="s" x="146" y="74">極大 2 (x = 0)</text><text class="s" x="240" y="200">極小 −2 (x = 2)</text>
+  <text class="r" x="350" y="109">y = a</text>
+  <text class="s" x="366" y="134">x</text><text class="s" x="128" y="146">O</text>
+  <text x="368" y="60" class="s">−2 &lt; a &lt; 2</text><text x="368" y="78" class="s">実数解 3 個</text><text x="368" y="96" class="s">3 nghiệm thực</text>
+</svg>

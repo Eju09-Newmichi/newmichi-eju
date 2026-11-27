@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="250" viewBox="0 0 420 250" role="img" aria-labelledby="t d">
+  <title id="t">複素数平面</title>
+  <desc id="d">Điểm z = 3 + 4i, số phức liên hợp 3 − 4i đối xứng qua trục thực, môđun |z| = 5 là khoảng cách đến gốc.</desc>
+  <style>
+    text { font-family: "Times New Roman", Tinos, "Shippori Mincho", serif; fill: #1B1F2A; font-size: 15px; }
+    .s { font-size: 13px; fill: #5A6072; }
+    .b { font-weight: 700; }
+    .r { fill: #C62828; font-weight: 700; }
+    .u { fill: #1F66C9; font-weight: 700; }
+    .l { fill: none; stroke: #1B1F2A; stroke-width: 2; }
+    .t { fill: none; stroke: #1B1F2A; stroke-width: 1.2; }
+    .d { fill: none; stroke: #9AA1B2; stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .rl { fill: none; stroke: #C62828; stroke-width: 2.5; }
+    .ul { fill: none; stroke: #1F66C9; stroke-width: 2.5; }
+    .ol { fill: none; stroke: #B9531A; stroke-width: 2.5; }
+    .p { fill: #C62828; }
+    .k { fill: #1B1F2A; }
+    .fu { fill: #E3F0FC; stroke: none; }
+    .fr { fill: #FDECEA; stroke: none; }
+    .ax { fill: none; stroke: #5A6072; stroke-width: 1.3; }
+  </style>
+  <path class="ax" d="M20 130 H260 M60 245 V10"/>
+  <text class="s" x="230" y="122">実軸</text><text class="s" x="66" y="20">虚軸</text>
+  <path class="rl" d="M60 130 L135 30"/>
+  <path class="d" d="M135 30 V230 M60 130 L135 230"/>
+  <circle class="p" cx="135" cy="30" r="5"/><circle cx="135" cy="230" r="5" style="fill:#1F66C9"/>
+  <text class="r" x="142" y="28">z = 3 + 4i</text><text class="u" x="142" y="234">z̄ = 3 − 4i</text>
+  <text class="r" x="74" y="72">|z| = 5</text><text class="s" x="46" y="146">O</text>
+  <text class="s" x="270" y="110">|z|² = z z̄</text><text class="s" x="270" y="140">実軸に関して対称</text><text class="s" x="270" y="156">Đối xứng qua trục thực</text>
+</svg>
